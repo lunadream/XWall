@@ -1,3 +1,6 @@
+# Learn more about X-Wall 
+# https://github.com/vilic/x-wall 
+
 {+forward-override{forward-socks5 127.0.0.1:$socks-port$ .}}
 :80/\.0rz\.tw
 0rz.tw:80
