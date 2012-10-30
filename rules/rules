@@ -1,8 +1,8 @@
-# Online rules generated at Wed Oct 31 00:50:05 UTC+0800 2012
+# Online rules generated at Wed Oct 31 03:13:34 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
-{+forward-override{$forward-type$ 127.0.0.1:$port$ .}}
+{+forward-override{$forward-type$ $server$ .}}
 :80/\.0rz\.tw
 0rz.tw:80
 0to255.com
