@@ -1,4 +1,4 @@
-# Online rules generated at Wed Oct 31 22:20:28 UTC+0800 2012
+# Online rules generated at Wed Oct 31 23:15:03 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -696,7 +696,6 @@ emule-ed2k.com:80
 .ezpeer.com
 :80/\.facebook\.com
 .facebook.com
-/
 .connect.facebook.net
 :80/\.fakku\.net
 .fakku.net
@@ -950,7 +949,6 @@ gaopi.net:80
 .gzone-anime.info
 :80/\.appspot\.com
 .appspot.com
-/
 :80/code\.google\.com/p/gappproxy
 :80/code\.google\.com/p/autoproxy/updates/list
 :80/code\.google\.com/p/program-think/wiki/Software
@@ -2703,7 +2701,6 @@ twt.tl:80
 .twitter.com
 .twitter.jp
 .twttr.com
-/
 :80/\.twittercounter\.com
 .twittercounter.com
 :80/twitterfeed\.com
@@ -2743,7 +2740,7 @@ twtkr.com:80
 .contests.twilio.com
 :80/embr\.in
 :80/fanfou\.im
-.fanfou.im/
+.fanfou.im
 :80/fanfou\.de
 :80/fanfou\.la
 :80/guomin\.us/login
