@@ -1,4 +1,4 @@
-# Online rules generated at Tue Nov 6 02:56:21 UTC+0800 2012
+# Online rules generated at Tue Nov 13 18:39:05 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -1412,6 +1412,7 @@ talkgadget.google.com:443/
 :80/.*\.helpeachpeople\.com.*
 .helpeachpeople.com
 .heroku.com
+.branch.com
 .awardwinningfjords.com
 .futureme.org
 .getcloudapp.com
@@ -1420,6 +1421,7 @@ talkgadget.google.com:443/
 .git-scm.com
 .lesscss.org
 .list.ly
+.maxgif.com
 .overlapr.com
 .peerpong.com
 .pose.com
@@ -2128,6 +2130,8 @@ nobelprize.org:80
 .cbs.ntu.edu.tw
 .nuexpo.com
 .nurgo-software.com
+:80/.*\.nytimes\.com.*
+.nytimes.com
 :80/.*nysingtao\.com.*
 .nysingtao.com
 .nzchinese.net.nz
