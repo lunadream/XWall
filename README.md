@@ -35,6 +35,5 @@ You can also use this list for your own Privoxy, the generator is written in Jav
 
 Downloads:
 
-> [Action File](https://raw.github.com/vilic/x-wall/master/rules/gfwlist.action)
-
+> [Action File](https://raw.github.com/vilic/x-wall/master/rules/gfwlist.action)  
 > [Generator](https://raw.github.com/vilic/x-wall/master/rules/gfwlist2privoxy.js)
