@@ -1,7 +1,6 @@
 [English](#x-wall-english) | [简体中文](#x-wall-chinese)
 
-<a id="x-wall-english"></a>
-# Introduction to X-Wall
+# <a id="x-wall-english"></a>Introduction to X-Wall
 
 ## What is X-Wall?
 
@@ -40,8 +39,7 @@ Downloads:
 > [Action File](https://raw.github.com/vilic/x-wall/master/rules/gfwlist.action)  
 > [Generator](https://raw.github.com/vilic/x-wall/master/rules/gfwlist2privoxy.js)
 
-<a id="x-wall-chinese"></a>
-# X-Wall 简介
+# <a id="x-wall-chinese"></a>X-Wall 简介
 
 ## X-Wall 是什么?
 
