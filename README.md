@@ -6,7 +6,7 @@ X-Wall is a small tool wrapped [Privoxy](http://www.privoxy.org/) and Plink (whi
 
 ## System Requirements
 
-Microsoft Windows 2000/XP/7/8 (By the way only XP and 7 are tested)
+Microsoft Windows 2000/XP/7/8 (By the way only XP and 7 are tested)  
 Microsoft .NET Framework 3.5 SP1 (pre-installed on Windows 7)
 
 ## Other Requirements
@@ -45,7 +45,7 @@ X-Wall 是一个整合了 [Privoxy](http://www.privoxy.org/) 和 Plink (Plink �
 
 ## 系统要求
 
-Microsoft Windows 2000/XP/7/8 (顺便只有 XP 和 7 测试过)
+Microsoft Windows 2000/XP/7/8 (顺便只有 XP 和 7 测试过)  
 Microsoft .NET Framework 3.5 SP1 (Windows 7 上已经预装)
 
 ## 其他要求
