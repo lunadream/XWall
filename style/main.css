@@ -249,7 +249,7 @@ img {
 /* FOOTER */
 
 #footer {
-    padding: 20px 0px;
+    margin: auto; padding: 20px 0px;
     width: 1000px;
     line-height: 20px;
     font-size: 12px; text-align: center; color: #CCCCCC;
