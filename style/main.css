@@ -81,7 +81,7 @@ img {
 
 #nav {
     position: absolute;
-    right: 40px; bottom: -1px;
+    right: 20px; bottom: -1px;
 }
 
 #nav li {
@@ -92,7 +92,7 @@ img {
 
 #nav li a {
     display: block;
-    padding: 0px 10px;
+    padding: 0px 8px;
     border-bottom: solid 1px #CCCCCC;
     line-height: 44px;
     color: #999999; text-decoration: none; text-transform: uppercase;
