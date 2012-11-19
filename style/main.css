@@ -1,0 +1,238 @@
+﻿body {
+    margin: 0px;
+    font-family: 'Segoe UI', Arial; font-size: 14px; color: #999999;
+    background-color: #EEEEEE;
+}
+
+ul, li {
+    margin: 0px; padding: 0px;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0px; padding: 0px;
+    font-weight: normal;
+}
+
+p {
+    margin: 0px 0px 0.5em 0px;
+}
+
+.anchor {
+    position: absolute;
+    margin-top: -66px;
+}
+
+/* LAYOUT */
+
+#main-wrapper {
+    position: absolute;
+    top: 66px;
+    width: 100%; min-width: 600px;
+    overflow: auto;
+}
+
+/* Header */
+
+#header {
+    position: absolute;
+    position: fixed;
+    border-bottom: solid 1px #CCCCCC;
+    height: 65px; width: 100%; min-width: 600px;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+#logo-wrapper {
+    position: absolute;
+    left: 30px; bottom: 10px;
+    height: 40px;
+}
+
+#logo {
+    position: absolute;
+    left: 0px; top: 0px;
+    width: 40px; height: 40px;
+    cursor: pointer;
+}
+
+#title {
+    position: absolute;
+    left: 48px; top: 16px;
+    line-height: 24px;
+    white-space: nowrap;
+    font-size: 18px; color: #666666; text-transform: uppercase;
+    cursor: pointer;
+}
+
+#domain {
+    position: absolute;
+    left: 48px; top: 0px;
+    line-height: 16px;
+    white-space: nowrap;
+    font-size: 14px; color: #CCCCCC;
+    cursor: pointer;
+}
+
+#nav {
+    position: absolute;
+    right: 40px; bottom: -1px;
+}
+
+#nav li {
+    float: left;
+    padding: 0px 2px;
+    height: 45px;
+}
+
+#nav li a {
+    display: block;
+    padding: 0px 10px;
+    border-bottom: solid 1px #CCCCCC;
+    line-height: 44px;
+    color: #999999; text-decoration: none; text-transform: uppercase;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#nav li a:hover {
+    border-bottom-color: #666666;
+    color: #666666;
+}
+
+/* BODY WRAPPER */
+
+#body-wrapper {
+    position: relative;
+}
+
+/* CONTENT WRAPPER */
+
+#content-wrapper {
+    margin-right: 280px;
+    padding: 0px 10px 10px 30px;
+}
+
+#content-wrapper h3 {
+    margin-left: -5px;
+    padding: 10px 0px 5px 0px;
+    text-transform: uppercase; color: #666666; font-size: 20px;
+}
+
+#content-wrapper h4 {
+    padding: 5px 0px;
+    font-size: 16px; color: #666666;
+}
+
+#content-wrapper a {
+    color: #888888; text-decoration: none;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#content-wrapper a:hover {
+    color: #666666;
+}
+
+/* SIDEBAR WRAPPER */
+
+#sidebar-wrapper {
+    position: absolute;
+    right: 0px; top: 0px;
+    padding: 10px;
+    width: 260px;
+}
+
+#sidebar-wrapper .item {
+    margin-bottom: 10px;
+    border: solid 1px #CCCCCC;
+    padding: 12px 10px 12px 20px;
+}
+
+#sidebar-wrapper .item h2 {
+    margin-left: -8px; margin-bottom: 10px;
+    border-left: solid 4px;
+    padding-left: 5px;
+    line-height: 16px;
+    font-size: 14px; text-transform: uppercase;
+}
+
+#sidebar-wrapper .item ul {
+    
+}
+
+#sidebar-wrapper .item ul li {
+    list-style: square inside;
+}
+
+#sidebar-wrapper .item ul li a {
+    text-decoration: none;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+/*#sidebar-wrapper .item ul li a:hover {
+    text-decoration: underline;
+}*/
+
+/* .item.dark */
+#sidebar-wrapper .dark {
+    background-color: #CCCCCC;
+}
+
+#sidebar-wrapper .dark h2 {
+    border-left-color: #999999;
+    color: #666666;
+}
+
+#sidebar-wrapper .dark ul li {
+    color: #999999;
+}
+
+#sidebar-wrapper .dark ul li a {
+    color: #F9F9F9;
+}
+
+#sidebar-wrapper .dark ul li a:hover {
+    color: #FFFFFF;
+}
+
+/* .item.light */
+#sidebar-wrapper .light {
+    background-color: #FFFFFF;
+}
+
+#sidebar-wrapper .light h2 {
+    border-left-color: #6DD900;
+    color: #666666;
+}
+
+#sidebar-wrapper .light ul li {
+    color: #6DD900;
+}
+
+#sidebar-wrapper .light ul li a {
+    color: #888888;
+}
+
+#sidebar-wrapper .light ul li a:hover {
+    color: #666666;
+}
+
+/* FOOTER */
+
+#footer {
+    padding: 20px 0px;
+    line-height: 20px;
+    font-size: 12px; text-align: center; color: #CCCCCC;
+}
+
+#footer a {
+    color: inherit; text-decoration: none;
+}
