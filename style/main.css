@@ -25,6 +25,8 @@ img {
 .anchor {
     position: absolute;
     margin-top: -66px;
+    font-size: 0px;
+    overflow: hidden;
 }
 
 /* LAYOUT */
@@ -32,19 +34,24 @@ img {
 #main-wrapper {
     position: absolute;
     top: 66px;
-    width: 100%; min-width: 600px;
-    overflow: auto;
+    width: 100%;
 }
 
 /* Header */
 
-#header {
+#header-wrapper {
     position: absolute;
     position: fixed;
     border-bottom: solid 1px #CCCCCC;
-    height: 65px; width: 100%; min-width: 600px;
+    width: 100%; height: 65px;
     background-color: #FFFFFF;
     z-index: 1;
+}
+
+#header {
+    position: relative;
+    margin: auto;
+    width: 1000px; height: 65px;
 }
 
 #logo-wrapper {
@@ -81,7 +88,7 @@ img {
 
 #nav {
     position: absolute;
-    right: 20px; bottom: -1px;
+    right: 8px; bottom: -1px;
 }
 
 #nav li {
@@ -111,6 +118,8 @@ img {
 
 #body-wrapper {
     position: relative;
+    margin: auto;
+    width: 1000px;
 }
 
 /* CONTENT WRAPPER */
@@ -153,9 +162,11 @@ img {
 }
 
 #sidebar-wrapper .item {
+    position: fixed;
     margin-bottom: 10px;
     border: solid 1px #CCCCCC;
     padding: 12px 10px 12px 20px;
+    width: 228px;
 }
 
 #sidebar-wrapper .item h2 {
@@ -171,10 +182,13 @@ img {
 }
 
 #sidebar-wrapper .item ul li {
-    list-style: square inside;
+    line-height: 18px;
+    padding-left: 10px;
+    background: url(images/spirits.png) no-repeat;
 }
 
 #sidebar-wrapper .item ul li a {
+    display: block;
     text-decoration: none;
     -moz-transition: all linear 0.2s;
     -o-transition: all linear 0.2s;
@@ -198,6 +212,7 @@ img {
 
 #sidebar-wrapper .dark ul li {
     color: #999999;
+    background-position: -196px 0px;
 }
 
 #sidebar-wrapper .dark ul li a {
@@ -220,6 +235,7 @@ img {
 
 #sidebar-wrapper .light ul li {
     color: #6DD900;
+    background-position: -196px -18px;
 }
 
 #sidebar-wrapper .light ul li a {
@@ -234,6 +250,7 @@ img {
 
 #footer {
     padding: 20px 0px;
+    width: 1000px;
     line-height: 20px;
     font-size: 12px; text-align: center; color: #CCCCCC;
 }
