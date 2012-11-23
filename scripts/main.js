@@ -7,45 +7,22 @@ window.onload = function () {
 
     var main = import_("main");
     if (main) main.load();
+
+    //Google Analytics
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36452018-1']);
+    _gaq.push(['_setDomainName', 'x-wall.org']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 };
 
 use_("dom", "dom.animation", function (dom, anim) {
-    var lang = function () {
-        var contentRoot = "contents/";
-        //var contentRoot = "https://raw.github.com/vilic/gh-pages/contents/";
-
-        var langs = [
-            {
-                name: "en-US",
-                title: "X-WALL",
-                loading: "loading...",
-                font: "Segoe UI, Arial",
-                file: contentRoot + "en-us"
-            },
-            {
-                name: "zh-CN",
-                title: "X-WALL",
-                loading: "正在加载...",
-                font: "微软雅黑, 黑体",
-                file: contentRoot + "zh-cn"
-            }
-        ];
-
-        var langName =
-            navigator.language ||
-            navigator.userLanguage ||
-            navigator.browserLanguage ||
-            navigator.systemLanguage;
-
-        return getLang(langName) || getLang(langName.substr(0, 2)) || langs[0];
-
-        function getLang(name) {
-            for (var i = 0; i < langs.length; i++) {
-                if (langs[i].name.indexOf(name) == 0)
-                    return langs[i];
-            }
-        }
-    }();
+    var contentRoot = "contents/";
 
     var style = {
         transparent: {
@@ -59,25 +36,17 @@ use_("dom", "dom.animation", function (dom, anim) {
     document.title = lang.title;
     document.body.style.fontFamily = lang.font;
 
-    var loading = dom.query("#loading");
-    loading.innerHTML = lang.loading;
-
-    var loadingAnim = new anim.Element(loading, style.transparent, 100);
-    loadingAnim.setStyle(style.opaque);
-
     module_("main", function () {
         this.load = function () {
             var xhr = new XMLHttpRequest();
-            xhr.open("get", lang.file);
+            xhr.open("get", contentRoot + lang.name.toLowerCase() + "/html");
             xhr.send(null);
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     use_("base64", function (base64) {
-                        loadingAnim.setStyle(style.transparent, function () {
-                            var html = base64.decode(xhr.responseText);
-                            loadContent(html);
-                        });
+                        var html = base64.decode(xhr.responseText);
+                        loadContent(html);
                     });
                 }
             };
@@ -101,5 +70,18 @@ use_("dom", "dom.animation", function (dom, anim) {
 
         headerAnim.setStyle(style.opaque);
         mainAnim.setStyle(style.opaque);
+
+        var imgs = dom.query("#content-wrapper img");
+
+        for_(imgs, function (img) {
+            var imgAnim = new anim.Element(img, style.transparent, 500);
+
+            if (img.complete) onload();
+            else img.onload = onload;
+
+            function onload() {
+                imgAnim.setStyle(style.opaque);
+            }
+        });
     } //end of loadContent
 });

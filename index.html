@@ -3,8 +3,6 @@
 <head>
     <title>X-WALL</title>
     <link href="style/main.css" rel="stylesheet" />
-    <script src="scripts/vejis.js"></script>
-    <script src="scripts/main.js"></script>
 </head>
 <body>
 <div id="loading"></div>
@@ -12,17 +10,42 @@
     <img src="images/logo.png" />
     <img src="style/images/spirits.png" />
 </div>
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36452018-1']);
-    _gaq.push(['_setDomainName', 'x-wall.org']);
-    _gaq.push(['_trackPageview']);
+<script>
+    var lang = function () {
+        var langs = [
+            {
+                name: "en-US",
+                title: "X-WALL",
+                loading: "loading...",
+                font: "Segoe UI, Arial"
+            },
+            {
+                name: "zh-CN",
+                title: "X-WALL",
+                loading: "正在加载...",
+                font: "微软雅黑, 黑体"
+            }
+        ];
 
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+        var langName =
+            navigator.language ||
+            navigator.userLanguage ||
+            navigator.browserLanguage ||
+            navigator.systemLanguage;
+
+        return getLang(langName) || getLang(langName.substr(0, 2)) || langs[0];
+
+        function getLang(name) {
+            for (var i = 0; i < langs.length; i++) {
+                if (langs[i].name.indexOf(name) == 0)
+                    return langs[i];
+            }
+        }
+    }();
+
+    document.getElementById("loading").innerHTML = lang.loading;
 </script>
+<script src="scripts/vejis.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>

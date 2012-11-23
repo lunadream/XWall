@@ -38,7 +38,7 @@ img {
     border: solid 1px #CCCCCC;
     width: 200px; height: 80px; line-height: 80px;
     text-align: center;
-    background-color: #FFFFFF; opacity: 0; filter: alpha(opacity=0);
+    background-color: #FFFFFF;
 }
 
 #preload-wrapper {
@@ -145,6 +145,11 @@ img {
 #content-wrapper {
     margin-right: 280px;
     padding: 0px 10px 10px 30px;
+}
+
+#content-wrapper img {
+    display: block;
+    margin: 10px 0px;
 }
 
 #content-wrapper h3 {
