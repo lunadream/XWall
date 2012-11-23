@@ -1,6 +1,15 @@
 ﻿require_("scripts/", ["dom.js", "dom.animation.js", "base64.js"]);
 
-use_("dom", "dom.animation", "base64", function (dom, anim, base64) {
+var loaded = false;
+
+window.onload = function () {
+    loaded = true;
+
+    var main = import_("main");
+    if (main) main.load();
+};
+
+use_("dom", "dom.animation", function (dom, anim) {
     var lang = function () {
         var contentRoot = "contents/";
         //var contentRoot = "https://raw.github.com/vilic/gh-pages/contents/";
@@ -46,29 +55,36 @@ use_("dom", "dom.animation", "base64", function (dom, anim, base64) {
             opacity: 1
         }
     };
-    
-    dom.ready(function () {
-        document.title = lang.title;
-        document.body.style.fontFamily = lang.font;
 
-        var loading = dom.query("#loading");
-        loading.innerHTML = lang.loading;
+    document.title = lang.title;
+    document.body.style.fontFamily = lang.font;
 
-        var loadingAnim = new anim.Element(loading, style.transparent, 500);
-        loadingAnim.setStyle(style.opaque);
+    var loading = dom.query("#loading");
+    loading.innerHTML = lang.loading;
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("get", lang.file);
-        xhr.send(null);
+    var loadingAnim = new anim.Element(loading, style.transparent, 100);
+    loadingAnim.setStyle(style.opaque);
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                loadingAnim.setStyle(style.transparent, function () {
-                    var html = base64.decode(xhr.responseText);
-                    loadContent(html);
-                });
-            }
+    module_("main", function () {
+        this.load = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get", lang.file);
+            xhr.send(null);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    use_("base64", function (base64) {
+                        loadingAnim.setStyle(style.transparent, function () {
+                            var html = base64.decode(xhr.responseText);
+                            loadContent(html);
+                        });
+                    });
+                }
+            };
         };
+
+        if (loaded)
+            this.load();
     });
 
     function loadContent(html) {

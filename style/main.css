@@ -41,6 +41,13 @@ img {
     background-color: #FFFFFF; opacity: 0; filter: alpha(opacity=0);
 }
 
+#preload-wrapper {
+    position: absolute;
+    width: 0px; height: 0px;
+    font-size: 0px;
+    visibility: hidden;
+}
+
 #main-wrapper {
     position: absolute;
     top: 66px;
