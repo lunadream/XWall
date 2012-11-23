@@ -58,7 +58,6 @@ img {
 /* Header */
 
 #header-wrapper {
-    position: absolute;
     position: fixed;
     border-bottom: solid 1px #CCCCCC;
     width: 100%; height: 65px;
@@ -143,8 +142,8 @@ img {
 /* CONTENT WRAPPER */
 
 #content-wrapper {
-    margin-right: 280px;
     padding: 0px 10px 10px 30px;
+    width: 680px;
 }
 
 #content-wrapper img {
@@ -178,14 +177,14 @@ img {
 /* SIDEBAR WRAPPER */
 
 #sidebar-wrapper {
-    position: absolute;
-    right: 0px; top: 0px;
+    position: fixed;
+    top: 66px;
+    margin-left: 720px;
     padding: 10px;
     width: 260px;
 }
 
 #sidebar-wrapper .item {
-    position: fixed;
     margin-bottom: 10px;
     border: solid 1px #CCCCCC;
     padding: 12px 10px 12px 20px;
@@ -211,7 +210,6 @@ img {
 }
 
 #sidebar-wrapper .item ul li a {
-    display: block;
     text-decoration: none;
     -moz-transition: all linear 0.2s;
     -o-transition: all linear 0.2s;

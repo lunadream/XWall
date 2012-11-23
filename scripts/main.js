@@ -37,6 +37,7 @@ use_("dom", "dom.animation", function (dom, anim) {
         this.load = function () {
             var xhr = new XMLHttpRequest();
             xhr.open("get", contentRoot + lang.name.toLowerCase() + "/html");
+            xhr.setRequestHeader("If-Modified-Since", "0");
             xhr.send(null);
 
             xhr.onreadystatechange = function () {
