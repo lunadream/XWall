@@ -105,18 +105,18 @@ img {
 
 #nav {
     position: absolute;
-    right: 3px; bottom: -1px;
+    right: 5px; bottom: -1px;
 }
 
 #nav li {
     float: left;
-    padding: 0px 2px;
+    padding: 0px;
     height: 45px;
 }
 
 #nav li a {
     display: block;
-    padding: 0px 8px;
+    padding: 0px 10px;
     border-bottom: solid 1px #CCCCCC;
     line-height: 44px;
     color: #999999; text-decoration: none; text-transform: uppercase;
