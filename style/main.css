@@ -31,10 +31,21 @@ img {
 
 /* LAYOUT */
 
+#loading {
+    position: absolute;
+    left: 50%; top: 50%;
+    margin: -40px -100px;
+    border: solid 1px #CCCCCC;
+    width: 200px; height: 80px; line-height: 80px;
+    text-align: center;
+    background-color: #FFFFFF; opacity: 0; filter: alpha(opacity=0);
+}
+
 #main-wrapper {
     position: absolute;
     top: 66px;
     width: 100%;
+    opacity: 0; filter: alpha(opacity=0);
 }
 
 /* Header */
@@ -44,7 +55,7 @@ img {
     position: fixed;
     border-bottom: solid 1px #CCCCCC;
     width: 100%; height: 65px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; opacity: 0; filter: alpha(opacity=0);
     z-index: 1;
 }
 
@@ -56,7 +67,7 @@ img {
 
 #logo-wrapper {
     position: absolute;
-    left: 30px; bottom: 10px;
+    left: 25px; bottom: 10px;
     height: 40px;
     text-decoration: none;
 }
@@ -88,7 +99,7 @@ img {
 
 #nav {
     position: absolute;
-    right: 8px; bottom: -1px;
+    right: 3px; bottom: -1px;
 }
 
 #nav li {
