@@ -33,9 +33,6 @@ use_("dom", "dom.animation", function (dom, anim) {
         }
     };
 
-    document.title = lang.title;
-    document.body.style.fontFamily = lang.font;
-
     module_("main", function () {
         this.load = function () {
             var xhr = new XMLHttpRequest();
