@@ -6,13 +6,13 @@ use_("dom", "dom.animation", "base64", function (dom, anim, base64) {
         //var contentRoot = "https://raw.github.com/vilic/gh-pages/contents/";
 
         var langs = [
-            //{
-            //    name: "en-US",
-            //    title: "X-WALL",
-            //    loading: "loading...",
-            //    font: "Segoe UI, Arial",
-            //    file: contentRoot + "en-us"
-            //},
+            {
+                name: "en-US",
+                title: "X-WALL",
+                loading: "loading...",
+                font: "Segoe UI, Arial",
+                file: contentRoot + "en-us"
+            },
             {
                 name: "zh-CN",
                 title: "X-WALL",
