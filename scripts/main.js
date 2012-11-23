@@ -3,7 +3,7 @@
 use_("dom", "dom.animation", function (dom, anim) {
     var lang = function () {
         //var contentRoot = "contents/";
-        var contentRoot = "https://raw.github.com/vilic/gh-pages/contents/";
+        var contentRoot = "https://raw.github.com/vilic/x-wall/gh-pages/contents/";
 
         var langs = [
             {
