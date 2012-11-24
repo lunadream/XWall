@@ -1,4 +1,4 @@
-# Online rules generated at Sun Nov 18 14:24:03 UTC+0800 2012
+# Online rules generated at Sat Nov 24 11:08:48 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -1924,12 +1924,8 @@ moby.to:80
 .mypopescu.com
 :80/.*mysinablog\.com.*
 .mysinablog.com
-:80/.*\.blogs\.myspace\.com.*
-.blogs.myspace.com
-:80/.*vids\.myspace\.com/index\.cfm\?fuseaction=vids\..*
-.vids.myspace.com/index\.cfm\?fuseaction=vids\.
-:80/.*viewmorepics\.myspace\.com.*
-.viewmorepics.myspace.com
+:80/.*\.myspace\.com.*
+.myspace.com
 :80/.*old\.nabble\.com.*
 .old.nabble.com
 .naitik.net
