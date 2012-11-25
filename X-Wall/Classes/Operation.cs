@@ -16,12 +16,21 @@ namespace XWall {
         static Settings settings = Settings.Default;
 
         public static void KillProcess(string fileName) {
+            var processes = GetProcesses(fileName);
+            foreach (var process in processes)
+                process.Kill();
+        }
+
+        public static Process[] GetProcesses(string fileName) {
             var path = Path.GetFullPath(fileName).ToLower();
             var processes = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(fileName));
+            var results = new List<Process>();
+            var current = Process.GetCurrentProcess();
             foreach (var process in processes) {
-                if (Path.GetFullPath(process.MainModule.FileName).ToLower() == path)
-                    process.Kill();
+                if (process.Id != current.Id && Path.GetFullPath(process.MainModule.FileName).ToLower() == path)
+                    results.Add(process);
             }
+            return results.ToArray();
         }
 
         public static void SetAvailablePorts() {
@@ -58,8 +67,12 @@ namespace XWall {
 
         public static void SetAutoStart(bool autoStart) {
             var dir = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+            var valueName = "X-Wall";
             var reg = Registry.CurrentUser.CreateSubKey(dir);
-            reg.SetValue("X-Wall", autoStart ? "\"" + System.Windows.Forms.Application.ExecutablePath + "\"" : null);
+            if (autoStart)
+                reg.SetValue(valueName, "\"" + System.Windows.Forms.Application.ExecutablePath + "\"");
+            else if (reg.GetValue(valueName) != null)
+                reg.DeleteValue(valueName);
         }
 
         // Created by Joel 'Jaykul' Bennett
@@ -246,6 +259,7 @@ namespace XWall {
             }
 
             public static bool RestoreProxy() {
+                OriginalProxies.Initialize();
                 if (OriginalProxies.List.Length == 0) return true;
 
                 var success = true;

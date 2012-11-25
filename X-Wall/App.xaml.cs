@@ -16,7 +16,20 @@ namespace XWall {
     /// </summary>
     public partial class App : Application {
         App() {
-            Environment.CurrentDirectory = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+            var executablePath = System.Windows.Forms.Application.ExecutablePath;
+            Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
+
+            var settings = Settings.Default;
+
+            if (Environment.GetCommandLineArgs().Contains("uninstall")) {
+                Operation.KillProcess(executablePath);
+                Operation.KillProcess(settings.PrivoxyFileName);
+                Operation.KillProcess(settings.PlinkFileName);
+                Operation.Proxies.RestoreProxy();
+                Operation.SetAutoStart(false);
+                App.Current.Shutdown();
+                return;
+            }
 
             Process current = Process.GetCurrentProcess();
             MessageBoxResult? result = null;
@@ -26,12 +39,13 @@ namespace XWall {
                         result = MessageBox.Show(App.Current.Resources["XWallAlreadyStartedDescription"] as string, "X-Wall", MessageBoxButton.OKCancel);
                     if (result == MessageBoxResult.OK)
                         process.Kill();
-                    else
+                    else {
                         App.Current.Shutdown();
+                        return;
+                    }
                 }
             }
 
-            var settings = Settings.Default;
             if (settings.UpgradeRequired) {
                 settings.Upgrade();
                 settings.UpgradeRequired = false;
