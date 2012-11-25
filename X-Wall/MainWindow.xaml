@@ -1,0 +1,228 @@
+﻿<Window x:Class="XWall.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{StaticResource XWallTitle}"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight" 
+        Loaded="onWindowLoaded"
+        Closing="onWindowClosing"
+        StateChanged="onWindowStateChanged" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Icon="Icons/main.ico">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+            <GradientStop Color="#FFEEEEEE" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Margin="5" Background="#FFF9F9F9">
+            <TabItem Header="{StaticResource BasicSettings}">
+                <StackPanel Margin="0,0,0,3">
+                    <GroupBox Header="{StaticResource ProxyType}" Margin="0,0,0,2">
+                        <Grid Margin="10,5,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SshTunnelAndDescription}" />
+                            <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource SshInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
+                        <StackPanel Margin="0,10,10,5">
+                            <Grid x:Name="sshInformationGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}"/>
+                                <TextBox x:Name="sshServerTextBox" Grid.Row="0" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                                <TextBox x:Name="sshPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Username}" />
+                                <TextBox x:Name="sshUsernameTextBox" Grid.Row="0" Grid.Column="3" Margin="5,0" VerticalAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Password}" />
+                                <PasswordBox x:Name="sshPasswordBox" Grid.Row="1" Grid.Column="3" Height="22" Margin="5,0" VerticalAlignment="Center" />
+                            </Grid>
+                            <Grid Margin="0,6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="90" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalAlignment="Center" HorizontalAlignment="Right" Padding="0,0,2,0" Content="{StaticResource Status}" />
+                                <TextBlock x:Name="sshStatusTextBlock" Grid.Column="1" Margin="5,0,5,0" VerticalAlignment="Center"></TextBlock>
+                                <Button x:Name="sshConnectButton" Grid.Column="2" Margin="5,0,5,0" VerticalAlignment="Center" Click="onSshConnectButtonClick" Content="{StaticResource Connect}" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource HttpInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeHttpRadio}">
+                        <Grid Margin="0,10,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="65" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}"/>
+                            <TextBox x:Name="httpServerTextBox" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
+                            <Label Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}"/>
+                            <TextBox x:Name="httpPortTextBox" Grid.Column="3" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="advancedSettingsTabItem" Header="{StaticResource AdvancedSettings}">
+                <StackPanel Margin="0,0,0,3">
+                    <GroupBox Header="{StaticResource XWall}" Margin="0,0,0,2">
+                        <Grid Margin="10,5,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                                <RowDefinition Height="24" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox x:Name="autoStartCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoStartDescription}" />
+                            <CheckBox x:Name="listenToLocalOnlyCheckBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ListenToLocalOnlyDescription}" />
+                            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource ProxyPort}" />
+                            <TextBox x:Name="proxyPortTextBox" Grid.Row="2" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource Ssh}" Margin="0,0,0,2">
+                        <StackPanel Margin="10,5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
+                                <CheckBox Grid.Column="1" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource SocksPort}" />
+                                <TextBox x:Name="sshSocksPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{StaticResource Rules}">
+                <StackPanel Margin="0,0,0,3">
+                    <GroupBox Header="{StaticResource RuleOptions}" Margin="0,0,0,2">
+                        <Grid Margin="10,5,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <CheckBox x:Name="useOnlineRulesCheckBox" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseOnlineRulesAndDescription}" />
+                            <CheckBox x:Name="useCustomRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseCustomRules}" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource OnlineRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useOnlineRulesCheckBox}">
+                        <Grid Margin="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="90" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock VerticalAlignment="Center">
+                                <Run Text="{StaticResource LastUpdate}" />
+                                <Run>-</Run>
+                                <Run x:Name="lastUpdateTimeTextBlock" Text="{StaticResource None}" />
+                            </TextBlock>
+                            <Button x:Name="onlineRulesUpdateButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Click="onOnlineRulesUpdateButtonClick" Content="{StaticResource Update}" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource CustomRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useCustomRulesCheckBox}">
+                        <Grid Margin="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="90" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock VerticalAlignment="Center">
+                                <Run x:Name="customRulesCountTextBlock"></Run>
+                            </TextBlock>
+                            <Button Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Click="onCustomRulesEditButtonClick" Content="{StaticResource Edit}" />
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{StaticResource About}">
+                <StackPanel Margin="0,0,0,3">
+                    <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2" VerticalAlignment="Top">
+                        <StackPanel Margin="10,5,10,8">
+                            <TextBlock x:Name="versionTextBlock" Margin="0,2,0,0"></TextBlock>
+                            <TextBlock Margin="0,2,0,0" Text="{StaticResource AuthorLine}" />
+                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,0" Text="{StaticResource XWallDescription}" />
+                            <TextBlock Margin="0,2,0,0" HorizontalAlignment="Left">
+                                <Hyperlink Click="onWebsiteHyperLinkClick"><Run x:Name="websiteUrlText"></Run></Hyperlink>
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                                <Run Text="{StaticResource FeedbackLine}" />
+                                <Hyperlink Click="onFeedbackEmailClick"><Run x:Name="feedbackEmailText"></Run></Hyperlink>.
+                            </TextBlock>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource OnlineVersion}" Margin="0,0,0,2" VerticalAlignment="Top">
+                        <Grid Margin="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="90" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="onlineVersionTextBlock" VerticalAlignment="Center"></TextBlock>
+                            <Button x:Name="downloadUpdateButton" Click="onDownloadUpdateButtonClick" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Download}" />
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1" Margin="5,0,5,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center" Click="onExitButtonClick" Content="{StaticResource Exit}" />
+            <Button x:Name="hideButton" Grid.Column="2" Margin="10,0,0,0" VerticalAlignment="Center" Click="onHideButtonClick" Content="{StaticResource Hide}" />
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,96 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- MainWindow -->
+    <sys:String x:Key="XWallTitle">X-Wall</sys:String>
+    
+    <sys:String x:Key="BasicSettings">Basic Settings</sys:String>
+    <sys:String x:Key="ProxyType">Proxy Type</sys:String>
+    <sys:String x:Key="SshTunnelAndDescription">SSH Tunnel - Server and account information required</sys:String>
+    <sys:String x:Key="HttpProxyAndDescription">HTTP Proxy - Server information required</sys:String>
+    
+    <sys:String x:Key="SshInformation">SSH Information</sys:String>
+    <sys:String x:Key="Status">Status</sys:String>
+    <sys:String x:Key="Connect">Connect</sys:String>
+    <sys:String x:Key="Connecting">Connecting</sys:String>
+    <sys:String x:Key="Connected">Connected</sys:String>
+    <sys:String x:Key="NotConnected">Not connected</sys:String>
+    <sys:String x:Key="SuccessConnectDescription">X-Wall has successfully connected to {0}.</sys:String>
+    <sys:String x:Key="Disconnect">Disconnect</sys:String>
+    <sys:String x:Key="Disconnected">Disconnected</sys:String>
+    <sys:String x:Key="DisconnectedDescription">X-Wall has disconnected with SSH server.</sys:String>
+    <sys:String x:Key="Stop">Stop</sys:String>
+    <sys:String x:Key="ReconnectDescription">Reconnect in {0} s...</sys:String>
+    <sys:String x:Key="ErrorConnect">Error connect server</sys:String>
+    <sys:String x:Key="ConnectStopped">Connect stopped</sys:String>
+    <sys:String x:Key="ConnectFailed">Connect failed</sys:String>
+    <sys:String x:Key="ConnectFailedDescription">X-Wall failed to connect to {0}.</sys:String>
+
+    <sys:String x:Key="HttpInformation">HTTP Information</sys:String>
+    
+    <sys:String x:Key="AdvancedSettings">Advanced Settings</sys:String>
+    <sys:String x:Key="AutoStartDescription">Start X-Wall with Windows and connect automatically</sys:String>
+    <sys:String x:Key="ListenToLocalOnlyDescription">Listen to local address only</sys:String>
+    <sys:String x:Key="ProxyPort">Proxy port</sys:String>
+    <sys:String x:Key="Ssh">SSH</sys:String>
+    <sys:String x:Key="EnableCompression">Enable compression</sys:String>
+    <sys:String x:Key="AutoReconnect">Automatically reconnect</sys:String>
+    <sys:String x:Key="SocksPort">SOCKS Port</sys:String>
+
+    <sys:String x:Key="Rules">Rules</sys:String>
+    <sys:String x:Key="RuleOptions">Rule Options</sys:String>
+    <sys:String x:Key="UseOnlineRulesAndDescription">Use online rules - Most of the walled websites are included</sys:String>
+    <sys:String x:Key="UseCustomRules">Use custom rules</sys:String>
+    <sys:String x:Key="OnlineRules">Online Rules</sys:String>
+    <sys:String x:Key="LastUpdate">Last update</sys:String>
+    <sys:String x:Key="None">None</sys:String>
+    <sys:String x:Key="Update">Update</sys:String>
+    <sys:String x:Key="Updating">Updating</sys:String>
+    <sys:String x:Key="UpdateOnlineRulesFailed">Failed update online rules</sys:String>
+    <sys:String x:Key="UpdateOnlineRulesFailedDescription">X-Wall failed to update the online rules cache.</sys:String>
+    <sys:String x:Key="CustomRules">Custom Rules</sys:String>
+    <sys:String x:Key="NoCustomRuleDescription">No custom rule yet</sys:String>
+    <sys:String x:Key="OneCustomRuleDescription">There is 1 custom rule in total</sys:String>
+    <sys:String x:Key="CustomRulesDescription">There are {0} custom rules in total</sys:String>
+    <sys:String x:Key="AddRules">Add rules</sys:String>
+    <sys:String x:Key="Edit">Edit</sys:String>
+
+    <sys:String x:Key="About">About</sys:String>
+    <sys:String x:Key="AboutXWall">About X-Wall</sys:String>
+    <sys:String x:Key="Version">Version</sys:String>
+    <sys:String x:Key="AuthorLine">Author VILIC VANE</sys:String>
+    <sys:String x:Key="XWallDescription">X-Wall is a small tool wrapped Plink and Privoxy together to provide people an easier way to X the Wall.</sys:String>
+    <sys:String x:Key="FeedbackLine">Any feedback please email</sys:String>
+    <sys:String x:Key="OnlineVersion">Online Version</sys:String>
+    <sys:String x:Key="Download">Download</sys:String>
+    <sys:String x:Key="Downloading">Downloading... ({0}%)</sys:String>
+    <sys:String x:Key="Checking">Checking...</sys:String>
+    <sys:String x:Key="OnlineVersionCheckFailed">Online version check failed</sys:String>
+    <sys:String x:Key="UpdateAvailableDescription">An update ({0}) of X-Wall is available, do you want to download now?</sys:String>
+    <sys:String x:Key="InstallUpdateDescription">Update download completed, click OK to exit and install the update.</sys:String>
+    <sys:String x:Key="DownloadUpdateFailed">Update download failed, please retry.</sys:String>
+
+    <!-- CustomRulesEditor -->
+    <sys:String x:Key="CustomRulesEditorTitle">Custom Rules</sys:String>
+    <sys:String x:Key="Add">Add</sys:String>
+    <sys:String x:Key="MatchSubdomainsDescription">Also make the rule match its subdomains (if it is a domain)</sys:String>
+    <sys:String x:Key="CustomRulesList">Custom Rules List</sys:String>
+    <sys:String x:Key="DeleteSelected">Delete Selected</sys:String>
+
+    <!-- Privoxy -->
+    <sys:String x:Key="PrivoxyErrorExitMessage">X-Wall proxy exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
+    
+    <!-- Plink -->
+    <sys:String x:Key="PlinkAuthFailed">Password authentication failed</sys:String>
+    
+    <!-- COMMON -->
+    <sys:String x:Key="XWall">X-Wall</sys:String>
+    <sys:String x:Key="Server">Server</sys:String>
+    <sys:String x:Key="Port">Port</sys:String>
+    <sys:String x:Key="Username">Username</sys:String>
+    <sys:String x:Key="Password">Password</sys:String>
+    <sys:String x:Key="Exit">Exit</sys:String>
+    <sys:String x:Key="Hide">Hide</sys:String>
+    <sys:String x:Key="XWallAlreadyStartedDescription">It seems that X-Wall has already started, do you want to end it?</sys:String>
+    <!--<sys:String x:Key=""></sys:String>-->
+</ResourceDictionary>

@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Windows;
+using XWall.Properties;
+
+namespace XWall {
+    class Privoxy {
+        static Settings settings = Settings.Default;
+        static ResourceDictionary resources = App.Current.Resources;
+        Process process;
+        bool stop;
+        bool lastStopWithError = false;
+
+        public Privoxy() {
+            Operation.KillProcess(settings.PrivoxyFileName);
+            App.Current.Exit += (sender, e) => {
+                Stop();
+            };
+
+            settings.PropertyChanged += (sender, e) => {
+                switch (e.PropertyName) {
+                    case "ProxyPort": break;
+                    case "ListenToLocalOnly": break;
+                    default: return;
+                }
+
+                GenerateConfigFile();
+            };
+
+            //if (!File.Exists(settings.PrivoxyConfigFileName))
+            GenerateConfigFile();
+        }
+
+        public static void GenerateConfigFile() {
+            var defaultProxy = Operation.Proxies.DefaultProxy;
+            var text =
+                "listen-address " + (settings.ListenToLocalOnly ? "127.0.0.1:" : ":") + settings.ProxyPort + "\r\n" +
+                "forward / " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy) + "\r\n" +
+                "actionsfile " + settings.PrivoxyActionFileName;
+            File.WriteAllText(settings.PrivoxyConfigFileName, text);
+        }
+
+        void startProcess() {
+            stop = false;
+            process = new Process();
+
+            var si = process.StartInfo;
+            si.FileName = settings.PrivoxyFileName;
+            si.Arguments = settings.PrivoxyConfigFileName;
+            si.CreateNoWindow = true;
+            si.UseShellExecute = false;
+
+            process.Start();
+            process.WaitForExit();
+
+            var code = process.HasExited ? process.ExitCode : 0;
+            if (code == 1) {
+                if (!lastStopWithError) {
+                    lastStopWithError = true;
+                    new Action(() => {
+                        Thread.Sleep(1000);
+                        MessageBox.Show(resources["PrivoxyErrorExitMessage"] as string);
+                    }).BeginInvoke(null, null);
+                }
+            }
+            else lastStopWithError = false;
+
+            if (!stop) {
+                new Action(() => {
+                    Thread.Sleep(2000);
+                    if (process == null || process.HasExited)
+                        startProcess();
+                }).BeginInvoke(null, null);
+            }
+        }
+
+        public void Start() {
+            Stop();
+            new Action(startProcess).BeginInvoke(null, null);
+        }
+
+        public void Stop() {
+            stop = true;
+            if (process != null && !process.HasExited)
+                process.Kill();
+        }
+
+    }
+}
