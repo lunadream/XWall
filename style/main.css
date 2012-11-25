@@ -217,6 +217,10 @@ img {
     transition: all linear 0.2s;
 }
 
+#version {
+    color: #F9F9F9;
+}
+
 /*#sidebar-wrapper .item ul li a:hover {
     text-decoration: underline;
 }*/
