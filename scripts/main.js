@@ -61,6 +61,7 @@ use_("dom", "dom.animation", function (dom, anim) {
     function fetchVersion() {
         var xhr = new XMLHttpRequest();
         xhr.open("get", "release/version");
+        xhr.setRequestHeader("If-Modified-Since", "0");
         xhr.send(null);
 
         xhr.onreadystatechange = function () {
