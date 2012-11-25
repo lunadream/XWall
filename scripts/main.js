@@ -33,6 +33,8 @@ use_("dom", "dom.animation", function (dom, anim) {
         }
     };
 
+    var version;
+
     module_("main", function () {
         this.load = function () {
             var xhr = new XMLHttpRequest();
@@ -54,11 +56,31 @@ use_("dom", "dom.animation", function (dom, anim) {
             this.load();
     });
 
+    fetchVersion();
+
+    function fetchVersion() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "release/version");
+        xhr.send(null);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                version = xhr.responseText;
+                var versionSpan = dom.query("#version");
+                if (versionSpan)
+                    versionSpan.innerHTML = version;
+            }
+        };
+    }
+
     function loadContent(html) {
         document.body.innerHTML = html;
 
         var title = dom.query("#title").getAttribute("data-document-title");
         document.title = title;
+
+        if (version)
+            dom.query("#version").innerHTML = version;
 
         var header = dom.query("#header-wrapper");
         var main = dom.query("#main-wrapper");
