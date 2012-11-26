@@ -183,7 +183,7 @@
                     </GroupBox>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="{StaticResource About}">
+            <TabItem Header="{StaticResource About}" GotFocus="onAboutTabItemGotFocus">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2" VerticalAlignment="Top">
                         <StackPanel Margin="10,5,10,8">

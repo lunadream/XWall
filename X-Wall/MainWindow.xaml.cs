@@ -305,7 +305,7 @@ namespace XWall {
                         downloadUpdateButton.IsEnabled = true;
 
                         if (suggestedToUpdate) {
-                            var result = MessageBox.Show(String.Format(resources["UpdateAvailableDescription"] as string, onlineVersion), null, MessageBoxButton.OKCancel);
+                            var result = MessageBox.Show(String.Format(resources["UpdateAvailableDescription"] as string, onlineVersion), resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
                             if (result == MessageBoxResult.OK)
                                 downloadUpdate();
                         }
@@ -314,14 +314,13 @@ namespace XWall {
                         onlineVersionTextBlock.Text = resources["OnlineVersionCheckFailed"] as string;
                 }));
             };
-
         }
 
         void downloadUpdate() {
             var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             if (version == onlineVersion) {
-                var result = MessageBox.Show(resources["SameVersionMessage"] as string, null, MessageBoxButton.OKCancel);
+                var result = MessageBox.Show(resources["SameVersionMessage"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
                 if (result == MessageBoxResult.Cancel)
                     return;
             }
@@ -360,7 +359,7 @@ namespace XWall {
         }
 
         void startUpdateInstalling() {
-            var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, null, MessageBoxButton.OKCancel);
+            var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
                 Process.Start(settings.UpdateInstallerName);
                 App.Current.Shutdown();
@@ -369,6 +368,11 @@ namespace XWall {
 
         private void onDownloadUpdateButtonClick(object sender, RoutedEventArgs e) {
             downloadUpdate();
+        }
+
+        private void onAboutTabItemGotFocus(object sender, RoutedEventArgs e) {
+            if (onlineVersion == null)
+                checkVersion();
         }
     }
 }
