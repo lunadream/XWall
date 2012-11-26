@@ -15,6 +15,8 @@ namespace XWall {
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application {
+        public static bool IsShutDown = false;
+
         App() { }
 
         protected override void OnStartup(StartupEventArgs eventArgs) {
@@ -32,6 +34,7 @@ namespace XWall {
                 Operation.KillProcess(settings.PlinkFileName);
                 Operation.Proxies.RestoreProxy();
                 Operation.SetAutoStart(false);
+                IsShutDown = true;
                 App.Current.Shutdown();
                 return;
             }
@@ -46,6 +49,7 @@ namespace XWall {
                     if (result == MessageBoxResult.OK)
                         process.Kill();
                     else {
+                        IsShutDown = true;
                         App.Current.Shutdown();
                         return;
                     }

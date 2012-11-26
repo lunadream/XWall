@@ -32,6 +32,9 @@ namespace XWall {
         Privoxy privoxy;
 
         public MainWindow() {
+            if (App.IsShutDown)
+                return;
+
             InitializeComponent();
             InitializeBinding();
 
