@@ -15,7 +15,12 @@ namespace XWall {
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application {
-        App() {
+        App() { }
+
+        protected override void OnStartup(StartupEventArgs eventArgs) {
+            base.OnStartup(eventArgs);
+            LoadLanguage();
+
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
 
@@ -68,11 +73,6 @@ namespace XWall {
             App.Current.Exit += (sender, e) => {
                 Operation.Proxies.RestoreProxy();
             };
-        }
-
-        protected override void OnStartup(StartupEventArgs e) {
-            base.OnStartup(e);
-            LoadLanguage();
 
             Process current = Process.GetCurrentProcess();
             var resources = App.Current.Resources;
@@ -95,8 +95,8 @@ namespace XWall {
             CultureInfo currentCultureInfo = CultureInfo.CurrentCulture;
 
             var files = new string[] { 
-                @"langs\" + currentCultureInfo.TwoLetterISOLanguageName + ".xaml",
-                @"langs\" + currentCultureInfo.Name + ".xaml"
+                @"Langs\" + currentCultureInfo.TwoLetterISOLanguageName + ".xaml",
+                @"Langs\" + currentCultureInfo.Name + ".xaml"
             };
 
             foreach (var file in files) {
