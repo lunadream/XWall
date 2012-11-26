@@ -269,7 +269,7 @@ namespace XWall {
             return result;
         }
 
-        string onlineVersion = null;
+        string onlineVersionStr = null;
         bool updateDownloaded = false;
 
         void checkVersion() {
@@ -287,25 +287,26 @@ namespace XWall {
                     if (e.Error == null) {
                         bool suggestedToUpdate = false;
 
-                        if (e.Result.StartsWith("+")) {
-                            onlineVersion = e.Result.Substring(1);
-                            suggestedToUpdate = settings.DismissedUpdateVersion != onlineVersion;
+                        var versions = e.Result.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
-                            if (onlineVersion != Assembly.GetExecutingAssembly().GetName().Version.ToString()) {
-                                if (onlineVersion != settings.DismissedUpdateVersion) {
-                                    suggestedToUpdate = true;
-                                    settings.DismissedUpdateVersion = onlineVersion;
-                                }
+                        var installedVersion = Assembly.GetExecutingAssembly().GetName().Version;
+                        onlineVersionStr = versions[0];
+                        var lowVersion = new Version(versions[1]);
+
+                        if (installedVersion < lowVersion) {
+                            suggestedToUpdate = settings.DismissedUpdateVersion != onlineVersionStr;
+
+                            if (onlineVersionStr != settings.DismissedUpdateVersion) {
+                                suggestedToUpdate = true;
+                                settings.DismissedUpdateVersion = onlineVersionStr;
                             }
                         }
-                        else
-                            onlineVersion = e.Result;
 
-                        onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersion;
+                        onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersionStr;
                         downloadUpdateButton.IsEnabled = true;
 
                         if (suggestedToUpdate) {
-                            var result = MessageBox.Show(String.Format(resources["UpdateAvailableDescription"] as string, onlineVersion), resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
+                            var result = MessageBox.Show(String.Format(resources["UpdateAvailableDescription"] as string, onlineVersionStr), resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
                             if (result == MessageBoxResult.OK)
                                 downloadUpdate();
                         }
@@ -319,7 +320,7 @@ namespace XWall {
         void downloadUpdate() {
             var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-            if (version == onlineVersion) {
+            if (version == onlineVersionStr) {
                 var result = MessageBox.Show(resources["SameVersionMessage"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
                 if (result == MessageBoxResult.Cancel)
                     return;
@@ -344,7 +345,7 @@ namespace XWall {
                 client.DownloadFileCompleted += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
                         downloadUpdateButton.IsEnabled = true;
-                        onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersion;
+                        onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersionStr;
                         if (e.Error == null) {
                             updateDownloaded = true;
                             startUpdateInstalling();
@@ -371,7 +372,7 @@ namespace XWall {
         }
 
         private void onAboutTabItemGotFocus(object sender, RoutedEventArgs e) {
-            if (onlineVersion == null)
+            if (onlineVersionStr == null)
                 checkVersion();
         }
     }

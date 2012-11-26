@@ -27,6 +27,7 @@ namespace XWall {
                 Operation.KillProcess(settings.PlinkFileName);
                 Operation.Proxies.RestoreProxy();
                 Operation.SetAutoStart(false);
+                settings.Reset();
                 App.Current.Shutdown();
                 return;
             }
