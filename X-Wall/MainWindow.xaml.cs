@@ -329,6 +329,7 @@ namespace XWall {
                 startUpdateInstalling();
             else {
                 downloadUpdateButton.IsEnabled = false;
+
                 var url = new Uri(settings.UpdateInstallerUrl);
 
                 var client = new WebClient();
