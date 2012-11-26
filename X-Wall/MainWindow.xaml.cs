@@ -270,6 +270,7 @@ namespace XWall {
         }
 
         string onlineVersion = null;
+        bool updateDownloaded = false;
 
         void checkVersion() {
             downloadUpdateButton.IsEnabled = false;
@@ -317,37 +318,53 @@ namespace XWall {
         }
 
         void downloadUpdate() {
-            downloadUpdateButton.IsEnabled = false;
+            var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-            var url = new Uri(settings.UpdateInstallerUrl);
+            if (version == onlineVersion) {
+                var result = MessageBox.Show(resources["SameVersionMessage"] as string, null, MessageBoxButton.OKCancel);
+                if (result == MessageBoxResult.Cancel)
+                    return;
+            }
 
-            var client = new WebClient();
-            client.Proxy = null;
-            client.DownloadFileAsync(url, settings.UpdateInstallerName);
+            if (updateDownloaded)
+                startUpdateInstalling();
+            else {
+                downloadUpdateButton.IsEnabled = false;
+                var url = new Uri(settings.UpdateInstallerUrl);
 
-            client.DownloadProgressChanged += (sender, e) => {
-                Dispatcher.BeginInvoke(new Action(() => {
-                    onlineVersionTextBlock.Text = String.Format(resources["Downloading"] as string, e.ProgressPercentage);
-                }));
-            };
+                var client = new WebClient();
+                client.Proxy = null;
+                client.DownloadFileAsync(url, settings.UpdateInstallerName);
 
-            client.DownloadFileCompleted += (sender, e) => {
-                Dispatcher.BeginInvoke(new Action(() => {
-                    downloadUpdateButton.IsEnabled = true;
-                    onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersion;
-                    if (e.Error == null) {
-                        var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, null, MessageBoxButton.OKCancel);
-                        if (result == MessageBoxResult.OK) {
-                            Process.Start(settings.UpdateInstallerName);
-                            App.Current.Shutdown();
+                client.DownloadProgressChanged += (sender, e) => {
+                    Dispatcher.BeginInvoke(new Action(() => {
+                        onlineVersionTextBlock.Text = String.Format(resources["Downloading"] as string, e.ProgressPercentage);
+                    }));
+                };
+
+                client.DownloadFileCompleted += (sender, e) => {
+                    Dispatcher.BeginInvoke(new Action(() => {
+                        downloadUpdateButton.IsEnabled = true;
+                        onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersion;
+                        if (e.Error == null) {
+                            updateDownloaded = true;
+                            startUpdateInstalling();
                         }
-                    }
-                    else
-                        MessageBox.Show(resources["DownloadUpdateFailed"] as string);
-                }));
-            };
+                        else
+                            MessageBox.Show(resources["DownloadUpdateFailed"] as string);
+                    }));
+                };
 
-            onlineVersionTextBlock.Text = String.Format(resources["Downloading"] as string, 0);
+                onlineVersionTextBlock.Text = String.Format(resources["Downloading"] as string, 0);
+            }
+        }
+
+        void startUpdateInstalling() {
+            var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, null, MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK) {
+                Process.Start(settings.UpdateInstallerName);
+                App.Current.Shutdown();
+            }
         }
 
         private void onDownloadUpdateButtonClick(object sender, RoutedEventArgs e) {

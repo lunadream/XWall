@@ -69,6 +69,7 @@
     <sys:String x:Key="UpdateAvailableDescription">An update ({0}) of X-Wall is available, do you want to download now?</sys:String>
     <sys:String x:Key="InstallUpdateDescription">Update download completed, click OK to exit and install the update.</sys:String>
     <sys:String x:Key="DownloadUpdateFailed">Update download failed, please retry.</sys:String>
+    <sys:String x:Key="SameVersionMessage">The online version is the same as the installed one, do you still want to download?</sys:String>
 
     <!-- CustomRulesEditor -->
     <sys:String x:Key="CustomRulesEditorTitle">Custom Rules</sys:String>
