@@ -28,6 +28,7 @@ namespace XWall {
                 Operation.Proxies.RestoreProxy();
                 Operation.SetAutoStart(false);
                 settings.Reset();
+                settings.UpgradeRequired = false;
                 App.Current.Shutdown();
                 return;
             }
