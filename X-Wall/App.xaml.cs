@@ -26,7 +26,7 @@ namespace XWall {
 
             var settings = Settings.Default;
 
-            if (Environment.GetCommandLineArgs().Contains("uninstall")) {
+            if (eventArgs.Args.Contains("uninstall")) {
                 Operation.KillProcess(executablePath);
                 Operation.KillProcess(settings.PrivoxyFileName);
                 Operation.KillProcess(settings.PlinkFileName);
@@ -34,6 +34,22 @@ namespace XWall {
                 Operation.SetAutoStart(false);
                 App.Current.Shutdown();
                 return;
+            }
+
+            Process current = Process.GetCurrentProcess();
+            var resources = App.Current.Resources;
+            MessageBoxResult? result = null;
+            foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
+                if (process.Id != current.Id) {
+                    if (result == null)
+                        result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
+                    if (result == MessageBoxResult.OK)
+                        process.Kill();
+                    else {
+                        App.Current.Shutdown();
+                        return;
+                    }
+                }
             }
 
             if (settings.UpgradeRequired) {
@@ -73,22 +89,6 @@ namespace XWall {
             App.Current.Exit += (sender, e) => {
                 Operation.Proxies.RestoreProxy();
             };
-
-            Process current = Process.GetCurrentProcess();
-            var resources = App.Current.Resources;
-            MessageBoxResult? result = null;
-            foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
-                if (process.Id != current.Id) {
-                    if (result == null)
-                        result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
-                    if (result == MessageBoxResult.OK)
-                        process.Kill();
-                    else {
-                        App.Current.Shutdown();
-                        return;
-                    }
-                }
-            }
         }
 
         private void LoadLanguage() {
