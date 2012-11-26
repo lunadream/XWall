@@ -68,8 +68,11 @@ use_("dom", "dom.animation", function (dom, anim) {
         var title = dom.query("#title").getAttribute("data-document-title");
         document.title = title;
 
-        if (version)
+        if (version) {
+            if (version.charAt(0) == "+")
+                version = version.substr(1);
             dom.query("#version").innerHTML = version;
+        }
 
         var header = dom.query("#header-wrapper");
         var main = dom.query("#main-wrapper");
