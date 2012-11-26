@@ -29,7 +29,7 @@
 
         var langName;
 
-        var langQuery = window.location.href.match(/\?lang=([^&]*)/);
+        var langQuery = window.location.href.match(/[?&]lang=([^&]*)/);
         if (langQuery)
             langName = langQuery[1];
 
