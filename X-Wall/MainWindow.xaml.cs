@@ -168,6 +168,9 @@ namespace XWall {
             };
 
             checkVersion();
+
+            if (WindowState != WindowState.Minimized)
+                Activate();
         }
 
         void updateCustomRulesStatus() {
