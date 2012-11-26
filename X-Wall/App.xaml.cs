@@ -31,21 +31,6 @@ namespace XWall {
                 return;
             }
 
-            Process current = Process.GetCurrentProcess();
-            MessageBoxResult? result = null;
-            foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
-                if (process.Id != current.Id) {
-                    if (result == null)
-                        result = MessageBox.Show(App.Current.Resources["XWallAlreadyStartedDescription"] as string, "X-Wall", MessageBoxButton.OKCancel);
-                    if (result == MessageBoxResult.OK)
-                        process.Kill();
-                    else {
-                        App.Current.Shutdown();
-                        return;
-                    }
-                }
-            }
-
             if (settings.UpgradeRequired) {
                 settings.Upgrade();
                 settings.UpgradeRequired = false;
@@ -88,6 +73,22 @@ namespace XWall {
         protected override void OnStartup(StartupEventArgs e) {
             base.OnStartup(e);
             LoadLanguage();
+
+            Process current = Process.GetCurrentProcess();
+            var resources = App.Current.Resources;
+            MessageBoxResult? result = null;
+            foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
+                if (process.Id != current.Id) {
+                    if (result == null)
+                        result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
+                    if (result == MessageBoxResult.OK)
+                        process.Kill();
+                    else {
+                        App.Current.Shutdown();
+                        return;
+                    }
+                }
+            }
         }
 
         private void LoadLanguage() {
