@@ -2,16 +2,15 @@
 <html>
 <head>
     <title>X-WALL</title>
-    <meta name="keywords" content="X-WALL" />
+    <meta property="og:image" content="images/logo-large.png" />
+    <meta property="og:description" content="A small tool wrapped Plink and Privoxy together to provide people an easier way to CROSS the WALL." />
     <link href="style/main.css" rel="stylesheet" />
 </head>
 <body>
-<div id="loading"></div>
+<div id="loading">...</div>
 <div id="preload-wrapper">
-    <img src="images/logo-large.png" style="display: none;" />
     <script>
         var wrapper = document.getElementById("preload-wrapper");
-
         var imageFiles = ["images/logo.png", "style/images/spirits.png"];
         for (var i = 0; i < imageFiles.length; i++) {
             var img = document.createElement("img");
