@@ -33,6 +33,7 @@
     <sys:String x:Key="ListenToLocalOnlyDescription">只监听本地端口</sys:String>
     <sys:String x:Key="ProxyPort">代理端口</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
+    <sys:String x:Key="EnableConnectionStatusNotificationDescription">开启连接状态改变时的气球状提示</sys:String>
     <sys:String x:Key="EnableCompression">开启压缩</sys:String>
     <sys:String x:Key="AutoReconnect">自动重连</sys:String>
     <sys:String x:Key="SocksPort">SOCKS 端口</sys:String>

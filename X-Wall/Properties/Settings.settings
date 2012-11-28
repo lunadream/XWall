@@ -90,7 +90,7 @@
       <Value Profile="(Default)">60000</Value>
     </Setting>
     <Setting Name="AbortionBeforeReconnect" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="MaxReconnectPeriod" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">128</Value>
@@ -115,6 +115,12 @@
     </Setting>
     <Setting Name="DismissedUpdateVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SshNotification" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ForwardConnectionRetries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

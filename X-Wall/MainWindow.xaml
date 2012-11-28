@@ -114,13 +114,12 @@
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="24" />
+                                    <RowDefinition Height="24" />
+                                    <RowDefinition Height="24" />
                                 </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <CheckBox Grid.Column="0" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
-                                <CheckBox Grid.Column="1" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
+                                <CheckBox Grid.Row="0" x:Name="sshNotificationCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableConnectionStatusNotificationDescription}" />
+                                <CheckBox Grid.Row="1" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
+                                <CheckBox Grid.Row="2" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
                             </Grid>
                             <Grid>
                                 <Grid.RowDefinitions>

@@ -66,7 +66,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Disconnect"] as string;
-                    connectStatus.SetStatus(ConnectStatus.Status.OK, resources["Connected"] as string, String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer));
+                    connectStatus.SetStatus(ConnectStatus.Status.OK, resources["Connected"] as string, settings.SshNotification ? String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer) : null);
                 }));
             };
 
@@ -87,7 +87,7 @@ namespace XWall {
                     if (plink.Error != null)
                         connectStatus.SetStatus(ConnectStatus.Status.Error, resources["ErrorConnect"] as string, plink.Error, System.Windows.Forms.ToolTipIcon.Error);
                     else if (isLastSuccess)
-                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["Disconnected"] as string, resources["DisconnectedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
+                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
                     else if (plink.IsNormallyStopped)
                         connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["ConnectStopped"] as string);
                     else if (isReconnect)

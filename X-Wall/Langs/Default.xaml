@@ -33,6 +33,7 @@
     <sys:String x:Key="ListenToLocalOnlyDescription">Listen to local address only</sys:String>
     <sys:String x:Key="ProxyPort">Proxy port</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
+    <sys:String x:Key="EnableConnectionStatusNotificationDescription">Enable notification for connection status change</sys:String>
     <sys:String x:Key="EnableCompression">Enable compression</sys:String>
     <sys:String x:Key="AutoReconnect">Automatically reconnect</sys:String>
     <sys:String x:Key="SocksPort">SOCKS Port</sys:String>

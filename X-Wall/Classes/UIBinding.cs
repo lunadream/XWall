@@ -30,6 +30,7 @@ namespace XWall {
             UIBinding.bindTextBox(proxyPortTextBox, "ProxyPort");
 
             //ssh
+            UIBinding.bindCheckBox(sshNotificationCheckBox, "SshNotification");
             UIBinding.bindCheckBox(sshCompressionCheckBox, "SshCompression");
             UIBinding.bindCheckBox(sshAutoReconnectCheckBox, "SshAutoReconnect");
             UIBinding.bindTextBox(sshSocksPortTextBox, "SshSocksPort");

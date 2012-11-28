@@ -68,7 +68,7 @@ namespace XWall {
                 Operation.SetAvailablePorts();
             }
 
-            Operation.SetAutoStart(settings.AutoStart);
+            settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
             Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
 
             settings.PropertyChanged += (sender, e) => {
@@ -86,7 +86,7 @@ namespace XWall {
                     default: return;
                 }
 
-                Operation.SetAutoStart(settings.AutoStart);
+                settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
             };
             //Operation.SetAvailablePorts();
 

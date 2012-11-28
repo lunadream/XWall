@@ -40,6 +40,7 @@ namespace XWall {
             var defaultProxy = Operation.Proxies.DefaultProxy;
             var text =
                 "listen-address " + (settings.ListenToLocalOnly ? "127.0.0.1:" : ":") + settings.ProxyPort + "\r\n" +
+                "forwarded-connect-retries " + settings.ForwardConnectionRetries + "\r\n" +
                 "forward / " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy) + "\r\n" +
                 "actionsfile " + settings.PrivoxyActionFileName;
             File.WriteAllText(settings.PrivoxyConfigFileName, text);

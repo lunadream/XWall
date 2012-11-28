@@ -65,14 +65,25 @@ namespace XWall {
             return port;
         }
 
-        public static void SetAutoStart(bool autoStart) {
+        public static bool SetAutoStart(bool autoStart) {
             var dir = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
             var valueName = "X-Wall";
             var reg = Registry.CurrentUser.CreateSubKey(dir);
-            if (autoStart)
-                reg.SetValue(valueName, "\"" + System.Windows.Forms.Application.ExecutablePath + "\"");
-            else if (reg.GetValue(valueName) != null)
+
+            if (autoStart) {
+                var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\"";
+                try {
+                    reg.SetValue(valueName, value);
+                }
+                catch {
+                    return false;
+                }
+            }
+            else if (reg.GetValue(valueName) != null) {
                 reg.DeleteValue(valueName);
+            }
+
+            return autoStart;
         }
 
         // Created by Joel 'Jaykul' Bennett

@@ -345,7 +345,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int AbortionBeforeReconnect {
             get {
                 return ((int)(this["AbortionBeforeReconnect"]));
@@ -427,6 +427,27 @@ namespace XWall.Properties {
             }
             set {
                 this["DismissedUpdateVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SshNotification {
+            get {
+                return ((bool)(this["SshNotification"]));
+            }
+            set {
+                this["SshNotification"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int ForwardConnectionRetries {
+            get {
+                return ((int)(this["ForwardConnectionRetries"]));
             }
         }
     }
