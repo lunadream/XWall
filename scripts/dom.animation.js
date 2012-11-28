@@ -92,7 +92,15 @@ use_("dom", function (dom) {
                 trans = transition || defaultTransition;
 
                 var now = 0;
-                nextStyle();
+
+                if (dur > 0)
+                    nextStyle();
+                else {
+                    for_(styles, function (style) {
+                        dom.setStyle(ele, style);
+                    });
+                    if (callback) callback();
+                }
 
                 function nextStyle() {
                     var style = styles[now++];

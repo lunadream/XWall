@@ -12,15 +12,6 @@ window.onload = function () {
 use_("dom", "dom.animation", function (dom, anim) {
     var contentRoot = "contents/";
 
-    var style = {
-        transparent: {
-            opacity: 0
-        },
-        opaque: {
-            opacity: 1
-        }
-    };
-
     var version;
 
     module_("main", function () {
@@ -63,6 +54,17 @@ use_("dom", "dom.animation", function (dom, anim) {
     }
 
     function loadContent(html) {
+        var style = {
+            transparent: {
+                opacity: 0
+            },
+            opaque: {
+                opacity: 1
+            }
+        };
+
+        var animTimeout = debug ? 0 : 500;
+
         document.body.innerHTML = html;
 
         var title = dom.query("#title").getAttribute("data-document-title");
@@ -74,8 +76,8 @@ use_("dom", "dom.animation", function (dom, anim) {
         var header = dom.query("#header-wrapper");
         var main = dom.query("#main-wrapper");
 
-        var headerAnim = new anim.Element(header, style.transparent, 500);
-        var mainAnim = new anim.Element(main, style.transparent, 500);
+        var headerAnim = new anim.Element(header, style.transparent, animTimeout);
+        var mainAnim = new anim.Element(main, style.transparent, animTimeout);
 
         headerAnim.setStyle(style.opaque);
         mainAnim.setStyle(style.opaque);
@@ -83,7 +85,7 @@ use_("dom", "dom.animation", function (dom, anim) {
         var imgs = dom.query("#content-wrapper img");
 
         for_(imgs, function (img) {
-            var imgAnim = new anim.Element(img, style.transparent, 500);
+            var imgAnim = new anim.Element(img, style.transparent, animTimeout);
 
             if (img.complete) onload();
             else img.onload = onload;

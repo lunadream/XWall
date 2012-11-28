@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>X-WALL</title>
-    <meta property="og:url" content="http://x-wall.org/" />
     <meta property="og:title" content="X-WALL" />
+    <meta property="og:url" content="http://x-wall.org/" />
     <meta property="og:image" content="http://x-wall.org/images/logo-large.png" />
     <meta property="og:description" content="A small tool wrapped Plink and Privoxy together to provide people an easier way to CROSS the WALL." />
     <link href="style/main.css" rel="stylesheet" />
@@ -22,6 +22,24 @@
     </script>
 </div>
 <script>
+    var queryString = function () {
+        var str = (document.location.href.match(/\?(.+)?/) || [])[1];
+        var map = {};
+
+        if (str) {
+            var items = str.split("&");
+            for (var i = 0; i < items.length; i++) {
+                var groups = items[i].match(/([^=]+)=(.*)/);
+                if (groups)
+                    map[decodeURIComponent(groups[1])] = decodeURIComponent(groups[2]);
+            }
+        }
+
+        return map;
+    }();
+
+    var debug = !!queryString["debug"];
+
     var lang = function () {
         var langs = [
             {
@@ -38,11 +56,7 @@
             }
         ];
 
-        var langName;
-
-        var langQuery = window.location.href.match(/[?&]lang=([^&]*)/);
-        if (langQuery)
-            langName = langQuery[1];
+        var langName = queryString["lang"];
 
         langName =
             langName ||

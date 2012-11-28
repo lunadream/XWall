@@ -174,6 +174,23 @@ img {
     color: #666666;
 }
 
+#content-wrapper ul {
+    padding-left: 5px;
+}
+
+#content-wrapper ul li {
+    /* see sidebar wrapper section */
+}
+
+#faq-list p.q {
+    margin-bottom: 2px;
+    color: #666666;
+}
+
+#faq-list p.a {
+
+}
+
 /* SIDEBAR WRAPPER */
 
 #sidebar-wrapper {
@@ -199,10 +216,7 @@ img {
     font-size: 14px; text-transform: uppercase;
 }
 
-#sidebar-wrapper .item ul {
-    
-}
-
+#content-wrapper ul li,
 #sidebar-wrapper .item ul li {
     line-height: 18px;
     padding-left: 10px;
@@ -221,10 +235,6 @@ img {
     color: #F9F9F9;
 }
 
-/*#sidebar-wrapper .item ul li a:hover {
-    text-decoration: underline;
-}*/
-
 /* .item.dark */
 #sidebar-wrapper .dark {
     background-color: #CCCCCC;
@@ -235,6 +245,7 @@ img {
     color: #666666;
 }
 
+#content-wrapper ul li,
 #sidebar-wrapper .dark ul li {
     color: #999999;
     background-position: -196px 0px;
@@ -260,7 +271,7 @@ img {
 
 #sidebar-wrapper .light ul li {
     color: #6DD900;
-    background-position: -196px -18px;
+    background-position: 0px -182px;
 }
 
 #sidebar-wrapper .light ul li a {
