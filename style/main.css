@@ -182,13 +182,24 @@ img {
     /* see sidebar wrapper section */
 }
 
+#faq-list {
+    padding-left: 0px!important;
+}
+
+#faq-list li {
+    color: #666666!important;
+    padding-left: 0px!important;
+    background: none!important;
+    list-style: decimal inside;
+}
+
 #faq-list p.q {
     margin-bottom: 2px;
-    color: #666666;
 }
 
 #faq-list p.a {
-
+    text-indent: 1em;
+    color: #999999;
 }
 
 /* SIDEBAR WRAPPER */
