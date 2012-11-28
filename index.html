@@ -2,15 +2,20 @@
 <html>
 <head>
     <title>X-WALL</title>
+    <meta name="keywords" content="X-WALL" />
     <link href="style/main.css" rel="stylesheet" />
 </head>
 <body>
 <div id="loading"></div>
 <div id="preload-wrapper">
-    <!--<img src="images/logo-large.png" />-->
+    <img id="preview-logo" src="images/logo-large.png" />
     <script>
-        var imageFiles = ["images/logo.png", "style/images/spirits.png"];
         var wrapper = document.getElementById("preload-wrapper");
+        var previewLogo = document.getElementById("preview-logo");
+
+        wrapper.removeChild(previewLogo);
+
+        var imageFiles = ["images/logo.png", "style/images/spirits.png"];
         for (var i = 0; i < imageFiles.length; i++) {
             var img = document.createElement("img");
             img.src = imageFiles[i];
