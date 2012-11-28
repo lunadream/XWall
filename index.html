@@ -8,11 +8,10 @@
 <body>
 <div id="loading"></div>
 <div id="preload-wrapper">
-    <img id="preview-logo" src="images/logo-large.png" />
     <script>
-        var wrapper = document.getElementById("preload-wrapper");
-        var previewLogo = document.getElementById("preview-logo");
+        '<img id="preview-logo" src="images/logo-large.png" />';
 
+        var wrapper = document.getElementById("preload-wrapper");
         wrapper.removeChild(previewLogo);
 
         var imageFiles = ["images/logo.png", "style/images/spirits.png"];
