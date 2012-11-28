@@ -1,5 +1,4 @@
 ﻿module_("base64", function () {
-    //var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
 
     this._("encode", String, function (str) {
