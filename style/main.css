@@ -187,14 +187,15 @@ img {
 }
 
 #faq-list li {
-    color: #666666!important;
+    margin-bottom: 8px;
     padding-left: 0px!important;
+    color: #666666!important;
     background: none!important;
     list-style: decimal inside;
 }
 
 #faq-list p.q {
-    margin-bottom: 2px;
+
 }
 
 #faq-list p.a {
