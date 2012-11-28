@@ -7,9 +7,15 @@
 <body>
 <div id="loading"></div>
 <div id="preload-wrapper">
-    <img src="images/logo.png" />
+    <!--<img src="images/logo-large.png" />-->
     <script>
-        document.writeln('<img src="style/images/spirits.png" />');
+        var imageFiles = ["images/logo.png", "style/images/spirits.png"];
+        var wrapper = document.getElementById("preload-wrapper");
+        for (var i = 0; i < imageFiles.length; i++) {
+            var img = document.createElement("img");
+            img.src = imageFiles[i];
+            wrapper.appendChild(img);
+        }
     </script>
 </div>
 <script>
