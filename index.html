@@ -10,17 +10,6 @@
 </head>
 <body>
 <div id="loading">...</div>
-<div id="preload-wrapper">
-    <script>
-        var wrapper = document.getElementById("preload-wrapper");
-        var imageFiles = ["images/logo.png", "style/images/spirits.png"];
-        for (var i = 0; i < imageFiles.length; i++) {
-            var img = document.createElement("img");
-            img.src = imageFiles[i];
-            wrapper.appendChild(img);
-        }
-    </script>
-</div>
 <script>
     var queryString = function () {
         var str = (document.location.href.match(/\?(.+)?/) || [])[1];
@@ -39,6 +28,19 @@
     }();
 
     var debug = !!queryString["debug"];
+
+    if (!debug) {
+        "image preload",
+        function () {
+            var wrapper = document.body.appendChild(document.createElement("div"));
+            var imageFiles = ["images/logo.png", "style/images/spirits.png"];
+            for (var i = 0; i < imageFiles.length; i++) {
+                var img = document.createElement("img");
+                img.src = imageFiles[i];
+                wrapper.appendChild(img);
+            }
+        }();
+    }
 
     var lang = function () {
         var langs = [
