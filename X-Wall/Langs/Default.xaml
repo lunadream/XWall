@@ -60,7 +60,7 @@
     <sys:String x:Key="AboutXWall">About X-Wall</sys:String>
     <sys:String x:Key="Version">Version</sys:String>
     <sys:String x:Key="AuthorLine">Author VILIC VANE</sys:String>
-    <sys:String x:Key="XWallDescription">X-Wall is a small tool wrapped Plink and Privoxy together to provide people an easier way to X the Wall.</sys:String>
+    <sys:String x:Key="XWallDescription">X-Wall is a small tool wraps together Plink and Privoxy to provide people an easier way to cross the Great Firewall of China.</sys:String>
     <sys:String x:Key="FeedbackLine">Any feedback please email</sys:String>
     <sys:String x:Key="OnlineVersion">Online Version</sys:String>
     <sys:String x:Key="Download">Download</sys:String>
