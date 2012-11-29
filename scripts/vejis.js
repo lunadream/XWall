@@ -10,6 +10,8 @@
 
 "VEJIS",
 function () {
+    if (typeof intellisense != "undefined" && typeof _ != "undefined")
+        return;
 
     /* COMMON VARIABLES */
 

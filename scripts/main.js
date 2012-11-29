@@ -1,6 +1,4 @@
-﻿require_("scripts/", ["dom.js", "dom.animation.js", "base64.js"]);
-
-var loaded = false;
+﻿var loaded = false;
 
 window.onload = function () {
     loaded = true;
@@ -23,10 +21,8 @@ use_("dom", "dom.animation", function (dom, anim) {
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    use_("base64", function (base64) {
-                        var html = base64.decode(xhr.responseText);
-                        loadContent(html);
-                    });
+                    var html = base64.decode(xhr.responseText);
+                    loadContent(html);
                 }
             };
         };
@@ -66,9 +62,6 @@ use_("dom", "dom.animation", function (dom, anim) {
         var animTimeout = debug ? 0 : 500;
 
         document.body.innerHTML = html;
-
-        var title = dom.query("#title").getAttribute("data-document-title");
-        document.title = title;
 
         if (version)
             dom.query("#version").innerHTML = version;

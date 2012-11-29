@@ -10,7 +10,61 @@
 </head>
 <body>
 <div id="loading">...</div>
+<p id="description" class="hidden"></p>
 <script>
+    var base64 = new function () {
+        var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
+
+        this.encode = function (str) {
+            //Creates a base-64 encoded ASCII string from a string of binary data.
+            //str: the string to encode.
+
+            str = unescape(encodeURIComponent(str));
+
+            var encoded = [];
+            var c = 0;
+            while (c < str.length) {
+                var b0 = str.charCodeAt(c++);
+                var b1 = str.charCodeAt(c++);
+                var b2 = str.charCodeAt(c++);
+                var buf = (b0 << 16) + ((b1 || 0) << 8) + (b2 || 0);
+                var i0 = (buf & (63 << 18)) >> 18;
+                var i1 = (buf & (63 << 12)) >> 12;
+                var i2 = isNaN(b1) ? 64 : (buf & (63 << 6)) >> 6;
+                var i3 = isNaN(b2) ? 64 : (buf & 63);
+                encoded[encoded.length] = chars.charAt(i0);
+                encoded[encoded.length] = chars.charAt(i1);
+                encoded[encoded.length] = chars.charAt(i2);
+                encoded[encoded.length] = chars.charAt(i3);
+            }
+
+            return encoded.join("");
+        };
+
+        this.decode = function (str) {
+            //Decodes a string of data which has been encoded using base-64 encoding.
+            //str: a base-64 encoded ASCII string.
+
+            var decoded = [];
+            var c = 0;
+            while (c < str.length) {
+                var i0 = chars.indexOf(str.charAt(c++));
+                var i1 = chars.indexOf(str.charAt(c++));
+                var i2 = chars.indexOf(str.charAt(c++));
+                var i3 = chars.indexOf(str.charAt(c++));
+                var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
+                var b0 = (buf & (255 << 16)) >> 16;
+                var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
+                var b2 = (i3 == 64) ? -1 : (buf & 255);
+                decoded[decoded.length] = String.fromCharCode(b0);
+                if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
+                if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
+            }
+
+            return decodeURIComponent(escape(decoded.join("")));
+        };
+    }();
+
     var queryString = function () {
         var str = (document.location.href.match(/\?(.+)?/) || [])[1];
         var map = {};
@@ -49,13 +103,15 @@
         var langs = [
             {
                 name: "en-US",
-                title: "X-WALL",
+                title: "f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a",
+                description: "f1iH3f2aq4IBq4V5ekiN74s5p4Do71LJ76q5XkIhm4D6evL/A4y/q8pv3HLBq8RomkX/A4XvqyLaAfu0q4yhm1LdeJIk76Nuq8Roq8Lv76mwm4W5e4Xoe42Iq4yhq4XNekIIelL63HF5p4x536boe6T5p4NIqVpvmfy/qVmweJX63f2aq4DJqVY+AfuNjlLbp1LwevLFmHYwmkuIm1L/7vLlmgLNevLI3HYuq4yBq4I/q4Yopf2Fq4bIj1LN7Jd5pkNNp1Lu76W57JXIm1LwevLGpHY/q4yhqyYcg1LN3kYopfu/jlLy7rRIelLu76XvqyYcg1Lw7JmoeJiNp4Io7lLN7Jd53kDh7JXZp1s5p4NI7lLIpJXvEHR+Afurq4IBq4Ro7JWh",
                 loading: "loading...",
                 font: "Segoe UI, Arial"
             },
             {
                 name: "zh-CN",
-                title: "X-WALL",
+                title: "f1iHdW2Tq8s5uKJMKjA=Kmlvu940KmfMumCP",
+                description: "f1iH3f2aqPA30Cg95Pg9GlLHAfuF76pBqPfuaCfUaPg9lCEANPfsZCf6wEfynvs5uwf/um1qujG4qyLaAfu0qPfgZ1LdeJIk76Nuj1QFhKHrhurIw=SI007JZuQFowoFhqQFh=0JJtcr0+QIZmHrJ+crotoI+wrJI0rJ+35hqPfeGPlhohlh+Efh5CEANPAHnhfzJgs5u712u7lTuwv7uwPYujkeu71Du3CoKqPDumvsu3=tuuPeu3vfj1Q+5qBFoAQwrqQ+w+8rJ+cFh9HFh9HJJ=MFhqQFh=+5WiYqqPl/whfUnv95umv+qy5nXkya71QFh=6+owUINAHFoAQrJ+d5WiYqqPgM+EAL0CfunhlMrhAPwgs5u3fkujhfuu1duK=PuuGVuth4KqG1u712ujGFuthmqy5nXkya71QJrAHI0+BJlbQIF=eh",
                 loading: "正在加载...",
                 font: "微软雅黑, 黑体"
             }
@@ -80,13 +136,15 @@
         }
     }();
 
-    document.title = lang.title;
     document.body.style.fontFamily = lang.font;
     document.getElementById("loading").innerHTML = lang.loading;
+
+    document.title = base64.decode(lang.title);
+    document.getElementById("description").innerHTML = base64.decode(lang.description);
 </script>
 <script src="scripts/vejis.js"></script>
 <script>
-    require_("scripts/main.js");
+    require_("scripts/", ["main.js", "dom.js", "dom.animation.js"]);
 
     //Google Analytics
     var _gaq = _gaq || [];
