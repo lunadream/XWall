@@ -32,7 +32,10 @@
     if (!debug) {
         "image preload",
         function () {
-            var wrapper = document.body.appendChild(document.createElement("div"));
+            var wrapper = document.createElement("div");
+            wrapper.className = "hidden";
+            document.body.appendChild(wrapper);
+            
             var imageFiles = ["images/logo.png", "style/images/spirits.png"];
             for (var i = 0; i < imageFiles.length; i++) {
                 var img = document.createElement("img");

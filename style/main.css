@@ -29,6 +29,13 @@ img {
     overflow: hidden;
 }
 
+.hidden {
+    position: absolute;
+    width: 0px; height: 0px;
+    font-size: 0px;
+    visibility: hidden;
+}
+
 /* LAYOUT */
 
 #loading {
@@ -39,13 +46,6 @@ img {
     width: 200px; height: 80px; line-height: 80px;
     text-align: center;
     background-color: #FFFFFF;
-}
-
-#preload-wrapper {
-    position: absolute;
-    width: 0px; height: 0px;
-    font-size: 0px;
-    visibility: hidden;
 }
 
 #main-wrapper {
