@@ -7,6 +7,18 @@
     <meta property="og:image" content="http://x-wall.org/images/logo-large.png" />
     <meta property="og:description" content="A small tool wrapped Plink and Privoxy together to provide people an easier way to CROSS the WALL." />
     <link href="style/main.css" rel="stylesheet" />
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36452018-1']);
+        _gaq.push(['_setDomainName', 'x-wall.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 <body>
 <div id="loading">...</div>
@@ -145,18 +157,6 @@
 <script src="scripts/vejis.js"></script>
 <script>
     require_("scripts/", ["main.js", "dom.js", "dom.animation.js"]);
-
-    //Google Analytics
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36452018-1']);
-    _gaq.push(['_setDomainName', 'x-wall.org']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
 </script>
 </body>
 </html>
