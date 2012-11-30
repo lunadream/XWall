@@ -52,7 +52,7 @@ namespace XWall {
             if (!(
                 settings.ProxyType == "SSH" && Plink.CheckSettings() ||
                 settings.ProxyType == "HTTP"
-            )) WindowState = WindowState.Normal;
+            )) WindowState = WindowState.Minimized;
 
             plink.Started += () => {
                 Dispatcher.BeginInvoke(new Action(() => {

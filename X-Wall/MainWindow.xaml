@@ -9,8 +9,6 @@
         StateChanged="onWindowStateChanged"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        ShowInTaskbar="False"
-        WindowState="Minimized"
         Icon="Icons/main.ico">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
