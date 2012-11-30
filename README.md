@@ -1,0 +1,2 @@
+Please visit [x-wall.org](http://x-wall.org) or [x-wall.org/en-US/](http://x-wall.org/en-US/) for more information.  
+请访问 [x-wall.org](http://x-wall.org) 或 [x-wall.org/zh-CN/](http://x-wall.org/zh-CN/) 了解更多.
