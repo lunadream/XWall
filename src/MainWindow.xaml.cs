@@ -49,10 +49,10 @@ namespace XWall {
             websiteUrlText.Text = settings.WebsiteUrl;
             feedbackEmailText.Text = settings.FeedbackEmail;
 
-            if (!(
+            if (
                 settings.ProxyType == "SSH" && Plink.CheckSettings() ||
                 settings.ProxyType == "HTTP"
-            )) WindowState = WindowState.Minimized;
+            ) WindowState = WindowState.Minimized;
 
             plink.Started += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
