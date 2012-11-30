@@ -101,7 +101,7 @@ namespace XWall {
             //RULES
             //online rules
             if (settings.OnlineRulesLastUpdateTime.Ticks > 0)
-                lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToShortDateString();
+                lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString("MM/dd/yyyy");
 
             Rules.OnlineRules.UpdateStarted += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
