@@ -115,7 +115,7 @@ namespace XWall {
                     onlineRulesUpdateButton.Content = resources["Update"] as string;
                     onlineRulesUpdateButton.IsEnabled = true;
                     if (success)
-                        lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToShortDateString();
+                        lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString("MM/dd/yyyy");
                     else
                         notificationController.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
                 }));
