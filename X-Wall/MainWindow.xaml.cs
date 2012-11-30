@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -27,7 +28,7 @@ namespace XWall {
         static Settings settings = Settings.Default;
         static ResourceManager resourceManager = Properties.Resources.ResourceManager;
         static ResourceDictionary resources = App.Current.Resources;
-        ConnectStatus connectStatus;
+        NotificationController notificationController;
         Plink plink;
         Privoxy privoxy;
 
@@ -43,7 +44,7 @@ namespace XWall {
                 settings.ProxyType == "HTTP"
             ) WindowState = WindowState.Minimized;
             
-            connectStatus = new ConnectStatus(this);
+            notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
         }
@@ -58,7 +59,7 @@ namespace XWall {
                     sshInformationGrid.IsEnabled = false;
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Stop"] as string;
-                    connectStatus.SetStatus(ConnectStatus.Status.Processing, resources["Connecting"] as string);
+                    notificationController.SetStatus(NotificationController.Status.Processing, resources["Connecting"] as string);
                 }));
             };
 
@@ -66,7 +67,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Disconnect"] as string;
-                    connectStatus.SetStatus(ConnectStatus.Status.OK, resources["Connected"] as string, settings.SshNotification ? String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer) : null);
+                    notificationController.SetStatus(NotificationController.Status.OK, resources["Connected"] as string, settings.SshNotification ? String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer) : null);
                 }));
             };
 
@@ -74,7 +75,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Stop"] as string;
-                    connectStatus.SetStatus(ConnectStatus.Status.Stopped, String.Format(resources["ReconnectDescription"] as string, seconds));
+                    notificationController.SetStatus(NotificationController.Status.Stopped, String.Format(resources["ReconnectDescription"] as string, seconds));
                 }));
             };
 
@@ -85,15 +86,15 @@ namespace XWall {
                     sshConnectButton.Content = resources["Connect"] as string;
 
                     if (plink.Error != null)
-                        connectStatus.SetStatus(ConnectStatus.Status.Error, resources["ErrorConnect"] as string, plink.Error, System.Windows.Forms.ToolTipIcon.Error);
+                        notificationController.SetStatus(NotificationController.Status.Error, resources["ErrorConnect"] as string, plink.Error, System.Windows.Forms.ToolTipIcon.Error);
                     else if (isLastSuccess)
-                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
+                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
                     else if (plink.IsNormallyStopped)
-                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["ConnectStopped"] as string);
+                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectStopped"] as string);
                     else if (isReconnect)
-                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["ConnectFailed"] as string);
+                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string);
                     else
-                        connectStatus.SetStatus(ConnectStatus.Status.Stopped, resources["ConnectFailed"] as string, String.Format(resources["ConnectFailedDescription"] as string, settings.SshServer), System.Windows.Forms.ToolTipIcon.Warning);
+                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string, String.Format(resources["ConnectFailedDescription"] as string, settings.SshServer), System.Windows.Forms.ToolTipIcon.Warning);
                 }));
             };
 
@@ -116,7 +117,7 @@ namespace XWall {
                     if (success)
                         lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToShortDateString();
                     else
-                        connectStatus.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
+                        notificationController.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
                 }));
             };
 
@@ -297,7 +298,16 @@ namespace XWall {
 
                         var installedVersion = Assembly.GetExecutingAssembly().GetName().Version;
                         onlineVersionStr = versions[0];
+                        var onlineVersion = new Version(onlineVersionStr);
                         var lowVersion = new Version(versions[1]);
+
+                        if (File.Exists(settings.UpdateMarkName)){
+                            File.Delete(settings.UpdateMarkName);
+                            if (installedVersion < onlineVersion)
+                                notificationController.SendMessage(resources["UpdateFailedTitle"] as string, resources["UpdateFailedDetails"] as string, System.Windows.Forms.ToolTipIcon.Error);
+                            else
+                                notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+                        }
 
                         if (installedVersion < lowVersion) {
                             suggestedToUpdate = settings.DismissedUpdateVersion != onlineVersionStr;
@@ -368,6 +378,7 @@ namespace XWall {
         void startUpdateInstalling() {
             var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
+                File.WriteAllText(settings.UpdateMarkName, "");
                 Process.Start(settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }

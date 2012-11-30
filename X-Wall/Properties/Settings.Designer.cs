@@ -450,5 +450,17 @@ namespace XWall.Properties {
                 return ((int)(this["ForwardConnectionRetries"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("update-mark")]
+        public string UpdateMarkName {
+            get {
+                return ((string)(this["UpdateMarkName"]));
+            }
+            set {
+                this["UpdateMarkName"] = value;
+            }
+        }
     }
 }

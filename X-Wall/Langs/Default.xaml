@@ -71,6 +71,10 @@
     <sys:String x:Key="InstallUpdateDescription">Update download completed, click OK to exit and install the update.</sys:String>
     <sys:String x:Key="DownloadUpdateFailed">Update download failed, please retry.</sys:String>
     <sys:String x:Key="SameVersionMessage">The online version is the same as the installed one, do you still want to download?</sys:String>
+    <sys:String x:Key="UpdateFailedTitle">Update failed</sys:String>
+    <sys:String x:Key="UpdateFailedDetails">It seems that X-Wall hasn't been updated successfully.</sys:String>
+    <sys:String x:Key="UpdateSuccessTitle">Update success</sys:String>
+    <sys:String x:Key="UpdateSuccessDetails">X-Wall has been successfully updated.</sys:String>
 
     <!-- CustomRulesEditor -->
     <sys:String x:Key="CustomRulesEditorTitle">Custom Rules</sys:String>

@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace XWall {
     partial class MainWindow {
-        class ConnectStatus {
+        class NotificationController {
             NotifyIcon icon;
             MainWindow window;
             public enum Status { Stopped = 0, Processing = 1, OK = 2, Error = 3 }
@@ -20,7 +20,7 @@ namespace XWall {
                 resourceManager.GetObject("TrayErrorIcon") as Icon
             };
 
-            public ConnectStatus(MainWindow window) {
+            public NotificationController(MainWindow window) {
                 this.window = window;
                 icon = new NotifyIcon();
                 icon.Visible = true;
@@ -46,6 +46,10 @@ namespace XWall {
                 System.Windows.Application.Current.Exit += (sender, e) => {
                     icon.Dispose();
                 };
+            }
+
+            public void SendMessage(string title, string details, ToolTipIcon tipIcon = ToolTipIcon.Info) {
+                icon.ShowBalloonTip(0, title, details, tipIcon);
             }
 
             public void SetStatus(Status status, string message, string tip = null, ToolTipIcon tipIcon = ToolTipIcon.Info) {

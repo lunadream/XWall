@@ -102,7 +102,7 @@
     <Compile Include="Classes\Operation.cs" />
     <Compile Include="Classes\Rules.cs" />
     <Compile Include="Classes\Settings.cs" />
-    <Compile Include="Classes\ConnectStatus.cs" />
+    <Compile Include="Classes\NotificationController.cs" />
     <Compile Include="Classes\UIBinding.cs" />
     <Page Include="CustomRulesEditor.xaml">
       <SubType>Designer</SubType>
