@@ -368,7 +368,7 @@ namespace XWall {
         void startUpdateInstalling() {
             var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
-                Process.Start(settings.UpdateInstallerName);
+                Process.Start(settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }
         }
