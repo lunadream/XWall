@@ -101,7 +101,7 @@ namespace XWall {
             //RULES
             //online rules
             if (settings.OnlineRulesLastUpdateTime.Ticks > 0)
-                lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString("M/d/yyyy");
+                lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString(@"M\/d\/yyyy");
 
             Rules.OnlineRules.UpdateStarted += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
@@ -115,7 +115,7 @@ namespace XWall {
                     onlineRulesUpdateButton.Content = resources["Update"] as string;
                     onlineRulesUpdateButton.IsEnabled = true;
                     if (success)
-                        lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString("M/d/yyyy");
+                        lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString(@"M\/d\/yyyy");
                     else
                         notificationController.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
                 }));
