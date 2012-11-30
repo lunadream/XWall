@@ -39,13 +39,6 @@ namespace XWall {
             InitializeComponent();
             InitializeBinding();
 
-            if (
-                settings.ProxyType == "SSH" && Plink.CheckSettings() ||
-                settings.ProxyType == "HTTP"
-            ) {
-                WindowState = WindowState.Minimized;
-                ShowInTaskbar = false;
-            }
             notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
@@ -55,6 +48,14 @@ namespace XWall {
             versionTextBlock.Text += resources["Version"] as string + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             websiteUrlText.Text = settings.WebsiteUrl;
             feedbackEmailText.Text = settings.FeedbackEmail;
+
+            if (
+                settings.ProxyType == "SSH" && Plink.CheckSettings() ||
+                settings.ProxyType == "HTTP"
+            ) {
+                WindowState = WindowState.Minimized;
+                ShowInTaskbar = false;
+            }
 
             plink.Started += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
