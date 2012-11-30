@@ -194,7 +194,7 @@ namespace XWall {
             else if (line.StartsWith("Nothing left to send, closing channel"))
                 portCloseCount = Math.Min(1, portCloseCount + 1);
             else if (line.StartsWith("Forwarded port closed")) {
-                if (--portCloseCount < -settings.AbortionBeforeReconnect)
+                if (--portCloseCount < -settings.AbortionBeforeReconnect && settings.SshAutoReconnect)
                     Stop(true);
             }
             else if (line.StartsWith("The server's host key is not cached in the registry."))
