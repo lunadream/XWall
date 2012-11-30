@@ -42,8 +42,10 @@ namespace XWall {
             if (
                 settings.ProxyType == "SSH" && Plink.CheckSettings() ||
                 settings.ProxyType == "HTTP"
-            ) WindowState = WindowState.Minimized;
-            
+            ) {
+                WindowState = WindowState.Minimized;
+                ShowInTaskbar = false;
+            }
             notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
