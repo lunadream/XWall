@@ -76,7 +76,7 @@ img {
 
 #title {
     position: absolute;
-    left: 48px; top: 16px;
+    left: 48px; top: 18px;
     line-height: 24px;
     white-space: nowrap;
     font-size: 18px; color: #666666; text-transform: uppercase;
@@ -86,7 +86,7 @@ img {
 #domain {
     position: absolute;
     left: 48px; top: 0px;
-    line-height: 16px;
+    line-height: 18px;
     white-space: nowrap;
     font-size: 14px; color: #CCCCCC;
     cursor: pointer;
