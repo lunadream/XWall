@@ -22,6 +22,54 @@ img {
     border: none;
 }
 
+button {
+    border: solid 1px #CCCCCC;
+    padding: 0px 10px;
+    line-height: 24px;
+    color: #888888; font-family: Segoe UI, 微软雅黑, 黑体, Arial;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+button:hover {
+    color: #666666;
+    border-color: #999999;
+}
+
+button:disabled {
+    color: #AAAAAA;
+    border-color: #CCCCCC;
+    cursor: default;
+}
+
+button.center {
+    display: block;
+    margin: 5px auto;
+}
+
+input {
+    border: solid 1px #CCCCCC;
+    padding: 2px 5px;
+    width: 200px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #999999;
+    font-family: Segoe UI, 微软雅黑, 黑体, Arial;
+    outline: none;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+input:focus {
+    border-color: #999999;
+}
+
 .anchor {
     position: absolute;
     margin-top: -66px;
@@ -152,7 +200,7 @@ img {
 }
 
 #content-wrapper a {
-    color: #888888; text-decoration: none;
+    color: #666666; text-decoration: none; word-break: break-all;
     -moz-transition: all linear 0.2s;
     -o-transition: all linear 0.2s;
     -webkit-transition: all linear 0.2s;
@@ -160,7 +208,7 @@ img {
 }
 
 #content-wrapper a:hover {
-    color: #666666;
+    color: #333333;
 }
 
 #content-wrapper ul {
