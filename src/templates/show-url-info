@@ -4,7 +4,6 @@
 <head>
     <title></title>
 #include mod-head
-    <link rel="search" type="application/opensearchdescription+xml" title="Privoxy URL Info" href="/url-info-osd.xml">
 </head>
 <body>
 #include mod-header
