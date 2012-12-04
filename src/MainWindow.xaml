@@ -145,10 +145,12 @@
                         <Grid Margin="10,5,10,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
+                                <!--<RowDefinition Height="24" />-->
                                 <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
                             <CheckBox x:Name="useOnlineRulesCheckBox" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseOnlineRulesAndDescription}" />
-                            <CheckBox x:Name="useCustomRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseCustomRules}" />
+                            <!--<CheckBox x:Name="useCustomRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseCustomRules}" />-->
+                            <CheckBox x:Name="submitNewRuleCheckBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SubmitNewRuleAndDescription}" />
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{StaticResource OnlineRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useOnlineRulesCheckBox}">

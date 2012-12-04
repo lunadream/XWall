@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -16,7 +19,12 @@ namespace XWall {
         static bool changedInQueue = false;
         static bool generatingActionFile = false;
 
+        static bool initialized = false;
+
         public static void Initialize() {
+            if (initialized) return;
+            initialized = true;
+
             OnlineRules.Updated += (success) => {
                 raiseChangedEvent();
             };
@@ -50,9 +58,19 @@ namespace XWall {
                 if (settings.UseOnlineRules && !File.Exists(settings.OnlineRulesFileName))
                     OnlineRules.Update();
             };
+
+            settings.PropertyChanged += (sender, e) => {
+                switch (e.PropertyName) {
+                    case "SubmitNewRule": break;
+                    default: return;
+                }
+
+                updateNewRuleSubmitToggleFile();
+            };
             
             //if (!File.Exists(settings.PrivoxyActionFileName))
             GenerateActionFile();
+            updateNewRuleSubmitToggleFile();
 
             if (
                 settings.UseOnlineRules &&
@@ -60,6 +78,10 @@ namespace XWall {
                 !File.Exists(settings.OnlineRulesFileName)
             ) OnlineRules.Update();
 
+        }
+
+        static void updateNewRuleSubmitToggleFile() {
+            File.WriteAllText(settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
         }
 
         public static void GenerateActionFile() {
@@ -159,12 +181,17 @@ namespace XWall {
             public static BindingList<string> Rules = initList();
 
             public static bool Add(string rule) {
-                if (Rules.Contains(rule))
+                if (Rules.Contains(rule)) {
                     return false;
+                }
                 else {
                     Rules.Add(rule);
                     return true;
                 }
+            }
+
+            public static bool Delete(string rule) {
+                return Rules.Remove(rule);
             }
 
             static BindingList<string> initList() {

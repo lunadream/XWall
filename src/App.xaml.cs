@@ -9,6 +9,7 @@ using System.Windows;
 using System.Deployment;
 using XWall.Properties;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace XWall {
     /// <summary>
@@ -25,18 +26,39 @@ namespace XWall {
 
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
-
+            
             var settings = Settings.Default;
 
-            if (eventArgs.Args.Contains("uninstall")) {
-                Operation.KillProcess(executablePath);
-                Operation.KillProcess(settings.PrivoxyFileName);
-                Operation.KillProcess(settings.PlinkFileName);
-                Operation.Proxies.RestoreProxy();
-                Operation.SetAutoStart(false);
-                IsShutDown = true;
-                App.Current.Shutdown();
-                return;
+            if (eventArgs.Args.Length > 0) {
+                var commandStr = eventArgs.Args[0];
+                var match = new Regex(@"^(.*?)(?:/(.*))?$").Match(commandStr);
+                var command = match.Groups[1].Value;
+                var commandArg = match.Groups[2].Value;
+
+                switch (command) {
+                    case "uninstall":
+                        Operation.KillProcess(executablePath);
+                        Operation.KillProcess(settings.PrivoxyFileName);
+                        Operation.KillProcess(settings.PlinkFileName);
+                        Operation.Proxies.RestoreProxy();
+                        Operation.SetAutoStart(false);
+                        Operation.RegisterXWallProtocol(false);
+                        IsShutDown = true;
+                        App.Current.Shutdown();
+                        return;
+                    case "xwall:new-rule":
+                        File.WriteAllText(settings.NewRuleFileName, commandArg);
+                        IsShutDown = true;
+                        App.Current.Shutdown();
+                        return;
+                    case "xwall:del-rule":
+                        File.WriteAllText(settings.DeleteRuleFileName, commandArg);
+                        IsShutDown = true;
+                        App.Current.Shutdown();
+                        return;
+                    default:
+                        break;
+                }
             }
 
             Process current = Process.GetCurrentProcess();
@@ -70,6 +92,7 @@ namespace XWall {
 
             settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
             Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
+            Operation.RegisterXWallProtocol(true);
 
             settings.PropertyChanged += (sender, e) => {
                 switch (e.PropertyName) {
@@ -88,6 +111,7 @@ namespace XWall {
 
                 settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
             };
+
             //Operation.SetAvailablePorts();
 
             App.Current.Exit += (sender, e) => {

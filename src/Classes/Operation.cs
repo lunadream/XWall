@@ -68,22 +68,43 @@ namespace XWall {
         public static bool SetAutoStart(bool autoStart) {
             var dir = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
             var valueName = "X-Wall";
-            var reg = Registry.CurrentUser.CreateSubKey(dir);
+            try {
+                var reg = Registry.CurrentUser.CreateSubKey(dir);
 
-            if (autoStart) {
-                var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\"";
-                try {
+                if (autoStart) {
+                    var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\"";
                     reg.SetValue(valueName, value);
                 }
-                catch {
-                    return false;
+                else if (reg.GetValue(valueName) != null) {
+                    reg.DeleteValue(valueName);
                 }
-            }
-            else if (reg.GetValue(valueName) != null) {
-                reg.DeleteValue(valueName);
-            }
 
-            return autoStart;
+                return autoStart;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public static bool RegisterXWallProtocol(bool toggle) {
+            var root = Registry.ClassesRoot;
+
+            try {
+                if (toggle) {
+                    var xwallKey = root.CreateSubKey("xwall");
+                    xwallKey.SetValue("URL Protocol", "");
+                    var commandKey = xwallKey.CreateSubKey(@"shell\open\command");
+                    var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\" \"%1\"";
+                    commandKey.SetValue("", value);
+                }
+                else {
+                    root.DeleteSubKeyTree("xwall");
+                }
+                return toggle;
+            }
+            catch {
+                return false;
+            }
         }
 
         // Created by Joel 'Jaykul' Bennett

@@ -71,7 +71,7 @@
     <Setting Name="UseOnlineRules" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="UseCustomRules" Type="System.Boolean" Scope="User">
+    <Setting Name="UseCustomRules" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CustomRules" Type="System.String" Scope="User">
@@ -122,8 +122,23 @@
     <Setting Name="ForwardConnectionRetries" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">2</Value>
     </Setting>
-    <Setting Name="UpdateMarkName" Type="System.String" Scope="User">
+    <Setting Name="UpdateMarkName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">update-mark</Value>
+    </Setting>
+    <Setting Name="NewRuleFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">new-rule-cmd</Value>
+    </Setting>
+    <Setting Name="DeleteRuleFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">del-rule-cmd</Value>
+    </Setting>
+    <Setting Name="SubmitNewRule" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubmitNewRuleAsked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubmitNewRuleToggleFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">templates\submit-new-rule-toggle</Value>
     </Setting>
   </Settings>
 </SettingsFile>

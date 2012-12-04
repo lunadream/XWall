@@ -171,10 +171,23 @@ namespace XWall {
                 }
             };
 
+            var ruleCommandWatcher = new FileSystemWatcher(Environment.CurrentDirectory, "*-cmd");
+            ruleCommandWatcher.Created += ruleCommandHandler;
+            ruleCommandWatcher.Changed += ruleCommandHandler;
+            ruleCommandWatcher.EnableRaisingEvents = true;
+
             checkVersion();
 
             if (WindowState != WindowState.Minimized)
                 Activate();
+
+            if (!settings.SubmitNewRuleAsked) {
+                settings.SubmitNewRuleAsked = true;
+                var message = (resources["ShareRuleMessage"] as string).Replace("%n ", Environment.NewLine + Environment.NewLine);
+
+                var result = MessageBox.Show(message, resources["ShareRuleTitle"] as string, MessageBoxButton.YesNo);
+                settings.SubmitNewRule = result == MessageBoxResult.Yes;
+            }
         }
 
         void updateCustomRulesStatus() {
@@ -382,6 +395,23 @@ namespace XWall {
                 Process.Start(settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }
+        }
+
+        void ruleCommandHandler(object sender, FileSystemEventArgs e) {
+            Dispatcher.BeginInvoke(new Action(() => {
+                Thread.Sleep(100);
+                if (!File.Exists(e.FullPath)) return;
+                if (e.Name == settings.NewRuleFileName) {
+                    var rule = File.ReadAllText(e.FullPath);
+                    Rules.CustomRules.Add(rule);
+                    File.Delete(e.FullPath);
+                }
+                else if (e.Name == settings.DeleteRuleFileName) {
+                    var rule = File.ReadAllText(e.FullPath);
+                    Rules.CustomRules.Delete(rule);
+                    File.Delete(e.FullPath);
+                }
+            }));
         }
 
         private void onDownloadUpdateButtonClick(object sender, RoutedEventArgs e) {

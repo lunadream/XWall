@@ -280,15 +280,12 @@ namespace XWall.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool UseCustomRules {
             get {
                 return ((bool)(this["UseCustomRules"]));
-            }
-            set {
-                this["UseCustomRules"] = value;
             }
         }
         
@@ -451,15 +448,66 @@ namespace XWall.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("update-mark")]
         public string UpdateMarkName {
             get {
                 return ((string)(this["UpdateMarkName"]));
             }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("new-rule-cmd")]
+        public string NewRuleFileName {
+            get {
+                return ((string)(this["NewRuleFileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("del-rule-cmd")]
+        public string DeleteRuleFileName {
+            get {
+                return ((string)(this["DeleteRuleFileName"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SubmitNewRule {
+            get {
+                return ((bool)(this["SubmitNewRule"]));
+            }
             set {
-                this["UpdateMarkName"] = value;
+                this["SubmitNewRule"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SubmitNewRuleAsked {
+            get {
+                return ((bool)(this["SubmitNewRuleAsked"]));
+            }
+            set {
+                this["SubmitNewRuleAsked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("templates\\submit-new-rule-toggle")]
+        public string SubmitNewRuleToggleFileName {
+            get {
+                return ((string)(this["SubmitNewRuleToggleFileName"]));
+            }
+            set {
+                this["SubmitNewRuleToggleFileName"] = value;
             }
         }
     }

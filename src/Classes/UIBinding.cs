@@ -37,7 +37,8 @@ namespace XWall {
 
             //RULES
             UIBinding.bindCheckBox(useOnlineRulesCheckBox, "UseOnlineRules");
-            UIBinding.bindCheckBox(useCustomRulesCheckBox, "UseCustomRules");
+            UIBinding.bindCheckBox(submitNewRuleCheckBox, "SubmitNewRule");
+            //UIBinding.bindCheckBox(useCustomRulesCheckBox, "UseCustomRules");
         }
 
         void bindProxyType() {

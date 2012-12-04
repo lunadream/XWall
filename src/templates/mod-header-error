@@ -1,0 +1,14 @@
+<div id="header-wrapper">
+    <div id="header">
+        <a id="logo-wrapper" href="http://x-wall.org/">
+            <img id="logo" alt="X-Wall Logo" src="http://x-wall.org/images/logo-error.png" />
+            <h1 id="title">Privoxy</h1>
+            <span id="domain">@my-ip-address@:@my-port@ / built-in X-WALL</span>
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="@homepage@" target="_blank">Privoxy</a>
+            </li>
+        </ul>
+    </div>
+</div>

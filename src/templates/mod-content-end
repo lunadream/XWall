@@ -1,0 +1,24 @@
+        </div>
+        <div id="sidebar-wrapper">
+            <div data-lang="en-US" class="item dark">
+                <h2>More Operation</h2>
+                <ul>
+                    <li>
+                        <a href="@default-cgi@show-url-info">View the action for a URL</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-lang="zh-CN" class="item dark">
+                <h2>更多操作</h2>
+                <ul>
+                    <li>
+                        <a href="@default-cgi@show-url-info">查看 URL 对应的行为</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div>©2012 <a href="http://vilic.info/" target="_blank">VILIC VANE</a></div>
+    </div>
+</div>
