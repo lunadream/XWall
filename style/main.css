@@ -211,6 +211,11 @@ input:focus {
     color: #333333;
 }
 
+#content-wrapper em {
+    font-style: normal; color: #666666;
+}
+
+
 #content-wrapper ul {
     padding-left: 5px;
 }
