@@ -59,7 +59,7 @@
     <sys:String x:Key="ShareRuleTitle">Share New Rules</sys:String>
     <sys:String x:Key="ShareRuleMessage">Do you want to enable sharing of new rules?%n
 When X-Wall thinks a website is blocked by the GFW, it will offer you an option in the web page to quickly add a new rule.%n
-This rule will be tested and if it works, X-Wall can submit the rule (anonymously, and includes only the host) to a server.
+This rule will be tested and if it works, X-Wall can submit the rule (anonymously) to a server.
 So that we can review the new rules shared by people and add them to online rules list.%n
 BTW, the rules you manually added via Custom Rules Editor will not be shared.%n
 It is STRONGLY RECOMMENDED to enable this feature, but of course you have the choice.</sys:String>

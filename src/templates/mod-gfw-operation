@@ -46,10 +46,15 @@
         var url = window.location.href;
         var host = window.location.host;
 
-        if (host.indexOf("www.") == 0)
-            host = host.substr(4);
-
-        var rule = "." + host + (window.location.protocol == "http:" && pageStatus == 502 ? ":80" : "");
+        var rule;
+        if (window.location.protocol == "http:" && pageStatus == 502) {
+            var path = location.pathname + location.search;
+            var pathReStr = path.replace(/([\.\?\+\*\(\)\{\}\[\]\\])/g, "\\$1");
+            rule = host + ":80" + pathReStr;
+        }
+        else {
+            rule = host.indexOf("www.") == 0 ? host.substr(4) : host;
+        }
 
         var lang;
         var langs = {
@@ -87,10 +92,14 @@
 
             button = document.getElementById(lang.buttonId);
 
-            button.innerHTML = lang.addAndTry.replace("{rule}", rule);
+            var ruleShort = rule.length > 32 ? rule.substr(0, 29) + "..." : rule;
+
+            button.innerHTML = lang.addAndTry.replace("{rule}", ruleShort);
+            button.title = rule;
 
             button.onclick = function () {
                 window.location.href = "xwall:new-rule/" + rule;
+                button.title = "";
                 startTest();
             };
         };
