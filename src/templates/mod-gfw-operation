@@ -171,12 +171,11 @@
 
             var called = false;
 
-            sender.onerror =
-            sender.onload = function () {
+            setTimeout(sender.onerror = sender.onload = function () {
                 if (called) return;
                 called = true;
                 callback(true);
-            };
+            }, 5000);
         }
 
         function refresh(submitted) {
