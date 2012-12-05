@@ -1,8 +1,8 @@
-# Online rules generated at Wed Dec 5 12:54:00 UTC+0800 2012
+# Online rules generated at Wed Dec 5 13:36:35 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
-{+forward-override{forward-socks5 127.0.0.1:1080 .}}
+{+forward-override{$forward-type$ $server$ .}}
 # GFWList
 .0rz.tw
 .0to255.com
