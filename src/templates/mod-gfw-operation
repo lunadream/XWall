@@ -53,7 +53,7 @@
             rule = host + ":80" + pathReStr;
         }
         else {
-            rule = host.indexOf("www.") == 0 ? host.substr(4) : host;
+            rule = "." + (host.indexOf("www.") == 0 ? host.substr(4) : host);
         }
 
         var lang;
