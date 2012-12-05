@@ -145,7 +145,7 @@
 
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4) {
-                        if (xhr.status < 500) {
+                        if (xhr.status < 500 || !/^\s*<![^>]+>\s*<!--PrivoxyMark-->/.test(xhr.responseText)) {
                             clearTimeout(testTimeout);
                             if (toggle) {
                                 submit(rule, refresh);
