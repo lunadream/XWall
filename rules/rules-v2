@@ -1,8 +1,8 @@
-# Online rules generated at Wed Dec 5 13:36:35 UTC+0800 2012
+# Online rules generated at Wed Dec 5 13:44:57 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
-{+forward-override{$forward-type$ $server$ .}}
+{+forward-override{$forward-settings$}}
 # GFWList
 .0rz.tw
 .0to255.com
@@ -2560,7 +2560,7 @@ chinese.wsj.com:80/gb
 .googleusercontent.com
 .googleapis.com
 
-{+forward-override{forward .}}
+{+forward-override{$default-forward-settings$}}
 .www.exblog.jp
 .*v6.facebook.com
 .bak.gun-world.net
