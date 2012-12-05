@@ -3,7 +3,7 @@
     <p>
         If simply refreshing the page doesn't help, this error then might be caused by the Great Firewall of China.
         You can
-        <button id="new-rule-button-en-us" class="center" onclick="javascript:void(window.location='xwall:new-rule/');"></button>
+        <button id="new-rule-button-en-us" class="center"></button>
     </p>
 </div>
 <div data-lang="zh-CN">
@@ -11,7 +11,7 @@
     <p>
         如果刷新页面没有用, 这个错误则可能是防火长城引起的.
         你可以
-        <button id="new-rule-button-zh-cn" class="center" onclick="javascript:void(window.location='xwall:new-rule/');"></button>
+        <button id="new-rule-button-zh-cn" class="center"></button>
     </p>
 </div>
 <script>
