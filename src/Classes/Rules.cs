@@ -143,12 +143,23 @@ namespace XWall {
         public static class OnlineRules {
             static bool updating = false;
 
+            static System.Timers.Timer updateTimer = new System.Timers.Timer(settings.OnlineRulesUpdateInterval * 1000);
+
+            static OnlineRules() {
+                updateTimer.Elapsed += (sender, e) => {
+                    Update();
+                };
+                updateTimer.Start();
+            }
+
             public static void Update() {
                 if (updating) return;
                 updating = true;
 
-                UpdateStarted();
+                updateTimer.Stop();
+                updateTimer.Start();
 
+                UpdateStarted();
                 var client = new WebClient();
 
                 var timer = new Timer((arg) => {
