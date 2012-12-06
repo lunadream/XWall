@@ -137,8 +137,11 @@
     <Setting Name="SubmitNewRuleAsked" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SubmitNewRuleToggleFileName" Type="System.String" Scope="User">
+    <Setting Name="SubmitNewRuleToggleFileName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">templates\submit-new-rule-toggle</Value>
+    </Setting>
+    <Setting Name="ShowUrlInfoUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://config.privoxy.org/show-url-info</Value>
     </Setting>
   </Settings>
 </SettingsFile>

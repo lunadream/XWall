@@ -499,15 +499,21 @@ namespace XWall.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("templates\\submit-new-rule-toggle")]
         public string SubmitNewRuleToggleFileName {
             get {
                 return ((string)(this["SubmitNewRuleToggleFileName"]));
             }
-            set {
-                this["SubmitNewRuleToggleFileName"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://config.privoxy.org/show-url-info")]
+        public string ShowUrlInfoUrl {
+            get {
+                return ((string)(this["ShowUrlInfoUrl"]));
             }
         }
     }

@@ -9,7 +9,7 @@
 #include mod-header
 #include mod-content-begin
 <div data-lang="en-US" data-title="View the Action for a URL">
-    <h3>View the Action for a URL</h3>
+    <h3>View Whether a URL Will Be Forwarded</h3>
 <!-- @if-url-given-start -->
 <!-- @if-valid-url-start -->
     <h4>Forwarding settings:</h4>
@@ -44,8 +44,7 @@
 
         if-http-forwarder-end@ -->.</p>
 <!-- if-url-given-end@ -->
-    <h4>Look up the actions for a
-<!-- @if-url-given-start -->new<!-- if-url-given-end@ -->
+    <h4>Please enter a<!-- @if-url-given-start -->nother<!-- if-url-given-end@ -->
         URL:</h4>
     <form method="GET" action="@default-cgi@show-url-info">
         <p>
@@ -55,7 +54,7 @@
     </form>
 </div>
 <div data-lang="zh-CN" data-title="查看 URL 对应的行为">
-    <h3>查看 URL 对应的行为</h3>
+    <h3>查看 URL 是否会被转发</h3>
 <!-- @if-url-given-start -->
 <!-- @if-valid-url-start -->
     <h4>转发设置:</h4>
@@ -83,8 +82,7 @@
 
         if-http-forwarder-end@ -->.</p>
 <!-- if-url-given-end@ -->
-    <h4>查看<!-- @if-url-given-start -->另一个<!-- if-url-given-end@ -->
-        URL 对应的行为:</h4>
+    <h4>请输入<!-- @if-url-given-start -->另<!-- if-url-given-end@ -->一个 URL:</h4>
     <form method="GET" action="@default-cgi@show-url-info">
         <p>
         <input type="text" name="url" style="width: 300px;" value="@url@">

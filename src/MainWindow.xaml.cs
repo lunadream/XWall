@@ -212,6 +212,10 @@ namespace XWall {
             Process.Start("mailto:" + settings.FeedbackEmail);
         }
 
+        private void onShowUrlInfoHyperlinkClick(object sender, RoutedEventArgs e) {
+            Process.Start(settings.ShowUrlInfoUrl);
+        }
+
         private void onWindowClosing(object sender, CancelEventArgs e) {
             e.Cancel = true;
             hideButton.Focus();

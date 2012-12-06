@@ -142,15 +142,16 @@
             <TabItem Header="{StaticResource Rules}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource RuleOptions}" Margin="0,0,0,2">
-                        <Grid Margin="10,5,10,0">
+                        <Grid Margin="10,5,10,3">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
-                                <!--<RowDefinition Height="24" />-->
+                                <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
                             <CheckBox x:Name="useOnlineRulesCheckBox" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseOnlineRulesAndDescription}" />
                             <!--<CheckBox x:Name="useCustomRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseCustomRules}" />-->
-                            <CheckBox x:Name="submitNewRuleCheckBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SubmitNewRuleAndDescription}" />
+                            <CheckBox x:Name="submitNewRuleCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SubmitNewRuleAndDescription}" />
+                            <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"><Hyperlink Click="onShowUrlInfoHyperlinkClick"><Run Text="{StaticResource ViewUrlActionDescription}" /></Hyperlink></TextBlock>
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{StaticResource OnlineRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useOnlineRulesCheckBox}">

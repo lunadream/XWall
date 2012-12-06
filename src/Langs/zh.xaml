@@ -43,6 +43,7 @@
     <sys:String x:Key="UseOnlineRulesAndDescription">使用在线规则 - 包含绝大多数被屏蔽的网站</sys:String>
     <sys:String x:Key="UseCustomRules">使用自定义规则</sys:String>
     <sys:String x:Key="SubmitNewRuleAndDescription">分享新规则 - 不会涉及手动添加的规则</sys:String>
+    <sys:String x:Key="ViewUrlActionDescription">点击这里查看 URL 是否会被转发</sys:String>
     <sys:String x:Key="OnlineRules">在线规则</sys:String>
     <sys:String x:Key="LastUpdate">最后更新</sys:String>
     <sys:String x:Key="None">无</sys:String>
