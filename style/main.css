@@ -199,6 +199,11 @@ input:focus {
     font-size: 16px; color: #666666;
 }
 
+#content-wrapper h4 {
+    padding: 2px 0px;
+    font-size: 14px; color: #666666;
+}
+
 #content-wrapper a {
     color: #666666; text-decoration: none; word-break: break-all;
     -moz-transition: all linear 0.2s;
