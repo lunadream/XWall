@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows;
 using XWall.Properties;
@@ -105,14 +106,33 @@ namespace XWall {
                 text = text.Replace("$forward-settings$", forwardSettings);
 
                 var defaultProxy = Operation.Proxies.DefaultProxy;
-                text = text.Replace("$default-forward-settings$", "forward " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy));
+
+                var defaultForwardSettings = "forward " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy);
+
+                text = text.Replace("$default-forward-settings$", defaultForwardSettings);
 
                 if (settings.UseCustomRules) {
+                    var matches = new Regex(@".+").Matches(settings.CustomRules);
+                    
+                    var forwardRules = new List<string>();
+                    var doNotForwardRules = new List<string>();
+
+                    foreach (Match match in matches) {
+                        if (match.Value.StartsWith("!")) {
+                            doNotForwardRules.Add(match.Value.Substring(1));
+                        }
+                        else {
+                            forwardRules.Add(match.Value);
+                        }
+                    }
+
                     text +=
                         "\r\n\r\n" +
                         "# Custom rules\r\n\r\n" +
                         "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
-                        settings.CustomRules.Replace("\n", "\r\n");
+                        String.Join("\r\n", forwardRules.ToArray()) + "\r\n" +
+                        "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
+                        String.Join("\r\n", doNotForwardRules.ToArray())+ "\r\n";
                 }
 
                 File.WriteAllText(settings.PrivoxyActionFileName, text);

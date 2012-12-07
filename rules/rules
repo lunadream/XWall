@@ -1,4 +1,4 @@
-# Online rules generated at Fri Dec 7 15:20:20 UTC+0800 2012
+# Online rules generated at Fri Dec 7 16:23:28 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2554,13 +2554,13 @@ chinese.wsj.com:80/gb
 .ssh91.com
 .feelssh.com:80
 .sshwall.com:80
-.google.com:80
-.gstatic.com:80
-.googleusercontent.com:80
-.googleapis.com:80
-.googleads.g.doubleclick.net:80
-goo.gl:80
-bit.ly:80
+.google.com
+.gstatic.com
+.googleusercontent.com
+.googleapis.com
+.googleads.g.doubleclick.net
+goo.gl
+bit.ly
 
 {+forward-override{forward .}}
 .www.exblog.jp

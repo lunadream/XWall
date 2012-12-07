@@ -91,6 +91,9 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="MatchSubdomainsDescription">Also make the rule match its subdomains (if it is a domain)</sys:String>
     <sys:String x:Key="CustomRulesList">Custom Rules List</sys:String>
     <sys:String x:Key="DeleteSelected">Delete Selected</sys:String>
+    <sys:String x:Key="EnterRuleMessage">Please enter a rule.</sys:String>
+    <sys:String x:Key="InvalidRuleMessage">The rule you entered is invalid.</sys:String>
+    <sys:String x:Key="RuleExistsMessage">The rule you entered already exists.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">X-Wall proxy exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>

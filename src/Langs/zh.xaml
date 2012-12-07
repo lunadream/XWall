@@ -91,6 +91,9 @@
     <sys:String x:Key="MatchSubdomainsDescription">如果该规则是域名, 同时匹配其子域名</sys:String>
     <sys:String x:Key="CustomRulesList">自定义规则列表</sys:String>
     <sys:String x:Key="DeleteSelected">删除选中规则</sys:String>
+    <sys:String x:Key="EnterRuleMessage">请输入规则.</sys:String>
+    <sys:String x:Key="InvalidRuleMessage">您输入的规则无效.</sys:String>
+    <sys:String x:Key="RuleExistsMessage">您输入的规则已经存在.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">X-Wall 后台代理因为一个错误退出, 这可能是因为端口无效或者被占用.</sys:String>

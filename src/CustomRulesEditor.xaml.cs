@@ -23,7 +23,7 @@ namespace XWall {
         string lastCopied;
         Regex urlRe = new Regex(@"(?:[a-z0-9-]+://)?((?:(?:[a-z0-9-]+\.)+[a-z]{2,}|\d{1,3}(?:\.\d{1,3}){3})(?::\d+)?)(?:[/\s]|$)", RegexOptions.IgnoreCase);
         Regex domainRe = new Regex(@"^(?:[a-z0-9-]+\.)+[a-z]{2,}$");
-        Regex ruleRe = new Regex(@"^(?:www\.)?([a-z0-9-.\*\?]+)((?::\d+)?(?:/.*)?)$", RegexOptions.IgnoreCase);
+        Regex ruleRe = new Regex(@"^(?:(?:www\.)?([a-z0-9-.\*\?]+))?((?::\d+)?(?:/.*)?)$", RegexOptions.IgnoreCase);
 
         public CustomRulesEditor() {
             InitializeComponent();
@@ -80,9 +80,13 @@ namespace XWall {
 
         private void addNewRule() {
             var rule = newRuleTextBox.Text.Trim();
+            var withExc = rule.StartsWith("!");
+            if (withExc) {
+                rule = rule.Substring(1);
+            }
             
-            if (rule == "") {
-                MessageBox.Show("Please enter a rule.", "Add Rule", MessageBoxButton.OK, MessageBoxImage.Warning);
+            if (rule == "" && !withExc) {
+                MessageBox.Show(resources["EnterRuleMessage"] as string, resources["CustomRulesEditorTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Warning);
                 newRuleTextBox.Text = "";
                 newRuleTextBox.Focus();
                 return;
@@ -90,8 +94,8 @@ namespace XWall {
 
             var match = ruleRe.Match(rule);
 
-            if (!match.Success) {
-                MessageBox.Show("The rule you entered is invalid.", "Add Rule", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (rule == "" || !match.Success) {
+                MessageBox.Show(resources["InvalidRuleMessage"] as string, resources["CustomRulesEditorTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
                 newRuleTextBox.SelectAll();
                 newRuleTextBox.Focus();
                 return;
@@ -105,10 +109,13 @@ namespace XWall {
                     rule = "." + domain;
             }
 
+            if (withExc)
+                rule = "!" + rule;
+
             var result = Rules.CustomRules.Add(rule);
 
             if (!result) {
-                MessageBox.Show("The rule you entered already exists.", "Add Rule", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(resources["RuleExistsMessage"] as string, resources["CustomRulesEditorTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Warning);
                 newRuleTextBox.SelectAll();
                 newRuleTextBox.Focus();
                 return;
