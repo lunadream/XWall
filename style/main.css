@@ -199,8 +199,8 @@ input:focus {
     font-size: 16px; color: #666666;
 }
 
-#content-wrapper h4 {
-    padding: 2px 0px;
+#content-wrapper h5 {
+    margin: 0.5em 0px;
     font-size: 14px; color: #666666;
 }
 
