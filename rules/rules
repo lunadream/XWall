@@ -1,4 +1,4 @@
-# Online rules generated at Fri Dec 7 16:23:28 UTC+0800 2012
+# Online rules generated at Mon Dec 10 01:17:33 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2554,7 +2554,7 @@ chinese.wsj.com:80/gb
 .ssh91.com
 .feelssh.com:80
 .sshwall.com:80
-.google.com
+.google.
 .gstatic.com
 .googleusercontent.com
 .googleapis.com
