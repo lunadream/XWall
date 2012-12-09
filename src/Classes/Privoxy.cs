@@ -47,6 +47,8 @@ namespace XWall {
         }
 
         void startProcess() {
+            if (Environment.HasShutdownStarted) return;
+
             stop = false;
             process = new Process();
 

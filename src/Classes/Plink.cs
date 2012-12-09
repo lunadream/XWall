@@ -19,6 +19,7 @@ namespace XWall {
         bool isLastSuccess;
         bool toReconnect;
         Timer connectTimer;
+        Timer processCheckTimer;
         int portCloseCount;
         public bool IsReconnecting = false;
         public bool IsConnecting = false;
@@ -52,6 +53,8 @@ namespace XWall {
         }
 
         void startProcess(bool isReconnect) {
+            if (Environment.HasShutdownStarted) return;
+
             Thread.Sleep(10);
             isLastSuccess = false;
             toReconnect = true;
@@ -87,6 +90,15 @@ namespace XWall {
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
 
+            processCheckTimer = new Timer((o) => {
+                if (process == null || process.HasExited) {
+                    IsConnected = false;
+                    IsConnecting = false;
+                    Disconnected(isLastSuccess, isReconnect);
+                    disposeProcessCheckTimer();
+                }
+            }, null, 0, 1000);
+
             connectTimer = new Timer((o) => {
                 process.Kill();
             }, null, settings.SshConnectTimeout, Timeout.Infinite);
@@ -99,9 +111,15 @@ namespace XWall {
             IsConnected = false;
             IsConnecting = false;
             Disconnected(isLastSuccess, isReconnect);
+            processCheckTimer.Dispose();
 
             if (toReconnect)
                 reconnect();
+        }
+
+        void disposeProcessCheckTimer() {
+            if (processCheckTimer != null)
+                processCheckTimer.Dispose();
         }
 
         public void Start() {
