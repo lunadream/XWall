@@ -1,18 +1,26 @@
-<div data-lang="en-US">
-    <h3>It might be GFWed</h3>
-    <p>
-        If simply refreshing the page doesn't help, this error then might be caused by the Great Firewall of China.
-        You can
-        <button id="new-rule-button-en-us" class="center"></button>
-    </p>
-</div>
-<div data-lang="zh-CN">
-    <h3>可能是被墙了</h3>
-    <p>
-        如果刷新页面没有用, 这个错误则可能是防火长城引起的.
-        你可以
-        <button id="new-rule-button-zh-cn" class="center"></button>
-    </p>
+<div id="gfw-wrapper">
+    <div data-lang="en-US">
+        <h3>Fetching IP information...</h3>
+        <div style="display: none;">
+            <h3>It might be GFWed</h3>
+            <p>
+                If simply refreshing the page doesn't help, this error then might be caused by the Great Firewall of China.
+                You can
+                <button id="new-rule-button-en-us" class="center"></button>
+            </p>
+        </div>
+    </div>
+    <div data-lang="zh-CN">
+        <h3>正在获取 IP 信息...</h3>
+        <div style="display: none;">
+            <h3>可能是被墙了</h3>
+            <p>
+                如果刷新页面没有用, 这个错误则可能是防火长城引起的.
+                你可以
+                <button id="new-rule-button-zh-cn" class="center"></button>
+            </p>
+        </div>
+    </div>
 </div>
 <script>
     (function () {
@@ -102,6 +110,27 @@
                 button.title = "";
                 startTest();
             };
+
+            var whiteListRe = /^(?:河北|山西|辽宁|吉林|黑龙江|江苏|浙江|安徽|福建|江西|山东|河南|湖北|湖南|广东|海南|四川|贵州|云南|陕西|甘肃|青海|广西|内蒙古|西藏|宁夏|新疆|北京|天津|上海|重庆)/;
+
+            var wrapper = document.getElementById("gfw-wrapper");
+
+            window.ipCallback = function (done, data) {
+                var h3 = wrapper.getElementsByTagName("h3")[0];
+                h3.style.display = "none";
+
+                if (done && !whiteListRe.test(data.location)) {
+                    var div = wrapper.getElementsByTagName("div")[0].getElementsByTagName("div")[0];
+                    div.style.display = "block";
+                }
+            };
+
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async = true;
+            script.src = "http://www.youdao.com/smartresult-xml/search.s?jsFlag=true&event=ipCallback&type=ip&q=@host-ip@";
+            head.insertBefore(script, head.firstChild);
         };
 
         function startTest() {
