@@ -25,6 +25,11 @@
     <sys:String x:Key="ConnectStopped">Connect stopped</sys:String>
     <sys:String x:Key="ConnectFailed">Connect failed</sys:String>
     <sys:String x:Key="ConnectFailedDescription">X-Wall failed to connect to {0}.</sys:String>
+    <sys:String x:Key="EmptySshServerMessage">Please enter the SSH server.</sys:String>
+    <sys:String x:Key="InvalidSshPortMessage">Please enter a valid SSH port.</sys:String>
+    <sys:String x:Key="InvalidSocksPortMessage">Please enter a valid SOCKS port.</sys:String>
+    <sys:String x:Key="EmptySshUsernameMessage">Please enter your username.</sys:String>
+    <sys:String x:Key="EmptySshPasswordMessage">Please enter your password.</sys:String>
 
     <sys:String x:Key="HttpInformation">HTTP Information</sys:String>
     
@@ -96,7 +101,7 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="RuleExistsMessage">The rule you entered already exists.</sys:String>
 
     <!-- Privoxy -->
-    <sys:String x:Key="PrivoxyErrorExitMessage">X-Wall proxy exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
+    <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (built-in X-Wall) exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
     
     <!-- Plink -->
     <sys:String x:Key="PlinkAuthFailed">Password authentication failed</sys:String>

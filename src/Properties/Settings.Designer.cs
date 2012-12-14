@@ -501,7 +501,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("templates\\submit-new-rule-toggle")]
+        [global::System.Configuration.DefaultSettingValueAttribute("submit-new-rule-toggle")]
         public string SubmitNewRuleToggleFileName {
             get {
                 return ((string)(this["SubmitNewRuleToggleFileName"]));
@@ -514,6 +514,15 @@ namespace XWall.Properties {
         public string ShowUrlInfoUrl {
             get {
                 return ((string)(this["ShowUrlInfoUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("privoxy-templates\\")]
+        public string PrivoxyTemplatesFolderName {
+            get {
+                return ((string)(this["PrivoxyTemplatesFolderName"]));
             }
         }
     }

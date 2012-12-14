@@ -100,8 +100,9 @@ namespace XWall {
 
             //RULES
             //online rules
-            if (settings.OnlineRulesLastUpdateTime.Ticks > 0)
+            if (settings.OnlineRulesLastUpdateTime.Ticks > 0) {
                 lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString(@"M\/d\/yyyy");
+            }
 
             Rules.OnlineRules.UpdateStarted += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
@@ -142,8 +143,10 @@ namespace XWall {
                 privoxy.Start();
             };
 
-            if (settings.ProxyType == "SSH" && settings.AutoStart)
+
+            if (settings.ProxyType == "SSH" && settings.AutoStart) {
                 plink.Start();
+            }
 
             settings.PropertyChanged += (o, a) => {
                 switch (a.PropertyName) {
@@ -171,7 +174,7 @@ namespace XWall {
                 }
             };
 
-            var ruleCommandWatcher = new FileSystemWatcher(Environment.CurrentDirectory, "*-cmd");
+            var ruleCommandWatcher = new FileSystemWatcher(App.AppDataDirectory, "*-cmd");
             ruleCommandWatcher.Created += ruleCommandHandler;
             ruleCommandWatcher.Changed += ruleCommandHandler;
             ruleCommandWatcher.EnableRaisingEvents = true;
@@ -258,11 +261,11 @@ namespace XWall {
             }
             else {
                 if (
-                    checkSetting(settings.SshServer.Trim() != "", sshServerTextBox, "Server cannot be empty.") &&
-                    checkSetting(settings.SshPort > 0 && settings.SshPort < 10000, sshPortTextBox, "Port is invalid.") &&
-                    checkSetting(settings.SshUsername.Trim() != "", sshUsernameTextBox, "Username cannot be empty.") &&
-                    checkSetting(settings.SshPassword.Trim() != "", sshPasswordBox, "Password cannot be empty.") &&
-                    checkSetting(settings.SshSocksPort > 0 && settings.SshSocksPort < 10000, sshSocksPortTextBox, "SOCKS port is invalid.", advancedSettingsTabItem)
+                    checkSetting(settings.SshServer.Trim() != "", sshServerTextBox, resources["EmptySshServerMessage"] as string) &&
+                    checkSetting(settings.SshPort > 0, sshPortTextBox, resources["InvalidSshPortMessage"] as string) &&
+                    checkSetting(settings.SshUsername.Trim() != "", sshUsernameTextBox, resources["EmptySshUsernameMessage"] as string) &&
+                    checkSetting(settings.SshPassword.Trim() != "", sshPasswordBox, resources["EmptySshPasswordMessage"] as string) &&
+                    checkSetting(settings.SshSocksPort > 0, sshSocksPortTextBox, resources["InvalidSocksPortMessage"] as string, advancedSettingsTabItem)
                 )
                 plink.Start();
             }
@@ -318,8 +321,8 @@ namespace XWall {
                         var onlineVersion = new Version(onlineVersionStr);
                         var lowVersion = new Version(versions[1]);
 
-                        if (File.Exists(settings.UpdateMarkName)){
-                            File.Delete(settings.UpdateMarkName);
+                        if (File.Exists(App.AppDataDirectory + settings.UpdateMarkName)) {
+                            File.Delete(App.AppDataDirectory + settings.UpdateMarkName);
                             if (installedVersion < onlineVersion)
                                 notificationController.SendMessage(resources["UpdateFailedTitle"] as string, resources["UpdateFailedDetails"] as string, System.Windows.Forms.ToolTipIcon.Error);
                             else
@@ -367,7 +370,7 @@ namespace XWall {
 
                 var client = new WebClient();
                 client.Proxy = null;
-                client.DownloadFileAsync(url, settings.UpdateInstallerName);
+                client.DownloadFileAsync(url, App.AppDataDirectory + settings.UpdateInstallerName);
 
                 client.DownloadProgressChanged += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
@@ -395,8 +398,8 @@ namespace XWall {
         void startUpdateInstalling() {
             var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
-                File.WriteAllText(settings.UpdateMarkName, "");
-                Process.Start(settings.UpdateInstallerName, "/silent");
+                File.WriteAllText(App.AppDataDirectory + settings.UpdateMarkName, "");
+                Process.Start(App.AppDataDirectory + settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }
         }

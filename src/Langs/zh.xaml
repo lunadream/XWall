@@ -25,6 +25,11 @@
     <sys:String x:Key="ConnectStopped">连接终止</sys:String>
     <sys:String x:Key="ConnectFailed">连接失败</sys:String>
     <sys:String x:Key="ConnectFailedDescription">X-Wall 未能连接到 {0}.</sys:String>
+    <sys:String x:Key="EmptySshServerMessage">请输入 SSH 服务器地址.</sys:String>
+    <sys:String x:Key="InvalidSshPortMessage">请输入有效的 SSH 端口.</sys:String>
+    <sys:String x:Key="InvalidSocksPortMessage">请输入有效的 SOCKS 端口.</sys:String>
+    <sys:String x:Key="EmptySshUsernameMessage">请输入用户名.</sys:String>
+    <sys:String x:Key="EmptySshPasswordMessage">请输入密码.</sys:String>
     
     <sys:String x:Key="HttpInformation">HTTP 信息</sys:String>
     
@@ -96,7 +101,7 @@
     <sys:String x:Key="RuleExistsMessage">您输入的规则已经存在.</sys:String>
 
     <!-- Privoxy -->
-    <sys:String x:Key="PrivoxyErrorExitMessage">X-Wall 后台代理因为一个错误退出, 这可能是因为端口无效或者被占用.</sys:String>
+    <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (X-Wall 内建) 因为一个错误退出, 这可能是因为代理端口无效或者被占用.</sys:String>
 
     <!-- Plink -->
     <sys:String x:Key="PlinkAuthFailed">账号或密码无效</sys:String>

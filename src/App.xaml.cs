@@ -10,6 +10,7 @@ using System.Deployment;
 using XWall.Properties;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace XWall {
     /// <summary>
@@ -17,8 +18,7 @@ namespace XWall {
     /// </summary>
     public partial class App : Application {
         public static bool IsShutDown = false;
-
-        App() { }
+        public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
 
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
@@ -26,7 +26,13 @@ namespace XWall {
 
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
-            
+
+            Directory.CreateDirectory(AppDataDirectory);
+            Microsoft.Win32.SystemEvents.SessionEnding += (sender, e) => {
+                IsShutDown = true;
+                App.Current.Shutdown();
+            };
+
             var settings = Settings.Default;
 
             if (eventArgs.Args.Length > 0) {
@@ -47,12 +53,12 @@ namespace XWall {
                         App.Current.Shutdown();
                         return;
                     case "xwall:new-rule":
-                        File.WriteAllText(settings.NewRuleFileName, commandArg);
+                        File.WriteAllText(App.AppDataDirectory + settings.NewRuleFileName, commandArg);
                         IsShutDown = true;
                         App.Current.Shutdown();
                         return;
                     case "xwall:del-rule":
-                        File.WriteAllText(settings.DeleteRuleFileName, commandArg);
+                        File.WriteAllText(App.AppDataDirectory + settings.DeleteRuleFileName, commandArg);
                         IsShutDown = true;
                         App.Current.Shutdown();
                         return;
