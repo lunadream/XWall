@@ -96,7 +96,10 @@ namespace XWall {
                 Operation.SetAvailablePorts();
             }
 
-            settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
+            var autoStart = Operation.SetAutoStart(settings.AutoStart);
+            if (autoStart != settings.AutoStart)
+                settings.AutoStart = autoStart;
+
             Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
             Operation.RegisterXWallProtocol(true);
 
@@ -115,7 +118,9 @@ namespace XWall {
                     default: return;
                 }
 
-                settings.AutoStart = Operation.SetAutoStart(settings.AutoStart);
+                var rst = Operation.SetAutoStart(settings.AutoStart);
+                if (rst != settings.AutoStart)
+                    settings.AutoStart = rst;
             };
 
             //Operation.SetAvailablePorts();
