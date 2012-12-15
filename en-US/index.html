@@ -116,7 +116,7 @@ q4Noe6RIm1LlEgzx3gL+eJXJUgb+p8RseB+ojkpwp4Ni3luZ7k/oqlL/3HbrmHdDqIDl74yhAvqCRkI/
 
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4 && xhr.status == 200) {
-                        version = xhr.responseText;
+                        var version = xhr.responseText;
                         var versionSpan = document.getElementById("version");
                         versionSpan.innerHTML = version;
                     }

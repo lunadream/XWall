@@ -194,7 +194,7 @@ XFyPRcso3c9xjkRwpZ9Y1lz5q1zxjkRwpZ9Y1Zsom4IkU5OO");
 
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4 && xhr.status == 200) {
-                        version = xhr.responseText;
+                        var version = xhr.responseText;
                         var versionSpan = document.getElementById("version");
                         versionSpan.innerHTML = version;
                     }
