@@ -1,4 +1,4 @@
-# Online rules generated at Sat Dec 15 14:21:17 UTC+0800 2012
+# Online rules generated at Sat Dec 15 22:05:08 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2564,6 +2564,7 @@ bit.ly
 .atgfw.org
 .drtuber.com:80
 .cs.adxpansion.com:80
+.randkao.myweb.hinet.net
 
 {+forward-override{$default-forward-settings$}}
 .www.exblog.jp
