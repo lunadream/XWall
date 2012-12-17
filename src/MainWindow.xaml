@@ -119,19 +119,24 @@
                                     <RowDefinition Height="24" />
                                     <RowDefinition Height="24" />
                                     <RowDefinition Height="24" />
+                                    <RowDefinition Height="24" />
                                 </Grid.RowDefinitions>
                                 <CheckBox Grid.Row="0" x:Name="sshNotificationCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableConnectionStatusNotificationDescription}" />
                                 <CheckBox Grid.Row="1" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
                                 <CheckBox Grid.Row="2" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
+                                <CheckBox Grid.Row="3" x:Name="sshUsePlonkCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UsePlonk}" />
                             </Grid>
                             <Grid>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition />
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="75" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource PlonkKeyword}" />
+                                <TextBox x:Name="sshPlonkKeywordTextBox" Grid.Row="0" Grid.Column="1" Width="200" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=sshUsePlonkCheckBox}"></TextBox>
                                 <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource SocksPort}" />
                                 <TextBox x:Name="sshSocksPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
                             </Grid>

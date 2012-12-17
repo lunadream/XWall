@@ -306,9 +306,41 @@ namespace XWall {
             }
 
             static string[] getConnections() {
-                var dir = @"Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections";
-                var key = Registry.CurrentUser.CreateSubKey(dir);
-                return key.GetValueNames();
+                //var dir = @"Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections";
+                //var key = Registry.CurrentUser.CreateSubKey(dir);
+                //return key.GetValueNames();
+                int lpNames = 1;
+                int entryNameSize = 0;
+                int lpSize = 0;
+
+                RasEntryName[] names = null;
+
+                entryNameSize = Marshal.SizeOf(typeof(RasEntryName));
+                lpSize = lpNames * entryNameSize;
+
+                names = new RasEntryName[lpNames];
+                names[0].dwSize = entryNameSize;
+
+                uint retval = NativeMethods.RasEnumEntries(null, null, names, ref lpSize, out lpNames);
+
+                //if we have more than one connection, we need to do it again
+                if (lpNames > 1) {
+                    names = new RasEntryName[lpNames];
+                    for (int i = 0; i < names.Length; i++) {
+                        names[i].dwSize = entryNameSize;
+                    }
+                    retval = NativeMethods.RasEnumEntries(null, null, names, ref lpSize, out lpNames);
+                }
+
+                var connections = new List<string>() { "" };
+
+                var length = lpNames > 0 ? names.Length : 0;
+
+                for (int i = 0; i < length; i++) {
+                    connections.Add(names[i].szEntryName);
+                }
+
+                return connections.ToArray();
             }
 
             class ProxyInfo {
@@ -319,6 +351,14 @@ namespace XWall {
         }
 
         #region WinINet structures
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct RasEntryName      //define the struct to receive the entry name
+        {
+            public int dwSize;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256 + 1)]
+            public string szEntryName;
+        }
+
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         public class InternetPerConnOptionList {
             public int dwSize;               // size of the INTERNET_PER_CONN_OPTION_LIST struct
@@ -389,6 +429,9 @@ namespace XWall {
 
             [DllImport("WinINet.dll", SetLastError = true, CharSet = CharSet.Auto)]
             public static extern bool InternetQueryOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, ref int lpdwBufferLength);
+
+            [DllImport("rasapi32.dll", CharSet = CharSet.Auto)]
+            public static extern uint RasEnumEntries(string reserved, string lpszPhonebook, [In, Out]RasEntryName[] lprasentryname, ref int lpcb, out int lpcEntries);
         }
     }
 }

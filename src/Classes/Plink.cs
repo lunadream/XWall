@@ -56,6 +56,7 @@ namespace XWall {
             if (Environment.HasShutdownStarted) return;
 
             Thread.Sleep(10);
+
             isLastSuccess = false;
             toReconnect = true;
             IsConnecting = true;
@@ -66,16 +67,18 @@ namespace XWall {
             process = new Process();
 
             var si = process.StartInfo;
-            si.FileName = settings.PlinkFileName;
+            si.FileName = settings.SshUsePlonk ? settings.PlonkFileName : settings.PlinkFileName;
             si.Arguments = String.Format(
-                "-v -x -a -T -N{0} -l {1} -pw {2} -P {3} -D {4} {5}",
+                "-v -x -a -T -N{0}{1} -l {2} -pw {3} -P {4} -D {5} {6}",
                 settings.SshCompression ? " -C" : "",
+                settings.SshUsePlonk ? " -z" + (settings.SshPlonkKeyword.Trim() != "" ? " -Z " + settings.SshPlonkKeyword : "") : "",
                 settings.SshUsername,
                 settings.SshPassword,
                 settings.SshPort,
                 "127.0.0.1:" + settings.SshSocksPort,
                 settings.SshServer
             );
+
             si.RedirectStandardOutput = true;
             si.RedirectStandardInput = true;
             si.RedirectStandardError = true;
@@ -123,9 +126,9 @@ namespace XWall {
         }
 
         public void Start() {
-            if (!CheckSettings()) return;
             reconnectPeriod = 1;
             Stop();
+            if (!CheckSettings()) return;
             new Action(() => {
                 Thread.Sleep(100);
                 startProcess();

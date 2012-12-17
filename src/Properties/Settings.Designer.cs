@@ -525,5 +525,47 @@ namespace XWall.Properties {
                 return ((string)(this["PrivoxyTemplatesFolderName"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public string PrivoxyKeepAliveTimeout {
+            get {
+                return ((string)(this["PrivoxyKeepAliveTimeout"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SshUsePlonk {
+            get {
+                return ((bool)(this["SshUsePlonk"]));
+            }
+            set {
+                this["SshUsePlonk"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("plonk.exe")]
+        public string PlonkFileName {
+            get {
+                return ((string)(this["PlonkFileName"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SshPlonkKeyword {
+            get {
+                return ((string)(this["SshPlonkKeyword"]));
+            }
+            set {
+                this["SshPlonkKeyword"] = value;
+            }
+        }
     }
 }

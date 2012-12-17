@@ -42,6 +42,7 @@ namespace XWall {
                 "listen-address " + (settings.ListenToLocalOnly ? "127.0.0.1:" : ":") + settings.ProxyPort + "\r\n" +
                 "forwarded-connect-retries " + settings.ForwardConnectionRetries + "\r\n" +
                 "forward / " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy) + "\r\n" +
+                "keep-alive-timeout " + settings.PrivoxyKeepAliveTimeout + "\r\n" +
                 "actionsfile " + App.AppDataDirectory + settings.PrivoxyActionFileName + "\r\n" +
                 "templdir " + App.AppDataDirectory + settings.PrivoxyTemplatesFolderName + "\r\n";
             File.WriteAllText(App.AppDataDirectory + settings.PrivoxyConfigFileName, text);

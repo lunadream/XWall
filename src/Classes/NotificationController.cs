@@ -30,6 +30,11 @@ namespace XWall {
                     window.Activate();
                 };
 
+                icon.BalloonTipClicked += (sender, e) => {
+                    window.WindowState = System.Windows.WindowState.Normal;
+                    window.Activate();
+                };
+
                 var menu = new ContextMenu();
 
                 menu.MenuItems.Add(resources["AddRules"] as string, (sender, e) => {

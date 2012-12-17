@@ -146,5 +146,17 @@
     <Setting Name="PrivoxyTemplatesFolderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">privoxy-templates\</Value>
     </Setting>
+    <Setting Name="PrivoxyKeepAliveTimeout" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="SshUsePlonk" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PlonkFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">plonk.exe</Value>
+    </Setting>
+    <Setting Name="SshPlonkKeyword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

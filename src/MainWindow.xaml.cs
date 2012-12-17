@@ -143,7 +143,6 @@ namespace XWall {
                 privoxy.Start();
             };
 
-
             if (settings.ProxyType == "SSH" && settings.AutoStart) {
                 plink.Start();
             }
@@ -165,10 +164,35 @@ namespace XWall {
             settings.PropertyChanged += (o, a) => {
                 switch (a.PropertyName) {
                     case "SshSocksPort": break;
+                    case "SshCompression": break;
+                    case "SshPlonkKeyword": break;
                     default: return;
                 }
 
                 if (settings.ProxyType == "SSH") {
+                    if (plink.IsConnected || plink.IsConnecting)
+                        plink.Start();
+                }
+            };
+
+            var usePlonkChangeBack = false;
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "SshUsePlonk":
+                        if (usePlonkChangeBack) {
+                            usePlonkChangeBack = false;
+                            return;
+                        }
+                        else break;
+                    default: return;
+                }
+
+                if (settings.SshUsePlonk && !File.Exists(settings.PlonkFileName)) {
+                    usePlonkChangeBack = true;
+                    sshUsePlonkCheckBox.IsChecked = false;
+                    MessageBox.Show(resources["PlonkMissingMessage"] as string);
+                }
+                else if (settings.ProxyType == "SSH") {
                     if (plink.IsConnected || plink.IsConnecting)
                         plink.Start();
                 }

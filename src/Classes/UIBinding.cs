@@ -33,6 +33,8 @@ namespace XWall {
             UIBinding.bindCheckBox(sshNotificationCheckBox, "SshNotification");
             UIBinding.bindCheckBox(sshCompressionCheckBox, "SshCompression");
             UIBinding.bindCheckBox(sshAutoReconnectCheckBox, "SshAutoReconnect");
+            UIBinding.bindCheckBox(sshUsePlonkCheckBox, "SshUsePlonk");
+            UIBinding.bindTextBox(sshPlonkKeywordTextBox, "SshPlonkKeyword");
             UIBinding.bindTextBox(sshSocksPortTextBox, "SshSocksPort");
 
             //RULES

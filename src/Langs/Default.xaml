@@ -41,6 +41,10 @@
     <sys:String x:Key="EnableConnectionStatusNotificationDescription">Enable notification for connection status change</sys:String>
     <sys:String x:Key="EnableCompression">Enable compression</sys:String>
     <sys:String x:Key="AutoReconnect">Automatically reconnect</sys:String>
+    <sys:String x:Key="UsePlonk">Use Plonk and enable obfuscation (server-side support needed)</sys:String>
+    <sys:String x:Key="PlonkMissingMessage">Plonk is not prepacked in X-Wall. To enable this feature, please download Plonk manually and put it into X-Wall's installation directory.</sys:String>
+    <sys:String x:Key="PlonkKeyword">Keyword</sys:String>
+    <sys:String x:Key="PlonkKeywordMissingMessage">Please enter the keyword for SSH obfuscation.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS Port</sys:String>
 
     <sys:String x:Key="Rules">Rules</sys:String>
