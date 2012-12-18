@@ -1,4 +1,4 @@
-# Online rules generated at Tue Dec 18 23:43:13 UTC+0800 2012
+# Online rules generated at Wed Dec 19 01:58:21 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2563,6 +2563,7 @@ zh.wikipedia.org
 .gstatic.com
 .googleusercontent.com
 .googleapis.com
+autoproxy-gfwlist.googlecode.com
 goo.gl
 bit.ly
 .drtuber.com:80
@@ -2673,3 +2674,6 @@ bit.ly
 .nici.nat.gov.tw
 .cromotc.nat.gov.tw
 .taitung-house.gov.tw
+
+# X-List
+.google.cn
