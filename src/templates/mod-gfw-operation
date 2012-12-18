@@ -58,10 +58,10 @@
         if (window.location.protocol == "http:" && pageStatus == 502) {
             var path = location.pathname + location.search;
             var pathReStr = path == "/" ? "" : path.replace(/([\.\?\+\*\(\)\{\}\[\]\\])/g, "\\$1");
-            rule = (pathReStr ? host : "." + (host.indexOf("www.") == 0 ? host.substr(4) : host)) + ":80" + pathReStr;
+            rule = (pathReStr ? host : "." + (host.indexOf("www.") == 0 ? host.substr(4) : host)) + ":80";
         }
         else {
-            rule = "." + (host.indexOf("www.") == 0 ? host.substr(4) : host);
+            rule = (/\d$/.test(host) ? "" : ".") + (host.indexOf("www.") == 0 ? host.substr(4) : host);
         }
 
         var lang;
@@ -196,7 +196,7 @@
             button.disabled = true;
 
             var sender = new Image();
-            sender.src = "http://list.x-wall.org/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(rule));
+            sender.src = "http://list.x-wall.org/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(url));
 
             var called = false;
 

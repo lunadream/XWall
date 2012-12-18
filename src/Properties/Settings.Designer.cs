@@ -526,15 +526,6 @@ namespace XWall.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
-        public string PrivoxyKeepAliveTimeout {
-            get {
-                return ((string)(this["PrivoxyKeepAliveTimeout"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -565,6 +556,15 @@ namespace XWall.Properties {
             }
             set {
                 this["SshPlonkKeyword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public string PrivoxyKeepAliveTimeout {
+            get {
+                return ((string)(this["PrivoxyKeepAliveTimeout"]));
             }
         }
     }
