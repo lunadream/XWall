@@ -1,4 +1,4 @@
-# Online rules generated at Sat Dec 15 22:05:08 UTC+0800 2012
+# Online rules generated at Tue Dec 18 23:43:13 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2547,24 +2547,27 @@ chinese.wsj.com:80/gb
 .gov.tw/
 .president.gov.tw
 # X-List
-.sshcenter.net:80
-.x-berry.com:80/goagent
-.igfw.net
 .chosun.com
-.ssh91.com
-.feelssh.com:80
+.voachinese.com
+.sinchew.com.my
+.x-berry.com:80/goagent
+.randkao.myweb.hinet.net
+.igfw.net
+.atgfw.org
+zh.wikipedia.org
+.sshcenter.net:80
 .sshwall.com:80
+.ssh91.com
+.feelssh.com
 .google.
 .gstatic.com
 .googleusercontent.com
 .googleapis.com
-.googleads.g.doubleclick.net
 goo.gl
 bit.ly
-.atgfw.org
 .drtuber.com:80
 .cs.adxpansion.com:80
-.randkao.myweb.hinet.net
+.googleads.g.doubleclick.net
 
 {+forward-override{$default-forward-settings$}}
 .www.exblog.jp
