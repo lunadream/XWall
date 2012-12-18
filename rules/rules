@@ -1,4 +1,4 @@
-# Online rules generated at Wed Dec 19 01:58:21 UTC+0800 2012
+# Online rules generated at Wed Dec 19 02:02:07 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -2566,9 +2566,9 @@ zh.wikipedia.org
 autoproxy-gfwlist.googlecode.com
 goo.gl
 bit.ly
-.drtuber.com:80
+.drtuber.com
 .cs.adxpansion.com:80
-.googleads.g.doubleclick.net
+.googleads.g.doubleclick.net:80
 
 {+forward-override{forward .}}
 .www.exblog.jp
