@@ -1,4 +1,4 @@
-# Online rules generated at Wed Dec 19 14:54:04 UTC+0800 2012
+# Online rules generated at Wed Dec 19 19:35:31 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4199,6 +4199,7 @@ chinese.wsj.com:80/gb
 .atgfw.org
 :80/.*atgfw\.org
 autoproxy-gfwlist.googlecode.com
+sshtunnel.googlecode.com
 .zh.wikipedia.org
 .sshcenter.net:80
 .sshwall.com:80
@@ -4211,6 +4212,8 @@ autoproxy-gfwlist.googlecode.com
 goo.gl:80
 bit.ly:80
 .drtuber.com:80
+.filefap.com:80
+.ukrainian-angels.com
 
 {+forward-override{forward .}}
 # GFWList
