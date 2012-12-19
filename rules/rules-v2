@@ -1,4 +1,4 @@
-# Online rules generated at Wed Dec 19 14:38:28 UTC+0800 2012
+# Online rules generated at Wed Dec 19 14:54:04 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4213,6 +4213,7 @@ bit.ly:80
 .drtuber.com:80
 
 {+forward-override{$default-forward-settings$}}
+# GFWList
 .www.exblog.jp
 .*v6.facebook.com
 .bak.gun-world.net
@@ -4316,6 +4317,5 @@ bit.ly:80
 .nici.nat.gov.tw
 .cromotc.nat.gov.tw
 .taitung-house.gov.tw
-
 # X-List
 .google.cn
