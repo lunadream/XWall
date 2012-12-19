@@ -1,11 +1,11 @@
-# Online rules generated at Mon Dec 10 01:17:55 UTC+0800 2012
+# Online rules generated at Thu Dec 20 01:03:23 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
 {+forward-override{forward-socks5 127.0.0.1:1080 .}}
+# GFWList
 :80/.*\.0rz\.tw.*
 .0rz.tw
-0rz.tw:80
 .0to255.com
 :80/.*1-apple\.com\.tw.*
 .1-apple.com.tw
@@ -21,7 +21,6 @@
 .173ng.com
 :80/.*\.17e\.org.*
 .17e.org
-17e.org:80/
 :80/.*1984bbs\.com.*
 .1984bbs.com
 .1984blog.com
@@ -29,7 +28,6 @@
 .1984bbs.org
 :80/.*\.1bao\.org.*
 .1bao.org
-1bao.org:80
 .1free.ws
 .1pondo.tv
 :80/.*bbs\.1tor\.com.*
@@ -53,7 +51,6 @@
 .4bluestones.biz
 :80/.*\.4shared\.com.*
 .4shared.com
-4shared.com:80
 :80/.*5i01\.com.*
 .5i01.com
 :80/.*taiwannation\.50webs\.com.*
@@ -145,7 +142,6 @@
 .alliance.org.hk
 :80/.*\.allinfa\.com.*
 .allinfa.com
-allinfa.com:80
 .allinfo.com
 .alternate-tools.com
 :80/.*alwaysdata\.com.*
@@ -173,7 +169,6 @@ allinfa.com:80
 .anthonycalzadilla.com
 :80/.*\.antiwave\.net.*
 .antiwave.net
-antiwave.net:80
 .aolchannels.aol.com
 :80/.*video\.aol\.ca/video-detail.*
 .video.aol.ca/video-detail
@@ -209,7 +204,6 @@ antiwave.net:80
 .archlinux.fr
 :80/.*\.arctosia\.com.*
 .arctosia.com
-arctosia.com:80
 .areca-backup.org
 :80/.*asdfg\.jp/dabr.*
 .asdfg.jp/dabr
@@ -226,7 +220,6 @@ arctosia.com:80
 .astonmartinnews.com
 :80/.*\.atchinese\.com.*
 .atchinese.com
-atchinese.com:80
 .atj.org.tw
 :80/.*\.atlaspost\.com.*
 .atlaspost.com
@@ -301,7 +294,6 @@ bbc.in:80
 .bitshare.com:80/files
 :80/.*\.bitsnoop\.com.*
 .bitsnoop.com
-bitsnoop.com:80
 :80/.*bjzc\.org.*
 .bjzc.org
 .bjzc.org/
@@ -336,7 +328,6 @@ bitsnoop.com:80
 .blogtd.net
 :80/.*\.blogtd\.org.*
 .blogtd.org
-blogtd.org:80
 .bloodshed.net
 :80/.*\.bloomberg\.cn.*
 .bloomberg.cn
@@ -389,7 +380,6 @@ blogtd.org:80
 .businessweek.com
 :80/.*\.businesstimes\.com\.cn.*
 .businesstimes.com.cn
-businesstimes.com.cn:80
 :80/.*bugbeep\.com.*
 .bugbeep.com
 .bugclub.org
@@ -407,7 +397,6 @@ businesstimes.com.cn:80
 .calameo.com/books
 :80/.*\.cn\.calameo\.com.*
 .cn.calameo.com
-cn.calameo.com:80
 :80/.*canadameet\.com.*
 .canadameet.com
 :80/.*\.canyu\.org.*
@@ -448,11 +437,9 @@ cn.calameo.com:80
 .cenews.eu
 :80/.*\.centurys\.net.*
 .centurys.net
-centurys.net:80
 .chandoo.org
 :80/.*\.change\.org.*
 .change.org
-change.org:80
 :80/.*\.changp\.com.*
 .changp.com
 :80/.*chengmingmag\.com.*
@@ -472,7 +459,6 @@ change.org:80
 .chinachannel.hk
 :80/.*\.chinadigitaltimes\.net.*
 .chinadigitaltimes.net
-chinadigitaltimes.net:80
 :80/.*\.chinaeweekly\.com.*
 .chinaeweekly.com
 .chinafreepress.org
@@ -508,7 +494,6 @@ chinadigitaltimes.net:80
 .gb.chinatimes.com/gate/gb/news\.chinatimes\.com/focus
 :80/.*\.news\.chinatimes\.com.*
 .news.chinatimes.com
-news.chinatimes.com:80
 :80/.*chinatweeps\.com.*
 .chinatweeps.com
 :80/.*chinaway\.org.*
@@ -729,7 +714,6 @@ news.chinatimes.com:80
 .dvorak.org
 :80/.*\.dw\.de.*
 .dw.de
-dw.de:80
 :80/.*\.dw-world\.com.*
 .dw-world.com
 :80/.*\.dw-world\.de.*
@@ -775,7 +759,6 @@ dw.de:80
 .emscripten.org
 :80/.*\.emule-ed2k\.com.*
 .emule-ed2k.com
-emule-ed2k.com:80
 :80/.*chinese\.engadget\.com.*
 .chinese.engadget.com
 .englishfromengland.co.uk
@@ -865,7 +848,6 @@ emule-ed2k.com:80
 .filefactory.com/file
 :80/.*\.files2me\.com.*
 .files2me.com
-files2me.com:80
 :80/.*\.fileserve\.com/file.*
 .fileserve.com/file
 :80/.*\.filesonic\.com/file.*
@@ -930,7 +912,6 @@ files2me.com:80
 .franklc.com
 :80/.*\.freakshare\.com.*
 .freakshare.com
-freakshare.com:80
 :80/.*\.free\.fr/adsl.*
 .free.fr/adsl
 .allonlinux.free.fr
@@ -1009,7 +990,6 @@ ff.im:80
 .gaoming.net
 :80/.*\.gaopi\.net.*
 .gaopi.net
-gaopi.net:80
 .gappp.org
 :80/.*gardennetworks\.com.*
 .gardennetworks.com
@@ -1372,7 +1352,6 @@ talkgadget.google.com:443/
 .hidemyass.com
 :80/.*\.hihiforum\.com.*
 .hihiforum.com
-hihiforum.com:80
 :80/.*\.higfw\.com.*
 .higfw.com
 .highrockmedia.com
@@ -1489,7 +1468,6 @@ hk-pub.com:80/forum
 .imagevenue.com
 :80/.*\.imdb\.com.*
 .imdb.com
-imdb.com:80
 :80/.*\.img\.ly.*
 .img.ly
 :80/.*\.imkev\.com.*
@@ -1534,7 +1512,6 @@ imdb.com:80
 .ithelp.ithome.com.tw/question/10007094
 :80/.*\.itweet\.net.*
 .itweet.net
-itweet.net:80
 :80/.*\.iu45\.com.*
 .iu45.com
 :80/.*yy\.iyatou\.com/archives/1042.*
@@ -1560,7 +1537,6 @@ itweet.net:80
 .jieshibaobao.com
 :80/.*\.jimoparty\.com.*
 .jimoparty.com
-jimoparty.com:80
 :80/.*zhao\.jinhai\.de.*
 .zhao.jinhai.de
 :80/.*jingpin\.org.*
@@ -1644,7 +1620,6 @@ jimoparty.com:80
 .laomiu.com
 :80/.*\.laoyang\.info.*
 .laoyang.info
-laoyang.info:80
 .laptoplockdown.com
 :80/.*latelinenews\.com.*
 .latelinenews.com
@@ -1749,7 +1724,6 @@ laoyang.info:80
 .longtermly.net
 :80/.*\.lookatgame\.com.*
 .lookatgame.com
-lookatgame.com:80
 .lookingglasstheatre.org
 .lookpic.com
 .lrfz.com
@@ -1932,7 +1906,6 @@ moby.to:80
 .namsisi.com
 :80/.*\.nanyangpost\.com.*
 .nanyangpost.com
-nanyangpost.com:80
 .naveensrinivasan.com
 .navicat.com
 :80/.*\.nakido\.com.*
@@ -1972,7 +1945,6 @@ nanyangpost.com:80
 .new-akiba.com
 :80/.*\.newcenturymc\.com.*
 .newcenturymc.com
-newcenturymc.com:80
 :80/.*newcenturynews\.com.*
 .newcenturynews.com
 .newchen.com
@@ -2013,7 +1985,6 @@ newcenturymc.com:80
 .nintendium.com
 :80/.*\.dayaarmongol\.ning\.com.*
 .dayaarmongol.ning.com
-dayaarmongol.ning.com:80
 :80/.*taiwanyes\.ning\.com.*
 .taiwanyes.ning.com
 :80/.*njuice\.com.*
@@ -2022,7 +1993,6 @@ dayaarmongol.ning.com:80
 .no-ip.com
 :80/.*\.nobelprize\.org.*
 .nobelprize.org
-nobelprize.org:80
 :80/.*nobelprize\.org/nobel_prizes/peace/laureates/2010.*
 .nobelprize.org/nobel_prizes/peace/laureates/2010
 :80/.*nobodycanstop\.us.*
@@ -2118,7 +2088,6 @@ nobelprize.org:80
 .share.ovi.com/media
 :80/.*\.ow\.ly.*
 .ow.ly
-ow.ly:80
 owl.li:80
 ht.ly:80
 htl.li:80
@@ -2288,7 +2257,6 @@ www.oxid.it:80
 post.ly:80
 :80/.*\.posterous\.com.*
 .posterous.com
-posterous.com:80
 .post.anyu.org
 .bralio.com
 .calebelston.com
@@ -2348,7 +2316,6 @@ posterous.com:80
 .pwned.com
 :80/.*\.python\.com\.tw.*
 .python.com.tw
-python.com.tw:80
 :80/.*python\.org.*download.*
 .python.org/.*download
 :80/.*\.qanote\.com.*
@@ -2388,7 +2355,6 @@ python.com.tw:80
 .ranyunfei.com
 :80/.*\.rapidshare\.com.*
 .rapidshare.com
-rapidshare.com:80
 :80/.*\.rapidshare1\.com.*
 .rapidshare1.com
 .rapidshare8.com
@@ -2396,7 +2362,6 @@ rapidshare.com:80
 .rapidsharedata.com
 :80/.*\.rapidscan\.me.*
 .rapidscan.me
-rapidscan.me:80
 :80/.*\.rayfme\.com/bbs.*
 .rayfme.com/bbs
 :80/.*rcinet\.ca.*
@@ -2461,10 +2426,8 @@ rfi.my:80/
 .rssmeme.com
 :80/.*\.rthk\.hk.*
 .rthk.hk
-rthk.hk:80
 :80/.*\.rthk\.org\.hk.*
 .rthk.org.hk
-rthk.org.hk:80
 :80/.*rti\.org\.tw.*
 .rti.org.tw
 :80/.*\.ruanyifeng\.com/blog.*some_ways_to_break_the_great_firewall.*
@@ -2570,7 +2533,6 @@ rthk.org.hk:80
 .ch.shvoong.com
 :80/.*\.shwchurch3\.com.*
 .shwchurch3.com
-shwchurch3.com:80
 :80/.*simpleproductivityblog\.com.*
 .simpleproductivityblog.com
 :80/.*bbs\.sina\.com/.*
@@ -2662,7 +2624,6 @@ www.skype.com:80/intl/
 .soupofmedia.com
 :80/.*\.sourceforge\.net.*
 .sourceforge.net
-sourceforge.net:80
 :80/.*sowers\.org\.hk.*
 .sowers.org.hk
 .wlx.sowiki.net
@@ -2716,7 +2677,6 @@ spb.com:80/symbian-software/tv/download
 .tw.streetvoice.com
 :80/.*\.strongvpn\.com.*
 .strongvpn.com
-strongvpn.com:80
 :80/.*\.student\.tw/db.*
 .student.tw/db
 :80/.*blog\.sufeng\.org.*
@@ -2751,7 +2711,6 @@ strongvpn.com:80
 .t66y.com
 :80/.*\.taa-usa\.org.*
 .taa-usa.org
-taa-usa.org:80
 :80/.*tabtter\.jp.*
 .tabtter.jp
 :80/.*\.tacem\.org.*
@@ -2816,7 +2775,6 @@ taa-usa.org:80
 .thevivekspot.com
 :80/.*\.thisav\.com.*
 .thisav.com
-thisav.com:80
 :80/.*thkphoto\.com.*
 .thkphoto.com
 .thomasbernhard.org
@@ -2904,7 +2862,6 @@ tmi.me:80
 .trustedbi.com
 :80/.*\.truth101\.co\.tv.*
 .truth101.co.tv
-truth101.co.tv:80
 .truthcn.com
 :80/.*\.truveo\.com.*
 .truveo.com
@@ -2929,10 +2886,8 @@ truth101.co.tv:80
 .bbs.tuitui.info
 :80/.*\.tunein\.com.*
 .tunein.com
-tunein.com:80
 :80/.*\.turbobit\.net.*
 .turbobit.net
-turbobit.net:80
 .turningtorso.com
 .tuxtraining.com
 .tumblr.com
@@ -3070,7 +3025,6 @@ tv.com:80
 .tweetboner.biz
 :80/.*\.tweetdeck\.com.*
 .tweetdeck.com
-tweetdeck.com:80
 deck.ly:80
 .tweete.net
 :80/.*m\.tweete\.net.*
@@ -3098,7 +3052,6 @@ deck.ly:80
 .twibs.com
 :80/.*\.twifan\.com.*
 .twifan.com
-twifan.com:80
 :80/.*twiffo\.com.*
 .twiffo.com
 :80/.*twilog\.org.*
@@ -3177,7 +3130,6 @@ twt.tl:80
 .twstar.net
 :80/.*\.twtkr\.com.*
 .twtkr.com
-twtkr.com:80
 :80/.*twurl\.nl.*
 .twurl.nl
 :80/.*\.twyac\.org.*
@@ -3270,7 +3222,6 @@ uploaded.to:80/file
 .ustream.tv
 :80/.*\.uushare\.com.*
 .uushare.com
-uushare.com:80
 :80/.*\.uwants\.com.*
 .uwants.com
 :80/.*\.uwants\.net.*
@@ -3333,7 +3284,6 @@ uushare.com:80
 .waikeung.org/php_wind
 :80/.*\.waiwaier\.com.*
 .waiwaier.com
-waiwaier.com:80
 :80/.*wallornot\.org.*
 .wallornot.org
 .wallpapercasa.com
@@ -3507,7 +3457,6 @@ chinese.wsj.com:80/gb
 .xiezhua.com
 :80/.*\.xing\.com.*
 .xing.com
-xing.com:80
 :80/.*\.xinmiao\.com\.hk.*
 .xinmiao.com.hk
 :80/.*xinsheng\.net.*
@@ -3579,7 +3528,6 @@ xing.com:80
 .blog.yam.com
 :80/.*\.mymedia\.yam\.com.*
 .mymedia.yam.com
-mymedia.yam.com:80
 :80/.*n\.yam\.com.*
 .n.yam.com
 :80/.*news\.yam\.com.*
@@ -3636,7 +3584,6 @@ mymedia.yam.com:80
 .topic.youthwant.com.tw
 :80/.*\.youporn\.com.*
 .youporn.com
-youporn.com:80
 :80/.*youtu\.be.*
 .youtu.be
 :80/.*\.youtube\.com.*
@@ -3661,7 +3608,6 @@ youporn.com:80
 .tap11.com
 :80/.*\.zaobao\.com.*
 .zaobao.com
-zaobao.com:80
 :80/.*\.zaozon\.com.*
 .zaozon.com
 .zarias.com
@@ -4242,8 +4188,41 @@ zaobao.com:80
 .gov.tw/
 :80/.*\.president\.gov\.tw.*
 .president.gov.tw
+# X-List
+.chosun.com:80
+.voachinese.com:80
+.sinchew.com.my:80
+.nextmedia.com:80
+.online.wsj.com:80/article
+.sharpdaily.com.hk:80
+:80/.*sharpdaily\.com\.hk
+.sharpdaily.hk:80
+:80/.*sharpdaily\.hk
+.x-berry.com:80/goagent
+.randkao.myweb.hinet.net
+.igfw.net
+:80/.*igfw\.net
+.atgfw.org
+:80/.*atgfw\.org
+autoproxy-gfwlist.googlecode.com
+sshtunnel.googlecode.com
+.zh.wikipedia.org
+.sshcenter.net:80
+.sshwall.com:80
+.ssh91.com:80
+.feelssh.com:80
+.google.
+.gstatic.com
+.googleusercontent.com
+.googleapis.com
+goo.gl:80
+bit.ly:80
+.drtuber.com:80
+.filefap.com:80
+.ukrainian-angels.com
 
 {+forward-override{forward .}}
+# GFWList
 .www.exblog.jp
 .*v6.facebook.com
 .bak.gun-world.net
@@ -4347,3 +4326,5 @@ zaobao.com:80
 .nici.nat.gov.tw
 .cromotc.nat.gov.tw
 .taitung-house.gov.tw
+# X-List
+.google.cn
