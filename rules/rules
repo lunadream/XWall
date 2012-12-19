@@ -1,4 +1,4 @@
-# Online rules generated at Wed Dec 19 19:35:31 UTC+0800 2012
+# Online rules generated at Thu Dec 20 00:35:08 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4189,9 +4189,11 @@ chinese.wsj.com:80/gb
 :80/.*\.president\.gov\.tw.*
 .president.gov.tw
 # X-List
-.chosun.com
-.voachinese.com
-.sinchew.com.my
+.chosun.com:80
+.voachinese.com:80
+.sinchew.com.my:80
+.nextmedia.com:80
+.online.wsj.com:80/article
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
 .igfw.net
