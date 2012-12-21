@@ -1,4 +1,4 @@
-# Online rules generated at Thu Dec 20 01:03:23 UTC+0800 2012
+# Online rules generated at Fri Dec 21 22:09:00 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4200,6 +4200,8 @@ chinese.wsj.com:80/gb
 :80/.*sharpdaily\.hk
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
+.blogspot.hk:80
+:80/.*blogspot\.hk
 .igfw.net
 :80/.*igfw\.net
 .atgfw.org
@@ -4220,6 +4222,7 @@ bit.ly:80
 .drtuber.com:80
 .filefap.com:80
 .ukrainian-angels.com
+.cl.babi.info:80/htm_data/
 
 {+forward-override{$default-forward-settings$}}
 # GFWList
