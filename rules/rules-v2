@@ -1,4 +1,4 @@
-# Online rules generated at Fri Dec 21 23:50:41 UTC+0800 2012
+# Online rules generated at Fri Dec 21 23:52:36 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -3741,8 +3741,8 @@ chinese.wsj.com:80/gb
 .google.
 .googleusercontent.com
 .googleapis.com
-.goo.gl
-.bit.ly
+.goo.gl:80
+.bit.ly:80
 :80/.*drtuber\.com
 .drtuber.com
 :80/.*filefap\.com
