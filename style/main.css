@@ -285,10 +285,18 @@ input:focus {
 #provider-list li {
     height: 16px;
     overflow: hidden;
+    -moz-transition: linear all 0.2s;
+    -o-transition: linear all 0.2s;
+    -webkit-transition: linear all 0.2s;
+    transition: linear all 0.2s;
 }
 
 #provider-list li:hover {
     height: auto;
+}
+
+#provider-list li div {
+    cursor: pointer;
 }
 
 #sidebar-wrapper .item ul li a {
