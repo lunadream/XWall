@@ -7,49 +7,63 @@
     <meta property="og:image" content="http://x-wall.org/images/logo-large.png" />
     <meta property="og:description" content="X-Wall is a small tool for Windows that wraps together Plink and Privoxy to provide people an easier way to CROSS the WALL." />
     <script>
-        var base64 = new function () {
-            var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
-            this.decode = function (str) {
-                str = str.replace(/\s/g, "");
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36452018-1']);
+        _gaq.push(['_setDomainName', 'x-wall.org']);
+        _gaq.push(['_trackPageview']);
 
-                var decoded = [];
-                var c = 0;
-                while (c < str.length) {
-                    var i0 = chars.indexOf(str.charAt(c++));
-                    var i1 = chars.indexOf(str.charAt(c++));
-                    var i2 = chars.indexOf(str.charAt(c++));
-                    var i3 = chars.indexOf(str.charAt(c++));
-                    var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
-                    var b0 = (buf & (255 << 16)) >> 16;
-                    var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
-                    var b2 = (i3 == 64) ? -1 : (buf & 255);
-                    decoded[decoded.length] = String.fromCharCode(b0);
-                    if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
-                    if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
-                }
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <link href="/style/main.css" rel="stylesheet" />
+</head>
+<body></body>
+<script>
+    var base64 = new function () {
+        var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
+        this.decode = function (str) {
+            str = str.replace(/\s/g, "");
 
-                return decodeURIComponent(escape(decoded.join("")));
-            };
-        }();
+            var decoded = [];
+            var c = 0;
+            while (c < str.length) {
+                var i0 = chars.indexOf(str.charAt(c++));
+                var i1 = chars.indexOf(str.charAt(c++));
+                var i2 = chars.indexOf(str.charAt(c++));
+                var i3 = chars.indexOf(str.charAt(c++));
+                var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
+                var b0 = (buf & (255 << 16)) >> 16;
+                var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
+                var b2 = (i3 == 64) ? -1 : (buf & 255);
+                decoded[decoded.length] = String.fromCharCode(b0);
+                if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
+                if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
+            }
 
-        function fadeOut(ele) {
-            var opacity = 0;
-            var interval = setInterval(function () {
-                if (opacity >= 100) {
-                    opacity = 100;
-                    clearInterval(interval);
-                }
+            return decodeURIComponent(escape(decoded.join("")));
+        };
+    }();
 
-                opacity += 5;
+    function fadeOut(ele) {
+        var opacity = 0;
+        var interval = setInterval(function () {
+            if (opacity >= 100) {
+                opacity = 100;
+                clearInterval(interval);
+            }
 
-                ele.style.opacity = opacity / 100;
-                ele.style.filter = "alpha(opacity=" + opacity + ")";
-            }, 20);
-        }
+            opacity += 5;
 
-        window.onload = function () {
-            document.title = base64.decode("f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a");
-            document.body.innerHTML = base64.decode("U4RwplLwmQ/lA4XNm4XvjHpv3HLsmHqlU5/=q1z5qQ2FAH35AfdDqJNI3fRIelqCQd+5q1z5q1z5qQ2Nq4IFUgba7kpojHpv3HLsmHqlq4Nvmf3DqlqCQd+5q1z5q1z5\
+            ele.style.opacity = opacity / 100;
+            ele.style.filter = "alpha(opacity=" + opacity + ")";
+        }, 20);
+    }
+
+    document.title = base64.decode("f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a");
+    document.body.innerHTML = base64.decode("U4RwplLwmQ/lA4XNm4XvjHpv3HLsmHqlU5/=q1z5qQ2FAH35AfdDqJNI3fRIelqCQd+5q1z5q1z5qQ2Nq4IFUgba7kpojHpv3HLsmHqlq4Nvmf3DqlqCQd+5q1z5q1z5\
 q1z5q1zxAfirq4IFUgba7kpoqlLN78dDqI5nXkya71LT7kpoqlLBeJTDqlDw7fyrmHTo74Dr7vus7Jelq1xCQd+5q1z5q1z5q1z5q1zxAQV5AfdDqrRwp42IqZu3jXpN\
 74sxjk52U5/=q1z5q1z5q1z5q1z5U8Ys3f95AfdDqJRo7fyw7lqCE1i63f2ajJDvmBsoe6LN7Z9Y1lz5q1z5q1z5U1DNU5/=q1z5q1z5q1zxpfs5AfdDqJuNplqCQd+5\
 q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/lqkIhp8bom8XZp4Io7lqCgfu/eJDFpfY/AfDhU1DNUZso74FCQd+5q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/lA8R/e8TKjvDr\
@@ -102,50 +116,34 @@ q1z5U1DFAH3CQd+5q1z5q1z5qQsom4IkU5/=q1z5qQsom4IkU5/=q1z5qQ2FAH35AfdDqJmo76RIelqC
 A8bImZ/lA8R/e8TKjvDrAHR+pfqh3kDnjvq5p4yvmkX/UgbS3J2N7JalUFpwp4Ni3Zso3c9xjkRwpZ9Y1lz5q1z5q1z5U4RwpZt1GcqsTcq5U4V5A8bImZ/lA8R/eQ+o\
 j6mw74IZjJIhmJxoqlL/3HbrmHdDqIDl74yhAvqCXFITgWT5XFyPRcso3c9xjkRwpZ9Y1lz5q1zxjkRwpZ9Y1Zsom4IkU5OO");
 
-            (function () {
-                var images = document.getElementById("content-wrapper").getElementsByTagName("img");
-                for (var i = 0; i < images.length; i++) {
-                    var image = images[i];
-                    if (image.complete) continue;
+    (function () {
+        var images = document.getElementById("content-wrapper").getElementsByTagName("img");
+        for (var i = 0; i < images.length; i++) {
+            var image = images[i];
+            if (image.complete) continue;
 
-                    image.style.opacity = 0;
-                    image.style.filter = "alpha(opacity=0)";
+            image.style.opacity = 0;
+            image.style.filter = "alpha(opacity=0)";
 
-                    image.onload = function () {
-                        fadeOut(this);
-                    };
-                }
-            })();
+            image.onload = function () {
+                fadeOut(this);
+            };
+        }
+    })();
 
-            (function () {
-                var xhr = this.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("MSXML2.XMLHTTP");
-                xhr.open("GET", "/release/version");
-                xhr.setRequestHeader("If-Modified-Since", "0");
-                xhr.send(null);
+    (function () {
+        var xhr = this.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("MSXML2.XMLHTTP");
+        xhr.open("GET", "/release/version");
+        xhr.setRequestHeader("If-Modified-Since", "0");
+        xhr.send(null);
 
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        var version = xhr.responseText;
-                        var versionSpan = document.getElementById("version");
-                        versionSpan.innerHTML = version;
-                    }
-                };
-            })();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var version = xhr.responseText;
+                var versionSpan = document.getElementById("version");
+                versionSpan.innerHTML = version;
+            }
         };
-    </script>
-    <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-36452018-1']);
-        _gaq.push(['_setDomainName', 'x-wall.org']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    <link href="/style/main.css" rel="stylesheet" />
-</head>
-<body></body>
+    })();
+</script>
 </html>
