@@ -282,6 +282,11 @@ input:focus {
     background: url(images/spirits.png) no-repeat;
 }
 
+#provider-list li {
+    height: 16px;
+    overflow: hidden;
+}
+
 #sidebar-wrapper .item ul li a {
     text-decoration: none;
     -moz-transition: all linear 0.2s;
