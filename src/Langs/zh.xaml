@@ -41,6 +41,7 @@
     <sys:String x:Key="EnableConnectionStatusNotificationDescription">开启连接状态改变时的气球状提示</sys:String>
     <sys:String x:Key="EnableCompression">开启压缩</sys:String>
     <sys:String x:Key="AutoReconnect">自动重连</sys:String>
+    <sys:String x:Key="ReconnectAnyCondition">在任何情况下重连</sys:String>
     <sys:String x:Key="UsePlonk">使用 Plonk 代替 Plink 并开启混淆加密 (需服务器支持)</sys:String>
     <sys:String x:Key="PlonkMissingMessage">Plonk 并没有预先打包在 X-Wall 中. 如果需要使用此功能, 请手动下载 Plonk 并放在 X-Wall 的安装目录下.</sys:String>
     <sys:String x:Key="PlonkKeyword">关键字</sys:String>

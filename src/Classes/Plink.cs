@@ -154,7 +154,7 @@ namespace XWall {
 
             IsReconnecting = true;
 
-            if (settings.SshAutoReconnect && Error == null) {
+            if (settings.SshAutoReconnect && (settings.SshReconnectAnyCondition || Error == null)) {
                 StopReconnect = false;
 
                 new Action(() => {
@@ -222,7 +222,7 @@ namespace XWall {
                 process.StandardInput.WriteLine("y");
             else if (line.StartsWith("Password authentication failed")) {
                 Error = resources["PlinkAuthFailed"] as string;
-                Stop();
+                Stop(settings.SshReconnectAnyCondition);
             }
         }
 

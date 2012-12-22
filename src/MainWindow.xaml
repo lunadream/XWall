@@ -37,7 +37,7 @@
                             <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource SshInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
+                    <GroupBox Header="{StaticResource SshInformation}" PreviewKeyDown="onSshInfoPreviewKeyDown" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
                         <StackPanel Margin="0,10,10,5">
                             <Grid x:Name="sshInformationGrid">
                                 <Grid.RowDefinitions>
@@ -121,10 +121,15 @@
                                     <RowDefinition Height="24" />
                                     <RowDefinition Height="24" />
                                 </Grid.RowDefinitions>
-                                <CheckBox Grid.Row="0" x:Name="sshNotificationCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableConnectionStatusNotificationDescription}" />
-                                <CheckBox Grid.Row="1" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
-                                <CheckBox Grid.Row="2" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
-                                <CheckBox Grid.Row="3" x:Name="sshUsePlonkCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UsePlonk}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Row="0" Grid.ColumnSpan="2" x:Name="sshNotificationCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableConnectionStatusNotificationDescription}" />
+                                <CheckBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="sshCompressionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource EnableCompression}" />
+                                <CheckBox Grid.Row="2" Grid.Column="0" x:Name="sshAutoReconnectCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoReconnect}" />
+                                <CheckBox Grid.Row="2" Grid.Column="1" x:Name="sshReconnectAnyConditionCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ReconnectAnyCondition}" IsEnabled="{Binding IsChecked, ElementName=sshAutoReconnectCheckBox}" />
+                                <CheckBox Grid.Row="3" Grid.ColumnSpan="2" x:Name="sshUsePlonkCheckBox" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UsePlonk}" />
                             </Grid>
                             <Grid>
                                 <Grid.RowDefinitions>

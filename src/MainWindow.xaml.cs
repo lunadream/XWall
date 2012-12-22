@@ -86,7 +86,7 @@ namespace XWall {
                     sshConnectButton.Content = resources["Connect"] as string;
 
                     if (plink.Error != null)
-                        notificationController.SetStatus(NotificationController.Status.Error, resources["ErrorConnect"] as string, plink.Error, System.Windows.Forms.ToolTipIcon.Error);
+                        notificationController.SetStatus(NotificationController.Status.Error, resources["ErrorConnect"] as string, plink.Error != lastPlinkError ? plink.Error : null, System.Windows.Forms.ToolTipIcon.Error);
                     else if (isLastSuccess)
                         notificationController.SetStatus(NotificationController.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
                     else if (plink.IsNormallyStopped)
@@ -95,6 +95,8 @@ namespace XWall {
                         notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string);
                     else
                         notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string, String.Format(resources["ConnectFailedDescription"] as string, settings.SshServer), System.Windows.Forms.ToolTipIcon.Warning);
+                    
+                    lastPlinkError = plink.Error;
                 }));
             };
 
@@ -276,6 +278,9 @@ namespace XWall {
             Rules.OnlineRules.Update();
         }
 
+
+        string lastPlinkError = null;
+
         private void onSshConnectButtonClick(object sender, RoutedEventArgs e) {
             if (plink.IsConnected || plink.IsConnecting)
                 plink.Stop();
@@ -290,8 +295,10 @@ namespace XWall {
                     checkSetting(settings.SshUsername.Trim() != "", sshUsernameTextBox, resources["EmptySshUsernameMessage"] as string) &&
                     checkSetting(settings.SshPassword.Trim() != "", sshPasswordBox, resources["EmptySshPasswordMessage"] as string) &&
                     checkSetting(settings.SshSocksPort > 0, sshSocksPortTextBox, resources["InvalidSocksPortMessage"] as string, advancedSettingsTabItem)
-                )
-                plink.Start();
+                ) {
+                    lastPlinkError = null;
+                    plink.Start();
+                }
             }
         }
 
@@ -452,6 +459,12 @@ namespace XWall {
         private void onAboutTabItemGotFocus(object sender, RoutedEventArgs e) {
             if (onlineVersionStr == null)
                 checkVersion();
+        }
+
+        private void onSshInfoPreviewKeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                onSshConnectButtonClick(sender, e);
+            }
         }
     }
 }

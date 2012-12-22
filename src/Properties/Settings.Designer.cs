@@ -567,5 +567,17 @@ namespace XWall.Properties {
                 return ((string)(this["PrivoxyKeepAliveTimeout"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SshReconnectAnyCondition {
+            get {
+                return ((bool)(this["SshReconnectAnyCondition"]));
+            }
+            set {
+                this["SshReconnectAnyCondition"] = value;
+            }
+        }
     }
 }

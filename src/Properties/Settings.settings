@@ -158,5 +158,8 @@
     <Setting Name="PrivoxyKeepAliveTimeout" Type="System.String" Scope="Application">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="SshReconnectAnyCondition" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
