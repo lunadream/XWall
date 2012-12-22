@@ -1,4 +1,4 @@
-# Online rules generated at Sat Dec 22 01:52:00 UTC+0800 2012
+# Online rules generated at Sat Dec 22 14:21:58 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -3730,6 +3730,8 @@ chinese.wsj.com:80/gb
 .autoproxy-gfwlist.googlecode.com
 .sshtunnel.googlecode.com
 .zh.wikipedia.org
+.wikia.com
+:80/.*\.cn\.uncyclopedia\.wikia\.com
 :80/.*sshcenter\.net
 .sshcenter.net
 :80/.*sshwall\.com
