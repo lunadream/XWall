@@ -118,7 +118,7 @@ j6mw74IZjJIhmJxoqlL/3HbrmHdDqIDl74yhAvqCXFITgWT5XFyPRcso3c9xjkRwpZ9Y1lz5q1zxjkRw
             })();
 
             (function () {
-                var xhr = this.XMLHttpRequest ? new XMLHttpRequest() : ActiveXObject("MSXML2.XMLHTTP");
+                var xhr = this.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("MSXML2.XMLHTTP");
                 xhr.open("GET", "/release/version");
                 xhr.setRequestHeader("If-Modified-Since", "0");
                 xhr.send(null);
