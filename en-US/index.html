@@ -99,18 +99,20 @@ q1zxm4Ikq4IFUgbJ7kD/mHqlU5/=q1z5q1z5q1zxm4IkUILv76XF78F5A4DBp4XFq4buqQ2Nq4Nvmf3D
 qZu8AHR+pfqxjkVCU1DFAH3CQd+5q1z5q1z5qQ2FAH3CsGFvTQVvqQ2Nq4Nvmf3DqJN/p8zKjvDkAf2w3vuw7Jmojvq5p4yvmkX/UgbS3J2N7JalUImbcVIQqymLcFWx\
 jkVCU1DFAH3CQd+5q1z5U1DFAH3CQd+xjkRwpZ9O");
 
-            var images = document.getElementById("content-wrapper").getElementsByTagName("img");
-            for (var i = 0; i < images.length; i++) {
-                var image = images[i];
-                if (image.complete) continue;
+            (function () {
+                var images = document.getElementById("content-wrapper").getElementsByTagName("img");
+                for (var i = 0; i < images.length; i++) {
+                    var image = images[i];
+                    if (image.complete) continue;
 
-                image.style.opacity = 0;
-                image.style.filter = "alpha(opacity=0)";
+                    image.style.opacity = 0;
+                    image.style.filter = "alpha(opacity=0)";
 
-                image.onload = function () {
-                    fadeOut(this);
-                };
-            }
+                    image.onload = function () {
+                        fadeOut(this);
+                    };
+                }
+            })();
 
             (function () {
                 var xhr = new XMLHttpRequest();
