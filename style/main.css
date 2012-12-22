@@ -253,8 +253,8 @@ input:focus {
 /* SIDEBAR WRAPPER */
 
 #sidebar-wrapper {
-    position: fixed;
-    top: 66px;
+    position: absolute;
+    top: 0px;
     margin-left: 720px;
     padding: 10px;
     width: 260px;
