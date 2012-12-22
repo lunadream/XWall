@@ -287,6 +287,10 @@ input:focus {
     overflow: hidden;
 }
 
+#provider-list li:hover {
+    height: auto;
+}
+
 #sidebar-wrapper .item ul li a {
     text-decoration: none;
     -moz-transition: all linear 0.2s;
