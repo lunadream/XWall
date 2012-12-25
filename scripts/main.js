@@ -28,8 +28,8 @@ use_("dom", "dom.animation", function (dom, anim) {
             var all = dom.query("a");
 
             for_(all, function (link) {
-                var id = (link.href.match(/#.+/) || [])[0];
-                var anchor = id ? dom.query(id) : null;
+                var id = (link.href.match(/#.*/) || [])[0];
+                var anchor = id ? id == "#" ? document.body : dom.query(id) : null;
                 if (!anchor) return;
 
                 dom.addEventListener(link, "click", function (e) {
