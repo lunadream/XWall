@@ -308,7 +308,7 @@ input:focus {
 }
 
 #faq-list p.q {
-
+    display: inline-block;
 }
 
 #faq-list p.a {
