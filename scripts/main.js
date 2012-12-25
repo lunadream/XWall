@@ -70,86 +70,96 @@ use_("dom", "dom.animation", function (dom, anim) {
             var menuItems = dom.query("> li", nav);
             for_(menuItems, function (item) {
                 var links = dom.query("ul li", item);
+                if (!links.length) return;
 
-                if (links.length > 0)
-                    dom.addEventListener(item, "mouseover", function () {
-                        clearTimeout(timer);
-                        if (current == item) return;
+                var mouseover = false;
+                dom.addEventListener(item, "mouseover", function () {
+                    if (mouseover) return;
+                    mouseover = true;
 
-                        if (current == null)
-                            dom.show(wrapperEle);
+                    clearTimeout(timer);
 
-                        dom.clearChildNodes(listEle);
-                        var width = 120;
-                        var height = 0;
+                    if (current == null)
+                        dom.show(wrapperEle);
 
-                        for_(links, function (link) {
-                            listEle.appendChild(link);
-                            var a = dom.query("a", link)[0];
-                            a.className = "adjusting";
-                            width = Math.max(a.offsetWidth, width);
-                            a.className = "";
-                            height += link.offsetHeight;
-                        });
+                    dom.clearChildNodes(listEle);
+                    var width = 120;
+                    var height = 0;
 
-                        var offsetRight = header.offsetWidth - (nav.offsetLeft + item.offsetLeft + item.offsetWidth);
+                    for_(links, function (link) {
+                        listEle.appendChild(link);
+                        var a = dom.query("a", link)[0];
+                        a.className = "adjusting";
+                        width = Math.max(a.offsetWidth, width);
+                        a.className = "";
+                        height += link.offsetHeight;
+                    });
 
-                        var top = nav.offsetTop + item.offsetHeight;
+                    var offsetRight = header.offsetWidth - (nav.offsetLeft + item.offsetLeft + item.offsetWidth);
 
-                        var right = Math.max(offsetRight + item.offsetWidth + 10 - (width + 2), 0);
-                        var arrowRight = offsetRight + item.offsetWidth / 2 - right;
+                    var top = nav.offsetTop + item.offsetHeight;
 
-                        if (current == null) {
-                            wrapper.initStyle({
-                                top: top + "px",
-                                right: right + "px",
-                                opacity: 0
-                            });
+                    var right = Math.max(offsetRight + item.offsetWidth + 10 - (width + 2), 0);
+                    var arrowRight = offsetRight + item.offsetWidth / 2 - right;
 
-                            arrow.initStyle({
-                                right: arrowRight + "px"
-                            });
-
-                            list.initStyle({
-                                width: width + "px", height: "0px"
-                            });
-                        }
-
-                        current = item;
-
-                        wrapper.setStyle({
+                    if (current == null) {
+                        wrapper.initStyle({
+                            top: top + "px",
                             right: right + "px",
-                            opacity: 1
+                            opacity: 0
                         });
 
-                        arrow.setStyle({
+                        arrow.initStyle({
                             right: arrowRight + "px"
                         });
 
-                        list.setStyle({
-                            width: width + "px",
-                            height: height + "px"
-                        }, function () { }, 150);
+                        list.initStyle({
+                            width: width + "px", height: "0px"
+                        });
+                    }
+
+                    current = item;
+
+                    wrapper.setStyle({
+                        right: right + "px",
+                        opacity: 1
                     });
 
-                dom.addEventListener(item, "mouseout", onmouseout);
+                    arrow.setStyle({
+                        right: arrowRight + "px"
+                    });
+
+                    list.setStyle({
+                        width: width + "px",
+                        height: height + "px"
+                    }, function () { }, 150);
+                });
+
+                dom.addEventListener(item, "mouseout", onitemmouseout);
+                dom.addEventListener(wrapperEle, "mouseout", onmouseout);
+                dom.addEventListener([item, wrapperEle], ["click"], hideMenu);
 
                 dom.addEventListener(wrapperEle, "mouseover", function () {
                     clearTimeout(timer);
                 });
 
-                dom.addEventListener(wrapperEle, "mouseout", onmouseout);
+                function onitemmouseout(e) {
+                    if (e.relatedTarget && dom.contains(this, e.relatedTarget))
+                        return;
 
-                dom.addEventListener([item, wrapperEle], ["click"], hideMenu);
+                    mouseover = false;
+                    clearTimeout(timer);
+                    timer = setTimeout(hideMenu, 100);
+                }
+
+                function onmouseout(e) {
+                    if (e.relatedTarget && dom.contains(this, e.relatedTarget))
+                        return;
+
+                    clearTimeout(timer);
+                    timer = setTimeout(hideMenu, 100);
+                }
             });
-
-            function onmouseout(e) {
-                if (e.relatedTarget && dom.contains(this, e.relatedTarget))
-                    return;
-
-                clearTimeout(timer);
-                timer = setTimeout(hideMenu, 100);
-            }
 
             function hideMenu() {
                 clearTimeout(timer);
