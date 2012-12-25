@@ -326,11 +326,11 @@ input:focus {
     padding-top: 10px;
 }
 
-#ds-thread .ds-waiting:after {
+#ds-thread div.ds-waiting:after {
     content: "正在加载评论...";
 }
 
-#ds-thread .ds-waiting img {
+#ds-thread div.ds-waiting img {
     display: none;
 }
 
