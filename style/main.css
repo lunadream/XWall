@@ -90,6 +90,7 @@ input:focus {
     position: absolute;
     top: 66px;
     width: 100%;
+    z-index: 0;
 }
 
 /* Header */
@@ -270,6 +271,11 @@ input:focus {
     font-size: 14px; color: #666666;
 }
 
+#content-wrapper ul {
+    margin-bottom: 0.5em;
+}
+
+
 #content-wrapper a {
     color: #666666; text-decoration: none; word-break: break-all;
     -moz-transition: all linear 0.2s;
@@ -314,6 +320,18 @@ input:focus {
 #faq-list p.a {
     text-indent: 1em;
     color: #999999;
+}
+
+#ds-thread {
+    padding-top: 10px;
+}
+
+#ds-thread .ds-waiting:after {
+    content: "正在加载评论...";
+}
+
+#ds-thread .ds-waiting img {
+    display: none;
 }
 
 /* SIDEBAR WRAPPER */

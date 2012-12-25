@@ -21,43 +21,35 @@
     <link href="/style/main.css" rel="stylesheet" />
 </head>
 <body></body>
-<script src="/scripts/vejis.js"></script>
 <script>
-    require_("/scripts/", ["main.js", "dom.js", "dom.animation.js"]);
+(function () {
+    var base64 = new function () {
+        var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
+        this.decode = function (str) {
+            str = str.replace(/\s/g, "");
 
-    module_("xwall.index", ["main"], function () {
-        this.root = "";
-        this.lang = "en-US";
-    });
+            var decoded = [];
+            var c = 0;
+            while (c < str.length) {
+                var i0 = chars.indexOf(str.charAt(c++));
+                var i1 = chars.indexOf(str.charAt(c++));
+                var i2 = chars.indexOf(str.charAt(c++));
+                var i3 = chars.indexOf(str.charAt(c++));
+                var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
+                var b0 = (buf & (255 << 16)) >> 16;
+                var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
+                var b2 = (i3 == 64) ? -1 : (buf & 255);
+                decoded[decoded.length] = String.fromCharCode(b0);
+                if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
+                if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
+            }
 
-    (function () {
-        var base64 = new function () {
-            var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
-            this.decode = function (str) {
-                str = str.replace(/\s/g, "");
+            return decodeURIComponent(escape(decoded.join("")));
+        };
+    }();
 
-                var decoded = [];
-                var c = 0;
-                while (c < str.length) {
-                    var i0 = chars.indexOf(str.charAt(c++));
-                    var i1 = chars.indexOf(str.charAt(c++));
-                    var i2 = chars.indexOf(str.charAt(c++));
-                    var i3 = chars.indexOf(str.charAt(c++));
-                    var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
-                    var b0 = (buf & (255 << 16)) >> 16;
-                    var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
-                    var b2 = (i3 == 64) ? -1 : (buf & 255);
-                    decoded[decoded.length] = String.fromCharCode(b0);
-                    if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
-                    if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
-                }
-
-                return decodeURIComponent(escape(decoded.join("")));
-            };
-        }();
-
-        document.title = base64.decode("f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a");
-        document.body.innerHTML = base64.decode("U4RwplLwmQ/lA4XNm4XvjHpv3HLsmHqlU5/=q1z5qQ2FAH35AfdDqJNI3fRIelqCQd+5q1z5q1z5qQ2Nq4IFUgba7kpojHpv3HLsmHqlq4Nvmf3DqlTlU5/=q1z5q1z5\
+    document.title = base64.decode("f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a");
+    document.body.innerHTML = base64.decode("U4RwplLwmQ/lA4XNm4XvjHpv3HLsmHqlU5/=q1z5qQ2FAH35AfdDqJNI3fRIelqCQd+5q1z5q1z5qQ2Nq4IFUgba7kpojHpv3HLsmHqlq4Nvmf3DqlTlU5/=q1z5q1z5\
 q1z5q1z5U4InmvLwmQ/l74Dr7vq53f2/Ugb3jXpN74s5c4Dr7vq5e6bZUgqoAfiNmkXBjk2omkxhe4urqlzoU5/=q1z5q1z5q1z5q1z5U452q4IFUgb/AHRamgqCf1iH\
 3f2aU1D+Tc9Y1lz5q1z5q1z5q1z5qQ2Be4yhq4IFUgbF7kiNAf9lUr5npkya71uoeJexj6Ys3f9CQd+5q1z5q1z5qQso3c9Y1lz5q1z5q1z5U8Xaq4IFUgbh3H3lU5/=\
 q1z5q1z5q1z5q1z5U42wU5/=q1z5q1z5q1z5q1z5q1z5qQ2Nq4Nvmf3DqlYw7rRv7kRi36Rw7k9lUFIhp8bom8XZp4Io7Zso3c9Y1lz5q1z5q1z5q1z5qQso74FCQd+5\
@@ -115,35 +107,47 @@ pZ9Y1lz5q1zxjkRwpZ9Y1lz5q1zxm4Ikq4IFUgbJ7kD/mHqlU5/=q1z5q1z5q1zxm4IkUILv76XF78F5
 7gxlq8RNeJpIpQ/lHkba3fu0qZu8AHR+pfqxjkVCU1DFAH3CQd+5q1z5q1z5qQ2FAH3CsGFvTQVvqQ2Nq4Nvmf3DqJN/p8zKjvDkAf2w3vuw7Jmojvq5p4yvmkX/UgbS\
 3J2N7JalUImbcVIQqymLcFWxjkVCU1DFAH3CQd+5q1z5U1DFAH3CQd+xjkRwpZ9O");
 
-        (function () {
-            var images = document.getElementById("content-wrapper").getElementsByTagName("img");
-            for (var i = 0; i < images.length; i++) {
-                var image = images[i];
-                if (image.complete) continue;
+    (function () {
+        var images = document.getElementById("content-wrapper").getElementsByTagName("img");
+        for (var i = 0; i < images.length; i++) {
+            var image = images[i];
+            if (image.complete) continue;
 
-                image.style.opacity = 0;
-                image.style.filter = "alpha(opacity=0)";
+            image.style.opacity = 0;
+            image.style.filter = "alpha(opacity=0)";
 
-                image.onload = function () {
-                    fadeOut(this);
-                };
-            }
+            image.onload = function () {
+                fadeOut(this);
+            };
+        }
 
-            function fadeOut(ele) {
-                var opacity = 0;
-                var interval = setInterval(function () {
-                    if (opacity >= 100) {
-                        opacity = 100;
-                        clearInterval(interval);
-                    }
+        function fadeOut(ele) {
+            var opacity = 0;
+            var interval = setInterval(function () {
+                if (opacity >= 100) {
+                    opacity = 100;
+                    clearInterval(interval);
+                }
 
-                    opacity += 5;
+                opacity += 5;
 
-                    ele.style.opacity = opacity / 100;
-                    ele.style.filter = "alpha(opacity=" + opacity + ")";
-                }, 20);
-            }
-        })();
+                ele.style.opacity = opacity / 100;
+                ele.style.filter = "alpha(opacity=" + opacity + ")";
+            }, 20);
+        }
     })();
+})();
+</script>
+<script src="/scripts/vejis.js"></script>
+<script>
+    require_("/scripts/", ["main.js", "dom.js", "dom.animation.js"]);
+
+    module_("xwall.index", ["main"], function () {
+        this.root = "";
+        this.lang = "en-US";
+    });
+
+    var duoshuoQuery = { short_name: "x-wall" };
+    require_("http://static.duoshuo.com/embed.js");
 </script>
 </html>
