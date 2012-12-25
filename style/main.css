@@ -145,13 +145,13 @@ input:focus {
     right: 5px; bottom: -1px;
 }
 
-#nav li {
+#nav > li {
     float: left;
     padding: 0px;
     height: 45px;
 }
 
-#nav li a {
+#nav > li > a {
     display: block;
     padding: 0px 10px;
     border-bottom: solid 1px #CCCCCC;
@@ -163,8 +163,74 @@ input:focus {
     transition: all linear 0.2s;
 }
 
-#nav li a:hover {
+#nav > li > a:hover {
     border-bottom-color: #666666;
+    color: #666666;
+}
+
+#nav ul {
+    display: none;
+}
+
+/* MAIN MENU */
+#main-menu-list-wrapper {
+    display: none;
+    position: absolute;
+    margin-top: 2px;
+    padding-top: 5px;
+    line-height: 28px; font-size: 14px;
+    z-index: 1;
+}
+
+/* menu arrow */
+#main-menu-list-wrapper b {
+    position: absolute;
+    /*left: 46px;*/ top: 0px;
+    margin: 0px -6px;
+    border: dashed transparent; border-width: 0px 6px; border-bottom: solid 6px #CCCCCC;
+    width: 0px; height: 0px;
+    line-height: 0px;
+    z-index: 1;
+}
+
+#main-menu-list-wrapper b i {
+    position: absolute;
+    left: -6px; top: 1px;
+    border: dashed transparent; border-width: 0px 6px; border-bottom: solid 6px #FFFFFF;
+    width: 0px; height: 0px;
+    line-height: 0px;
+}
+
+#main-menu-list {
+    position: relative;
+    border: solid 1px #DDDDDD;
+    padding: 8px 0px 12px 0px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+#main-menu-list li {
+    height: 28px; width: 100%;
+    float: left;
+}
+
+#main-menu-list li a {
+    position: absolute;
+    width: 100%;
+    padding: 0px 40px 0px 15px;
+    text-decoration: none; color: #999999;
+    white-space: nowrap;
+    -moz-transition: color linear 0.2s;
+    -o-transition: color linear 0.2s;
+    -webkit-transition: color linear 0.2s;
+    transition: color linear 0.2s;
+}
+
+#main-menu-list li a.adjusting {
+    width: auto;
+}
+
+#main-menu-list li a:hover {
     color: #666666;
 }
 
