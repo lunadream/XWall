@@ -1,4 +1,4 @@
-# Online rules generated at Tue Dec 25 23:09:01 UTC+0800 2012
+# Online rules generated at Wed Dec 26 16:38:52 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4127,6 +4127,7 @@ zaobao.com:80
 .google.
 .googleusercontent.com
 .googleapis.com
+.g.doubleclick.net
 .goo.gl:80
 .bit.ly:80
 :80/.*drtuber\.com
