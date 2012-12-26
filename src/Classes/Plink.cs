@@ -18,7 +18,6 @@ namespace XWall {
         int reconnectPeriod;
         bool isLastSuccess;
         bool toReconnect;
-        Timer connectTimer;
         Timer processCheckTimer;
         int portCloseCount;
         public bool IsReconnecting = false;
@@ -89,27 +88,23 @@ namespace XWall {
             process.ErrorDataReceived += onErrorDataReceived;
 
             Error = null;
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
+            try {
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
 
-            processCheckTimer = new Timer((o) => {
-                if (process == null || process.HasExited) {
-                    IsConnected = false;
-                    IsConnecting = false;
-                    Disconnected(isLastSuccess, isReconnect);
-                    disposeProcessCheckTimer();
-                }
-            }, null, 0, 1000);
+                processCheckTimer = new Timer((o) => {
+                    if (process == null || process.HasExited) {
+                        IsConnected = false;
+                        IsConnecting = false;
+                        Disconnected(isLastSuccess, isReconnect);
+                        disposeProcessCheckTimer();
+                    }
+                }, null, 0, 1000);
 
-            connectTimer = new Timer((o) => {
-                process.Kill();
-            }, null, settings.SshConnectTimeout, Timeout.Infinite);
-
-            process.WaitForExit();
-
-            if (connectTimer != null)
-                connectTimer.Dispose();
+                process.WaitForExit();
+            }
+            catch { }
 
             IsConnected = false;
             IsConnecting = false;
@@ -208,8 +203,6 @@ namespace XWall {
                 isLastSuccess = true;
                 IsConnected = true;
                 IsConnecting = false;
-                if (connectTimer != null)
-                    connectTimer.Dispose();
                 Connected();
             }
             else if (line.StartsWith("Nothing left to send, closing channel"))
