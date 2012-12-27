@@ -217,6 +217,9 @@ namespace XWall {
                 Error = resources["PlinkAuthFailed"] as string;
                 Stop(settings.SshReconnectAnyCondition);
             }
+            else if (line.StartsWith("FATAL ERROR:")) {
+                Stop(settings.SshReconnectAnyCondition);
+            }
         }
 
         public string Error;
