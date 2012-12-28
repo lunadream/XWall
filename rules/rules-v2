@@ -1,4 +1,4 @@
-# Online rules generated at Thu Dec 27 23:24:16 UTC+0800 2012
+# Online rules generated at Fri Dec 28 17:54:23 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4106,6 +4106,8 @@ zaobao.com:80
 :80/.*blogspot\.hk
 .blogspot.hk:80
 .sapikachu.com
+:80/.*x-wall\.org
+.x-wall.org:80
 :80/.*igfw\.net
 .igfw.net:80
 :80/.*atgfw\.org

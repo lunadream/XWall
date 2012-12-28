@@ -196,7 +196,7 @@
             button.disabled = true;
 
             var sender = new Image();
-            sender.src = "http://list.x-wall.org/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(url));
+            sender.src = "http://vilic.s4.jutuo.net/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(url));
 
             var called = false;
 
