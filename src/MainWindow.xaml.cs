@@ -337,7 +337,7 @@ namespace XWall {
             var url = new Uri(settings.OnlineVersionUrl);
 
             var client = new WebClient();
-            client.Proxy = null;
+            //client.Proxy = null;
             client.DownloadStringAsync(url);
 
             client.DownloadStringCompleted += (sender, e) => {
@@ -400,7 +400,7 @@ namespace XWall {
                 var url = new Uri(settings.UpdateInstallerUrl);
 
                 var client = new WebClient();
-                client.Proxy = null;
+                //client.Proxy = null;
                 client.DownloadFileAsync(url, App.AppDataDirectory + settings.UpdateInstallerName);
 
                 client.DownloadProgressChanged += (sender, e) => {

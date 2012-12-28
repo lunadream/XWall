@@ -186,7 +186,7 @@ namespace XWall {
                     Updated(false);
                 }, null, settings.RuleUpdateTimeout, Timeout.Infinite);
 
-                client.Proxy = null;
+                //client.Proxy = null;
                 client.DownloadStringCompleted += (sender, e) => {
                     timer.Dispose();
                     if (e.Error != null)

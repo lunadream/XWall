@@ -18,18 +18,12 @@ namespace XWall {
         int reconnectPeriod;
         bool isLastSuccess;
         bool toReconnect;
-        Timer processCheckTimer;
         int portCloseCount;
         public bool IsReconnecting = false;
         public bool IsConnecting = false;
         public bool IsConnected = false;
         public bool StopReconnect = false;
         public bool IsNormallyStopped = false;
-
-        //public enum Status {
-        //    Connected, ConnectedAutomatically, ConnectedByReconnect, ConnectedByUser,
-        //    Disconnected, DisconnectedByUser, DisconnectedByError
-        //}
 
         public Plink() {
             Operation.KillProcess(settings.PlinkFileName);
@@ -92,16 +86,6 @@ namespace XWall {
                 process.Start();
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
-
-                processCheckTimer = new Timer((o) => {
-                    if (process == null || process.HasExited) {
-                        IsConnected = false;
-                        IsConnecting = false;
-                        Disconnected(isLastSuccess, isReconnect);
-                        disposeProcessCheckTimer();
-                    }
-                }, null, 0, 1000);
-
                 process.WaitForExit();
             }
             catch { }
@@ -109,15 +93,9 @@ namespace XWall {
             IsConnected = false;
             IsConnecting = false;
             Disconnected(isLastSuccess, isReconnect);
-            processCheckTimer.Dispose();
 
             if (toReconnect)
                 reconnect();
-        }
-
-        void disposeProcessCheckTimer() {
-            if (processCheckTimer != null)
-                processCheckTimer.Dispose();
         }
 
         public void Start() {
