@@ -20,93 +20,102 @@
     </script>
     <link href="/style/main.css" rel="stylesheet" />
 </head>
-<body></body>
+<body>
+<div id="header-wrapper">
+    <div id="header">
+        <a id="logo-wrapper" href="#">
+            <img id="logo" alt="X-Wall Logo" src="/images/logo.png" />
+            <h1 id="title">X-Wall</h1>
+            <span id="domain">x-wall.org</span>
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="#introduction">Introduction</a>
+            </li>
+            <li>
+                <a href="https://github.com/vilic/x-wall" target="_blank">Links</a>
+                <ul>
+                    <li><a href="https://github.com/vilic/x-wall" target="_blank">Github Repository</a></li>
+                    <li><a href="http://vilic.info/blog/" target="_blank">Author's Blog</a></li>
+                    <li><a href="http://me.alipay.com/vilic" target="_blank">Donate (Alipay)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://github.com/vilic/x-wall/issues/new" target="_blank">Feedback</a>
+                <ul>
+                    <li><a href="https://github.com/vilic/x-wall/issues/new" target="_blank">Github</a></li>
+                    <li><a href="mailto:i@vilic.info">Email</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Language</a>
+                <ul>
+                    <li><a href="">English</a></li>
+                    <li><a href="/zh-CN/">中文 (简体)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main-wrapper">
+    <div id="body-wrapper">
+        <div id="content-wrapper">
+            <!-- Introduction -->
+            <a id="introduction" class="anchor">&nbsp;</a>
+            <h3>Introduction</h3>
+            <h4>What is X-Wall?</h4>
+            <p>X-Wall is a small tool wraps together <a href="http://www.privoxy.org/">Privoxy</a> and Plink (which is part of <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" target="_blank">PuTTy</a>) to provide people an easier way to X (cross) the Great Firewall of China.</p>
+            <p><img alt="X-Wall Screenshot" src="./images/1.png" style="width: 426px; height: 319px;" /></p>
+            <h4>System Requirements</h4>
+            <p>Microsoft Windows 2000/XP/7/8<br>
+            Microsoft .NET Framework 3.5 SP1 (pre-installed on Windows 7)</p>
+            <h4>Other Requirements</h4>
+            <p>You will need to prepare the SSH account (or a HTTP proxy) yourself, which is usually not free (but also not expensive, many within 50 RMB per year).</p>
+            <h4>Features</h4>
+            <ul>
+                <li>Easy to setup and configure. What you need to do after setup is just to start X-Wall, enter your SSH account information and connect.</li>
+                <li>Built-in GFWList and will check it online everyday, when you visit websites that are not blocked, it will connect directly.</li>
+                <li>Support custom rules. Just copy the link you want to add from your browser, right click the notification icon of X-Wall, and then "Add rules".</li>
+                <li>Share your rules and keep the online rules list up to date (anonymous and optional).</li>
+                <li>Ability to share the proxy with your phone via WiFi (need to cancel "Listen to local address only").</li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <div class="item dark">
+                <h2>Download</h2>
+                <p>Current version <span id="version">fetching...</span></p>
+                <p>Please select a package you prefer to download.</p>
+                <ul>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe">Windows Installer</a></li>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-with-plonk.exe">Windows Installer (with Plonk)</a></li>
+                </ul>
+            </div>
+            <div class="item dark">
+                <h2>SSH Service Provider</h2>
+                <p>Here are some SSH service providers who provide free or paid SSH service.</p>
+                <ul>
+                    <li><a href="http://blog.onlybird.com" target="_blank">Onlybird</a></li>
+                    <li><a href="http://www.sshcenter.info" target="_blank">SSHCenter.info</a></li>
+                    <li><a href="https://www.sshcenter.net" target="_blank">SSHCenter.net</a></li>
+                    <li><a href="http://www.hangssh.info" target="_blank">HangSSH</a></li>
+                    <li><a href="http://www.ssh91.tk" target="_blank">SSH91</a></li>
+                    <li><a href="http://www.diyssh.net" target="_blank">DIYSSH</a></li>
+                    <li><a href="http://playssh.com" target="_blank">PlaySSH</a></li>
+                </ul>
+            </div>
+            <div class="item light">
+                <h2>Help People around You</h2>
+                <p>The progress of this nation is about and is on everyone of us. I made this small tool because this is what I can do to help the people, and we know we can do something to make a difference.</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div>Proudly hosted by <a href="https://github.com/" target="_blank">Github</a></div>
+        <div>©2012 <a href="http://vilic.info/" target="_blank">VILIC VANE</a></div>
+    </div>
+</div>
+</body>
 <script>
-(function () {
-    var base64 = new function () {
-        var chars = "zL1QVy48qb=jTYPUdRgcWXfH3mA7epES5NlZFIJr+wG0anhos2vB/ik69uKtxDCMO";
-        this.decode = function (str) {
-            str = str.replace(/\s/g, "");
-
-            var decoded = [];
-            var c = 0;
-            while (c < str.length) {
-                var i0 = chars.indexOf(str.charAt(c++));
-                var i1 = chars.indexOf(str.charAt(c++));
-                var i2 = chars.indexOf(str.charAt(c++));
-                var i3 = chars.indexOf(str.charAt(c++));
-                var buf = (i0 << 18) + (i1 << 12) + ((i2 & 63) << 6) + (i3 & 63);
-                var b0 = (buf & (255 << 16)) >> 16;
-                var b1 = (i2 == 64) ? -1 : (buf & (255 << 8)) >> 8;
-                var b2 = (i3 == 64) ? -1 : (buf & 255);
-                decoded[decoded.length] = String.fromCharCode(b0);
-                if (b1 >= 0) decoded[decoded.length] = String.fromCharCode(b1);
-                if (b2 >= 0) decoded[decoded.length] = String.fromCharCode(b2);
-            }
-
-            return decodeURIComponent(escape(decoded.join("")));
-        };
-    }();
-
-    document.title = base64.decode("f1iHdW2Tq8s5d6boe6T5p4NIqVpvmfy/qVmweJX63f2a");
-    document.body.innerHTML = base64.decode("U4RwplLwmQ/lA4XNm4XvjHpv3HLsmHqlU5/=q1z5qQ2FAH35AfdDqJNI3fRIelqCQd+5q1z5q1z5qQ2Nq4IFUgba7kpojHpv3HLsmHqlq4Nvmf3DqlTlU5/=q1z5q1z5\
-q1z5q1z5U4InmvLwmQ/l74Dr7vq53f2/Ugb3jXpN74s5c4Dr7vq5e6bZUgqoAfiNmkXBjk2omkxhe4urqlzoU5/=q1z5q1z5q1z5q1z5U452q4IFUgb/AHRamgqCf1iH\
-3f2aU1D+Tc9Y1lz5q1z5q1z5q1z5qQ2Be4yhq4IFUgbF7kiNAf9lUr5npkya71uoeJexj6Ys3f9CQd+5q1z5q1z5qQso3c9Y1lz5q1z5q1z5U8Xaq4IFUgbh3H3lU5/=\
-q1z5q1z5q1z5q1z5U42wU5/=q1z5q1z5q1z5q1z5q1z5qQ2Nq4Nvmf3DqlYw7rRv7kRi36Rw7k9lUFIhp8bom8XZp4Io7Zso3c9Y1lz5q1z5q1z5q1z5qQso74FCQd+5\
-q1z5q1z5q1z5q1zx74FCQd+5q1z5q1z5q1z5q1z5q1z5U4V5A8bImZ/lA8R/e8TKjvDrAHR+pfqh3kDnj6mw74IZj65npkya71q5p4yvmkX/UgbS3J2N7JalUF2w7JnB\
-U1DNU5/=q1z5q1z5q1z5q1z5q1z5qQ2i7Q9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqJN/p8LBPlxomkI/A8XljJYo7gDkAf2w3vD9jHpN74slq8RN\
-eJpIpQ/lHkba3fu0qZu8AHR+pfq5WJXs76Ywp4DvEcso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/lA8R/eQ+oj6mw74IZjJIhmJxo3J2o\
-mvxlq8RNeJpIpQ/lHkba3fu0qZuLpHR+76qrevL174DrU1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5q1z5qQ2aAc9x3gL+eJXJUgb+p8RsPlxo7fWh3f2we4yujJYo\
-7gDkAf2w3vq5p4yvmkX/UgbS3J2N7JalUFRo7Jy/mgz+df2we4yu=cso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5qQsopfsCQd+5q1z5q1z5q1z5q1zxjk2wU5/=q1z5\
-q1z5q1z5q1z5U42wU5/=q1z5q1z5q1z5q1z5q1z5qQ2Nq4Nvmf3DqJN/p8LBPlxomkI/A8XljJYo7gDkAf2w3vD9jHpN74soAHYBpfXBjkuIpvq5p4yvmkX/UgbS3J2N\
-7JalUFmImfRl3fY0U1DNU5/=q1z5q1z5q1z5q1z5q1z5qQ2i7Q9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqJN/p8LBPlxomkI/A8XljJYo7gDkAf2w\
-3vD9jHpN74soAHYBpfXBjkuIpvq5p4yvmkX/UgbS3J2N7JalUFpwp4Ni3Zso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/l7fyw78RoPJIz\
-pJIaAfThAfuJ7vqCRfiNAfsxjkVCU1DaAc9Y1lz5q1z5q1z5q1z5q1z5q1zxj6XaU5/=q1z5q1z5q1z5q1z5U1DaAc9Y1lz5q1z5q1z5q1z5qQ2aAc9Y1lz5q1z5q1z5\
-q1z5q1z5q1zx3gL+eJXJUgqlUF2N7Jpi3fpIU1DNU5/=q1z5q1z5q1z5q1z5q1z5qQ2i7Q9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqlqCRfur74IB\
-AQso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/lj6w+jWYPjvqCujlnuwA8q1Zr0+QFomTwU1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5\
-U1Di7Q9Y1lz5q1z5q1z5q1z5qQso74FCQd+5q1z5q1z5qQsopfsCQd+5q1z5U1DFAH3CQd+xjkRwpZ9Y1Z2FAH35AfdDqJiNAf9np6bNe8LIelqCQd+5q1z5U4RwplLw\
-mQ/l3JDFEgi6eJyse4XvqZ9Y1lz5q1z5q1z5U4RwplLwmQ/l3kDhp4Xhp1i6eJyse4XvqZ9Y1lz5q1z5q1z5q1z5qQsNjg/5gfu/eJDFpfY/AfDhq1/nU5/=q1z5q1z5\
-q1z5q1z5U4V5AfdDqJIhp8bom8XZp4Io7lq53k2Ne6TDqJyh3kNoelqCbJule6ztU1DNU5/=q1z5q1z5q1z5q1z5U45BUFIhp8bom8XZp4Io7ZsoAQTCQd+5q1z5q1z5\
-q1z5q1zxAQdCXkNNp1LwevL3jXpN74sMU1D+YQ9Y1lz5q1z5q1z5q1z5qQ2sUI5nXkya71LwevLNq8Yn3f2aq8Ro7ks5p6bNe8T5p4DrmHR+mHq5U4V5A8bImZ/lA8R/\
-eQ+oj6p6pvuseJIk76NujJDvmvxlUILvAHmoE8FxjkVCq4yhm1Ld74IhAvz+pkNw3k55AHT5e4yvp1Lomlzx3gL+eJXJUgb+p8RsPlxop6p6jJY+AfyvAvureJXI7JXh\
-m1uoeJehpfaobcpyekp/3HR+3f/oe8X/p8FoqlL/3HbrmHdDqIDl74yhAvqCW8XWX8FxjkVC=gL/7vLseJDkAfRIq8LI76LamgLN7lLI3HYwmHq5pkyuq8Roqy55=4Yv\
-76YB=gL/A4W5R6bI3Hd5RJIvmHpN74s57k35dkNw7JVhU1DsU5/=q1z5q1z5q1z5q1z5U8zCU4InmvLN78dDqI5nXkya71Lc36bImfuBA4D/qlLBeJTDql9oAfiNmkXB\
-jBVhe4urqlLBp8Iamc/lpkIFp45KqQdvYrL9PvL+mfIrA8dKqQT2PHL9Pvq5jB9xj6zCQd+5q1z5q1z5q1z5q1zxAQdCW6IBp4XnqybIeHXweJXnmfu/eBsoAQdCQd+5\
-q1z5q1z5q1z5q1zxeQuYAfYv76Yomrd5XkIhm4D6evzvTQzsjiNdjBeoPQ2leZ9Y1lz5q1z5q1z5q1z5qViw36boekDJp1zhcFXWqVmv3fiIpkDvAvzBjZW5Wiz2q1Ns\
-eJWnAfuBp4ya74XFq4Dhqypw7JRop6T5YvFxj6zCQd+5q1z5q1z5q1z5q1zxAQdCc6R+mHq5WJX2pfIvmfiI7rRBU1D+YQ9Y1lz5q1z5q1z5q1z5qQ2sUIIopgL6Af2a\
-q4uImfd5p4x5e8bIe4yvmgL/A4W5WiYqq4yZ3kDi7rd5=4Dvq4V5gyRWW1LseJD9EgF5EfDierYI743aq8p+AfY+q4IBq8XBpfya78F57JD/q4mvmfW5=4bip1LN78Yo\
-q4uop1LIE8LI7rYwpJWaq4iN7rF5pkI/A4IhqQWsqybYdlLsmHq5EfXNelFhU1DsU5/=q1z5q1z5q1z5q1z5U45/UFmI3HRieJXBU1D+YQ9Y1lz5q1z5q1z5q1z5qQ2i\
-7Q9Y1lz5q1z5q1z5q1z5q1z5q1zx74FCRfyBEgL/7vLBmHRie1LN7Jd53kDhmJIrpHbIjlLHA4y/q8IopgLhmfXFq8Roq4Roq4yJp4Xvq8YIp8Xsq4IBq4wie6d5p4x5\
-e6RNerd5f1iH3f2aj1LI7rRIelLu76XvqyYcg1LN3kYopfu/q4IhmJDv7fy/AfDhq4yhm1LZ7kuhmfY/jZso74FCQd+5q1z5q1z5q1z5q1z5q1z5U42wUFbiAf2/jfIh\
-qVp4X/2we6d53fuFq8pw74s53kNI3ka5AHd57kuaAfuIq4XkmHbum4yuj1L6A4Xhq8IopgLkAHYwp1L6mfbBAHRIevL/A4y/q4yvmgLh76d53J2o3knIm1s5AHd5pkIa\
-71LZ7kuhmfY/q4RweJXZp42ujZso74FCQd+5q1z5q1z5q1z5q1z5q1z5U42wUIYie8Loerd536XBp4Dnq8bi74XBjlL=pHY/q4Yoe8F5p4NIq42w7Ja5EfDiq8pN7rd5\
-p4x53fRFq4mv7k/5EfDielLleJD6ekXvj1LvAfp+p1LZ74IZAvL/A4W57JD/Afmw3ky/AfDhq4IZ7k957k35f1iH3f2aj1LN7Jd5p4NI7lzldfRFq8bi74XBql9xjk2w\
-U5/=q1z5q1z5q1z5q1z5q1z5qQ2aAcucA4yvmgLu76Xvq8bi74XBq4yhm1L0mfXsq8R+mgLo7J2w7JW5erXamHT574IBp1Lie1L/7vLF3HRIq1NN7JDhEfiopHT53fuF\
-q4Dsp4Io7Jya=g9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5qQ2aAcuL3JIaAHRuq8Roq8Y+3HbIq8R+mgLseJD9EgL6AHR+q8IopHq5e4No7JW5pJINqypwRJF5=4uImfd5\
-p4x53kyh3kXaq1bTAHY/mf95p4x574DZ3fs53fRFeJXBevLo7J2uqlFhU1DaAc9Y1lz5q1z5q1z5q1z5qQsopfsCQd+5q1z5q1z5qQsom4IkU5/=q1z5q1z5q1zxm4Ik\
-q4IFUgbBAfRI3JyvjHpv3HLsmHqlU5/=q1z5q1z5q1z5q1z5U4RwplLZ74yBeB/lAHRI7gLF3Hb0qZ9Y1lz5q1z5q1z5q1z5q1z5q1zxAQqCR4D67J2o3fdxjk5vU5/=\
-q1z5q1z5q1z5q1z5q1z5qQ2sUFYierbI7rd5pJXvekIo7lzxe6LN7lLwmQ/lpJXvekIo7lqCmJX/3kNw7Jehjl9xj6Ys3f9CU1DsU5/=q1z5q1z5q1z5q1z5q1z5qQ2s\
-UILamfyBmgLBmf2I36d53gLs3fY03fpIq8IopgLseJXJmHq5p4x5m4D67J2o3fdhU1DsU5/=q1z5q1z5q1z5q1z5q1z5qQ2i7Q9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5\
-U42wUZ2Nq4Nvmf3DqJN/p8LBPlxoeJy6jJpwp4Ni3luZ7k/opJIaAfToE1i63f2ajkiNe6RIelDvmf2I3HYIj65npkya71iBmHRie1uIE4WlUIpw7JRop6T5gfuBp4ya\
-74XvU1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5q1z5qQ2aAc9x3gL+eJXJUgb+p8RseB+oj6bNpvurAHR+pfqh3kDnj6mw74IZj65npkya71Dn3HY/mHqoeJXamfyB\
-mgD9jHpN74snekX/pHznpkI/A1is74DhAvuIE4WlUIpw7JRop6T5gfuBp4ya74Xvq1N6AHR+qyLa7ku0=cso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5qQsopfsCQd+5\
-q1z5q1z5q1z5q1zxjkRwpZ9Y1lz5q1z5q1z5q1z5qQ2FAH353k2Ne6TDqJI/mf/5m4yvAvqCQd+5q1z5q1z5q1z5q1z5q1z5U45vUIYcg1LcmHbkAfYIqyLv76mwm4Xv\
-U1D+TZ9Y1lz5q1z5q1z5q1z5q1z5q1zxeQuqmHbIq4yvmgLB7kiIqyYcg1LBmHbkAfYIq8Lv76mwm4XvevL6A4x5e8bopJIFmgLJeJXIq4Dvq8LNAfd5WiYqq8YIermw\
-3kWhU1DsU5/=q1z5q1z5q1z5q1z5q1z5qQ2i7Q9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqJN/p8zKjvDl74DrjJDh78IlAHbFjJYo7gq5p4yvmkX/\
-UgbS3J2N7JalUFDh78IlAHbFU1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5q1z5qQ2aAc9x3gL+eJXJUgb+p8RsPlxop6p6jrYBA4YI7rRIeluw7JmoqlL/3HbrmHdD\
-qIDl74yhAvqCWiYqdkXhp4XvjJIhmJxxjkVCU1DaAc9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqJN/p8LBPlxop6p6jrYBA4YI7rRIeluhmHdlq8RN\
-eJpIpQ/lHkba3fu0qZucW/NQmfu/mHqh7JX/U1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5q1z5qQ2aAc9x3gL+eJXJUgb+p8RsPlxop6p6jJNN7JpBek5hAfuJ7vq5\
-p4yvmkX/UgbS3J2N7JalUFNN7JpcW/5xjkVCU1DaAc9Y1lz5q1z5q1z5q1z5q1z5q1z5q1z5U42wUZ2Nq4Nvmf3DqJN/p8zKjvD6p6ehe6Y+PcVhp4alq8RNeJpIpQ/l\
-Hkba3fu0qZucW/5uTcso3c9xjk2wU5/=q1z5q1z5q1z5q1z5q1z5q1z5q1zx74FCU4V5A8bImZ/lA8R/eQ+oj6p6pvuFAHIBek5h7JX/qlL/3HbrmHdDqIDl74yhAvqC\
-RVImWiYqU1DNUZso74FCQd+5q1z5q1z5q1z5q1z5q1z5q1z5qQ2aAc9x3gL+eJXJUgb+p8RsPlxoe42NEHYBA1uZ7k/lq8RNeJpIpQ/lHkba3fu0qZud74yuWiYqU1DN\
-UZso74FCQd+5q1z5q1z5q1z5q1z5q1z5U1Di7Q9Y1lz5q1z5q1z5q1z5qQsom4IkU5/=q1z5q1z5q1z5q1z5U4RwplLZ74yBeB/lAHRI7gLaAfp+p1qCQd+5q1z5q1z5\
-q1z5q1z5q1z5U45vUFNI78z5W4Xoe42Iq4yv76Xhm1Lm76Wxjk5vU5/=q1z5q1z5q1z5q1z5q1z5qQ2sUIR+mgLseJDreJXBevLomlL/A4IBq4uNp4Io7lLwevLN3JDi\
-p1LN7Jd5AHT57k95mHmIerIo7JW57k35pHThqVF57fyFmgL/A4IBq8Yn3f2aq8Ro7ks53JXZ3HXBmgL/A4IBq4IBq8p+3Hd5ggLZ3f95m4x5p4x5A4Xae1L/A4W5e4Xo\
-e42Ij1LN7Jd5pkW5AkuopvL6mgLZ3f95m4x5ekDnmHR+Afurq8Roq4iNAkW53gLFAfmJmHbI7JYIjZsoeQ9Y1lz5q1z5q1z5q1z5qQsom4IkU5/=q1z5q1z5q1zxjkRw\
-pZ9Y1lz5q1zxjkRwpZ9Y1lz5q1zxm4Ikq4IFUgbJ7kD/mHqlU5/=q1z5q1z5q1zxm4IkUILv76XF78F5A4DBp4XFq4buqQ2Nq4Nvmf3DqJN/p8LBPlxomkI/A8XljJYo\
-7gxlq8RNeJpIpQ/lHkba3fu0qZu8AHR+pfqxjkVCU1DFAH3CQd+5q1z5q1z5qQ2FAH3CsGFvTQVvqQ2Nq4Nvmf3DqJN/p8zKjvDkAf2w3vuw7Jmojvq5p4yvmkX/UgbS\
-3J2N7JalUImbcVIQqymLcFWxjkVCU1DFAH3CQd+5q1z5U1DFAH3CQd+xjkRwpZ9O");
-
     (function () {
         var images = document.getElementById("content-wrapper").getElementsByTagName("img");
         for (var i = 0; i < images.length; i++) {
@@ -136,7 +145,6 @@ pZ9Y1lz5q1zxjkRwpZ9Y1lz5q1zxm4Ikq4IFUgbJ7kD/mHqlU5/=q1z5q1z5q1zxm4IkUILv76XF78F5
             }, 20);
         }
     })();
-})();
 </script>
 <script src="/scripts/vejis.js"></script>
 <script>
