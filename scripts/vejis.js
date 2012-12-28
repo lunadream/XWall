@@ -1,5 +1,5 @@
 ﻿/*
-    VEJIS JavaScript Framework v0.5.0.21
+    VEJIS JavaScript Framework v0.5.0.22
     http://vejis.org
 
     This version is still preliminary and subject to change.

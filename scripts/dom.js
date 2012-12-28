@@ -1,5 +1,5 @@
 ﻿/*
-    VEJIS DOM Module v0.1.0.3
+    VEJIS DOM Module v0.1.0.4
     Just another module based on VEJIS 0.5.
     http://vejis.org/modules/dom
 
