@@ -1,4 +1,4 @@
-# Online rules generated at Fri Dec 28 17:54:23 UTC+0800 2012
+# Online rules generated at Mon Dec 31 23:18:09 UTC+0800 2012
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4114,6 +4114,7 @@ zaobao.com:80
 .atgfw.org:80
 .autoproxy-gfwlist.googlecode.com
 .sshtunnel.googlecode.com
+.openvpn.net
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect\.php\?.*language=zh
 .wikia.com
@@ -4252,3 +4253,4 @@ zaobao.com:80
 .taitung-house.gov.tw
 .google.cn
 .baidu.com
+.xunlei.com
