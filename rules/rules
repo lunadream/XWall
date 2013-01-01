@@ -1,4 +1,4 @@
-# Online rules generated at Mon Dec 31 23:18:09 UTC+0800 2012
+# Online rules generated at Tue Jan 1 21:14:20 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4121,14 +4121,20 @@ zaobao.com:80
 :80/.*cn\.uncyclopedia\.wikia\.com
 :80/.*bannedbook\.org
 .bannedbook.org:80
+.64memo.com
+.imagehyper.com
 :80/.*sshcenter\.net
 .sshcenter.net:80
 :80/.*sshwall\.com
 .sshwall.com:80
-:80/.*sh91\.com
-.sh91.com:80
+:80/.*ssh91\.com
+.ssh91.com:80
 :80/.*feelssh\.com
 .feelssh.com:80
+:80/.*strongvpn\.org
+.strongvpn.org:80
+:80/.*justfreevpn\.com
+.justfreevpn.com:80
 .google.
 .googleusercontent.com
 .googleapis.com
@@ -4145,6 +4151,9 @@ zaobao.com:80
 :80/.*91porn\.com
 .91porn.com:80
 .heyzo.com
+:80/.*777abcd\.com
+.777abcd.com:80
+.c1520.inc.gs
 
 {+forward-override{forward .}}
 # GFWList
