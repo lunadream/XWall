@@ -1,4 +1,4 @@
-# Online rules generated at Tue Jan 1 21:14:20 UTC+0800 2013
+# Online rules generated at Thu Jan 3 19:58:46 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4103,8 +4103,7 @@ zaobao.com:80
 :80/.*bbc\.co\.uk(?:/|%2f)zhongwen
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
-:80/.*blogspot\.hk
-.blogspot.hk:80
+:80/.*blogspot\.
 .sapikachu.com
 :80/.*x-wall\.org
 .x-wall.org:80
@@ -4135,6 +4134,16 @@ zaobao.com:80
 .strongvpn.org:80
 :80/.*justfreevpn\.com
 .justfreevpn.com:80
+:80/.*bodvpn\.com
+.bodvpn.com:80
+:80/.*bestvpnusa\.com
+.bestvpnusa.com:80
+:80/.*bestcanadavpn\.com
+.bestcanadavpn.com:80
+:80/.*us\.hotfreevpn\.com
+.us.hotfreevpn.com:80
+:80/.*free-ssl-certificates-proxy\.tk
+.free-ssl-certificates-proxy.tk:80
 .google.
 .googleusercontent.com
 .googleapis.com
@@ -4154,6 +4163,7 @@ zaobao.com:80
 :80/.*777abcd\.com
 .777abcd.com:80
 .c1520.inc.gs
+.local.apbest.info
 
 {+forward-override{$default-forward-settings$}}
 # GFWList
@@ -4260,6 +4270,5 @@ zaobao.com:80
 .nici.nat.gov.tw
 .cromotc.nat.gov.tw
 .taitung-house.gov.tw
-.google.cn
 .baidu.com
 .xunlei.com
