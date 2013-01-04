@@ -1,4 +1,4 @@
-# Online rules generated at Thu Jan 3 19:58:46 UTC+0800 2013
+# Online rules generated at Fri Jan 4 19:17:33 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4103,6 +4103,7 @@ zaobao.com:80
 :80/.*bbc\.co\.uk(?:/|%2f)zhongwen
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
+.blogspot.
 :80/.*blogspot\.
 .sapikachu.com
 :80/.*x-wall\.org
@@ -4114,6 +4115,7 @@ zaobao.com:80
 .autoproxy-gfwlist.googlecode.com
 .sshtunnel.googlecode.com
 .openvpn.net
+.ifanqiang.com
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect\.php\?.*language=zh
 .wikia.com
@@ -4121,7 +4123,9 @@ zaobao.com:80
 :80/.*bannedbook\.org
 .bannedbook.org:80
 .64memo.com
+.wugfresh.com
 .imagehyper.com
+.cloudflare.com
 :80/.*sshcenter\.net
 .sshcenter.net:80
 :80/.*sshwall\.com
@@ -4144,6 +4148,8 @@ zaobao.com:80
 .us.hotfreevpn.com:80
 :80/.*free-ssl-certificates-proxy\.tk
 .free-ssl-certificates-proxy.tk:80
+:80/.*bartvpn\.com
+.bartvpn.com:80
 .google.
 .googleusercontent.com
 .googleapis.com
