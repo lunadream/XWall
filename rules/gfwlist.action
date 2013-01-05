@@ -1,4 +1,4 @@
-# Online rules generated at Fri Jan 4 19:17:33 UTC+0800 2013
+# Online rules generated at Sat Jan 5 22:58:23 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4144,12 +4144,14 @@ zaobao.com:80
 .bestvpnusa.com:80
 :80/.*bestcanadavpn\.com
 .bestcanadavpn.com:80
-:80/.*us\.hotfreevpn\.com
-.us.hotfreevpn.com:80
+:80/.*hotfreevpn\.com
+.hotfreevpn.com:80
 :80/.*free-ssl-certificates-proxy\.tk
 .free-ssl-certificates-proxy.tk:80
 :80/.*bartvpn\.com
 .bartvpn.com:80
+:80/.*killwall\.com
+.killwall.com:80
 .google.
 .googleusercontent.com
 .googleapis.com
