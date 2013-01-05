@@ -86,7 +86,15 @@ namespace XWall {
                 process.Start();
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
-                process.WaitForExit();
+                process.WaitForExit(settings.PlinkConnectTimeout * 1000);
+                if (!process.HasExited) {
+                    if (IsConnected) {
+                        process.WaitForExit();
+                    }
+                    else {
+                        Stop(true);
+                    }
+                }
             }
             catch { }
 
@@ -167,14 +175,14 @@ namespace XWall {
         }
 
         void onOutputDataReceived(object sender, DataReceivedEventArgs e) {
-            //Console.WriteLine("D: " + e.Data);
+            Console.WriteLine("D: " + e.Data);
         }
 
         void onErrorDataReceived(object sender, DataReceivedEventArgs e) {
             var line = e.Data;
             if (line == null) return;
 
-            //Console.WriteLine("E: " + line);
+            Console.WriteLine("E: " + line);
 
             if (new Regex(@"^Local port .+ SOCKS dynamic forwarding").IsMatch(line)) {
                 reconnectPeriod = 1;
@@ -195,9 +203,9 @@ namespace XWall {
                 Error = resources["PlinkAuthFailed"] as string;
                 Stop(settings.SshReconnectAnyCondition);
             }
-            else if (line.StartsWith("FATAL ERROR:")) {
-                Stop(settings.SshReconnectAnyCondition);
-            }
+            //else if (line.StartsWith("FATAL ERROR:")) {
+            //    Stop(settings.SshReconnectAnyCondition);
+            //}
         }
 
         public string Error;

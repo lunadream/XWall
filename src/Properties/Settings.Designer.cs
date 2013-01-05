@@ -579,5 +579,14 @@ namespace XWall.Properties {
                 this["SshReconnectAnyCondition"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int PlinkConnectTimeout {
+            get {
+                return ((int)(this["PlinkConnectTimeout"]));
+            }
+        }
     }
 }
