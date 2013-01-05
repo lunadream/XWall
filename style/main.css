@@ -326,12 +326,9 @@ input:focus {
     padding-top: 10px;
 }
 
-#ds-waiting:after {
-    content: "正在加载评论...";
-}
-
-#ds-waiting img {
-    display: none;
+#ds-waiting {
+    width: auto; height: 30px;
+    background: url(images/loading.gif) no-repeat center;
 }
 
 /* SIDEBAR WRAPPER */
