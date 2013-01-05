@@ -326,9 +326,9 @@ input:focus {
     padding-top: 10px;
 }
 
-#ds-waiting {
+#ds-thread div#ds-waiting {
     width: auto; height: 30px;
-    background: url(images/loading.gif) no-repeat center;
+    background: url(images/loading.gif) no-repeat center!important;
 }
 
 /* SIDEBAR WRAPPER */
