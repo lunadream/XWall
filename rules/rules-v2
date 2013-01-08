@@ -1,4 +1,4 @@
-# Online rules generated at Tue Jan 8 22:29:27 UTC+0800 2013
+# Online rules generated at Wed Jan 9 00:46:13 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -64,7 +64,6 @@
 .5maodang.com
 .6-4.net:80
 :80/.*64memo
-.64memo
 :80/.*64tianwang\.com
 .64tianwang.com
 :80/.*666kb\.com
@@ -995,7 +994,7 @@ ff.im:80
 .gardennetworks.com
 .gardennetworks.org
 :80/.*72\.52\.81\.22
-.72.52.81.22
+72.52.81.22
 .gartlive.com
 .gather.com
 .gaymap.cc
@@ -1184,10 +1183,10 @@ ub0.cc:80
 :80/.*\.google\..*Tibetan.*independence
 .google.:80/.*Tibetan.*independence
 :80/.*\.google.*search.*%E5%8C%97%E5%9B%BD%E4%B9%8B%E6%98%A5
-.google:80/.*search.*%E5%8C%97%E5%9B%BD%E4%B9%8B%E6%98%A5
 :80/.*\.google\.com.*%E8%BE%BE%E8%B5%96%E5%96%87%E5%98%9B
 .google.com:80/.*%E8%BE%BE%E8%B5%96%E5%96%87%E5%98%9B
 :80/.*.*\.google\.com.*%E4%BB%A3%E7%90%86
+.google.com:80/.*%E4%BB%A3%E7%90%86
 :80/.*\.google\..*facebook
 .google.:80/.*facebook
 :80/.*\.google\..*%E7%BF%BB%E5%A2%99
@@ -2037,9 +2036,9 @@ moby.to:80
 :80/.*newtalk\.tw
 .newtalk.tw
 :80/.*hk.*\.nextmedia\.com
-.hk:80/.*\.nextmedia\.com
+.hk*.nextmedia.com
 :80/.*tw.*\.nextmedia\.com
-.tw:80/.*\.nextmedia\.com
+.tw*.nextmedia.com
 .nexton-net.jp
 :80/.*\.nexttv\.com\.tw
 .nexttv.com.tw
@@ -2253,7 +2252,7 @@ www.oxid.it:80
 .photofocus.com
 :80/.*\.picidae\.net
 .picidae.net
-.img:80/.*\.picturedip\.com
+.img*.picturedip.com
 :80/.*picturesocial\.com
 .picturesocial.com
 :80/.*\.pidown\.com
@@ -2355,7 +2354,6 @@ post.ly:80
 .premeforwindows7.com
 .presentationzen.com
 :80/.*prisoner-state-secret-journal-premier
-.prisoner-state-secret-journal-premier
 .privacybox.de
 :80/.*privatepaste\.com
 .privatepaste.com
@@ -2575,9 +2573,9 @@ rfi.my:80/
 :80/.*sexinsex\.net
 .sexinsex.net
 :80/.*67\.220\.91\.18
-.67.220.91.18
+67.220.91.18
 :80/.*67\.220\.91\.23
-.67.220.91.23
+67.220.91.23
 :80/.*\.sfileydy\.com
 .sfileydy.com
 :80/.*\.shangfang\.org
@@ -3171,7 +3169,7 @@ tl.gd:80/
 :80/.*\.twitvid\.com
 .twitvid.com
 :80/.*199\.59\.148\.20
-.199.59.148.20
+199.59.148.20
 t.co:80
 t.co:443
 twt.tl:80
@@ -3437,7 +3435,7 @@ uploaded.to:80/file
 :80/.*zh\.uncyclopedia\.wikia\.com
 .zh.uncyclopedia.wikia.com
 :80/.*213\.251\.145\.96
-.213.251.145.96
+213.251.145.96
 .wikileaks.ch
 :80/.*\.wikileaks\.org
 .wikileaks.org
@@ -4339,8 +4337,8 @@ chinese.wsj.com:80/gb
 .usesshblog.com
 :80/.*vpn\.tenacy\.com
 .vpn.tenacy.com
-:80/.*\(\?=%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9\)\(\?=vpn\)
-:80/.*||.*vpn.*\.(?:/|%2f).*\(\?=%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9\)
+:80/(?=.*(?:%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9))(?=.*(?:vpn))
+.*vpn*.:80/(?=.*(?:%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9))
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect\.php\?.*language=zh
 .wikia.com
@@ -4410,7 +4408,7 @@ bit.ly:80
 {+forward-override{$default-forward-settings$}}
 # GFWList
 .www.exblog.jp
-:80/.*||.*v6\.facebook\.com
+.*v6.facebook.com
 .bak.gun-world.net
 .site.locql.com
 .download.syniumsoftware.com
