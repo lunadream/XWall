@@ -45,7 +45,7 @@ Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plink.exe"; DestDir: "{app}";
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plonk.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\privoxy.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\templates\*"; DestDir: "{commonappdata}\{#MyAppName}\privoxy-templates"; Flags: ignoreversion; Permissions: authusers-full
-Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}"; DestName: "online-rules"; Flags: ignoreversion onlyifdoesntexist; Permissions: authusers-full
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
