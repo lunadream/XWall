@@ -1,4 +1,4 @@
-# Online rules generated at Wed Jan 9 20:57:17 UTC+0800 2013
+# Online rules generated at Thu Jan 10 16:18:02 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4314,6 +4314,11 @@ chinese.wsj.com:80/gb
 :80/.*bbc(?:\.|%2e)co(?:\.|%2e)uk(?:/|%2f)zhongwen
 :80/.*livestream(?:\.|%2e)com
 .livestream.com
+.youtube.
+:80/.*ntdtv(?:\.|%2e)ca
+.ntdtv.ca
+:80/.*cn(?:\.|%2e)fmnnow(?:\.|%2e)com
+.cn.fmnnow.com
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4405,6 +4410,8 @@ bit.ly:80
 .tube8.com
 :80/.*yymmyy(?:\.|%2e)com
 .yymmyy.com
+:80/.*shenyingwang(?:\.|%2e)com
+.shenyingwang.com
 .c1520.inc.gs
 .local.apbest.info
 :80/.*youversion(?:\.|%2e)com
@@ -4518,3 +4525,4 @@ bit.ly:80
 .taitung-house.gov.tw
 .baidu.com
 .xunlei.com
+.youdao.com
