@@ -87,12 +87,12 @@ namespace XWall {
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
                 process.WaitForExit(settings.PlinkConnectTimeout * 1000);
-                if (!process.HasExited) {
+                if (process != null && !process.HasExited) {
                     if (IsConnected) {
                         process.WaitForExit();
                     }
                     else {
-                        Stop(true);
+                        process.Kill();
                     }
                 }
             }
