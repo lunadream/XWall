@@ -1,4 +1,4 @@
-# Online rules generated at Thu Jan 10 16:18:02 UTC+0800 2013
+# Online rules generated at Sat Jan 12 14:17:10 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4319,6 +4319,12 @@ chinese.wsj.com:80/gb
 .ntdtv.ca
 :80/.*cn(?:\.|%2e)fmnnow(?:\.|%2e)com
 .cn.fmnnow.com
+:80/.*molihua(?:\.|%2e)org
+.molihua.org
+:80/.*mingjingnews(?:\.|%2e)com
+.mingjingnews.com
+:80/.*botanwang(?:\.|%2e)com
+.botanwang.com
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4353,6 +4359,12 @@ chinese.wsj.com:80/gb
 :80/.*bannedbook(?:\.|%2e)org
 .bannedbook.org
 .64memo.com
+.ecministry.net
+:80/.*shucang(?:\.|%2e)com
+.shucang.com
+:80/.*dogear(?:\.|%2e)mobi
+.dogear.mobi
+.mydogear.com
 .wugfresh.com
 :80/.*ithelp(?:\.|%2e)ithome(?:\.|%2e)com(?:\.|%2e)tw
 .ithelp.ithome.com.tw
