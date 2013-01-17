@@ -1,4 +1,4 @@
-# Online rules generated at Sat Jan 12 14:17:10 UTC+0800 2013
+# Online rules generated at Thu Jan 17 14:53:02 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -4325,14 +4325,21 @@ chinese.wsj.com:80/gb
 .mingjingnews.com
 :80/.*botanwang(?:\.|%2e)com
 .botanwang.com
+:80/.*citizensradio(?:\.|%2e)org
+.citizensradio.org
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
 .blogspot.
 :80/.*blogspot(?:\.|%2e)
 .sapikachu.com
+.umezawa.dyndns.info
+:80/.*fffff(?:\.|%2e)at
+.fffff.at
 :80/.*hkreporter(?:\.|%2e)loved(?:\.|%2e)hk
 .hkreporter.loved.hk
+:80/.*catcatbox(?:\.|%2e)com(?:/|%2f)forum(?:\.|%2e)php\?.*fid=
+.catcatbox.com:80/forum(?:\.|%2e)php\?.*fid=
 :80/.*x-wall(?:\.|%2e)org
 .x-wall.org
 :80/.*multiproxy(?:\.|%2e)org
@@ -4352,6 +4359,10 @@ chinese.wsj.com:80/gb
 .vpn.tenacy.com
 :80/(?=.*(?:%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9))(?=.*(?:vpn))
 .*vpn*.:80/(?=.*(?:%E4%BB%A3%E7%90%86|%E5%85%8D%E8%B4%B9))
+:80/.*wujieliulan(?:\.|%2e)com
+.wujieliulan.com
+:80/.*unblock-facebookproxy(?:\.|%2e)com
+.unblock-facebookproxy.com
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect(?:\.|%2e)php\?.*language=zh
 .wikia.com
@@ -4365,9 +4376,12 @@ chinese.wsj.com:80/gb
 :80/.*dogear(?:\.|%2e)mobi
 .dogear.mobi
 .mydogear.com
+.weibonai.com
 .wugfresh.com
 :80/.*ithelp(?:\.|%2e)ithome(?:\.|%2e)com(?:\.|%2e)tw
 .ithelp.ithome.com.tw
+:80/.*adsweep(?:\.|%2e)org
+.adsweep.org
 .imagehyper.com
 .cloudflare.com
 :80/.*box(?:\.|%2e)com(?:/|%2f)s
@@ -4400,6 +4414,10 @@ chinese.wsj.com:80/gb
 .bartvpn.com
 :80/.*killwall(?:\.|%2e)com
 .killwall.com
+:80/.*usessh(?:\.|%2e)com
+.usessh.com
+:80/.*spotflux(?:\.|%2e)com
+.spotflux.com
 .google.
 .googleusercontent.com
 .googleapis.com
@@ -4424,11 +4442,25 @@ bit.ly:80
 .yymmyy.com
 :80/.*shenyingwang(?:\.|%2e)com
 .shenyingwang.com
+:80/.*twavtv(?:\.|%2e)com
+.twavtv.com
+:80/.*surendao(?:\.|%2e)com
+.surendao.com
+:80/.*stileproject(?:\.|%2e)com
+.stileproject.com
+:80/.*x831(?:\.|%2e)com
+.x831.com
+:80/.*91porn(?:\.|%2e)69(?:\.|%2e)mu
+.91porn.69.mu
+:80/.*baisex(?:\.|%2e)cc
+.baisex.cc
 .c1520.inc.gs
 .local.apbest.info
 :80/.*youversion(?:\.|%2e)com
 .youversion.com
 .lvcuser.com:80/user55
+:80/.*linkbucks(?:\.|%2e)com
+.linkbucks.com
 
 {+forward-override{$default-forward-settings$}}
 # GFWList
