@@ -1,4 +1,4 @@
-# Online rules generated at Thu Jan 17 14:53:02 UTC+0800 2013
+# Online rules generated at Fri Jan 25 14:20:41 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -288,6 +288,8 @@ bbc.in:80
 .bigsound.org:80/portnoy
 .bill2-software.com
 .billywr.com
+:80/.*(?:\.|%2e)bit(?:\.|%2e)ly
+.bit.ly
 :80/.*(?:\.|%2e)bitshare(?:\.|%2e)com(?:/|%2f)files
 .bitshare.com:80/files
 :80/.*http:(?:/|%2f)(?:/|%2f)bitshare(?:\.|%2e)com(?:/|%2f)files
@@ -4295,14 +4297,14 @@ chinese.wsj.com:80/gb
 .gov.tw:80
 :80/.*(?:\.|%2e)president(?:\.|%2e)gov(?:\.|%2e)tw
 .president.gov.tw
-:80/.*chosun(?:\.|%2e)com(?:/|%2f)
-.chosun.com:80
+:80/.*chosun(?:\.|%2e)com
+.chosun.com
 :80/.*voachinese(?:\.|%2e)com
 .voachinese.com
-:80/.*sinchew(?:\.|%2e)com(?:\.|%2e)my(?:/|%2f)
-.sinchew.com.my:80
-:80/.*nextmedia(?:\.|%2e)com(?:/|%2f)
-.nextmedia.com:80
+:80/.*sinchew(?:\.|%2e)com(?:\.|%2e)my
+.sinchew.com.my
+:80/.*nextmedia(?:\.|%2e)com
+.nextmedia.com
 :80/.*online(?:\.|%2e)wsj(?:\.|%2e)com(?:/|%2f)article
 .online.wsj.com:80/article
 :80/.*sharpdaily(?:\.|%2e)com(?:\.|%2e)hk
@@ -4327,6 +4329,10 @@ chinese.wsj.com:80/gb
 .botanwang.com
 :80/.*citizensradio(?:\.|%2e)org
 .citizensradio.org
+:80/.*actimes(?:\.|%2e)com(?:\.|%2e)au
+.actimes.com.au
+:80/.*myactimes(?:\.|%2e)com
+.myactimes.com
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4352,6 +4358,8 @@ chinese.wsj.com:80/gb
 .atgfw.org
 .autoproxy-gfwlist.googlecode.com
 .sshtunnel.googlecode.com
+:80/.*goagent(?:\.|%2e)googlecode(?:\.|%2e)com
+.goagent.googlecode.com
 .openvpn.net
 .ifanqiang.com
 .usesshblog.com
@@ -4382,6 +4390,11 @@ chinese.wsj.com:80/gb
 .ithelp.ithome.com.tw
 :80/.*adsweep(?:\.|%2e)org
 .adsweep.org
+:80/.*matroska(?:\.|%2e)org
+.matroska.org
+.builtwithbootstrap.com
+.privoxy.org
+.7-zip.org
 .imagehyper.com
 .cloudflare.com
 :80/.*box(?:\.|%2e)com(?:/|%2f)s
@@ -4423,7 +4436,6 @@ chinese.wsj.com:80/gb
 .googleapis.com
 .g.doubleclick.net
 goo.gl:80
-bit.ly:80
 :80/.*drtuber(?:\.|%2e)com
 .drtuber.com
 :80/.*filefap(?:\.|%2e)com
@@ -4454,6 +4466,22 @@ bit.ly:80
 .91porn.69.mu
 :80/.*baisex(?:\.|%2e)cc
 .baisex.cc
+:80/.*penisbot(?:\.|%2e)com
+.penisbot.com
+.club-harmony.com
+:80/.*vida(?:\.|%2e)kir(?:\.|%2e)jp
+.vida.kir.jp
+:80/.*bbs(?:\.|%2e)adlz(?:\.|%2e)net
+.bbs.adlz.net
+:80/.*avsmg(?:\.|%2e)com
+.avsmg.com
+:80/.*sis001(?:\.|%2e)us(?:/|%2f)forum
+.sis001.us:80/forum
+:80/.*sexmm520(?:\.|%2e)com
+.sexmm520.com
+.nukinator.com
+:80/.*duga(?:\.|%2e)jp
+.duga.jp
 .c1520.inc.gs
 .local.apbest.info
 :80/.*youversion(?:\.|%2e)com
@@ -4461,6 +4489,8 @@ bit.ly:80
 .lvcuser.com:80/user55
 :80/.*linkbucks(?:\.|%2e)com
 .linkbucks.com
+:80/.*lalulu(?:\.|%2e)com
+.lalulu.com
 
 {+forward-override{forward .}}
 # GFWList
