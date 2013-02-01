@@ -1,4 +1,4 @@
-# Online rules generated at Fri Jan 25 14:20:41 UTC+0800 2013
+# Online rules generated at Fri Feb 1 23:01:11 UTC+0800 2013
 # Learn more about X-Wall
 # https://github.com/vilic/x-wall
 
@@ -19,8 +19,6 @@
 .t.16class.cn
 :80/.*173ng(?:\.|%2e)com
 .173ng.com
-:80/.*(?:\.|%2e)17e(?:\.|%2e)org
-.17e.org
 :80/.*1984bbs(?:\.|%2e)com
 .1984bbs.com
 .1984blog.com
@@ -28,10 +26,7 @@
 .1984bbs.org
 :80/.*(?:\.|%2e)1bao(?:\.|%2e)org
 .1bao.org
-.1free.ws
 .1pondo.tv
-:80/.*bbs(?:\.|%2e)1tor(?:\.|%2e)com
-.bbs.1tor.com
 :80/.*(?:\.|%2e)2-hand(?:\.|%2e)info
 .2-hand.info
 :80/.*(?:\.|%2e)2000fun(?:\.|%2e)com(?:/|%2f)bbs
@@ -46,11 +41,7 @@
 .315lz.com
 .36rain.com
 .3b8.cc:80
-:80/.*4(?:\.|%2e)gp
-.4.gp
 .4bluestones.biz
-:80/.*(?:\.|%2e)4shared(?:\.|%2e)com
-.4shared.com
 :80/.*5i01(?:\.|%2e)com
 .5i01.com
 :80/.*taiwannation(?:\.|%2e)50webs(?:\.|%2e)com
@@ -84,12 +75,6 @@
 .9001700.com
 :80/.*(?:\.|%2e)92ccav(?:\.|%2e)com
 .92ccav.com
-:80/.*98(?:\.|%2e)to
-.98.to
-:80/.*(?:\.|%2e)9999cn(?:\.|%2e)com
-.9999cn.com
-:80/.*(?:\.|%2e)99bbs(?:\.|%2e)com
-.99bbs.com
 .9bis.com
 .9bis.net
 :80/.*(?:\.|%2e)9city(?:\.|%2e)me(?:/|%2f)archiver.*308578(?:\.|%2e)html
@@ -102,13 +87,9 @@
 .aboluowang.com
 :80/.*(?:\.|%2e)aboutgfw(?:\.|%2e)com
 .aboutgfw.com
-:80/.*(?:\.|%2e)aboutus(?:\.|%2e)org
-.aboutus.org
 .acgkj.com
 .aculo.us
 .addictedtocoffee.de
-:80/.*(?:\.|%2e)adult168(?:\.|%2e)com
-.adult168.com
 :80/.*adultfriendfinder(?:\.|%2e)com
 .adultfriendfinder.com
 .advanscene.com
@@ -118,26 +99,16 @@
 :80/.*(?:\.|%2e)aisex(?:\.|%2e)com
 .aisex.com
 .ait.org.tw
-:80/.*blog(?:\.|%2e)aiweiwei(?:\.|%2e)com
-.blog.aiweiwei.com
 :80/.*(?:\.|%2e)aiweiweiblog(?:\.|%2e)com
 .aiweiweiblog.com
-.aiyori.org
 .ajaxplorer.info
 .www.ajsands.com
 .akiba-online.com
-:80/.*(?:\.|%2e)akiraclub(?:\.|%2e)com
-.akiraclub.com
-.alabout.com
-:80/.*aladding(?:\.|%2e)com
-.aladding.com
 .alasbarricadas.org
 .notes.alexdong.com
 :80/.*alexlur(?:\.|%2e)org
 .alexlur.org
 .alkasir.com
-:80/.*bbs(?:\.|%2e)allhabit(?:\.|%2e)com
-.bbs.allhabit.com
 :80/.*alliance(?:\.|%2e)org(?:\.|%2e)hk
 .alliance.org.hk
 :80/.*(?:\.|%2e)allinfa(?:\.|%2e)com
@@ -3222,12 +3193,7 @@ twt.tl:80
 .contests.twilio.com
 :80/.*embr(?:\.|%2e)in
 .embr.in
-:80/.*fanfou(?:\.|%2e)im
 .fanfou.im
-:80/.*fanfou(?:\.|%2e)de
-.fanfou.de
-:80/.*fanfou(?:\.|%2e)la
-.fanfou.la
 :80/.*guomin(?:\.|%2e)us(?:/|%2f)login
 .guomin.us:80/login
 :80/.*t(?:\.|%2e)fishnote(?:\.|%2e)net
@@ -3427,8 +3393,6 @@ uploaded.to:80/file
 :80/.*(?:\.|%2e)wforum(?:\.|%2e)com
 .wforum.com
 .wforum.com:80
-:80/.*wg1966(?:\.|%2e)com
-.wg1966.com
 :80/.*(?:\.|%2e)whatblocked(?:\.|%2e)com
 .whatblocked.com
 :80/.*(?:\.|%2e)whippedass(?:\.|%2e)com
@@ -3436,8 +3400,6 @@ uploaded.to:80/file
 .whyx.org
 :80/.*zh(?:\.|%2e)uncyclopedia(?:\.|%2e)wikia(?:\.|%2e)com
 .zh.uncyclopedia.wikia.com
-:80/.*213(?:\.|%2e)251(?:\.|%2e)145(?:\.|%2e)96
-213.251.145.96
 .wikileaks.ch
 :80/.*(?:\.|%2e)wikileaks(?:\.|%2e)org
 .wikileaks.org
@@ -3459,13 +3421,9 @@ uploaded.to:80/file
 .wisevid.com
 :80/.*(?:\.|%2e)witopia(?:\.|%2e)net
 .witopia.net
-:80/.*wjd(?:\.|%2e)name
-.wjd.name
 :80/.*(?:\.|%2e)wo(?:\.|%2e)tc
 .wo.tc
 .woeser.com
-:80/.*(?:\.|%2e)wofa(?:\.|%2e)us
-.wofa.us
 :80/.*(?:\.|%2e)womensrightsofchina(?:\.|%2e)org
 .womensrightsofchina.org
 :80/.*(?:\.|%2e)woopie(?:\.|%2e)jp(?:/|%2f)video
@@ -4333,6 +4291,11 @@ chinese.wsj.com:80/gb
 .actimes.com.au
 :80/.*myactimes(?:\.|%2e)com
 .myactimes.com
+.zaobao.com.sg
+:80/.*sohcradio(?:\.|%2e)com
+.sohcradio.com
+:80/.*yam(?:\.|%2e)com
+.yam.com
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4342,6 +4305,13 @@ chinese.wsj.com:80/gb
 .umezawa.dyndns.info
 :80/.*fffff(?:\.|%2e)at
 .fffff.at
+:80/.*www(?:\.|%2e)21andy(?:\.|%2e)com(?:/|%2f)blog(?:/|%2f)20090924(?:/|%2f)1371(?:\.|%2e)html
+.www.21andy.com:80/blog(?:/|%2f)20090924(?:/|%2f)1371(?:\.|%2e)html
+:80/.*juziyue(?:\.|%2e)com
+.juziyue.com
+:80/.*heqinglian(?:\.|%2e)net
+.heqinglian.net
+.imtx.me
 :80/.*hkreporter(?:\.|%2e)loved(?:\.|%2e)hk
 .hkreporter.loved.hk
 :80/.*catcatbox(?:\.|%2e)com(?:/|%2f)forum(?:\.|%2e)php\?.*fid=
@@ -4371,6 +4341,10 @@ chinese.wsj.com:80/gb
 .wujieliulan.com
 :80/.*unblock-facebookproxy(?:\.|%2e)com
 .unblock-facebookproxy.com
+:80/.*vpndaili(?:\.|%2e)net
+.vpndaili.net
+:80/.*myiphide(?:\.|%2e)com
+.myiphide.com
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect(?:\.|%2e)php\?.*language=zh
 .wikia.com
@@ -4385,6 +4359,8 @@ chinese.wsj.com:80/gb
 .dogear.mobi
 .mydogear.com
 .weibonai.com
+:80/.*123rf(?:\.|%2e)com
+.123rf.com
 .wugfresh.com
 :80/.*ithelp(?:\.|%2e)ithome(?:\.|%2e)com(?:\.|%2e)tw
 .ithelp.ithome.com.tw
@@ -4393,6 +4369,8 @@ chinese.wsj.com:80/gb
 :80/.*matroska(?:\.|%2e)org
 .matroska.org
 .builtwithbootstrap.com
+:80/.*packetix(?:\.|%2e)net
+.packetix.net
 .privoxy.org
 .7-zip.org
 .imagehyper.com
@@ -4431,6 +4409,8 @@ chinese.wsj.com:80/gb
 .usessh.com
 :80/.*spotflux(?:\.|%2e)com
 .spotflux.com
+:80/.*my-proxy(?:\.|%2e)com
+.my-proxy.com
 .google.
 .googleusercontent.com
 .googleapis.com
@@ -4482,6 +4462,12 @@ goo.gl:80
 .nukinator.com
 :80/.*duga(?:\.|%2e)jp
 .duga.jp
+:80/.*g-queen(?:\.|%2e)com
+.g-queen.com
+:80/.*camdough(?:\.|%2e)com
+.camdough.com
+:80/.*boosuck(?:\.|%2e)com
+.boosuck.com
 .c1520.inc.gs
 .local.apbest.info
 :80/.*youversion(?:\.|%2e)com
