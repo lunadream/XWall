@@ -42,8 +42,9 @@ namespace XWall {
                     case "SshSocksPort": break;
                     case "HttpServer": break;
                     case "HttpPort": break;
+                    case "ForwardAll": break;
                     case "UseOnlineRules": break;
-                    case "UseCustomRules": break;
+                    //case "UseCustomRules": break;
                     default: return;
                 }
 
@@ -90,49 +91,61 @@ namespace XWall {
             generatingActionFile = true;
 
             new Action(() => {
-                string text;
-                if (settings.UseOnlineRules && File.Exists(App.AppDataDirectory + settings.OnlineRulesFileName))
-                    text = File.ReadAllText(App.AppDataDirectory + settings.OnlineRulesFileName);
-                else
-                    text = "";
-
                 string forwardSettings;
-
-                if (settings.ProxyType == "SSH")
+                if (settings.ProxyType == "SSH") {
                     forwardSettings = "forward-socks5 127.0.0.1:" + settings.SshSocksPort + " .";
-                else
+                }
+                else {
                     forwardSettings = "forward " + (settings.HttpServer != "" ? settings.HttpServer + ":" : "127.0.0.1:") + settings.HttpPort;
-                
-                text = text.Replace("$forward-settings$", forwardSettings);
+                }
 
-                var defaultProxy = Operation.Proxies.DefaultProxy;
+                string text;
 
-                var defaultForwardSettings = "forward " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy);
-
-                text = text.Replace("$default-forward-settings$", defaultForwardSettings);
-
-                if (settings.UseCustomRules) {
-                    var matches = new Regex(@".+").Matches(settings.CustomRules);
-                    
-                    var forwardRules = new List<string>();
-                    var doNotForwardRules = new List<string>();
-
-                    foreach (Match match in matches) {
-                        if (match.Value.StartsWith("!")) {
-                            doNotForwardRules.Add(match.Value.Substring(1));
-                        }
-                        else {
-                            forwardRules.Add(match.Value);
-                        }
+                if (settings.ForwardAll) {
+                    text =
+                        "# Forward all\r\n" +
+                        "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
+                        "/";
+                }
+                else {
+                    if (settings.UseOnlineRules && File.Exists(App.AppDataDirectory + settings.OnlineRulesFileName)) {
+                        text = File.ReadAllText(App.AppDataDirectory + settings.OnlineRulesFileName);
+                    }
+                    else {
+                        text = "";
                     }
 
-                    text +=
-                        "\r\n\r\n" +
-                        "# Custom rules\r\n\r\n" +
-                        "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
-                        String.Join("\r\n", forwardRules.ToArray()) + "\r\n" +
-                        "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
-                        String.Join("\r\n", doNotForwardRules.ToArray())+ "\r\n";
+                    text = text.Replace("$forward-settings$", forwardSettings);
+
+                    var defaultProxy = Operation.Proxies.DefaultProxy;
+
+                    var defaultForwardSettings = "forward " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy);
+
+                    text = text.Replace("$default-forward-settings$", defaultForwardSettings);
+
+                    if (settings.UseCustomRules) {
+                        var matches = new Regex(@".+").Matches(settings.CustomRules);
+
+                        var forwardRules = new List<string>();
+                        var doNotForwardRules = new List<string>();
+
+                        foreach (Match match in matches) {
+                            if (match.Value.StartsWith("!")) {
+                                doNotForwardRules.Add(match.Value.Substring(1));
+                            }
+                            else {
+                                forwardRules.Add(match.Value);
+                            }
+                        }
+
+                        text +=
+                            "\r\n\r\n" +
+                            "# Custom rules\r\n\r\n" +
+                            "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
+                            String.Join("\r\n", forwardRules.ToArray()) + "\r\n" +
+                            "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
+                            String.Join("\r\n", doNotForwardRules.ToArray()) + "\r\n";
+                    }
                 }
 
                 File.WriteAllText(App.AppDataDirectory + settings.PrivoxyActionFileName, text);

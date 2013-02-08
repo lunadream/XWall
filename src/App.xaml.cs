@@ -89,6 +89,7 @@ namespace XWall {
                 settings.UpgradeRequired = false;
             }
 
+            //* DEBUG CODE
             if (settings.FirstRun) {
                 settings.FirstRun = false;
 
@@ -111,7 +112,7 @@ namespace XWall {
 
                 Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
             };
-
+            
             settings.PropertyChanged += (sender, e) => {
                 switch (e.PropertyName) {
                     case "AutoStart": break;
@@ -122,18 +123,20 @@ namespace XWall {
                 if (rst != settings.AutoStart)
                     settings.AutoStart = rst;
             };
-
+            
             //Operation.SetAvailablePorts();
 
             App.Current.Exit += (sender, e) => {
                 Operation.Proxies.RestoreProxy();
             };
+            //*/
         }
 
         private void LoadLanguage() {
             CultureInfo currentCultureInfo = CultureInfo.CurrentCulture;
 
             var files = new string[] { 
+                //@"Langs\zh.xaml",
                 @"Langs\" + currentCultureInfo.TwoLetterISOLanguageName + ".xaml",
                 @"Langs\" + currentCultureInfo.Name + ".xaml"
             };

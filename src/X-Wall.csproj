@@ -97,6 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Profiles.cs" />
     <Compile Include="CustomRulesEditor.xaml.cs">
       <DependentUpon>CustomRulesEditor.xaml</DependentUpon>
     </Compile>

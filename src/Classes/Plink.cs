@@ -22,8 +22,8 @@ namespace XWall {
         public bool IsReconnecting = false;
         public bool IsConnecting = false;
         public bool IsConnected = false;
-        public bool StopReconnect = false;
         public bool IsNormallyStopped = false;
+        Action stopReconnect;
 
         public Plink() {
             Operation.KillProcess(settings.PlinkFileName);
@@ -102,8 +102,12 @@ namespace XWall {
             IsConnecting = false;
             Disconnected(isLastSuccess, isReconnect);
 
-            if (toReconnect)
-                reconnect();
+            if (toReconnect) {
+                var stopReconnectingHandler = reconnect();
+                if (stopReconnectingHandler != null) {
+                    stopReconnect = stopReconnectingHandler;
+                }
+            }
         }
 
         public void Start() {
@@ -120,26 +124,36 @@ namespace XWall {
             IsNormallyStopped = true;
             this.toReconnect = toReconnect;
 
-            if (process != null && !process.HasExited)
-                process.Kill();
-        }
-
-        void reconnect() {
             if (IsReconnecting) {
-                new Action(() => {
-                    Thread.Sleep(1000);
-                    reconnect();
-                }).BeginInvoke(null, null);
-                return;
+                stopReconnect();
             }
 
-            IsReconnecting = true;
+            if (process != null && !process.HasExited) {
+                process.Kill();
+            }
+        }
+
+        Action reconnect() {
+            if (IsReconnecting) {
+                //new Action(() => {
+                //    Thread.Sleep(1000);
+                //    reconnect();
+                //}).BeginInvoke(null, null);
+                return null;
+            }
+
 
             if (settings.SshAutoReconnect && (settings.SshReconnectAnyCondition || Error == null)) {
-                StopReconnect = false;
+                var stopReconnect = false;
+                IsReconnecting = true;
+                //StopReconnect = false;
 
                 new Action(() => {
                     Thread.Sleep(500);
+
+                    if (stopReconnect) {
+                        return;
+                    }
 
                     var time = reconnectPeriod;
 
@@ -147,14 +161,11 @@ namespace XWall {
                         reconnectPeriod *= 2;
 
                     while (time > 0) {
-                        if (StopReconnect) {
-                            IsReconnecting = false;
-                            Disconnected(false, true);
-                            return;
-                        }
-
                         ReconnectCountingDown(time--);
                         Thread.Sleep(1000);
+                        if (stopReconnect) {
+                            return;
+                        }
                         //if started by user or something elses while counting.
                         if (process != null && !process.HasExited || !toReconnect) {
                             IsReconnecting = false;
@@ -171,6 +182,15 @@ namespace XWall {
 
                     startProcess(true);
                 }).BeginInvoke(null, null);
+
+                return () => {
+                    stopReconnect = true;
+                    IsReconnecting = false;
+                    Disconnected(false, true);
+                };
+            }
+            else {
+                return null;
             }
         }
 

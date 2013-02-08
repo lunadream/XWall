@@ -164,5 +164,14 @@
     <Setting Name="PlinkConnectTimeout" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">30</Value>
     </Setting>
+    <Setting Name="SshProfiles" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SshSelectedProfileIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ForwardAll" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

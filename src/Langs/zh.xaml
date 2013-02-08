@@ -48,8 +48,19 @@
     <sys:String x:Key="PlonkKeywordMissingMessage">请输入 SSH 混淆的关键字.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS 端口</sys:String>
 
+    <sys:String x:Key="Profile">配置</sys:String>
+    <sys:String x:Key="Profiles">账号配置</sys:String>
+    <sys:String x:Key="SshProfiles">SSH 账号配置</sys:String>
+    <sys:String x:Key="Name">名称</sys:String>
+    <sys:String x:Key="New">新建</sys:String>
+    <sys:String x:Key="Remove">移除</sys:String>
+
     <sys:String x:Key="Rules">规则</sys:String>
     <sys:String x:Key="RuleOptions">规则选项</sys:String>
+    <sys:String x:Key="Normal">普通</sys:String>
+    <sys:String x:Key="ForwardAll">全部转发</sys:String>
+    <sys:String x:Key="ProxyMode">代理模式</sys:String>
+    <sys:String x:Key="ForwardAllDescription">忽略规则全部转发</sys:String>
     <sys:String x:Key="UseOnlineRulesAndDescription">使用在线规则 - 包含绝大多数被屏蔽的网站</sys:String>
     <sys:String x:Key="UseCustomRules">使用自定义规则</sys:String>
     <sys:String x:Key="SubmitNewRuleAndDescription">分享新规则 - 不会涉及手动添加的规则</sys:String>

@@ -41,6 +41,43 @@ namespace XWall {
                     Rules.OpenEditor(false);
                 });
 
+                menu.MenuItems.Add(window.profileContextMenu);
+
+                var proxyModeNormalItem = new MenuItem(resources["Normal"] as string);
+                var proxyModeForwardAllItem=new MenuItem(resources["ForwardAll"] as string);
+
+                var proxyModeCheckSwitcher = new Action(() => {
+                    proxyModeNormalItem.Checked = !settings.ForwardAll;
+                    proxyModeForwardAllItem.Checked = settings.ForwardAll;
+                });
+
+                proxyModeCheckSwitcher();
+
+                settings.PropertyChanged += (sender, e) => {
+                    if (e.PropertyName == "ForwardAll") {
+                        proxyModeCheckSwitcher();
+                    }
+                };
+
+                proxyModeNormalItem.Click += (sender, e) => {
+                    if (settings.ForwardAll) {
+                        settings.ForwardAll = false;
+                    }
+                };
+
+                proxyModeForwardAllItem.Click += (sender, e) => {
+                    if (!settings.ForwardAll) {
+                        settings.ForwardAll = true;
+                    }
+                };
+
+                proxyModeNormalItem.RadioCheck = true;
+                proxyModeForwardAllItem.RadioCheck = true;
+
+                var proxyModeMenuItem = new MenuItem(resources["ProxyMode"] as string, new MenuItem[]{ proxyModeNormalItem, proxyModeForwardAllItem });
+
+                menu.MenuItems.Add(proxyModeMenuItem);
+
                 menu.MenuItems.Add(resources["Exit"] as string, (sender, e) => {
                     System.Windows.Application.Current.Shutdown();
                 });

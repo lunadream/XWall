@@ -48,8 +48,19 @@
     <sys:String x:Key="PlonkKeywordMissingMessage">Please enter the keyword for SSH obfuscation.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS Port</sys:String>
 
+    <sys:String x:Key="Profile">Profile</sys:String>
+    <sys:String x:Key="Profiles">Profiles</sys:String>
+    <sys:String x:Key="SshProfiles">SSH Profiles</sys:String>
+    <sys:String x:Key="Name">Name</sys:String>
+    <sys:String x:Key="New">New</sys:String>
+    <sys:String x:Key="Remove">Remove</sys:String>
+
     <sys:String x:Key="Rules">Rules</sys:String>
     <sys:String x:Key="RuleOptions">Rule Options</sys:String>
+    <sys:String x:Key="Normal">Normal</sys:String>
+    <sys:String x:Key="ForwardAll">Forward all</sys:String>
+    <sys:String x:Key="ProxyMode">Proxy mode</sys:String>
+    <sys:String x:Key="ForwardAllDescription">Ignore rules and forward all</sys:String>
     <sys:String x:Key="UseOnlineRulesAndDescription">Use online rules - Most of the GFWed websites are included</sys:String>
     <sys:String x:Key="UseCustomRules">Use custom rules</sys:String>
     <sys:String x:Key="SubmitNewRuleAndDescription">Share new rules - Manually added rules will not be shared</sys:String>

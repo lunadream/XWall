@@ -32,6 +32,8 @@ namespace XWall {
         Plink plink;
         Privoxy privoxy;
 
+        Profile.SshProfilesCollection sshProfiles;
+
         public MainWindow() {
             if (App.IsShutDown)
                 return;
@@ -119,8 +121,8 @@ namespace XWall {
                     onlineRulesUpdateButton.IsEnabled = true;
                     if (success)
                         lastUpdateTimeTextBlock.Text = settings.OnlineRulesLastUpdateTime.ToString(@"M\/d\/yyyy");
-                    else
-                        notificationController.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
+                    //else
+                    //    notificationController.Tray.ShowBalloonTip(0, resources["UpdateOnlineRulesFailed"] as string, resources["UpdateOnlineRulesFailedDescription"] as string, System.Windows.Forms.ToolTipIcon.Warning);
                 }));
             };
 
@@ -133,6 +135,7 @@ namespace XWall {
 
             Rules.Initialize();
 
+            //* DEBUG CODE
             privoxy.Start();
 
             settings.PropertyChanged += (o, a) => {
@@ -144,6 +147,7 @@ namespace XWall {
 
                 privoxy.Start();
             };
+            //*/
 
             if (settings.ProxyType == "SSH" && settings.AutoStart) {
                 plink.Start();
@@ -282,11 +286,8 @@ namespace XWall {
         string lastPlinkError = null;
 
         private void onSshConnectButtonClick(object sender, RoutedEventArgs e) {
-            if (plink.IsConnected || plink.IsConnecting)
+            if (plink.IsConnected || plink.IsConnecting || plink.IsReconnecting) {
                 plink.Stop();
-            else if (plink.IsReconnecting) {
-                sshConnectButton.IsEnabled = false;
-                plink.StopReconnect = true;
             }
             else {
                 if (
@@ -463,8 +464,44 @@ namespace XWall {
 
         private void onSshInfoPreviewKeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
-                onSshConnectButtonClick(sender, e);
+                if (settings.ProxyType == "SSH" && !plink.IsConnected && plink.IsConnecting) {
+                    onSshConnectButtonClick(sender, e);
+                }
             }
         }
+
+        private void onSshNewProfileButtonClick(object sender, RoutedEventArgs e) {
+            Profile.SshProfile profile;
+
+            var name = resources["Profile"] as string + " " + (sshProfiles.Items.Count + 1);
+
+            if (sshProfilesListBox.SelectedIndex < 0) {
+                profile = new Profile.SshProfile();
+                profile.Server = settings.SshServer;
+                profile.Port = settings.SshPort;
+                profile.Username = settings.SshUsername;
+                profile.Password = settings.SshPassword;
+            }
+            else {
+                profile = new Profile.SshProfile(sshProfilesListBox.SelectedItem as Profile.SshProfile);
+            }
+
+            profile.Name = name;
+
+            sshProfiles.Items.Add(profile);
+            sshProfilesListBox.SelectedItem = profile;
+            sshProfilesListBox.ScrollIntoView(profile);
+
+            if (sshProfilesList.SelectedIndex < 0) {
+                sshProfilesList.SelectedIndex = 0;
+            }
+        }
+
+        private void onSshRemoveProfileButtonClick(object sender, RoutedEventArgs e) {
+            var index = sshProfilesListBox.SelectedIndex;
+            sshProfiles.Items.RemoveAt(index);
+            sshProfilesListBox.SelectedIndex = Math.Min(index, sshProfilesListBox.Items.Count - 1);
+        }
+
     }
 }
