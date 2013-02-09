@@ -35,6 +35,7 @@
     
     <sys:String x:Key="AdvancedSettings">高级设置</sys:String>
     <sys:String x:Key="AutoStartDescription">随 Windows 启动 X-Wall 并自动连接</sys:String>
+    <sys:String x:Key="AutoSetProxyDescription">自动设置互联网代理</sys:String>
     <sys:String x:Key="ListenToLocalOnlyDescription">只监听本地端口</sys:String>
     <sys:String x:Key="ProxyPort">代理端口</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
@@ -114,6 +115,7 @@
     <sys:String x:Key="DeleteSelected">删除选中规则</sys:String>
     <sys:String x:Key="EnterRuleMessage">请输入规则.</sys:String>
     <sys:String x:Key="InvalidRuleMessage">您输入的规则无效.</sys:String>
+    <sys:String x:Key="InvalidRulePathMessage">您输入的规则无效, 规则中的路径不是一个正确的正则表达式.</sys:String>
     <sys:String x:Key="RuleExistsMessage">您输入的规则已经存在.</sys:String>
 
     <!-- Privoxy -->

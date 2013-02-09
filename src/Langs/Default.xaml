@@ -35,6 +35,7 @@
     
     <sys:String x:Key="AdvancedSettings">Advanced Settings</sys:String>
     <sys:String x:Key="AutoStartDescription">Start X-Wall with Windows and connect automatically</sys:String>
+    <sys:String x:Key="AutoSetProxyDescription">Set Internet proxy automatically</sys:String>
     <sys:String x:Key="ListenToLocalOnlyDescription">Listen to local address only</sys:String>
     <sys:String x:Key="ProxyPort">Proxy port</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
@@ -114,6 +115,7 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="DeleteSelected">Delete Selected</sys:String>
     <sys:String x:Key="EnterRuleMessage">Please enter a rule.</sys:String>
     <sys:String x:Key="InvalidRuleMessage">The rule you entered is invalid.</sys:String>
+    <sys:String x:Key="InvalidRulePathMessage">The rule you entered is invalid, because the path in the rule is not a valid regular expression.</sys:String>
     <sys:String x:Key="RuleExistsMessage">The rule you entered already exists.</sys:String>
 
     <!-- Privoxy -->

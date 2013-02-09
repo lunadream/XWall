@@ -46,7 +46,9 @@ namespace XWall {
                         Operation.KillProcess(executablePath);
                         Operation.KillProcess(settings.PrivoxyFileName);
                         Operation.KillProcess(settings.PlinkFileName);
-                        Operation.Proxies.RestoreProxy();
+                        if (settings.SetProxyAutomatically) {
+                            Operation.Proxies.RestoreProxy();
+                        }
                         Operation.SetAutoStart(false);
                         Operation.RegisterXWallProtocol(false);
                         IsShutDown = true;
@@ -101,7 +103,9 @@ namespace XWall {
             if (autoStart != settings.AutoStart)
                 settings.AutoStart = autoStart;
 
-            Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
+            if (settings.SetProxyAutomatically) {
+                Operation.Proxies.SetXWallProxy();
+            }
             Operation.RegisterXWallProtocol(true);
 
             settings.PropertyChanged += (sender, e) => {
@@ -110,7 +114,9 @@ namespace XWall {
                     default: return;
                 }
 
-                Operation.Proxies.SetProxy("127.0.0.1:" + settings.ProxyPort);
+                if (settings.SetProxyAutomatically) {
+                    Operation.Proxies.SetXWallProxy();
+                }
             };
             
             settings.PropertyChanged += (sender, e) => {
@@ -127,7 +133,9 @@ namespace XWall {
             //Operation.SetAvailablePorts();
 
             App.Current.Exit += (sender, e) => {
-                Operation.Proxies.RestoreProxy();
+                if (settings.SetProxyAutomatically) {
+                    Operation.Proxies.RestoreProxy();
+                }
             };
             //*/
         }

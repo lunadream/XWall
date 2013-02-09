@@ -624,5 +624,17 @@ namespace XWall.Properties {
                 this["ForwardAll"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SetProxyAutomatically {
+            get {
+                return ((bool)(this["SetProxyAutomatically"]));
+            }
+            set {
+                this["SetProxyAutomatically"] = value;
+            }
+        }
     }
 }

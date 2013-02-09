@@ -23,7 +23,7 @@ namespace XWall {
         string lastCopied;
         Regex urlRe = new Regex(@"(?:[a-z0-9-]+://)?((?:(?:[a-z0-9-]+\.)+[a-z]{2,}|\d{1,3}(?:\.\d{1,3}){3})(?::\d+)?)(?:[/\s]|$)", RegexOptions.IgnoreCase);
         Regex domainRe = new Regex(@"^(?:[a-z0-9-]+\.)+[a-z]{2,}$");
-        Regex ruleRe = new Regex(@"^(?:(?:www\.)?([a-z0-9-.\*\?]+))?((?::\d+)?(?:/.*)?)$", RegexOptions.IgnoreCase);
+        Regex ruleRe = new Regex(@"^(?:(?:www\.)?([a-z0-9-.\*\?]+))?((?::\d+)?(?:/(.*))?)$", RegexOptions.IgnoreCase);
 
         public CustomRulesEditor() {
             InitializeComponent();
@@ -99,6 +99,19 @@ namespace XWall {
                 newRuleTextBox.SelectAll();
                 newRuleTextBox.Focus();
                 return;
+            }
+            else {
+                var pathReStr = match.Groups[3].Value;
+
+                try {
+                    new Regex(pathReStr);
+                }
+                catch {
+                    MessageBox.Show(resources["InvalidRulePathMessage"] as string, resources["CustomRulesEditorTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+                    newRuleTextBox.SelectAll();
+                    newRuleTextBox.Focus();
+                    return;
+                }
             }
 
             if (settings.CustomRulesAddSubdomains) {

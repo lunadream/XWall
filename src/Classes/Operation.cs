@@ -273,6 +273,10 @@ namespace XWall {
                 return proxyInfo;
             }
 
+            public static void SetXWallProxy() {
+                SetProxy("127.0.0.1:" + settings.ProxyPort);
+            }
+
             public static bool SetProxy(string proxy) {
                 OriginalProxies.Initialize();
 

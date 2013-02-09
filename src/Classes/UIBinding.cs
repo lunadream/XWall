@@ -31,6 +31,19 @@ namespace XWall {
             //ADVANCED SETTINGS
             //x-wall
             UIBinding.bindCheckBox(autoStartCheckBox, "AutoStart");
+            UIBinding.bindCheckBox(autoSetProxyCheckBox, "SetProxyAutomatically");
+
+            settings.PropertyChanged += (sender, e) => {
+                if (e.PropertyName == "SetProxyAutomatically") {
+                    if (settings.SetProxyAutomatically) {
+                        Operation.Proxies.SetXWallProxy();
+                    }
+                    else {
+                        Operation.Proxies.RestoreProxy();
+                    }
+                }
+            };
+
             UIBinding.bindCheckBox(listenToLocalOnlyCheckBox, "ListenToLocalOnly");
             UIBinding.bindTextBox(proxyPortTextBox, "ProxyPort");
 
