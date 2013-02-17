@@ -22,6 +22,7 @@ myactimes.com
 sohcradio.com
 yam.com
 hkm.appledaily.com
+video.pbs.org
 
 ! Blogs
 x-berry.com/goagent
@@ -41,6 +42,7 @@ hkreporter.loved.hk
 catcatbox.com/forum.php?*fid=
 pcdvd.com.tw
 lkcn.net
+muchosucko.com
 
 ! GFW Related Sites
 x-wall.org
@@ -50,6 +52,7 @@ igfw.net
 atgfw.org
 ||autoproxy-gfwlist.googlecode.com
 ||sshtunnel.googlecode.com
+||cocoa-sshtunnel.googlecode.com
 goagent.googlecode.com
 ||openvpn.net
 ||ifanqiang.com
@@ -62,6 +65,7 @@ unblock-facebookproxy.com
 vpndaili.net
 myiphide.com
 3forever.com
+autoproxy.org
 
 ! Contents
 ||zh.wikipedia.org
@@ -77,6 +81,7 @@ dogear.mobi
 ||weibonai.com
 123rf.com
 jinbushe.org
+kaotic.com
 
 ! Tech
 ||wugfresh.com
@@ -86,10 +91,12 @@ matroska.org
 ||builtwithbootstrap.com
 packetix.net
 moreinfo.thebigboss.org
+pchome.com.tw
 
 ! Software
 ||privoxy.org
 ||7-zip.org
+getfoxyproxy.org
 
 ! CDN
 ||imagehyper.com
@@ -120,6 +127,7 @@ spotflux.com
 my-proxy.com
 youyuanle.com
 freehostia.com
+megacrazy.info
 
 ! Google Related
 ||google.
@@ -161,6 +169,11 @@ duga.jp
 g-queen.com
 camdough.com
 boosuck.com
+badjojo.com
+movies.askjolene.com
+extremetube.com
+efukt.com
+7ai.us
 
 ! Others
 @@||baidu.com
