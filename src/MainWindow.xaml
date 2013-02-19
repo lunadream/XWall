@@ -52,7 +52,7 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Profile}"/>
-                                <ComboBox x:Name="sshProfilesList"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0" SelectedIndex="-1" MinWidth="113" />
+                                <ComboBox x:Name="sshProfilesList"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0" SelectedIndex="-1" MinWidth="114" />
                             </Grid>
                             <Grid IsEnabled="{Binding Items.Count, ElementName=sshProfilesList, Mode=OneWay, Converter={StaticResource IntegerToBooleanNotConverter}}">
                                 <Grid x:Name="sshInformationGrid">

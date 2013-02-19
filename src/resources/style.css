@@ -1,0 +1,443 @@
+﻿body {
+    margin: 0px;
+    font-size: 14px; color: #999999; font-family: Segoe UI, 微软雅黑, 黑体, Arial;
+    background-color: #EEEEEE;
+}
+
+ul, li {
+    margin: 0px; padding: 0px;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0px; padding: 0px;
+    font-weight: normal;
+}
+
+p {
+    margin: 0px 0px 0.5em 0px;
+}
+
+img {
+    border: none;
+}
+
+button {
+    border: solid 1px #CCCCCC;
+    padding: 0px 10px;
+    line-height: 24px;
+    color: #888888; font-family: Segoe UI, 微软雅黑, 黑体, Arial;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+button:hover {
+    color: #666666;
+    border-color: #999999;
+}
+
+button:disabled {
+    color: #AAAAAA;
+    border-color: #CCCCCC;
+    cursor: default;
+}
+
+button.center {
+    display: block;
+    margin: 5px auto;
+}
+
+input {
+    border: solid 1px #CCCCCC;
+    padding: 2px 5px;
+    width: 200px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #999999;
+    font-family: Segoe UI, 微软雅黑, 黑体, Arial;
+    outline: none;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+input:focus {
+    border-color: #999999;
+}
+
+.anchor {
+    position: absolute;
+    margin-top: -66px;
+    font-size: 0px;
+    overflow: hidden;
+}
+
+.hidden {
+    position: absolute;
+    width: 0px; height: 0px;
+    font-size: 0px;
+    visibility: hidden;
+}
+
+/* LAYOUT */
+
+#main-wrapper {
+    position: absolute;
+    top: 66px;
+    width: 100%;
+    z-index: 0;
+}
+
+/* Header */
+
+#header-wrapper {
+    position: fixed;
+    border-bottom: solid 1px #CCCCCC;
+    width: 100%; height: 65px;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+#header {
+    position: relative;
+    margin: auto;
+    width: 1000px; height: 65px;
+}
+
+#logo-wrapper {
+    position: absolute;
+    left: 25px; bottom: 10px;
+    height: 40px;
+    text-decoration: none;
+}
+
+#logo {
+    position: absolute;
+    left: 0px; top: 0px;
+    width: 40px; height: 40px;
+    cursor: pointer;
+}
+
+#title {
+    position: absolute;
+    left: 48px; top: 18px;
+    line-height: 22px;
+    white-space: nowrap;
+    font-size: 18px; color: #666666; text-transform: uppercase;
+    cursor: pointer;
+}
+
+#domain {
+    position: absolute;
+    left: 48px; top: 2px;
+    line-height: 16px;
+    white-space: nowrap;
+    font-size: 14px; color: #CCCCCC;
+    cursor: pointer;
+}
+
+#nav {
+    position: absolute;
+    right: 5px; bottom: -1px;
+}
+
+#nav > li {
+    float: left;
+    padding: 0px;
+    height: 45px;
+}
+
+#nav > li > a {
+    display: block;
+    padding: 0px 10px;
+    border-bottom: solid 1px #CCCCCC;
+    line-height: 44px;
+    color: #999999; text-decoration: none; text-transform: uppercase;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#nav > li > a:hover {
+    border-bottom-color: #666666;
+    color: #666666;
+}
+
+#nav ul {
+    display: none;
+}
+
+/* MAIN MENU */
+#main-menu-list-wrapper {
+    display: none;
+    position: absolute;
+    margin-top: 2px;
+    padding-top: 5px;
+    line-height: 28px; font-size: 14px;
+    z-index: 1;
+}
+
+/* menu arrow */
+#main-menu-list-wrapper b {
+    position: absolute;
+    /*left: 46px;*/ top: 0px;
+    margin: 0px -6px;
+    border: dashed transparent; border-width: 0px 6px; border-bottom: solid 6px #CCCCCC;
+    width: 0px; height: 0px;
+    line-height: 0px;
+    z-index: 1;
+}
+
+#main-menu-list-wrapper b i {
+    position: absolute;
+    left: -6px; top: 1px;
+    border: dashed transparent; border-width: 0px 6px; border-bottom: solid 6px #FFFFFF;
+    width: 0px; height: 0px;
+    line-height: 0px;
+}
+
+#main-menu-list {
+    position: relative;
+    border: solid 1px #DDDDDD;
+    padding: 8px 0px 12px 0px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+#main-menu-list li {
+    height: 28px; width: 100%;
+    float: left;
+}
+
+#main-menu-list li a {
+    position: absolute;
+    width: 100%;
+    padding: 0px 40px 0px 15px;
+    text-decoration: none; color: #999999;
+    white-space: nowrap;
+    -moz-transition: color linear 0.2s;
+    -o-transition: color linear 0.2s;
+    -webkit-transition: color linear 0.2s;
+    transition: color linear 0.2s;
+}
+
+#main-menu-list li a.adjusting {
+    width: auto;
+}
+
+#main-menu-list li a:hover {
+    color: #666666;
+}
+
+/* BODY WRAPPER */
+
+#body-wrapper {
+    position: relative;
+    margin: auto;
+    width: 1000px;
+}
+
+/* CONTENT WRAPPER */
+
+#content-wrapper {
+    padding: 0px 10px 10px 30px;
+    width: 680px;
+}
+
+#content-wrapper img {
+    display: block;
+    margin: 10px 0px;
+}
+
+#content-wrapper h3 {
+    margin-left: -5px;
+    padding: 10px 0px 5px 0px;
+    text-transform: uppercase; color: #666666; font-size: 20px;
+}
+
+#content-wrapper h4 {
+    padding: 5px 0px;
+    font-size: 16px; color: #666666;
+}
+
+#content-wrapper h5 {
+    margin: 0.8em 0px 0.5em 0px;
+    font-size: 14px; color: #666666;
+}
+
+#content-wrapper ul {
+    margin-bottom: 0.5em;
+}
+
+
+#content-wrapper a {
+    color: #666666; text-decoration: none; word-break: break-all;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#content-wrapper a:hover {
+    color: #333333;
+}
+
+#content-wrapper em {
+    font-style: normal; color: #666666;
+}
+
+
+#content-wrapper ul {
+    padding-left: 5px;
+}
+
+#content-wrapper ul li {
+    /* see sidebar wrapper section */
+}
+
+#faq-list {
+    padding-left: 0px!important;
+}
+
+#faq-list li {
+    margin-bottom: 8px;
+    padding-left: 0px!important;
+    color: #666666!important;
+    background: none!important;
+    list-style: decimal inside;
+}
+
+#faq-list p.q {
+    display: inline-block;
+}
+
+#faq-list p.a {
+    text-indent: 1em;
+    color: #999999;
+}
+
+#ds-thread {
+    padding-top: 10px;
+}
+
+#ds-thread div.ds-waiting:after {
+    content: "正在加载评论...";
+}
+
+#ds-thread div.ds-waiting img {
+    display: none;
+}
+
+/* SIDEBAR WRAPPER */
+
+#sidebar-wrapper {
+    position: absolute;
+    top: 0px;
+    margin-left: 720px;
+    padding: 10px;
+    width: 260px;
+}
+
+#sidebar-wrapper .item {
+    margin-bottom: 10px;
+    border: solid 1px #CCCCCC;
+    padding: 12px 10px 12px 20px;
+    width: 228px;
+}
+
+#sidebar-wrapper .item h2 {
+    margin-left: -8px; margin-bottom: 10px;
+    border-left: solid 4px;
+    padding-left: 5px;
+    line-height: 16px;
+    font-size: 14px; text-transform: uppercase;
+}
+
+#content-wrapper ul li,
+#sidebar-wrapper .item ul li {
+    line-height: 18px;
+    padding-left: 10px;
+    background: url(transmit.ashx?file=spirits.png&type=image/png) no-repeat;
+}
+
+#provider-list {
+    margin-bottom: 0.5em;
+}
+
+#sidebar-wrapper .item ul li a {
+    text-decoration: none;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#version {
+    color: #F9F9F9;
+}
+
+/* .item.dark */
+#sidebar-wrapper .dark {
+    background-color: #CCCCCC;
+}
+
+#sidebar-wrapper .dark h2 {
+    border-left-color: #999999;
+    color: #666666;
+}
+
+#content-wrapper ul li,
+#sidebar-wrapper .dark ul li {
+    color: #999999;
+    background-position: -196px 0px;
+}
+
+#sidebar-wrapper .dark ul li a {
+    color: #F9F9F9;
+}
+
+#sidebar-wrapper .dark ul li a:hover {
+    color: #FFFFFF;
+}
+
+/* .item.light */
+#sidebar-wrapper .light {
+    background-color: #FFFFFF;
+}
+
+#sidebar-wrapper .light h2 {
+    border-left-color: #6DD900;
+    color: #666666;
+}
+
+#sidebar-wrapper .light ul li {
+    color: #6DD900;
+    background-position: 0px -182px;
+}
+
+#sidebar-wrapper .light ul li a {
+    color: #888888;
+}
+
+#sidebar-wrapper .light ul li a:hover {
+    color: #666666;
+}
+
+/* FOOTER */
+
+#footer {
+    margin: auto; padding: 20px 0px;
+    width: 1000px;
+    line-height: 20px;
+    font-size: 12px; text-align: center; color: #CCCCCC;
+}
+
+#footer a {
+    color: #CCCCCC; text-decoration: none;
+}

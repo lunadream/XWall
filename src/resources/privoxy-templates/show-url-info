@@ -1,0 +1,47 @@
+(function () {
+    var type, host, port;
+
+    /* @if-valid-url-start */
+
+    /* @if-http-forwarder-start */
+    type = "http";
+    host = "@forward-host@";
+    port = Number("@forward-port@");
+    /* if-http-forwarder-end@ */
+
+    /* @if-socks-forwarder-start */
+    type = "socks";
+    host = "@gateway-host@";
+    port = Number("@gateway-port@");
+    /* if-socks-forwarder-end@ */
+
+    /* if-valid-url-end@ */
+
+    var matchesHTML = (function () {/*
+@matches@
+    */}).toString().match(/\/\*\s*([\s\S]*)\s*\*\//)[1];
+
+    var temp = document.createElement("div");
+    temp.innerHTML = matchesHTML;
+
+    var tds = temp.getElementsByTagName("td");
+
+    var rule;
+    var rules = ["online-forward", "online-default", "custom-forward", "custom-default"];
+    
+    for (var i = 0; i < tds.length; i++) {
+        if (tds[i].getElementsByTagName("code").length > 0) {
+            rule = rules[i];
+        }
+    }
+
+    urlInfoCallback({
+        url: "@url@",
+        rule: rule,
+        forward: {
+            type: type,
+            host: host,
+            port: port
+        }
+    });
+})();

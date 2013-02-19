@@ -5,40 +5,35 @@
     <title></title>
 #include mod-head-error
     <script>
-        var pageStatus = 503;
+        var pageStatus = 404;
     </script>
 </head>
 <body>
 #include mod-header-error
 #include mod-content-begin
-<div data-lang="en-US" data-title="Connect Failed">
-    <h3>Connect Failed</h3>
-    <h4>Detailed information</h4>
+<div data-lang="en-US" data-title="No Such Domain">
+    <h3>No Such Domain</h3>
+    <h4>Detailed Information</h4>
     <p>
-        Your request for <a href="@protocol@@hostport@@path@">@protocol@@hostport@@path@</a> could
-        not be fulfilled, because the connection to @host@ (@host-ip@) could not be established.
+        Your request for <a href="@protocol@@hostport@@path@">@protocol@@hostport@@path@</a>
+        could not be fulfilled, because the domain name @host@ could not be resolved.
     </p>
     <p>
         This is often a temporary failure, so you might just
         <a href="@protocol@@hostport@@path@">try again</a>.
     </p>
 </div>
-<div data-lang="zh-CN" data-title="连接失败">
-    <h3>连接失败</h3>
+<div data-lang="zh-CN" data-title="该域名不存在">
+    <h3>该域名不存在</h3>
     <h4>详细信息</h4>
     <p>
         请求 <a href="@protocol@@hostport@@path@">@protocol@@hostport@@path@</a>
-        无法完成, 因为不能建立到 @host@ (@host-ip@) 的连接.
+        无法完成, 因为不能解析域名 @host@.
     </p>
     <p>
         这通常只是一个临时的错误, 您可以 <a href="@protocol@@hostport@@path@">重试看看</a>.
     </p>
 </div>
-<script>
-    var toggle = (
-#include submit-new-rule-toggle
-    );
-</script>
 #include mod-gfw-operation
 #include mod-content-end
 #include mod-lang-helper

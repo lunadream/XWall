@@ -138,6 +138,9 @@ namespace XWall {
             //* DEBUG CODE
             privoxy.Start();
 
+            var server = new Microsoft.VisualStudio.WebHost.Server(settings.LocalServerPort, "/", Environment.CurrentDirectory + "\\" + settings.LocalServerFolderName);
+            server.Start();
+
             settings.PropertyChanged += (o, a) => {
                 switch (a.PropertyName) {
                     case "ProxyPort": break;
@@ -204,7 +207,7 @@ namespace XWall {
                 }
             };
 
-            var ruleCommandWatcher = new FileSystemWatcher(App.AppDataDirectory, "*-cmd");
+            var ruleCommandWatcher = new FileSystemWatcher(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName, "*-cmd");
             ruleCommandWatcher.Created += ruleCommandHandler;
             ruleCommandWatcher.Changed += ruleCommandHandler;
             ruleCommandWatcher.EnableRaisingEvents = true;
@@ -353,8 +356,9 @@ namespace XWall {
                         var onlineVersion = new Version(onlineVersionStr);
                         var lowVersion = new Version(versions[1]);
 
-                        if (File.Exists(App.AppDataDirectory + settings.UpdateMarkName)) {
-                            File.Delete(App.AppDataDirectory + settings.UpdateMarkName);
+                        if (File.Exists(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.UpdateMarkName)) {
+                            File.Delete(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.UpdateMarkName);
+                            File.Delete(settings.UpdateInstallerName);
                             if (installedVersion < onlineVersion)
                                 notificationController.SendMessage(resources["UpdateFailedTitle"] as string, resources["UpdateFailedDetails"] as string, System.Windows.Forms.ToolTipIcon.Error);
                             else
@@ -402,7 +406,7 @@ namespace XWall {
 
                 var client = new WebClient();
                 //client.Proxy = null;
-                client.DownloadFileAsync(url, App.AppDataDirectory + settings.UpdateInstallerName);
+                client.DownloadFileAsync(url, settings.UpdateInstallerName);
 
                 client.DownloadProgressChanged += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
@@ -430,8 +434,8 @@ namespace XWall {
         void startUpdateInstalling() {
             var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
-                File.WriteAllText(App.AppDataDirectory + settings.UpdateMarkName, "");
-                Process.Start(App.AppDataDirectory + settings.UpdateInstallerName, "/silent");
+                File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.UpdateMarkName, "");
+                Process.Start(settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }
         }

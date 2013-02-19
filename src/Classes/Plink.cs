@@ -19,6 +19,7 @@ namespace XWall {
         bool isLastSuccess;
         bool toReconnect;
         int portCloseCount;
+        Timer processCheckTimer;
         public bool IsReconnecting = false;
         public bool IsConnecting = false;
         public bool IsConnected = false;
@@ -86,6 +87,16 @@ namespace XWall {
                 process.Start();
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
+
+                processCheckTimer = new Timer((o) => {
+                    if (process == null || process.HasExited) {
+                        IsConnected = false;
+                        IsConnecting = false;
+                        Disconnected(isLastSuccess, isReconnect);
+                        disposeProcessCheckTimer();
+                    }
+                }, null, 0, 1000);
+
                 process.WaitForExit(settings.PlinkConnectTimeout * 1000);
                 if (process != null && !process.HasExited) {
                     if (IsConnected) {
@@ -101,12 +112,19 @@ namespace XWall {
             IsConnected = false;
             IsConnecting = false;
             Disconnected(isLastSuccess, isReconnect);
+            processCheckTimer.Dispose();
 
             if (toReconnect) {
                 var stopReconnectingHandler = reconnect();
                 if (stopReconnectingHandler != null) {
                     stopReconnect = stopReconnectingHandler;
                 }
+            }
+        }
+
+        void disposeProcessCheckTimer() {
+            if (processCheckTimer != null) {
+                processCheckTimer.Dispose();
             }
         }
 

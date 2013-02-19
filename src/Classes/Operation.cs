@@ -86,26 +86,26 @@ namespace XWall {
             }
         }
 
-        public static bool RegisterXWallProtocol(bool toggle) {
-            var root = Registry.ClassesRoot;
+        //public static bool RegisterXWallProtocol(bool toggle) {
+        //    var root = Registry.ClassesRoot;
 
-            try {
-                if (toggle) {
-                    var xwallKey = root.CreateSubKey("xwall");
-                    xwallKey.SetValue("URL Protocol", "");
-                    var commandKey = xwallKey.CreateSubKey(@"shell\open\command");
-                    var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\" \"%1\"";
-                    commandKey.SetValue("", value);
-                }
-                else {
-                    root.DeleteSubKeyTree("xwall");
-                }
-                return toggle;
-            }
-            catch {
-                return false;
-            }
-        }
+        //    try {
+        //        if (toggle) {
+        //            var xwallKey = root.CreateSubKey("xwall");
+        //            xwallKey.SetValue("URL Protocol", "");
+        //            var commandKey = xwallKey.CreateSubKey(@"shell\open\command");
+        //            var value = "\"" + System.Windows.Forms.Application.ExecutablePath + "\" \"%1\"";
+        //            commandKey.SetValue("", value);
+        //        }
+        //        else {
+        //            root.DeleteSubKeyTree("xwall");
+        //        }
+        //        return toggle;
+        //    }
+        //    catch {
+        //        return false;
+        //    }
+        //}
 
         // Created by Joel 'Jaykul' Bennett
         // http://huddledmasses.org/setting-windows-internet-connection-proxy-from-c/

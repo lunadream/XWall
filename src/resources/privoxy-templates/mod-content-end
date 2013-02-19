@@ -4,7 +4,7 @@
                 <h2>More Operation</h2>
                 <ul>
                     <li>
-                        <a href="@default-cgi@show-url-info">View the action for a URL</a>
+                        <a href="http://localhost:14220/url-info.html">View the action for a URL</a>
                     </li>
                 </ul>
             </div>
@@ -12,7 +12,7 @@
                 <h2>更多操作</h2>
                 <ul>
                     <li>
-                        <a href="@default-cgi@show-url-info">查看 URL 对应的行为</a>
+                        <a href="http://localhost:14220/url-info.html">查看 URL 对应的行为</a>
                     </li>
                 </ul>
             </div>

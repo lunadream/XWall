@@ -77,8 +77,8 @@
     <Setting Name="CustomRules" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="PrivoxyActionFileName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">privoxy.action</Value>
+    <Setting Name="PrivoxyOnlineForwardActionFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">privoxy-online-forward.action</Value>
     </Setting>
     <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -141,7 +141,7 @@
       <Value Profile="(Default)">submit-new-rule-toggle</Value>
     </Setting>
     <Setting Name="ShowUrlInfoUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://config.privoxy.org/show-url-info</Value>
+      <Value Profile="(Default)">http://localhost:14220/url-info.html</Value>
     </Setting>
     <Setting Name="PrivoxyTemplatesFolderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">privoxy-templates\</Value>
@@ -175,6 +175,27 @@
     </Setting>
     <Setting Name="SetProxyAutomatically" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LocalServerFolderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">local-server-apps\</Value>
+    </Setting>
+    <Setting Name="ConfigsFolderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">configs\</Value>
+    </Setting>
+    <Setting Name="ResourcesFolderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">resources\</Value>
+    </Setting>
+    <Setting Name="LocalServerPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">14220</Value>
+    </Setting>
+    <Setting Name="PrivoxyOnlineDefaultActionFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">privoxy-online-default.action</Value>
+    </Setting>
+    <Setting Name="PrivoxyCustomDefaultActionFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">privoxy-custom-default.action</Value>
+    </Setting>
+    <Setting Name="PrivoxyCustomForwardActionFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">privoxy-custom-forward.action</Value>
     </Setting>
   </Settings>
 </SettingsFile>

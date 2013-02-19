@@ -44,8 +44,12 @@ Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\mgwz.dll"; DestDir: "{app}"; 
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plink.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plonk.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\privoxy.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\templates\*"; DestDir: "{commonappdata}\{#MyAppName}\privoxy-templates"; Flags: ignoreversion; Permissions: authusers-full
-Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}"; DestName: "online-rules"; Flags: ignoreversion onlyifdoesntexist; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\*"; DestDir: "{app}\local-server-apps"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\bin\*"; DestDir: "{app}\local-server-apps\bin"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\resources\privoxy-templates\*"; DestDir: "{app}\resources\privoxy-templates"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\configs\*"; DestDir: "{app}\configs"; Flags: ignoreversion; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{app}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -65,6 +69,7 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 #include "scripts\products\dotnetfx35sp1.iss"
 
 [Registry]
+Root: "HKCR"; Subkey: "xwall"; Flags: deletekey
 
 [InstallDelete]
 Type: files; Name: "{commondesktop}\{#MyAppName}.lnk"
@@ -73,13 +78,15 @@ Type: files; Name: "{app}\online-rules"
 Type: files; Name: "{app}\update-mark"
 Type: files; Name: "{app}\privoxy.config"
 Type: files; Name: "{app}\privoxy.action"
+Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}"
 
 [CustomMessages]
 win_sp_title=Windows %1 Service Pack %2
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"
-Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}"
+
+[Dirs]
 
 [Code]
 Function InitializeSetup : Boolean;

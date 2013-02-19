@@ -43,9 +43,12 @@ namespace XWall {
                 "forwarded-connect-retries " + settings.ForwardConnectionRetries + "\r\n" +
                 "forward / " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy) + "\r\n" +
                 "keep-alive-timeout " + settings.PrivoxyKeepAliveTimeout + "\r\n" +
-                "actionsfile " + App.AppDataDirectory + settings.PrivoxyActionFileName + "\r\n" +
-                "templdir " + App.AppDataDirectory + settings.PrivoxyTemplatesFolderName + "\r\n";
-            File.WriteAllText(App.AppDataDirectory + settings.PrivoxyConfigFileName, text);
+                "actionsfile " + Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName + "\r\n" +
+                "actionsfile " + Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName + "\r\n" +
+                "actionsfile " + Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName + "\r\n" +
+                "actionsfile " + Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName + "\r\n" +
+                "templdir " + Environment.CurrentDirectory + "\\" + settings.ResourcesFolderName + settings.PrivoxyTemplatesFolderName + "\r\n";
+            File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyConfigFileName, text);
         }
 
         void startProcess() {
@@ -56,7 +59,7 @@ namespace XWall {
 
             var si = process.StartInfo;
             si.FileName = settings.PrivoxyFileName;
-            si.Arguments = '"' + App.AppDataDirectory + settings.PrivoxyConfigFileName + '"';
+            si.Arguments = '"' + Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyConfigFileName + '"';
             si.CreateNoWindow = true;
             si.UseShellExecute = false;
 

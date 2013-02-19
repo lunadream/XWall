@@ -35,11 +35,6 @@
         这通常只是一个临时的错误, 您可以 <a href="@protocol@@hostport@@path@">重试看看</a>.
     </p>
 </div>
-<script>
-    var toggle = (
-#include submit-new-rule-toggle
-    );
-</script>
 #include mod-gfw-operation
 #include mod-content-end
 #include mod-lang-helper

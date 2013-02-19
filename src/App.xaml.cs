@@ -18,7 +18,7 @@ namespace XWall {
     /// </summary>
     public partial class App : Application {
         public static bool IsShutDown = false;
-        public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
+        //public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
 
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
@@ -27,7 +27,7 @@ namespace XWall {
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
 
-            Directory.CreateDirectory(AppDataDirectory);
+            //Directory.CreateDirectory(AppDataDirectory);
             Microsoft.Win32.SystemEvents.SessionEnding += (sender, e) => {
                 IsShutDown = true;
                 App.Current.Shutdown();
@@ -50,20 +50,20 @@ namespace XWall {
                             Operation.Proxies.RestoreProxy();
                         }
                         Operation.SetAutoStart(false);
-                        Operation.RegisterXWallProtocol(false);
+                        //Operation.RegisterXWallProtocol(false);
                         IsShutDown = true;
                         App.Current.Shutdown();
                         return;
-                    case "xwall:new-rule":
-                        File.WriteAllText(App.AppDataDirectory + settings.NewRuleFileName, commandArg);
-                        IsShutDown = true;
-                        App.Current.Shutdown();
-                        return;
-                    case "xwall:del-rule":
-                        File.WriteAllText(App.AppDataDirectory + settings.DeleteRuleFileName, commandArg);
-                        IsShutDown = true;
-                        App.Current.Shutdown();
-                        return;
+                    //case "xwall:new-rule":
+                    //    File.WriteAllText(settings.ConfigsFolderName + settings.NewRuleFileName, commandArg);
+                    //    IsShutDown = true;
+                    //    App.Current.Shutdown();
+                    //    return;
+                    //case "xwall:del-rule":
+                    //    File.WriteAllText(settings.ConfigsFolderName + settings.DeleteRuleFileName, commandArg);
+                    //    IsShutDown = true;
+                    //    App.Current.Shutdown();
+                    //    return;
                     default:
                         break;
                 }
@@ -106,7 +106,7 @@ namespace XWall {
             if (settings.SetProxyAutomatically) {
                 Operation.Proxies.SetXWallProxy();
             }
-            Operation.RegisterXWallProtocol(true);
+            //Operation.RegisterXWallProtocol(true);
 
             settings.PropertyChanged += (sender, e) => {
                 switch (e.PropertyName) {

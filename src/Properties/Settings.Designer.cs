@@ -303,10 +303,10 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("privoxy.action")]
-        public string PrivoxyActionFileName {
+        [global::System.Configuration.DefaultSettingValueAttribute("privoxy-online-forward.action")]
+        public string PrivoxyOnlineForwardActionFileName {
             get {
-                return ((string)(this["PrivoxyActionFileName"]));
+                return ((string)(this["PrivoxyOnlineForwardActionFileName"]));
             }
         }
         
@@ -510,7 +510,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://config.privoxy.org/show-url-info")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:14220/url-info.html")]
         public string ShowUrlInfoUrl {
             get {
                 return ((string)(this["ShowUrlInfoUrl"]));
@@ -634,6 +634,69 @@ namespace XWall.Properties {
             }
             set {
                 this["SetProxyAutomatically"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("local-server-apps\\")]
+        public string LocalServerFolderName {
+            get {
+                return ((string)(this["LocalServerFolderName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("configs\\")]
+        public string ConfigsFolderName {
+            get {
+                return ((string)(this["ConfigsFolderName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("resources\\")]
+        public string ResourcesFolderName {
+            get {
+                return ((string)(this["ResourcesFolderName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("14220")]
+        public int LocalServerPort {
+            get {
+                return ((int)(this["LocalServerPort"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("privoxy-online-default.action")]
+        public string PrivoxyOnlineDefaultActionFileName {
+            get {
+                return ((string)(this["PrivoxyOnlineDefaultActionFileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("privoxy-custom-default.action")]
+        public string PrivoxyCustomDefaultActionFileName {
+            get {
+                return ((string)(this["PrivoxyCustomDefaultActionFileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("privoxy-custom-forward.action")]
+        public string PrivoxyCustomForwardActionFileName {
+            get {
+                return ((string)(this["PrivoxyCustomForwardActionFileName"]));
             }
         }
     }
