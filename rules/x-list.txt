@@ -36,6 +36,7 @@ fffff.at
 juziyue.com
 heqinglian.net
 ||imtx.me
+onehungrymind.com
 
 ! BBS
 hkreporter.loved.hk
@@ -82,6 +83,11 @@ dogear.mobi
 123rf.com
 jinbushe.org
 kaotic.com
+||mic.no
+dybee.com
+
+! Organization
+gz-us-ca.com/aggregator
 
 ! Tech
 ||wugfresh.com
@@ -97,6 +103,7 @@ pchome.com.tw
 ||privoxy.org
 ||7-zip.org
 getfoxyproxy.org
+twipple.jp
 
 ! CDN
 ||imagehyper.com
@@ -105,6 +112,7 @@ box.com/s
 ||imagezilla.net
 ||imgchili.com
 telechargement.rfi.fr.edgesuite.net
+picsee.net
 
 ! SNS Related
 
@@ -128,6 +136,7 @@ my-proxy.com
 youyuanle.com
 freehostia.com
 megacrazy.info
+netignition.com
 
 ! Google Related
 ||google.
@@ -174,6 +183,7 @@ movies.askjolene.com
 extremetube.com
 efukt.com
 7ai.us
+||man9394.com
 
 ! Others
 @@||baidu.com
@@ -186,3 +196,4 @@ youversion.com
 linkbucks.com
 lalulu.com
 sky66.com
+||zipangguide.net
