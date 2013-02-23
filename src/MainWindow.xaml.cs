@@ -356,13 +356,16 @@ namespace XWall {
                         var onlineVersion = new Version(onlineVersionStr);
                         var lowVersion = new Version(versions[1]);
 
-                        if (File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.UpdateMarkName)) {
-                            File.Delete(App.AppDataDirectory + settings.ConfigsFolderName + settings.UpdateMarkName);
-                            File.Delete(settings.UpdateInstallerName);
+                        if (App.Updated) {
+                            File.Delete(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
                             if (installedVersion < onlineVersion)
                                 notificationController.SendMessage(resources["UpdateFailedTitle"] as string, resources["UpdateFailedDetails"] as string, System.Windows.Forms.ToolTipIcon.Error);
                             else
                                 notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+                        }
+
+                        if (App.Updated || App.FirstRun) {
+                            new WebClient().DownloadStringAsync(new Uri(settings.UpdateReportUrl + "?v=" + installedVersion.ToString()));
                         }
 
                         if (installedVersion < lowVersion) {
@@ -406,7 +409,7 @@ namespace XWall {
 
                 var client = new WebClient();
                 //client.Proxy = null;
-                client.DownloadFileAsync(url, settings.UpdateInstallerName);
+                client.DownloadFileAsync(url, App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
 
                 client.DownloadProgressChanged += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
@@ -434,8 +437,7 @@ namespace XWall {
         void startUpdateInstalling() {
             var result = MessageBox.Show(resources["InstallUpdateDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK) {
-                File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.UpdateMarkName, "");
-                Process.Start(settings.UpdateInstallerName, "/silent");
+                Process.Start(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
             }
         }

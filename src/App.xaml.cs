@@ -19,6 +19,8 @@ namespace XWall {
     public partial class App : Application {
         public static bool IsShutDown = false;
         public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
+        public static bool Updated = false;
+        public static bool FirstRun = false;
 
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
@@ -91,11 +93,16 @@ namespace XWall {
             if (settings.UpgradeRequired) {
                 settings.Upgrade();
                 settings.UpgradeRequired = false;
+
+                if (!settings.FirstRun) {
+                    Updated = true;
+                }
             }
 
             //* DEBUG CODE
             if (settings.FirstRun) {
                 settings.FirstRun = false;
+                FirstRun = true;
 
                 //first time stuffs.
                 Operation.SetAvailablePorts();
