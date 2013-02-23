@@ -17,6 +17,16 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+
+        document.addEventListener("click", function (e) {
+            var target = e.target;
+            while (target && target.tagName != "A") {
+                target = target.parentNode;
+            }
+            if (target) {
+                _gaq.push(['_trackEvent', 'Outgoing Links', target.href]);
+            }
+        });
     </script>
     <link href="/style/main.css" rel="stylesheet" />
 </head>
