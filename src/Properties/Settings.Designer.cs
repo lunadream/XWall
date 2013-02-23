@@ -342,10 +342,10 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int AbortionBeforeReconnect {
+        [global::System.Configuration.DefaultSettingValueAttribute("32")]
+        public int SshAbortionBeforeReconnect {
             get {
-                return ((int)(this["AbortionBeforeReconnect"]));
+                return ((int)(this["SshAbortionBeforeReconnect"]));
             }
         }
         

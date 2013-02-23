@@ -44,12 +44,12 @@ Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\WebDev.WebHost20.dll"; DestDi
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\mgwz.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plink.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\privoxy.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\*"; DestDir: "{app}\local-server-apps"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\bin\*"; DestDir: "{app}\local-server-apps\bin"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\resources\privoxy-templates\*"; DestDir: "{app}\resources\privoxy-templates"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\configs\*"; DestDir: "{app}\configs"; Flags: ignoreversion; Permissions: authusers-full
-Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{app}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\*"; DestDir: "{commonappdata}\{#MyAppName}\local-server-apps"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\local-server-apps\bin\*"; DestDir: "{commonappdata}\{#MyAppName}\local-server-apps\bin"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{commonappdata}\{#MyAppName}\resources"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\resources\privoxy-templates\*"; DestDir: "{commonappdata}\{#MyAppName}\resources\privoxy-templates"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\configs\*"; DestDir: "{commonappdata}\{#MyAppName}\configs"; Flags: ignoreversion; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -74,17 +74,22 @@ Root: "HKCR"; Subkey: "xwall"; Flags: deletekey
 [InstallDelete]
 Type: files; Name: "{commondesktop}\{#MyAppName}.lnk"
 Type: filesandordirs; Name: "{app}\templates"
+Type: filesandordirs; Name: "{app}\local-server-apps"
+Type: filesandordirs; Name: "{app}\configs"
+Type: filesandordirs; Name: "{app}\resources"
 Type: files; Name: "{app}\online-rules"
 Type: files; Name: "{app}\update-mark"
 Type: files; Name: "{app}\privoxy.config"
 Type: files; Name: "{app}\privoxy.action"
-Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}"
+Type: files; Name: "{commonappdata}\{#MyAppName}\*"
+Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}\privoxy-templates"
 
 [CustomMessages]
 win_sp_title=Windows %1 Service Pack %2
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"
+Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}"
 
 [Dirs]
 

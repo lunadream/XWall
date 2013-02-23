@@ -18,7 +18,7 @@ namespace XWall {
     /// </summary>
     public partial class App : Application {
         public static bool IsShutDown = false;
-        //public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
+        public static string AppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\X-Wall\";
 
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
@@ -26,14 +26,16 @@ namespace XWall {
 
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
-
-            //Directory.CreateDirectory(AppDataDirectory);
             Microsoft.Win32.SystemEvents.SessionEnding += (sender, e) => {
                 IsShutDown = true;
                 App.Current.Shutdown();
             };
 
             var settings = Settings.Default;
+
+            Directory.CreateDirectory(AppDataDirectory);
+            Directory.CreateDirectory(AppDataDirectory + settings.ConfigsFolderName);
+            Directory.CreateDirectory(AppDataDirectory + settings.ResourcesFolderName);
 
             if (eventArgs.Args.Length > 0) {
                 var commandStr = eventArgs.Args[0];

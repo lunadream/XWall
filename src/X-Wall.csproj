@@ -153,86 +153,43 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <Resource Include="post-build.txt" />
     <Content Include="plonk.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="resources\icon-error.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\icon.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\logo-error.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\lang-helper.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\spirits.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\style.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\connect-failed">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\connection-timeout">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\default">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\forwarding-failed">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\no-server-data">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\no-such-domain">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\show-url-info">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="resources\icon-error.ico" />
+    <Content Include="resources\icon.ico" />
+    <Content Include="resources\logo-error.png" />
+    <Content Include="resources\logo.png" />
+    <Content Include="resources\privoxy-templates\lang-helper.js" />
+    <Content Include="resources\spirits.png" />
+    <Content Include="resources\style.css" />
+    <Content Include="resources\privoxy-templates\connect-failed" />
+    <Content Include="resources\privoxy-templates\connection-timeout" />
+    <Content Include="resources\privoxy-templates\default" />
+    <Content Include="resources\privoxy-templates\forwarding-failed" />
+    <Content Include="resources\privoxy-templates\no-server-data" />
+    <Content Include="resources\privoxy-templates\no-such-domain" />
+    <Content Include="resources\privoxy-templates\show-url-info" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <AppDesigner Include="Properties\" />
-    <Content Include="resources\privoxy-templates\mod-content-begin">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-content-end">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-head">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-head-error">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-header">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-header-error">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-gfw-operation">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\privoxy-templates\mod-lang-helper">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="configs\submit-new-rule-toggle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="resources\privoxy-templates\mod-content-begin" />
+    <Content Include="resources\privoxy-templates\mod-content-end" />
+    <Content Include="resources\privoxy-templates\mod-head" />
+    <Content Include="resources\privoxy-templates\mod-head-error" />
+    <Content Include="resources\privoxy-templates\mod-header" />
+    <Content Include="resources\privoxy-templates\mod-header-error" />
+    <Content Include="resources\privoxy-templates\mod-gfw-operation" />
+    <Content Include="resources\privoxy-templates\mod-lang-helper" />
+    <Content Include="configs\submit-new-rule-toggle" />
     <None Include="X-Wall_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +233,10 @@
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

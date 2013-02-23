@@ -89,8 +89,8 @@
     <Setting Name="RuleUpdateTimeout" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">60000</Value>
     </Setting>
-    <Setting Name="AbortionBeforeReconnect" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">5</Value>
+    <Setting Name="SshAbortionBeforeReconnect" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">32</Value>
     </Setting>
     <Setting Name="MaxReconnectPeriod" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">128</Value>

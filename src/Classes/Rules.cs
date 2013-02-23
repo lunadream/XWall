@@ -57,7 +57,7 @@ namespace XWall {
                     default: return;
                 }
 
-                if (settings.UseOnlineRules && !File.Exists(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.OnlineRulesFileName))
+                if (settings.UseOnlineRules && !File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName))
                     OnlineRules.Update();
             };
 
@@ -78,12 +78,12 @@ namespace XWall {
             if (
                 settings.UseOnlineRules &&
                 (DateTime.Now - settings.OnlineRulesLastUpdateTime).Ticks / 10000000 >= settings.OnlineRulesUpdateInterval ||
-                !File.Exists(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.OnlineRulesFileName)
+                !File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName)
             ) OnlineRules.Update();
         }
 
         static void updateNewRuleSubmitToggleFile() {
-            File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
+            File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
         }
 
         public static void GenerateActionFile() {
@@ -114,8 +114,8 @@ namespace XWall {
                         "/";
                 }
                 else {
-                    if (settings.UseOnlineRules && File.Exists(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.OnlineRulesFileName)) {
-                        var onlineRulesText = File.ReadAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.OnlineRulesFileName);
+                    if (settings.UseOnlineRules && File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName)) {
+                        var onlineRulesText = File.ReadAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName);
                         var parts = onlineRulesText.Split(new string[] { "#-- separator --#" }, StringSplitOptions.None);
                         if (parts.Length == 2) {
                             onlineForwardText = parts[0].Trim().Replace("$forward-settings$", forwardSettings);
@@ -152,10 +152,10 @@ namespace XWall {
                     }
                 }
 
-                File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName, onlineForwardText);
-                File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName, onlineDefaultText);
-                File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName, customForwardText);
-                File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName, customDefaultText);
+                File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName, onlineForwardText);
+                File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName, onlineDefaultText);
+                File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName, customForwardText);
+                File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName, customDefaultText);
 
                 generatingActionFile = false;
             }).BeginInvoke(null, null);
@@ -213,7 +213,7 @@ namespace XWall {
                     if (e.Error != null)
                         Updated(false);
                     else {
-                        File.WriteAllText(Environment.CurrentDirectory + "\\" + settings.ConfigsFolderName + settings.OnlineRulesFileName, e.Result);
+                        File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName, e.Result);
                         settings.OnlineRulesLastUpdateTime = DateTime.Now;
                         Updated(true);
                     }

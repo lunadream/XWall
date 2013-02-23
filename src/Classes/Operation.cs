@@ -200,7 +200,7 @@ namespace XWall {
                 var optionsPtr = Marshal.AllocCoTaskMem(optSize * options.Length);
                 // copy the array over into that spot in memory ...
                 for (var i = 0; i < options.Length; i++) {
-                    var opt = new IntPtr(optionsPtr.ToInt32() + (i * optSize));
+                    var opt = new IntPtr(optionsPtr.ToInt64() + (i * optSize));
                     Marshal.StructureToPtr(options[i], opt, false);
                 }
 
