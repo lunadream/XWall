@@ -83,11 +83,8 @@
     <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SshConnectTimeout" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">30000</Value>
-    </Setting>
     <Setting Name="RuleUpdateTimeout" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">60000</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="SshAbortionBeforeReconnect" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">32</Value>
@@ -196,6 +193,9 @@
     </Setting>
     <Setting Name="UpdateReportUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://vilic.s4.jutuo.net/x-wall/update.ashx</Value>
+    </Setting>
+    <Setting Name="UpdateCheckDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
     </Setting>
   </Settings>
 </SettingsFile>

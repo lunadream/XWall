@@ -205,7 +205,7 @@ namespace XWall {
                 var timer = new Timer((arg) => {
                     client.CancelAsync();
                     Updated(false);
-                }, null, settings.RuleUpdateTimeout, Timeout.Infinite);
+                }, null, settings.RuleUpdateTimeout * 1000, Timeout.Infinite);
 
                 //client.Proxy = null;
                 client.DownloadStringCompleted += (sender, e) => {

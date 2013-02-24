@@ -212,7 +212,26 @@ namespace XWall {
             ruleCommandWatcher.Changed += ruleCommandHandler;
             ruleCommandWatcher.EnableRaisingEvents = true;
 
-            checkVersion();
+            Timer updateCheckTimer = null;
+            updateCheckTimer = new Timer((st) => {
+                Dispatcher.BeginInvoke(new Action(() => {
+                    if (onlineVersionStr == null) {
+                        checkVersion();
+                    }
+                    else {
+                        updateCheckTimer.Dispose();
+                    }
+                }));
+            }, null, 0, settings.UpdateCheckDelay * 1000);
+
+            if (App.Updated) {
+                File.Delete(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
+                notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+            }
+
+            if (App.Updated || App.FirstRun) {
+                new WebClient().DownloadStringAsync(new Uri(settings.UpdateReportUrl + "?v=" + Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+            }
 
             if (WindowState != WindowState.Minimized)
                 Activate();
@@ -333,8 +352,11 @@ namespace XWall {
 
         string onlineVersionStr = null;
         bool updateDownloaded = false;
+        bool checkingVersion = false;
 
         void checkVersion() {
+            if (checkingVersion) return;
+            checkingVersion = true;
             downloadUpdateButton.IsEnabled = false;
             onlineVersionTextBlock.Text = resources["Checking"] as string;
 
@@ -346,6 +368,7 @@ namespace XWall {
 
             client.DownloadStringCompleted += (sender, e) => {
                 Dispatcher.BeginInvoke(new Action(() => {
+                    checkingVersion = false;
                     if (e.Error == null) {
                         bool suggestedToUpdate = false;
 
@@ -355,18 +378,6 @@ namespace XWall {
                         onlineVersionStr = versions[0];
                         var onlineVersion = new Version(onlineVersionStr);
                         var lowVersion = new Version(versions[1]);
-
-                        if (App.Updated) {
-                            File.Delete(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
-                            if (installedVersion < onlineVersion)
-                                notificationController.SendMessage(resources["UpdateFailedTitle"] as string, resources["UpdateFailedDetails"] as string, System.Windows.Forms.ToolTipIcon.Error);
-                            else
-                                notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
-                        }
-
-                        if (App.Updated || App.FirstRun) {
-                            new WebClient().DownloadStringAsync(new Uri(settings.UpdateReportUrl + "?v=" + installedVersion.ToString()));
-                        }
 
                         if (installedVersion < lowVersion) {
                             suggestedToUpdate = settings.DismissedUpdateVersion != onlineVersionStr;

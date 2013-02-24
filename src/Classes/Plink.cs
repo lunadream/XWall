@@ -46,6 +46,10 @@ namespace XWall {
                 settings.SshSocksPort > 0;
         }
 
+        void fixPlink() { 
+            
+        }
+
         void startProcess(bool isReconnect) {
             if (Environment.HasShutdownStarted) return;
 
@@ -240,6 +244,16 @@ namespace XWall {
             else if (line.StartsWith("Password authentication failed")) {
                 Error = resources["PlinkAuthFailed"] as string;
                 Stop(settings.SshReconnectAnyCondition);
+            }
+            else {
+                var match = new Regex(@"Failed to connect to (.+?): Network error: No route to host").Match(line);
+                if (match.Success) {
+                    var ip = match.Groups[1].Value;
+                    var si = new ProcessStartInfo("arp", "-d " + ip);
+                    si.CreateNoWindow = true;
+                    si.UseShellExecute = false;
+                    Process.Start(si);
+                }
             }
             //else if (line.StartsWith("FATAL ERROR:")) {
             //    Stop(settings.SshReconnectAnyCondition);
