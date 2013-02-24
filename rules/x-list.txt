@@ -37,6 +37,8 @@ juziyue.com
 heqinglian.net
 ||imtx.me
 onehungrymind.com
+hkemax.com
+moonlit.me
 
 ! BBS
 hkreporter.loved.hk
@@ -143,6 +145,7 @@ netignition.com
 ||googleusercontent.com
 ||googleapis.com
 ||g.doubleclick.net
+||adsense.com
 
 ! URL Redirection Service
 |http://goo.gl
@@ -197,3 +200,4 @@ linkbucks.com
 lalulu.com
 sky66.com
 ||zipangguide.net
+991.com
