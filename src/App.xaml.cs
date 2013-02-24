@@ -11,6 +11,7 @@ using XWall.Properties;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using Microsoft.Win32;
 
 namespace XWall {
     /// <summary>
@@ -145,6 +146,10 @@ namespace XWall {
                 if (settings.SetProxyAutomatically) {
                     Operation.Proxies.RestoreProxy();
                 }
+            };
+
+            SystemEvents.SessionEnded += (sender, e) => {
+                App.Current.Shutdown();
             };
             //*/
         }
