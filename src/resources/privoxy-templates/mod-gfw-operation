@@ -252,7 +252,7 @@
 
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4 || xhr.readyState == 3 && xhr.responseText.length > 50) {
-                        xhr.onreadystatechange = null;
+                        xhr.onreadystatechange = function () { };
                         var text = xhr.responseText;
                         try {
                             xhr.abort();
