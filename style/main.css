@@ -146,13 +146,13 @@ input:focus {
     right: 5px; bottom: -1px;
 }
 
-#nav > li {
+#nav li {
     float: left;
     padding: 0px;
     height: 45px;
 }
 
-#nav > li > a {
+#nav li a {
     display: block;
     padding: 0px 10px;
     border-bottom: solid 1px #CCCCCC;
@@ -164,7 +164,7 @@ input:focus {
     transition: all linear 0.2s;
 }
 
-#nav > li > a:hover {
+#nav li a:hover {
     border-bottom-color: #666666;
     color: #666666;
 }

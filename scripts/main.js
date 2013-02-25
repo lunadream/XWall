@@ -69,7 +69,11 @@ use_("dom", "dom.animation", function (dom, anim) {
             var nav = dom.query("#nav");
             var menuItems = dom.query("> li", nav);
             for_(menuItems, function (item) {
-                var links = dom.query("ul li", item);
+                var ul = dom.query("ul", item)[0];
+
+                ul.parentNode.removeChild(ul);
+
+                var links = dom.query("li", ul);
                 if (!links.length) return;
 
                 var mouseover = false;
