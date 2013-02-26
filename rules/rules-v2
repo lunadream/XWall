@@ -682,6 +682,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .dev102.com
 .devio.us
 www.dfanning.com:80
+.dfas.mil
 :80/.*(?:\.|%2e)diaoyuislands(?:\.|%2e)org
 .diaoyuislands.org
 .digitalnomadsproject.org
@@ -734,6 +735,7 @@ www.dfanning.com:80
 :80/.*(?:\.|%2e)dropbox(?:\.|%2e)com
 .dropbox.com
 .dtiblog.com
+.dtic.mil
 :80/.*dtiserv2(?:\.|%2e)com
 .dtiserv2.com
 :80/.*(?:\.|%2e)duckload(?:\.|%2e)com(?:/|%2f)download
@@ -775,8 +777,6 @@ www.dfanning.com:80
 .e-info.org.tw
 :80/.*(?:\.|%2e)e-traderland(?:\.|%2e)net(?:/|%2f)board
 .e-traderland.net:80/board
-:80/.*ea(?:\.|%2e)com(?:\.|%2e)cn
-.ea.com.cn
 :80/.*(?:\.|%2e)easy-share(?:\.|%2e)com(?:/|%2f)191
 .easy-share.com:80/191
 :80/.*hkjp(?:\.|%2e)easyweb(?:\.|%2e)hk
@@ -856,6 +856,8 @@ www.dfanning.com:80
 .fakku.net
 :80/.*falunart(?:\.|%2e)org
 .falunart.org
+:80/.*falundafa(?:\.|%2e)org
+.falundafa.org
 :80/.*falundafamuseum(?:\.|%2e)org
 .falundafamuseum.org
 :80/.*fangongheike(?:\.|%2e)com
@@ -1299,6 +1301,8 @@ ub0.cc:80
 .google.:80/.*%E4%BB%A3%E7%90%86
 :80/.*(?:\.|%2e)google(?:\.|%2e).*facebook
 .google.:80/.*facebook
+:80/.*(?:\.|%2e)google(?:\.|%2e).*falungong
+.google.:80/.*falungong
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E7%BF%BB%E5%A2%99
 .google.:80/.*%E7%BF%BB%E5%A2%99
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E9%AB%98%E6%99%BA%E6%99%9F
@@ -1718,6 +1722,7 @@ www.idlcoyote.com:80
 .iredmail.org
 .ironicsoftware.com
 .ironbigfools.compython.net
+.ironpython.net
 :80/.*(?:\.|%2e)beta(?:\.|%2e)iset(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)forum
 .beta.iset.com.tw:80/forum
 :80/.*http:(?:/|%2f)(?:/|%2f)beta(?:\.|%2e)iset(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)forum
@@ -2237,6 +2242,8 @@ www.monlamit.org:80
 :80/.*(?:\.|%2e)newchen(?:\.|%2e)com
 :80/.*(?:\.|%2e)newgrounds(?:\.|%2e)com
 .newgrounds.com
+:80/.*newlandmagazine(?:\.|%2e)com(?:\.|%2e)au
+.newlandmagazine.com.au
 :80/.*news100(?:\.|%2e)com(?:\.|%2e)tw
 .news100.com.tw
 :80/.*(?:\.|%2e)newscn(?:\.|%2e)org
@@ -2263,6 +2270,7 @@ www.monlamit.org:80
 .nexton-net.jp
 :80/.*nexttv(?:\.|%2e)com(?:\.|%2e)tw
 .nexttv.com.tw
+.nga.mil
 :80/.*ngensis(?:\.|%2e)com
 .ngensis.com
 .ngs2.info
@@ -2280,10 +2288,6 @@ www.monlamit.org:80
 .njuice.com
 :80/.*nlfreevpn(?:\.|%2e)com
 .nlfreevpn.com
-:80/.*no-ip(?:\.|%2e)com
-.no-ip.com
-:80/.*(?:\.|%2e)nobelprize(?:\.|%2e)org
-.nobelprize.org
 :80/.*nobelprize(?:\.|%2e)org(?:/|%2f)nobel_prizes(?:/|%2f)peace(?:/|%2f)laureates(?:/|%2f)2010
 .nobelprize.org:80/nobel_prizes(?:/|%2f)peace(?:/|%2f)laureates(?:/|%2f)2010
 :80/.*nobodycanstop(?:\.|%2e)us
@@ -2291,8 +2295,6 @@ www.monlamit.org:80
 .nokogiri.org
 .nokola.com
 .noobbox.com
-:80/.*nooidea(?:\.|%2e)com
-.nooidea.com
 .novelasia.com
 :80/.*(?:\.|%2e)nownews(?:\.|%2e)com(?:/|%2f)cybersex
 .nownews.com:80/cybersex
@@ -2329,6 +2331,8 @@ www.monlamit.org:80
 :80/.*observechina(?:\.|%2e)net
 .observechina.net
 .october-review.org
+:80/.*offbeatchina(?:\.|%2e)com
+.offbeatchina.com
 .ogaoga.org
 :80/.*twtr2src(?:\.|%2e)ogaoga(?:\.|%2e)org
 .twtr2src.ogaoga.org
@@ -2647,6 +2651,8 @@ post.ly:80
 .python.com.tw
 :80/.*(?:\.|%2e)qanote(?:\.|%2e)com
 .qanote.com
+:80/.*qi-gong(?:\.|%2e)me
+.qi-gong.me
 :80/.*(?:\.|%2e)qienkuen(?:\.|%2e)org
 .qienkuen.org
 :80/.*qixianglu(?:\.|%2e)cn
@@ -3501,6 +3507,7 @@ tl.gd:80/
 t.co:80
 t.co:443
 twt.tl:80
+.twimg.com
 :80/.*twitter(?:\.|%2e)com
 .twitter.com
 .twitter.jp
@@ -3529,6 +3536,8 @@ twt.tl:80
 .twstar.net
 :80/.*(?:\.|%2e)twtkr(?:\.|%2e)com
 .twtkr.com
+:80/.*www(?:\.|%2e)twtrland(?:\.|%2e)com(?:/|%2f)profile(?:/|%2f).*
+.www.twtrland.com:80/profile(?:/|%2f).*
 :80/.*twurl(?:\.|%2e)nl
 .twurl.nl
 :80/.*(?:\.|%2e)twyac(?:\.|%2e)org
@@ -3548,14 +3557,8 @@ twt.tl:80
 .contests.twilio.com
 :80/.*embr(?:\.|%2e)in
 .embr.in
-.fanfou.im
 :80/.*guomin(?:\.|%2e)us(?:/|%2f)login
 .guomin.us:80/login
-:80/.*tuite(?:\.|%2e)in
-.tuite.in
-:80/.*tuite(?:\.|%2e)im
-.tuite.im
-.twimg.com
 :80/.*(?:\.|%2e)srcf(?:\.|%2e)ucam(?:\.|%2e)org(?:/|%2f)salon(?:/|%2f)
 .srcf.ucam.org:80/salon(?:/|%2f)
 :80/.*humanities(?:\.|%2e)uchicago(?:\.|%2e)edu(?:/|%2f)faculty(?:/|%2f)ywang(?:/|%2f)hi
@@ -3574,6 +3577,7 @@ twt.tl:80
 .ultravpn.fr
 :80/.*ultraxs(?:\.|%2e)com
 .ultraxs.com
+.unblock.cn.com
 :80/.*uncyclomedia(?:\.|%2e)org
 .uncyclomedia.org
 :80/.*uncyclopedia(?:\.|%2e)info
@@ -3820,6 +3824,8 @@ uploaded.to:80/file
 .wordpress.com
 :80/.*woxinghuiguo(?:\.|%2e)com
 .woxinghuiguo.com
+:80/.*wow-life(?:\.|%2e)net
+.wow-life.net
 :80/.*(?:\.|%2e)wpoforum(?:\.|%2e)com
 .wpoforum.com
 :80/.*(?:\.|%2e)wqlhw(?:\.|%2e)com
@@ -4714,6 +4720,8 @@ chinese.wsj.com:80/gb
 .hkm.appledaily.com
 :80/.*video(?:\.|%2e)pbs(?:\.|%2e)org
 .video.pbs.org
+:80/.*www(?:\.|%2e)tvbs(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)news(?:/|%2f)news_list(?:\.|%2e)asp
+.www.tvbs.com.tw:80/news(?:/|%2f)news_list(?:\.|%2e)asp
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4803,6 +4811,8 @@ chinese.wsj.com:80/gb
 .telechargement.rfi.fr.edgesuite.net
 :80/.*picsee(?:\.|%2e)net
 .picsee.net
+:80/.*twtrland(?:\.|%2e)com(?:/|%2f)profile
+.twtrland.com:80/profile
 :80/.*sshcenter(?:\.|%2e)net
 .sshcenter.net
 :80/.*sshwall(?:\.|%2e)com
@@ -4904,6 +4914,9 @@ goo.gl:80
 :80/.*7ai(?:\.|%2e)us
 .7ai.us
 .man9394.com
+:80/.*x77x77(?:\.|%2e)net
+.x77x77.net
+.ddlpornfree.com
 .c1520.inc.gs
 .local.apbest.info
 .lvcuser.com:80/user55
@@ -4916,6 +4929,7 @@ goo.gl:80
 .zipangguide.net
 :80/.*991(?:\.|%2e)com
 .991.com
+.tra.gov.tw
 #-- separator --#
 {+forward-override{$default-forward-settings$}}
 .www.exblog.jp
