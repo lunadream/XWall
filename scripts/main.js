@@ -71,6 +71,7 @@ use_("dom", "dom.animation", function (dom, anim) {
             for_(menuItems, function (item) {
                 var ul = dom.query("ul", item)[0];
 
+                if (!ul) return;
                 ul.parentNode.removeChild(ul);
 
                 var links = dom.query("li", ul);
