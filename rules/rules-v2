@@ -59,6 +59,8 @@
 .2000fun.com:80/bbs
 :80/.*(?:\.|%2e)2008xianzhang(?:\.|%2e)info
 .2008xianzhang.info
+:80/.*21andy(?:\.|%2e)com(?:/|%2f)blog
+.21andy.com:80/blog
 :80/.*24smile(?:\.|%2e)org
 .24smile.org
 :80/.*(?:\.|%2e)2shared(?:\.|%2e)com
@@ -181,6 +183,8 @@
 .video.aol.com
 :80/.*www(?:\.|%2e)aolnews(?:\.|%2e)com
 .www.aolnews.com
+:80/.*(?:\.|%2e)apetube(?:\.|%2e)com
+.apetube.com
 :80/.*(?:\.|%2e)apigee(?:\.|%2e)com
 .apigee.com
 :80/.*appledaily(?:\.|%2e)com
@@ -188,6 +192,9 @@
 :80/.*(?:\.|%2e)arctosia(?:\.|%2e)com
 .arctosia.com
 .areca-backup.org
+.army.mil
+:80/.*artsy(?:\.|%2e)net
+.artsy.net
 :80/.*(?:\.|%2e)asahichinese(?:\.|%2e)com
 .asahichinese.com
 :80/.*asdfg(?:\.|%2e)jp(?:/|%2f)dabr
@@ -226,6 +233,7 @@
 :80/.*badoo(?:\.|%2e)com
 .badoo.com
 www.baidu.jp:80
+image.baidu.jp:80
 :80/.*hen(?:\.|%2e)bao(?:\.|%2e)li
 .hen.bao.li
 :80/.*bannedbook(?:\.|%2e)org
@@ -322,6 +330,9 @@ bbc.in:80
 .blogspot.com
 :80/.*blogspot(?:\.|%2e)de
 .blogspot.de
+:80/.*blogspot(?:\.|%2e)fr
+.blogspot.fr
+.blogspot.hk
 :80/.*blogspot(?:\.|%2e)in
 .blogspot.in
 :80/.*blogspot(?:\.|%2e)jp
@@ -342,6 +353,8 @@ bbc.in:80
 :80/.*boardreader(?:\.|%2e)com(?:/|%2f)thread
 .boardreader.com:80/thread
 .boardreader.com
+:80/.*bonbonme(?:\.|%2e)com
+.bonbonme.com
 .books.com.tw
 :80/.*(?:\.|%2e)botanwang(?:\.|%2e)com
 .botanwang.com
@@ -357,6 +370,7 @@ bbc.in:80
 .boxun.tv
 .br.st
 .brandonhutchinson.com
+.braumeister.org
 :80/.*(?:\.|%2e)break(?:\.|%2e)com
 .break.com
 :80/.*(?:\.|%2e)breakingtweets(?:\.|%2e)com
@@ -438,8 +452,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 :80/.*cdjp(?:\.|%2e)org
 .cdjp.org
 .cdjp.org:80
-:80/.*(?:\.|%2e)cdnews(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)cdnews_site(?:/|%2f)docDetail(?:\.|%2e)jsp\?
-.cdnews.com.tw:80/cdnews_site(?:/|%2f)docDetail(?:\.|%2e)jsp\?
+:80/.*(?:\.|%2e)cdnews(?:\.|%2e)com(?:\.|%2e)tw
+.cdnews.com.tw
 :80/.*cdp1998(?:\.|%2e)org
 .cdp1998.org
 :80/.*cdpweb(?:\.|%2e)org
@@ -460,6 +474,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .changp.com
 :80/.*chengmingmag(?:\.|%2e)com
 .chengmingmag.com
+.chenguangcheng.com
 :80/.*chenpokong(?:\.|%2e)com
 .chenpokong.com
 .cherrysave.com
@@ -467,6 +482,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .china-week.com
 :80/.*china101(?:\.|%2e)com
 .china101.com
+.china21.com
 :80/.*china21(?:\.|%2e)org
 .china21.org
 :80/.*chinaaffairs(?:\.|%2e)org
@@ -564,6 +580,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .classicalguitarblog.net
 :80/.*(?:\.|%2e)clb(?:\.|%2e)org(?:\.|%2e)hk
 .clb.org.hk
+:80/.*(?:\.|%2e)clipfish(?:\.|%2e)de
+.clipfish.de
 :80/.*(?:\.|%2e)cmule(?:\.|%2e)com
 .cmule.com
 .cna.com.tw
@@ -799,6 +817,8 @@ www.dfanning.com:80
 :80/.*efcc(?:\.|%2e)org(?:\.|%2e)hk
 .efcc.org.hk
 .eic-av.com
+:80/.*electionsmeter(?:\.|%2e)com
+.electionsmeter.com
 :80/.*(?:\.|%2e)eltondisney(?:\.|%2e)com
 .eltondisney.com
 .emacsblog.org
@@ -1023,6 +1043,7 @@ cn.fmnnow.com:80
 :80/.*(?:\.|%2e)free-ssh(?:\.|%2e)com
 .free-ssh.com
 .freenetproject.org
+www.freeoz.org:80/ibbs(?:/|%2f)index(?:\.|%2e)php
 :80/.*www(?:\.|%2e)freetibet(?:\.|%2e)org
 .www.freetibet.org
 .freewallpaper4.me
@@ -1118,6 +1139,7 @@ ff.im:80
 .gfw.org.ua
 :80/.*(?:\.|%2e)ggssl(?:\.|%2e)com
 .ggssl.com
+.giga-web.jp
 :80/.*gigporno(?:\.|%2e)ru
 .gigporno.ru
 .gimpshop.com
@@ -1395,6 +1417,8 @@ ub0.cc:80
 .google.:80/.*%E7%9C%9F%E7%90%86%E9%83%A8
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E7%9C%9F%E7%9B%B8
 .google.:80/.*%E7%9C%9F%E7%9B%B8
+:80/.*(?:\.|%2e)google(?:\.|%2e).*%E6%94%BF%E6%B2%BB%E5%B1%80
+.google.:80/.*%E6%94%BF%E6%B2%BB%E5%B1%80
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E4%B8%AD%E5%85%B1
 .google.:80/.*%E4%B8%AD%E5%85%B1
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E4%B8%AD%E5%9B%BD%E5%86%A4%E6%B0%91%E5%A4%A7%E5%90%8C%E7%9B%9F
@@ -1689,8 +1713,7 @@ www.idlcoyote.com:80
 :80/.*imageshack(?:\.|%2e)us
 .imageshack.us
 .imagevenue.com
-:80/.*(?:\.|%2e)imdb(?:\.|%2e)com
-.imdb.com
+www.imdb.com:80/name(?:/|%2f)nm0482730
 :80/.*(?:\.|%2e)img(?:\.|%2e)ly
 .img.ly
 :80/.*(?:\.|%2e)imkev(?:\.|%2e)com
@@ -1874,6 +1897,7 @@ www.idlcoyote.com:80
 :80/.*(?:\.|%2e)laoyang(?:\.|%2e)info
 .laoyang.info
 .laptoplockdown.com
+.lastfm.es
 :80/.*latelinenews(?:\.|%2e)com
 .latelinenews.com
 .leecheukyan.org
@@ -2720,6 +2744,8 @@ post.ly:80
 :80/.*retweetist(?:\.|%2e)com
 .retweetist.com
 .retweetrank.com
+:80/.*connectedchina(?:\.|%2e)reuters(?:\.|%2e)com
+.connectedchina.reuters.com
 :80/.*revver(?:\.|%2e)com
 .revver.com
 :80/.*(?:\.|%2e)rfa(?:\.|%2e)org
@@ -2814,6 +2840,7 @@ rfi.my:80/
 .securitykiss.com
 :80/.*seesmic(?:\.|%2e)com
 .seesmic.com
+.seevpn.com
 .seezone.net
 :80/.*sejie(?:\.|%2e)com
 .sejie.com
@@ -2846,6 +2873,7 @@ rfi.my:80/
 67.220.91.18
 :80/.*67(?:\.|%2e)220(?:\.|%2e)91(?:\.|%2e)23
 67.220.91.23
+.sf.net
 :80/.*(?:\.|%2e)sfileydy(?:\.|%2e)com
 .sfileydy.com
 :80/.*shadow(?:\.|%2e)ma
@@ -2909,6 +2937,9 @@ rfi.my:80/
 .cdp.sinica.edu.tw
 :80/.*sino-monthly(?:\.|%2e)com
 .sino-monthly.com
+.sinocast.com
+:80/.*sinocism(?:\.|%2e)com
+.sinocism.com
 :80/.*sinomontreal(?:\.|%2e)ca
 .sinomontreal.ca
 :80/.*(?:\.|%2e)sinonet(?:\.|%2e)ca
@@ -3135,6 +3166,7 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 .tenacy.com
 .theappleblog.com
 .theatrum-belli.com
+.thebodyshop-usa.com
 :80/.*theblemish(?:\.|%2e)com
 .theblemish.com
 .thebcomplex.com
@@ -3143,6 +3175,8 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 .thedieline.com
 .thedw.us
 .thegatesnotes.com
+:80/.*thehousenews(?:\.|%2e)com
+.thehousenews.com
 .thelifeyoucansave.com
 .thelius.org
 :80/.*thepiratebay(?:\.|%2e)org
@@ -3571,6 +3605,7 @@ twt.tl:80
 .uighurbiz.net
 :80/.*(?:\.|%2e)ulike(?:\.|%2e)net
 .ulike.net
+www.ukchinese.com:80/www(?:/|%2f)22(?:/|%2f)2009-03(?:/|%2f)2842(?:\.|%2e)html
 :80/.*ukliferadio(?:\.|%2e)co(?:\.|%2e)uk
 .ukliferadio.co.uk
 :80/.*ultravpn(?:\.|%2e)fr
@@ -4197,6 +4232,8 @@ chinese.wsj.com:80/gb
 .en.wikipedia.org:80/wiki(?:/|%2f)Anti-communism
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Book_burning
 .en.wikipedia.org:80/wiki(?:/|%2f)Book_burning
+:80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Carl_Linnaeus
+.en.wikipedia.org:80/wiki(?:/|%2f)Carl_Linnaeus
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Censorship_in_the_People%27s_Republic_of_China
 .en.wikipedia.org:80/wiki(?:/|%2f)Censorship_in_the_People%27s_Republic_of_China
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Charter_08
@@ -4381,6 +4418,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E8%B3%88%E6%85%B6%E6%9E%97
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%B4%BE%E5%BA%86%E6%9E%97
 .zh.wikipedia.org:80/.*%E8%B4%BE%E5%BA%86%E6%9E%97
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BB%BA%E5%9B%BD%E9%97%A8%E4%BA%8B%E4%BB%B6
+.zh.wikipedia.org:80/.*%E5%BB%BA%E5%9B%BD%E9%97%A8%E4%BA%8B%E4%BB%B6
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B1%9F%E6%B3%BD%E6%B0%91
 .zh.wikipedia.org:80/.*%E6%B1%9F%E6%B3%BD%E6%B0%91
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B1%9F%E6%BE%A4%E6%B0%91
@@ -4411,6 +4450,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/zh-tw(?:/|%2f)%E6%9D%8E%E9%B9%8F
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%8E%E7%91%9E%E7%8E%AF
 .zh.wikipedia.org:80/.*%E6%9D%8E%E7%91%9E%E7%8E%AF
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%8E%E7%91%9E%E7%92%B0
+.zh.wikipedia.org:80/.*%E6%9D%8E%E7%91%9E%E7%92%B0
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%8E%E6%85%8E%E4%B9%8B
 .zh.wikipedia.org:80/.*%E6%9D%8E%E6%85%8E%E4%B9%8B
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%8E%E6%BA%90%E6%BD%AE
@@ -4559,6 +4600,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E7%8E%8B%E5%85%86%E5%9B%BD
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%94%AF%E8%89%B2
 .zh.wikipedia.org:80/.*%E5%94%AF%E8%89%B2
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%A8%81%E8%A7%86%E8%85%90%E8%B4%A5%E6%A1%88
+.zh.wikipedia.org:80/.*%E5%A8%81%E8%A7%86%E8%85%90%E8%B4%A5%E6%A1%88
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87
 .zh.wikipedia.org:80/.*%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B8%A9%E5%AE%B6%E5%AE%9D
@@ -4581,6 +4624,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E6%97%A0%E7%95%8C
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E4%B8%83%C2%B7%E4%BA%94%E6%9A%B4%E5%8A%9B%E4%BA%8B%E4%BB%B6
 .zh.wikipedia.org:80/.*%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E4%B8%83%C2%B7%E4%BA%94%E6%9A%B4%E5%8A%9B%E4%BA%8B%E4%BB%B6
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%BA%94%E6%AF%9B%E8%9B%8B%E4%BA%8B%E4%BB%B6
+.zh.wikipedia.org:80/.*%E4%BA%94%E6%AF%9B%E8%9B%8B%E4%BA%8B%E4%BB%B6
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%A5%BF%E5%8D%95%E6%B0%91%E4%B8%BB%E5%A2%99
 .zh.wikipedia.org:80/.*%E8%A5%BF%E5%8D%95%E6%B0%91%E4%B8%BB%E5%A2%99
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%BF%92%E8%BF%91%E5%B9%B3
@@ -4597,6 +4642,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E8%B0%A2%E5%BD%A6%E9%A3%9E
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%BE%9B%E7%81%8F%E5%B9%B4
 .zh.wikipedia.org:80/.*%E8%BE%9B%E7%81%8F%E5%B9%B4
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%96%B0%E5%94%90%E4%BA%BA%E9%9B%BB%E8%A6%96%E5%8F%B0
+.zh.wikipedia.org:80/.*%E6%96%B0%E5%94%90%E4%BA%BA%E9%9B%BB%E8%A6%96%E5%8F%B0
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%96%B0%E9%97%BB%E8%87%AA%E7%94%B1%E6%8E%A0%E5%A4%BA%E8%80%85
 .zh.wikipedia.org:80/.*%E6%96%B0%E9%97%BB%E8%87%AA%E7%94%B1%E6%8E%A0%E5%A4%BA%E8%80%85
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%98%9F%E4%BA%91%E6%B3%95%E5%B8%88
@@ -4629,8 +4676,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E8%A2%81%E7%BA%A2%E5%86%B0
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BC%A0%E5%BE%B7%E6%B1%9F
 .zh.wikipedia.org:80/.*%E5%BC%A0%E5%BE%B7%E6%B1%9F
-:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%E5%BC%A0%E9%AB%98%E4%B8%BD
-.zh.wikipedia.org:80/wiki(?:/|%2f)%E5%BC%A0%E9%AB%98%E4%B8%BD
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BC%A0%E9%AB%98%E4%B8%BD
+.zh.wikipedia.org:80/.*%E5%BC%A0%E9%AB%98%E4%B8%BD
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%AB%A0%E8%A9%92%E5%92%8C
 .zh.wikipedia.org:80/.*%E7%AB%A0%E8%A9%92%E5%92%8C
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%AB%A0%E8%AF%92%E5%92%8C
@@ -4655,6 +4702,8 @@ chinese.wsj.com:80/gb
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9C%8B%E5%85%B1%E7%94%A2%E9%BB
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%9C%8B%E5%85%B1%E7%94%A2%E9%BB
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9B%BD%E5%AE%B6%E5%BA%AD%E6%95%99%E4%BC%9A
+.zh.wikipedia.org:80/.*%E4%B8%AD%E5%9B%BD%E5%AE%B6%E5%BA%AD%E6%95%99%E4%BC%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9B%BD%E6%B0%91%E4%B8%BB%E5%85%9A
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%9B%BD%E6%B0%91%E4%B8%BB%E5%85%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9B%BD%E6%B0%91%E4%B8%BB%E8%BF%90%E5%8A%A8
@@ -4722,6 +4771,10 @@ chinese.wsj.com:80/gb
 .video.pbs.org
 :80/.*www(?:\.|%2e)tvbs(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)news(?:/|%2f)news_list(?:\.|%2e)asp
 .www.tvbs.com.tw:80/news(?:/|%2f)news_list(?:\.|%2e)asp
+:80/.*gospelherald(?:\.|%2e)com(?:\.|%2e)hk
+.gospelherald.com.hk
+:80/.*ctitv(?:\.|%2e)com(?:\.|%2e)tw
+.ctitv.com.tw
 :80/.*x-berry(?:\.|%2e)com(?:/|%2f)goagent
 .x-berry.com:80/goagent
 .randkao.myweb.hinet.net
@@ -4731,8 +4784,6 @@ chinese.wsj.com:80/gb
 .umezawa.dyndns.info
 :80/.*fffff(?:\.|%2e)at
 .fffff.at
-:80/.*21andy(?:\.|%2e)com(?:/|%2f)blog
-.21andy.com:80/blog
 .imtx.me
 :80/.*onehungrymind(?:\.|%2e)com
 .onehungrymind.com
@@ -4781,8 +4832,12 @@ chinese.wsj.com:80/gb
 .mic.no
 :80/.*dybee(?:\.|%2e)com
 .dybee.com
+:80/.*whenthedragon(?:\.|%2e)com
+.whenthedragon.com
 :80/.*gz-us-ca(?:\.|%2e)com(?:/|%2f)aggregator
 .gz-us-ca.com:80/aggregator
+:80/.*gofruita(?:\.|%2e)org
+.gofruita.org
 .wugfresh.com
 :80/.*ithelp(?:\.|%2e)ithome(?:\.|%2e)com(?:\.|%2e)tw
 .ithelp.ithome.com.tw
@@ -4813,6 +4868,8 @@ chinese.wsj.com:80/gb
 .picsee.net
 :80/.*twtrland(?:\.|%2e)com(?:/|%2f)profile
 .twtrland.com:80/profile
+:80/.*twylah(?:\.|%2e)com
+.twylah.com
 :80/.*sshcenter(?:\.|%2e)net
 .sshcenter.net
 :80/.*sshwall(?:\.|%2e)com
@@ -4920,6 +4977,16 @@ goo.gl:80
 :80/.*hegre-art(?:\.|%2e)com
 .hegre-art.com
 .mcnudes.com
+:80/.*cam4(?:\.|%2e)com
+.cam4.com
+:80/.*yahqq(?:\.|%2e)org
+.yahqq.org
+:80/.*jpav69(?:\.|%2e)com
+.jpav69.com
+:80/.*jjgirls(?:\.|%2e)com
+.jjgirls.com
+:80/.*hardsextube(?:\.|%2e)com
+.hardsextube.com
 .c1520.inc.gs
 .local.apbest.info
 .lvcuser.com:80/user55
@@ -4933,6 +5000,8 @@ goo.gl:80
 :80/.*991(?:\.|%2e)com
 .991.com
 .tra.gov.tw
+:80/.*nakuz(?:\.|%2e)com(?:/|%2f)bbs
+.nakuz.com:80/bbs
 #-- separator --#
 {+forward-override{$default-forward-settings$}}
 .www.exblog.jp
