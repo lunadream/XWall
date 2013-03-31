@@ -1147,7 +1147,6 @@ ff.im:80
 .galenwu.com
 :80/.*gamebase(?:\.|%2e)com(?:\.|%2e)tw
 .gamebase.com.tw
-.gamer.com.tw
 :80/.*(?:\.|%2e)gamez(?:\.|%2e)com(?:\.|%2e)tw
 .gamez.com.tw
 :80/.*(?:\.|%2e)gaoming(?:\.|%2e)net
@@ -1972,7 +1971,7 @@ tech2.in.com:80/video(?:/|%2f)
 .islam.org.hk
 :80/.*(?:\.|%2e)isaacmao(?:\.|%2e)com
 .isaacmao.com
-:80/.*||!--isaacmao(?:\.|%2e)com
+:80/.*\|\|!--isaacmao(?:\.|%2e)com
 .isgreat.org
 .ismprofessional.net
 :80/.*isohunt(?:\.|%2e)com
