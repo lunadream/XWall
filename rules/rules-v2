@@ -1,6 +1,8 @@
 {+forward-override{$forward-settings$}}
 www.hcm.com.tw:80
 www.1024cores.net:80
+play.google.com:80/store(?:/|%2f)music
+play.google.com:443/store(?:/|%2f)music
 :80/.*hulu(?:\.|%2e)com
 .hulu.com
 :80/.*huluim(?:\.|%2e)com
@@ -295,6 +297,8 @@ bbc.in:80
 .bewww.net
 .bfnn.org
 .bfsh.hk:80
+:80/.*biantailajiao(?:\.|%2e)com
+.biantailajiao.com
 :80/.*bigfools(?:\.|%2e)com
 .bigfools.com
 :80/.*(?:\.|%2e)bignews(?:\.|%2e)org
@@ -302,6 +306,8 @@ bbc.in:80
 :80/.*(?:\.|%2e)bigsound(?:\.|%2e)org(?:/|%2f)portnoy
 .bigsound.org:80/portnoy
 .bill2-software.com
+:80/.*billypan(?:\.|%2e)com(?:/|%2f)wiki(?:/|%2f)%E9%A6%96%E9%A0%81
+.billypan.com:80/wiki(?:/|%2f)%E9%A6%96%E9%A0%81
 .billywr.com
 :80/.*bipic(?:\.|%2e)net
 .bipic.net
@@ -381,6 +387,8 @@ bbc.in:80
 .boxun.com
 :80/.*(?:\.|%2e)boxun(?:\.|%2e)tv
 .boxun.tv
+:80/.*boxunblog(?:\.|%2e)com
+.boxunblog.com
 .br.st
 .brandonhutchinson.com
 .braumeister.org
@@ -1197,6 +1205,7 @@ ff.im:80
 :80/.*gigporno(?:\.|%2e)ru
 .gigporno.ru
 .gimpshop.com
+.girlbanker.com
 .glennhilton.com
 :80/.*globalmuseumoncommunism(?:\.|%2e)org
 .globalmuseumoncommunism.org
@@ -1372,6 +1381,8 @@ ub0.cc:80
 .google.:80/.*nytimes
 :80/.*(?:\.|%2e)google(?:\.|%2e).*peacehall
 .google.:80/.*peacehall
+:80/.*(?:\.|%2e)googlw(?:\.|%2e).*president(?:\.|%2e)gov(?:\.|%2e)tw
+.googlw.*president.gov.tw
 :80/.*(?:\.|%2e)google(?:\.|%2e).*protest.*1989
 .google.:80/.*protest.*1989
 :80/.*(?:\.|%2e)google(?:\.|%2e).*prisoner\+of\+the\+state
@@ -2072,6 +2083,8 @@ tech2.in.com:80/video(?:/|%2f)
 .kingstone.com.tw
 :80/.*killwall(?:\.|%2e)com
 .killwall.com
+:80/.*(?:\.|%2e)kissbbao(?:\.|%2e)cn
+.kissbbao.cn
 :80/.*(?:\.|%2e)knowledgerush(?:\.|%2e)com(?:/|%2f)kr(?:/|%2f)encyclopedia
 .knowledgerush.com:80/kr(?:/|%2f)encyclopedia
 .kodingen.com
@@ -2220,6 +2233,7 @@ tech2.in.com:80/video(?:/|%2f)
 .lockestek.com
 :80/.*logbot(?:\.|%2e)net
 .logbot.net
+.logiqx.com
 .logmike.com
 :80/.*(?:\.|%2e)longhair(?:\.|%2e)hk
 .longhair.hk
@@ -2782,8 +2796,6 @@ www.oxid.it:80
 .plm.org.hk
 :80/.*plunder(?:\.|%2e)com
 .plunder.com
-:80/.*plurk(?:\.|%2e)com
-.plurk.com
 :80/.*(?:\.|%2e)plus28(?:\.|%2e)com
 .plus28.com
 :80/.*(?:\.|%2e)plusbb(?:\.|%2e)com
@@ -2926,8 +2938,8 @@ post.ly:80
 .nemesis2.qx.net:80/.*pages.*MyEnTunnel
 :80/.*qxbbs(?:\.|%2e)org
 .qxbbs.org
-:80/.*www(?:\.|%2e)radioaustralia(?:\.|%2e)net(?:\.|%2e)au.*chinese.*articles.*
-.www.radioaustralia.net.au:80/.*chinese.*articles.*
+:80/.*radioaustralia(?:\.|%2e)net(?:\.|%2e)au
+.radioaustralia.net.au
 :80/.*opml(?:\.|%2e)radiotime(?:\.|%2e)com
 .opml.radiotime.com
 .radiovaticana.org
@@ -3099,7 +3111,6 @@ rfi.my:80/
 67.220.91.18
 :80/.*67(?:\.|%2e)220(?:\.|%2e)91(?:\.|%2e)23
 67.220.91.23
-.sf.net
 :80/.*(?:\.|%2e)sfileydy(?:\.|%2e)com
 .sfileydy.com
 :80/.*shadow(?:\.|%2e)ma
@@ -3237,6 +3248,7 @@ www.skype.com:80/intl(?:/|%2f)
 .snaptu.com
 :80/.*sneakme(?:\.|%2e)net
 .sneakme.net
+.snooper.co.uk
 :80/.*(?:\.|%2e)sobees(?:\.|%2e)com
 .sobees.com
 :80/.*socialwhale(?:\.|%2e)com
@@ -3567,6 +3579,7 @@ tmi.me:80
 .bbs.tuitui.info
 :80/.*(?:\.|%2e)tunein(?:\.|%2e)com
 .tunein.com
+.tunnelbear.com
 :80/.*(?:\.|%2e)turbobit(?:\.|%2e)net
 .turbobit.net
 .turningtorso.com
@@ -3818,8 +3831,8 @@ twt.tl:80
 .twstar.net
 :80/.*(?:\.|%2e)twtkr(?:\.|%2e)com
 .twtkr.com
-:80/.*www(?:\.|%2e)twtrland(?:\.|%2e)com(?:/|%2f)profile(?:/|%2f).*
-.www.twtrland.com:80/profile(?:/|%2f).*
+:80/.*twtrland(?:\.|%2e)com
+.twtrland.com
 :80/.*twurl(?:\.|%2e)nl
 .twurl.nl
 :80/.*(?:\.|%2e)twyac(?:\.|%2e)org
@@ -3944,6 +3957,7 @@ uploaded.to:80/file
 .viki.com
 :80/.*(?:\.|%2e)vimeo(?:\.|%2e)com
 .vimeo.com
+.vimgolf.com
 .vimperator.org
 .vincnd.com
 .vinniev.com
@@ -4128,6 +4142,8 @@ uploaded.to:80/file
 :80/.*woopie(?:\.|%2e)tv
 .woopie.tv
 .workatruna.com
+:80/.*(?:\.|%2e)worldcat(?:\.|%2e)org
+.worldcat.org
 :80/.*worldjournal(?:\.|%2e)com
 .worldjournal.com
 :80/.*(?:\.|%2e)wordpress(?:\.|%2e)com
@@ -4736,6 +4752,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E8%B4%BE%E5%BA%86%E6%9E%97
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BB%BA%E5%9B%BD%E9%97%A8%E4%BA%8B%E4%BB%B6
 .zh.wikipedia.org:80/.*%E5%BB%BA%E5%9B%BD%E9%97%A8%E4%BA%8B%E4%BB%B6
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%A7%9C%E7%BB%B4%E5%B9%B3
+.zh.wikipedia.org:80/.*%E5%A7%9C%E7%BB%B4%E5%B9%B3
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B1%9F%E6%B3%BD%E6%B0%91
 .zh.wikipedia.org:80/.*%E6%B1%9F%E6%B3%BD%E6%B0%91
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B1%9F%E6%BE%A4%E6%B0%91
@@ -4816,6 +4834,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E6%B4%9B%E6%A1%91%E6%A3%AE%E6%A0%BC
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%B6%A0%E5%A3%A9%C2%B7%E8%8A%B1%E5%AD%A3%E8%AD%B7%E8%88%AA
 .zh.wikipedia.org:80/.*%E7%B6%A0%E5%A3%A9%C2%B7%E8%8A%B1%E5%AD%A3%E8%AD%B7%E8%88%AA
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%BB%BF%E5%9D%9D%C2%B7%E8%8A%B1%E5%AD%A3%E6%8A%A4%E8%88%AA
+.zh.wikipedia.org:80/.*%E7%BB%BF%E5%9D%9D%C2%B7%E8%8A%B1%E5%AD%A3%E6%8A%A4%E8%88%AA
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%e7%bb%bf%e5%9d%9d%e5%a8%98
 .zh.wikipedia.org:80/wiki(?:/|%2f)%e7%bb%bf%e5%9d%9d%e5%a8%98
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%E9%A6%AC%E8%8B%B1%E4%B9%9D
@@ -5068,6 +5088,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E5%BC%A0%E5%BE%B7%E6%B1%9F
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BC%A0%E9%AB%98%E4%B8%BD
 .zh.wikipedia.org:80/.*%E5%BC%A0%E9%AB%98%E4%B8%BD
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%AB%A0%E5%98%89%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE
+.zh.wikipedia.org:80/.*%E7%AB%A0%E5%98%89%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BC%A0%E7%AB%8B%E6%98%8C
 .zh.wikipedia.org:80/.*%E5%BC%A0%E7%AB%8B%E6%98%8C
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BC%A0%E5%9F%B9%E8%8E%89
@@ -5082,6 +5104,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E5%BC%B5%E9%88%BA
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%B6%99%E7%B4%AB%E9%99%BD
 .zh.wikipedia.org:80/.*%E8%B6%99%E7%B4%AB%E9%99%BD
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%93%B2%E5%B8%83%E5%B0%8A%E4%B8%B9%E5%B7%B4%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE
+.zh.wikipedia.org:80/.*%E5%93%B2%E5%B8%83%E5%B0%8A%E4%B8%B9%E5%B7%B4%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%9C%9F%E5%96%84%E5%BF%8D
 .zh.wikipedia.org:80/.*%E7%9C%9F%E5%96%84%E5%BF%8D
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%AE%A3%E4%BC%A0%E9%83%A8
@@ -5148,6 +5172,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E4%B8%AD%E6%96%87%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%A4%AE%E8%AD%A6%E8%A1%9B%E5%B1%80
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%A4%AE%E8%AD%A6%E8%A1%9B%E5%B1%80
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%A4%AE%E6%96%87%E5%8C%96%E9%9D%A9%E5%91%BD%E5%B0%8F%E7%BB%84
+.zh.wikipedia.org:80/.*%E4%B8%AD%E5%A4%AE%E6%96%87%E5%8C%96%E9%9D%A9%E5%91%BD%E5%B0%8F%E7%BB%84
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E8%8B%B1%E7%BA%8C%E8%A8%82%E8%97%8F%E5%8D%B0%E6%A2%9D%E7%B4%84
 .zh.wikipedia.org:80/.*%E4%B8%AD%E8%8B%B1%E7%BA%8C%E8%A8%82%E8%97%8F%E5%8D%B0%E6%A2%9D%E7%B4%84
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%91%A8%E6%B0%B8%E5%BA%B7
@@ -5160,8 +5186,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E8%87%AA%E7%94%B1%E4%BA%9A%E6%B4%B2
 :80/.*zh(?:\.|%2e)wikibooks(?:\.|%2e)org.*%E7%AA%81%E7%A0%B4%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5
 .zh.wikibooks.org:80/.*%E7%AA%81%E7%A0%B4%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5
-:80/.*(?:\.|%2e)president(?:\.|%2e)gov(?:\.|%2e)tw
-.president.gov.tw
+:80/.*gov(?:\.|%2e)tw
+.gov.tw
 :80/.*174(?:\.|%2e)142(?:\.|%2e)105(?:\.|%2e)153
 174.142.105.153
 :80/.*chosun(?:\.|%2e)com
