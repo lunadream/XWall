@@ -202,6 +202,8 @@ play.google.com:443/store(?:/|%2f)music
 .apigee.com
 :80/.*appledaily(?:\.|%2e)com
 .appledaily.com
+:80/.*archive(?:\.|%2e)org
+.archive.org
 :80/.*(?:\.|%2e)arctosia(?:\.|%2e)com
 .arctosia.com
 .areca-backup.org
@@ -1117,6 +1119,7 @@ www.freegroup.org:80/2008(?:/|%2f)08(?:/|%2f)free-website-test-behind-the-great-
 :80/.*friendfeed-media(?:\.|%2e)com(?:/|%2f)e99a4ebe2fb4c1985c2a58775eb4422961aa5a2e
 .friendfeed-media.com:80/e99a4ebe2fb4c1985c2a58775eb4422961aa5a2e
 ff.im:80
+www.zensur.freerk.com:80/
 :80/.*freevpn(?:\.|%2e)nl
 .freevpn.nl
 :80/.*(?:\.|%2e)fring(?:\.|%2e)com
@@ -1268,6 +1271,7 @@ ff.im:80
 :80/.*(?:\.|%2e)gun-world(?:\.|%2e)net
 .gun-world.net
 .gutteruncensored.com
+.gvm.com.tw
 :80/.*(?:\.|%2e)gzm(?:\.|%2e)tv
 .gzm.tv
 .gzone-anime.info
@@ -2323,6 +2327,7 @@ tech2.in.com:80/video(?:/|%2f)
 .mgstage.com
 :80/.*mhradio(?:\.|%2e)org
 .mhradio.org
+michaelanti.com:80
 .michaelmarketl.com
 :80/.*middle-way(?:\.|%2e)net
 .middle-way.net
@@ -3216,6 +3221,7 @@ rfi.my:80/
 www.skype.com:80/intl(?:/|%2f)
 :80/.*share(?:\.|%2e)skype(?:\.|%2e)com(?:/|%2f)sites(?:/|%2f)en(?:/|%2f)2008(?:/|%2f)10(?:/|%2f)skype_president_addresses_chin
 .share.skype.com:80/sites(?:/|%2f)en(?:/|%2f)2008(?:/|%2f)10(?:/|%2f)skype_president_addresses_chin
+www.skype.com:80/zh-Hant
 :80/.*m(?:\.|%2e)slandr(?:\.|%2e)net
 .m.slandr.net
 .slavasoft.com
@@ -3584,6 +3590,7 @@ tmi.me:80
 .tuidang.org
 :80/.*bbs(?:\.|%2e)tuitui(?:\.|%2e)info
 .bbs.tuitui.info
+.tumutanzi.com
 :80/.*(?:\.|%2e)tunein(?:\.|%2e)com
 .tunein.com
 .tunnelbear.com
@@ -3964,8 +3971,7 @@ uploaded.to:80/file
 .videomo.com
 .vidoemo.com
 .viki.com
-:80/.*(?:\.|%2e)vimeo(?:\.|%2e)com
-.vimeo.com
+*vimeo.com:80
 .vimgolf.com
 .vimperator.org
 .vincnd.com
@@ -4534,6 +4540,12 @@ uploaded.to:80/file
 .search:80/.*%E4%B8%AD%E5%9B%BD%E8%AE%BA%E5%9D%9B
 :80/.*search.*%E4%B8%AD%E5%AE%A3%E9%83%A8
 .search:80/.*%E4%B8%AD%E5%AE%A3%E9%83%A8
+:80/.*(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai_Lama
+.wikipedia.org:80/wiki(?:/|%2f)Dalai_Lama
+:80/.*(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai-Lama
+.wikipedia.org:80/wiki(?:/|%2f)Dalai-Lama
+:80/.*ar(?:\.|%2e)wikipedia(?:\.|%2e)org.*%D8%AF%D8%A7%D9%84%D8%A7%D9%8A_%D9%84%D8%A7%D9%85%D8%A7
+.ar.wikipedia.org:80/.*%D8%AF%D8%A7%D9%84%D8%A7%D9%8A_%D9%84%D8%A7%D9%85%D8%A7
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Anti-communism
 .en.wikipedia.org:80/wiki(?:/|%2f)Anti-communism
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Book_burning
@@ -4544,8 +4556,6 @@ uploaded.to:80/file
 .en.wikipedia.org:80/wiki(?:/|%2f)Charter_08
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Chen_Guangcheng
 .en.wikipedia.org:80/wiki(?:/|%2f)Chen_Guangcheng
-:80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai_Lama
-.en.wikipedia.org:80/wiki(?:/|%2f)Dalai_Lama
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Deep_packet_inspection
 .en.wikipedia.org:80/wiki(?:/|%2f)Deep_packet_inspection
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Freegate
@@ -5022,8 +5032,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E5%A4%A9%E8%91%AC
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)zh-cn(?:/|%2f)Tor
 .zh.wikipedia.org:80/zh-cn(?:/|%2f)Tor
-:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*Twitter
-.zh.wikipedia.org:80/.*Twitter
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)zh-hk(?:/|%2f)Twitter
+.zh.wikipedia.org:80/zh-hk(?:/|%2f)Twitter
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%87%E9%87%8C
 .zh.wikipedia.org:80/.*%E4%B8%87%E9%87%8C
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8E%8B%E5%86%9B%E6%B6%9B
