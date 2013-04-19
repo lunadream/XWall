@@ -1,8 +1,4 @@
 {+forward-override{$forward-type$ $server$ .}}
-www.hcm.com.tw:80
-www.1024cores.net:80
-play.google.com:80/store(?:/|%2f)music
-play.google.com:443/store(?:/|%2f)music
 :80/.*hulu(?:\.|%2e)com
 .hulu.com
 :80/.*huluim(?:\.|%2e)com
@@ -14,26 +10,6 @@ play.google.com:443/store(?:/|%2f)music
 .pure18.com
 .turntable.fm
 .vevo.com
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*285688934
-.itunes.apple.:80/.*285688934
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*358801284
-.itunes.apple.:80/.*358801284
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*364147881
-.itunes.apple.:80/.*364147881
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*375584677
-.itunes.apple.:80/.*375584677
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*383949089
-.itunes.apple.:80/.*383949089
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*319295332
-.itunes.apple.:80/.*319295332
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*418987775
-.itunes.apple.:80/.*418987775
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*430271182
-.itunes.apple.:80/.*430271182
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*447119634
-.itunes.apple.:80/.*447119634
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*454439893
-.itunes.apple.:80/.*454439893
 :80/.*(?:\.|%2e)0rz(?:\.|%2e)tw
 .0rz.tw
 .0to255.com
@@ -1755,6 +1731,8 @@ apis.google.com:443
 .hellouk.org:80/forum(?:/|%2f)lofiversion
 :80/.*(?:\.|%2e)helpeachpeople(?:\.|%2e)com
 .helpeachpeople.com
+:80/.*(?:\.|%2e)helpzhuling(?:\.|%2e)org
+.helpzhuling.org
 .date.fm
 .flightcaster.com
 .branch.com
@@ -2006,6 +1984,22 @@ tech2.in.com:80/video(?:/|%2f)
 .gmozomg.izihost.org
 :80/.*(?:\.|%2e)izles(?:\.|%2e)net
 .izles.net
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*285688934
+.itunes.apple.:80/.*285688934
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*358801284
+.itunes.apple.:80/.*358801284
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*375584677
+.itunes.apple.:80/.*375584677
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*383949089
+.itunes.apple.:80/.*383949089
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*319295332
+.itunes.apple.:80/.*319295332
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*418987775
+.itunes.apple.:80/.*418987775
+:80/.*itunes(?:\.|%2e)apple(?:\.|%2e)com(?:/|%2f)us.*id447119634
+.itunes.apple.com:80/us.*id447119634
+:80/.*(?:\.|%2e)apple(?:\.|%2e).*isunaffairs
+.apple.:80/.*isunaffairs
 :80/.*blog(?:\.|%2e)jackjia(?:\.|%2e)com
 .blog.jackjia.com
 :80/.*jbtalks(?:\.|%2e)cc
@@ -2128,6 +2122,7 @@ tech2.in.com:80/video(?:/|%2f)
 :80/.*(?:\.|%2e)laoyang(?:\.|%2e)info
 .laoyang.info
 .laptoplockdown.com
+.larsgeorge.com
 .lastfm.es
 :80/.*latelinenews(?:\.|%2e)com
 .latelinenews.com
@@ -2581,6 +2576,7 @@ www.monlamit.org:80
 :80/.*nuzcom(?:\.|%2e)com
 .nuzcom.com
 .nyt.com
+.nytco.com
 :80/.*(?:\.|%2e)nytimes(?:\.|%2e)com
 .nytimes.com
 :80/.*nysingtao(?:\.|%2e)com
@@ -2655,6 +2651,7 @@ www.monlamit.org:80
 .t.orzdream.com
 :80/.*tui(?:\.|%2e)orzdream(?:\.|%2e)com
 .tui.orzdream.com
+.orzistic.org
 .osfoora.com
 :80/.*m(?:\.|%2e)oulove(?:\.|%2e)org
 .m.oulove.org
@@ -3153,6 +3150,7 @@ rfi.my:80/
 :80/.*(?:\.|%2e)shizhao(?:\.|%2e)org
 :80/.*shkspr(?:\.|%2e)mobi(?:/|%2f)dabr
 .shkspr.mobi:80/dabr
+.shodanhq.com
 :80/.*(?:\.|%2e)shopping(?:\.|%2e)com
 .shopping.com
 :80/.*(?:\.|%2e)showtime(?:\.|%2e)jp
@@ -3433,6 +3431,7 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 .telecomspace.com
 :80/.*(?:\.|%2e)tenacy(?:\.|%2e)com
 .tenacy.com
+.theampfactory.com
 .theappleblog.com
 .theatrum-belli.com
 .thebodyshop-usa.com
@@ -3879,6 +3878,8 @@ twt.tl:80
 .ufreevpn.com
 :80/.*(?:\.|%2e)ugo(?:\.|%2e)com
 .ugo.com
+:80/.*uhrp(?:\.|%2e)org
+.uhrp.org
 :80/.*uighurbiz(?:\.|%2e)net
 .uighurbiz.net
 :80/.*(?:\.|%2e)ulike(?:\.|%2e)net
@@ -3905,6 +3906,8 @@ www.ukchinese.com:80/www(?:/|%2f)22(?:/|%2f)2009-03(?:/|%2f)2842(?:\.|%2e)html
 :80/.*(?:\.|%2e)unix100(?:\.|%2e)com
 .unix100.com
 .unknownspace.org
+:80/.*unpo(?:\.|%2e)org
+.unpo.org
 .uocn.org
 :80/.*tor(?:\.|%2e)updatestar(?:\.|%2e)com
 .tor.updatestar.com
@@ -3971,7 +3974,8 @@ uploaded.to:80/file
 .videomo.com
 .vidoemo.com
 .viki.com
-*vimeo.com:80
+:80/.*vimeo(?:\.|%2e)com
+.vimeo.com
 .vimgolf.com
 .vimperator.org
 .vincnd.com
@@ -4016,8 +4020,6 @@ uploaded.to:80/file
 .waffle1999.com
 :80/.*(?:\.|%2e)jyzj(?:\.|%2e)waqn(?:\.|%2e)com
 .jyzj.waqn.com
-:80/.*http:(?:/|%2f)(?:/|%2f)jyzj(?:\.|%2e)waqn(?:\.|%2e)com
-.jyzj.waqn.com:80
 :80/.*(?:\.|%2e)wahas(?:\.|%2e)com
 .wahas.com
 :80/.*(?:\.|%2e)waigaobu(?:\.|%2e)com
@@ -4195,6 +4197,7 @@ uploaded.to:80/file
 .wwitv.com
 :80/.*wzyboy(?:\.|%2e)im(?:/|%2f)post(?:/|%2f)160
 .wzyboy.im:80/post(?:/|%2f)160
+www.x-berry.com:80/goagent
 .x-wall.org
 :80/.*x1949x(?:\.|%2e)com
 .x1949x.com
@@ -4244,6 +4247,7 @@ uploaded.to:80/file
 .xml-training-guide.com
 :80/.*xmovies(?:\.|%2e)com
 .xmovies.com
+.xnxx.com
 :80/.*xpdo(?:\.|%2e)net
 .xpdo.net
 .xpud.org
@@ -4400,7 +4404,7 @@ uploaded.to:80/file
 :80/.*(?:\.|%2e)zengjinyan(?:\.|%2e)org
 .zengjinyan.org
 .zeutch.com
-:80/.*http:(?:/|%2f)(?:/|%2f)www(?:\.|%2e)zfreet(?:\.|%2e)com(?:/|%2f)post(?:/|%2f)usejump-browns(?:\.|%2e)html
+:80/.*www(?:\.|%2e)zfreet(?:\.|%2e)com(?:/|%2f)post(?:/|%2f)usejump-browns(?:\.|%2e)html
 .www.zfreet.com:80/post(?:/|%2f)usejump-browns(?:\.|%2e)html
 :80/.*zgzcjj(?:\.|%2e)net
 .zgzcjj.net
@@ -4546,6 +4550,8 @@ uploaded.to:80/file
 .wikipedia.org:80/wiki(?:/|%2f)Dalai-Lama
 :80/.*ar(?:\.|%2e)wikipedia(?:\.|%2e)org.*%D8%AF%D8%A7%D9%84%D8%A7%D9%8A_%D9%84%D8%A7%D9%85%D8%A7
 .ar.wikipedia.org:80/.*%D8%AF%D8%A7%D9%84%D8%A7%D9%8A_%D9%84%D8%A7%D9%85%D8%A7
+:80/.*zh-yue(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%E5%8A%89%E6%9B%89%E6%B3%A2
+.zh-yue.wikipedia.org:80/wiki(?:/|%2f)%E5%8A%89%E6%9B%89%E6%B3%A2
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Anti-communism
 .en.wikipedia.org:80/wiki(?:/|%2f)Anti-communism
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Book_burning
@@ -4664,10 +4670,10 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E4%B8%9C%E9%A3%8E-21%E4%B8%AD%E7%A8%8B%E5%BC%B9%E9%81%93%E5%AF%BC%E5%BC%B9
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%B1%E9%A2%A8-31%E6%B4%B2%E9%9A%9B%E5%BD%88%E9%81%93%E5%B0%8E%E5%BD%88
 .zh.wikipedia.org:80/.*%E6%9D%B1%E9%A2%A8-31%E6%B4%B2%E9%9A%9B%E5%BD%88%E9%81%93%E5%B0%8E%E5%BD%88
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%B1%E7%AA%81%E5%8E%A5
+.zh.wikipedia.org:80/.*%E6%9D%B1%E7%AA%81%E5%8E%A5
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%9C%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6
 .zh.wikipedia.org:80/.*%E4%B8%9C%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6
-:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%9D%B1%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6
-.zh.wikipedia.org:80/.*%E6%9D%B1%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%A4%9A%E7%BB%B4
 .zh.wikipedia.org:80/.*%E5%A4%9A%E7%BB%B4
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%A4%9A%E7%B6%AD
@@ -4898,6 +4904,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/wiki(?:/|%2f)%e7%bb%bf%e5%9d%9d%e5%a8%98
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E9%A6%AC%E8%8B%B1%E4%B9%9D
 .zh.wikipedia.org:80/.*%E9%A6%AC%E8%8B%B1%E4%B9%9D
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%B0%91%E4%B8%BB%E5%9F%BA%E9%87%91%E4%BC%9A
+.zh.wikipedia.org:80/.*%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%B0%91%E4%B8%BB%E5%9F%BA%E9%87%91%E4%BC%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%95%8F%E6%84%9F%E4%BA%BA%E5%A3%AB
 .zh.wikipedia.org:80/.*%E6%95%8F%E6%84%9F%E4%BA%BA%E5%A3%AB
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E6%B0%91%E9%96%93%E4%BA%BA%E6%AC%8A%E9%99%A3%E7%B7%9A
@@ -4974,8 +4982,10 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/zh-cn(?:/|%2f)%E4%B8%96%E7%95%8C%E5%90%84%E6%94%BF%E6%9D%83%E5%8F%97%E6%89%BF%E8%AE%A4%E7%8A%B6%E5%86%B5%E5%88%97%E8%A1%A8
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E5%AF%BC%E6%8A%A5
 .zh.wikipedia.org:80/.*%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E5%AF%BC%E6%8A%A5
-:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E5%A4%A7%E4%BC%9A
-.zh.wikipedia.org:80/.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E5%A4%A7%E4%BC%9A
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E5%A4%A7%E4%BC%9A!--Shi Jie Wei Wu Er Qing Nian Dai Biao Da Hui
+.zh.wikipedia.org:80/.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E5%A4%A7%E4%BC%9A!--Shi Jie Wei Wu Er Qing Nian Dai Biao Da Hui
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E9%9D%92%E5%B9%B4%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A
+.zh.wikipedia.org:80/.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E9%9D%92%E5%B9%B4%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%96%E7%95%8C%E7%B6%AD%E5%90%BE%E7%88%BE%E4%BB%A3%E8%A1%A8%E5%A4%A7%E6%9C%83
 .zh.wikipedia.org:80/.*%E4%B8%96%E7%95%8C%E7%B6%AD%E5%90%BE%E7%88%BE%E4%BB%A3%E8%A1%A8%E5%A4%A7%E6%9C%83
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%8D%81%E5%9B%9B%E4%B8%96%E8%BE%BE%E8%B5%96
@@ -5038,6 +5048,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E4%B8%87%E9%87%8C
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8E%8B%E5%86%9B%E6%B6%9B
 .zh.wikipedia.org:80/.*%E7%8E%8B%E5%86%9B%E6%B6%9B
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8E%8B%E6%A8%82%E6%B3%89
+.zh.wikipedia.org:80/.*%E7%8E%8B%E6%A8%82%E6%B3%89
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8E%8B%E7%AB%8B%E5%86%9B
 .zh.wikipedia.org:80/.*%E7%8E%8B%E7%AB%8B%E5%86%9B
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8E%8B%E5%B2%90%E5%B1%B1
@@ -5202,6 +5214,8 @@ uploaded.to:80/file
 .zh.wikipedia.org:80/.*%E7%9C%9F%E5%96%84%E5%BF%8D
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%AE%A3%E4%BC%A0%E9%83%A8
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%AE%A3%E4%BC%A0%E9%83%A8
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%E4%B8%AD%E5%9B%BD
+.zh.wikipedia.org:80/wiki(?:/|%2f)%E4%B8%AD%E5%9B%BD
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9C%8B%E6%8C%81%E4%B8%8D%E5%90%8C%E6%94%BF%E8%A6%8B%E8%80%85%E5%90%8D%E5%96%AE
 .zh.wikipedia.org:80/.*%E4%B8%AD%E5%9C%8B%E6%8C%81%E4%B8%8D%E5%90%8C%E6%94%BF%E8%A6%8B%E8%80%85%E5%90%8D%E5%96%AE
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E5%B0%81%E9%94%81%E7%BB%B4%E5%9F%BA%E5%AA%92%E4%BD%93%E4%BA%8B%E4%BB%B6
