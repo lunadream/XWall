@@ -2765,6 +2765,7 @@ www.oxid.it:80
 .perfectvpn.net
 :80/.*perfspot(?:\.|%2e)com
 .perfspot.com
+.perlhowto.com
 :80/.*philly(?:\.|%2e)com
 .philly.com
 .photofocus.com
