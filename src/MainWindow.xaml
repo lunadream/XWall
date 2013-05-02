@@ -224,23 +224,6 @@
                             </Grid>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource HttpInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeHttpRadio}">
-                        <Grid Margin="0,10,10,5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="28" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="55" />
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="65" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}"/>
-                            <TextBox Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
-                            <Label Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}"/>
-                            <TextBox Grid.Column="3" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                        </Grid>
-                    </GroupBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="{StaticResource Rules}">
@@ -250,13 +233,13 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
-                                <RowDefinition Height="24" />
+                                <!--<RowDefinition Height="24" />-->
                                 <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
                             <CheckBox x:Name="forwardAllCheckBox" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="False" Content="{StaticResource ForwardAllDescription}" />
                             <CheckBox x:Name="useOnlineRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseOnlineRulesAndDescription}" />
                             <!--<CheckBox x:Name="useCustomRulesCheckBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource UseCustomRules}" />-->
-                            <CheckBox x:Name="submitNewRuleCheckBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SubmitNewRuleAndDescription}" />
+                            <!--<CheckBox x:Name="submitNewRuleCheckBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SubmitNewRuleAndDescription}" />-->
                             <TextBlock Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"><Hyperlink Click="onShowUrlInfoHyperlinkClick"><Run Text="{StaticResource ViewUrlActionDescription}" /></Hyperlink></TextBlock>
                         </Grid>
                     </GroupBox>

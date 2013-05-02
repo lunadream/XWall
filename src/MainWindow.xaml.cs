@@ -236,13 +236,13 @@ namespace XWall {
             if (WindowState != WindowState.Minimized)
                 Activate();
 
-            if (!settings.SubmitNewRuleAsked) {
-                settings.SubmitNewRuleAsked = true;
-                var message = (resources["ShareRuleMessage"] as string).Replace("%n ", Environment.NewLine + Environment.NewLine);
+            //if (!settings.SubmitNewRuleAsked) {
+            //    settings.SubmitNewRuleAsked = true;
+            //    var message = (resources["ShareRuleMessage"] as string).Replace("%n ", Environment.NewLine + Environment.NewLine);
 
-                var result = MessageBox.Show(message, resources["ShareRuleTitle"] as string, MessageBoxButton.YesNo);
-                settings.SubmitNewRule = result == MessageBoxResult.Yes;
-            }
+            //    var result = MessageBox.Show(message, resources["ShareRuleTitle"] as string, MessageBoxButton.YesNo);
+            //    settings.SubmitNewRule = result == MessageBoxResult.Yes;
+            //}
         }
 
         void updateCustomRulesStatus() {

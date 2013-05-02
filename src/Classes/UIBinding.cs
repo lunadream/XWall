@@ -199,7 +199,7 @@ namespace XWall {
             //RULES
             UIBinding.bindCheckBox(forwardAllCheckBox, "ForwardAll");
             UIBinding.bindCheckBox(useOnlineRulesCheckBox, "UseOnlineRules");
-            UIBinding.bindCheckBox(submitNewRuleCheckBox, "SubmitNewRule");
+            //UIBinding.bindCheckBox(submitNewRuleCheckBox, "SubmitNewRule");
             //UIBinding.bindCheckBox(useCustomRulesCheckBox, "UseCustomRules");
         }
 

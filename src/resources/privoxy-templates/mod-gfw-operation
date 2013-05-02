@@ -259,12 +259,12 @@
                         } catch (e) { }
 
                         if (!/^<![^>]+>\s*<!--PrivoxyMark-->/.test(text)) {
-                            if (toggle) {
-                                submit(rule, refresh);
-                            }
-                            else {
-                                refresh(false);
-                            }
+                            //if (toggle) {
+                            //    submit(rule, refresh);
+                            //}
+                            //else {
+                            refresh(false);
+                            //}
                         }
                         else {
                             next();
@@ -276,21 +276,21 @@
 
         }
 
-        function submit(rule, callback) {
-            button.innerHTML = lang.workAndSubmitting;
-            button.disabled = true;
+        //function submit(rule, callback) {
+        //    button.innerHTML = lang.workAndSubmitting;
+        //    button.disabled = true;
 
-            var sender = new Image();
-            sender.src = "http://vilic.s4.jutuo.net/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(url));
+        //    var sender = new Image();
+        //    sender.src = "http://vilic.s4.jutuo.net/x-list/submit.ashx?r=" + encodeURIComponent(base64.encode(url));
 
-            var called = false;
+        //    var called = false;
 
-            setTimeout(sender.onerror = sender.onload = function () {
-                if (called) return;
-                called = true;
-                callback(true);
-            }, 5000);
-        }
+        //    setTimeout(sender.onerror = sender.onload = function () {
+        //        if (called) return;
+        //        called = true;
+        //        callback(true);
+        //    }, 5000);
+        //}
 
         function refresh(submitted) {
             button.innerHTML = submitted ? lang.refreshing : lang.workAndRefreshing;
