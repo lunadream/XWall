@@ -18,10 +18,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="HttpServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="HttpPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">80</Value>
+      <Value Profile="(Default)">8087</Value>
     </Setting>
     <Setting Name="AutoStart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -196,6 +196,12 @@
     </Setting>
     <Setting Name="UpdateCheckDelay" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="SocksServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="SocksPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1080</Value>
     </Setting>
   </Settings>
 </SettingsFile>

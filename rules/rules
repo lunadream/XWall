@@ -611,8 +611,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .wiki.cnitter.com
 :80/.*(?:\.|%2e)cnn(?:\.|%2e)com(?:/|%2f)video
 .cnn.com:80/video
-:80/.*cn(?:\.|%2e)news(?:\.|%2e)cnyes(?:\.|%2e)com
-.cn.news.cnyes.com
+:80/.*news(?:\.|%2e)cnyes(?:\.|%2e)com
+.news.cnyes.com
 .cochina.org
 :80/.*(?:\.|%2e)code1984(?:\.|%2e)com(?:/|%2f)64
 .code1984.com:80/64
@@ -934,6 +934,7 @@ www.dfanning.com:80
 .fangbinxing.com
 :80/.*fangeming(?:\.|%2e)com
 .fangeming.com
+.fanswong.com
 :80/.*(?:\.|%2e)farwestchina(?:\.|%2e)com
 .farwestchina.com
 :80/.*favorious(?:\.|%2e)com
@@ -1172,6 +1173,7 @@ www.zensur.freerk.com:80/
 .geohot.com
 .geometrictools.com
 .get-digital-help.com
+.getfoxyproxy.org
 :80/.*(?:\.|%2e)getfreedur(?:\.|%2e)com
 .getfreedur.com
 :80/.*(?:\.|%2e)getjetso(?:\.|%2e)com(?:/|%2f)forum
@@ -1915,6 +1917,7 @@ www.idlcoyote.com:80
 .illusionfactory.com
 .ilove80.be
 .im.tv
+.im88.tw
 .imageflea.com
 :80/.*imageshack(?:\.|%2e)us
 .imageshack.us
@@ -2960,6 +2963,7 @@ post.ly:80
 :80/.*opml(?:\.|%2e)radiotime(?:\.|%2e)com
 .opml.radiotime.com
 .radiovaticana.org
+.raidcall.com.tw
 :80/.*rangzen(?:\.|%2e)org
 .rangzen.org
 :80/.*ranyunfei(?:\.|%2e)com
@@ -5419,7 +5423,6 @@ www.x-berry.com:80/goagent
 .privoxy.org
 .7-zip.org
 :80/.*getfoxyproxy(?:\.|%2e)org
-.getfoxyproxy.org
 :80/.*twipple(?:\.|%2e)jp
 .twipple.jp
 .imagehyper.com

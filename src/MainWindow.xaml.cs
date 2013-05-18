@@ -52,8 +52,7 @@ namespace XWall {
             feedbackEmailText.Text = settings.FeedbackEmail;
 
             if (
-                settings.ProxyType == "SSH" && Plink.CheckSettings() ||
-                settings.ProxyType == "HTTP"
+                settings.ProxyType != "SSH" || Plink.CheckSettings()
             ) WindowState = WindowState.Minimized;
 
             plink.Started += () => {

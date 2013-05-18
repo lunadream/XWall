@@ -8,6 +8,7 @@
     <sys:String x:Key="ProxyType">代理类型</sys:String>
     <sys:String x:Key="SshTunnelAndDescription">SSH 隧道 - 需要服务器和账号信息</sys:String>
     <sys:String x:Key="HttpProxyAndDescription">HTTP 代理 - 需要服务器信息</sys:String>
+    <sys:String x:Key="Socks5ProxyAndDescription">SOCKS v5 代理 - 需要服务器信息</sys:String>
     
     <sys:String x:Key="SshInformation">SSH 信息</sys:String>
     <sys:String x:Key="Status">状态</sys:String>
@@ -32,7 +33,9 @@
     <sys:String x:Key="EmptySshPasswordMessage">请输入密码.</sys:String>
     
     <sys:String x:Key="HttpInformation">HTTP 信息</sys:String>
-    
+
+    <sys:String x:Key="SocksInformation">SOCKS 信息</sys:String>
+
     <sys:String x:Key="AdvancedSettings">高级设置</sys:String>
     <sys:String x:Key="AutoStartDescription">随 Windows 启动 X-Wall 并自动连接</sys:String>
     <sys:String x:Key="AutoSetProxyDescription">自动设置互联网代理</sys:String>

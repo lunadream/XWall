@@ -36,9 +36,11 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
+                                <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
                             <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SshTunnelAndDescription}" />
                             <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
+                            <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{StaticResource SshInformation}" PreviewKeyDown="onSshInfoPreviewKeyDown" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
@@ -106,6 +108,23 @@
                             <TextBox x:Name="httpServerTextBox" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
                             <Label Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}"/>
                             <TextBox x:Name="httpPortTextBox" Grid.Column="3" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource SocksInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSocksRadio}">
+                        <Grid Margin="0,10,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="65" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}"/>
+                            <TextBox x:Name="socksServerTextBox" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
+                            <Label Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}"/>
+                            <TextBox x:Name="socksPortTextBox" Grid.Column="3" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
                         </Grid>
                     </GroupBox>
                 </StackPanel>

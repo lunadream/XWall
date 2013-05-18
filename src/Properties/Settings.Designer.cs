@@ -85,7 +85,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string HttpServer {
             get {
                 return ((string)(this["HttpServer"]));
@@ -97,7 +97,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("80")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8087")]
         public int HttpPort {
             get {
                 return ((int)(this["HttpPort"]));
@@ -697,6 +697,30 @@ namespace XWall.Properties {
         public int UpdateCheckDelay {
             get {
                 return ((int)(this["UpdateCheckDelay"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string SocksServer {
+            get {
+                return ((string)(this["SocksServer"]));
+            }
+            set {
+                this["SocksServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1080")]
+        public string SocksPort {
+            get {
+                return ((string)(this["SocksPort"]));
+            }
+            set {
+                this["SocksPort"] = value;
             }
         }
     }

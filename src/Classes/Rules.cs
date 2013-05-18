@@ -92,11 +92,20 @@ namespace XWall {
 
             new Action(() => {
                 string forwardSettings;
-                if (settings.ProxyType == "SSH") {
-                    forwardSettings = "forward-socks5 127.0.0.1:" + settings.SshSocksPort + " .";
-                }
-                else {
-                    forwardSettings = "forward " + (settings.HttpServer != "" ? settings.HttpServer + ":" : "127.0.0.1:") + settings.HttpPort;
+
+                switch (settings.ProxyType) {
+                    case "SSH":
+                        forwardSettings = "forward-socks5 127.0.0.1:" + settings.SshSocksPort + " .";
+                        break;
+                    case "HTTP":
+                        forwardSettings = "forward " + (settings.HttpServer != "" ? settings.HttpServer + ":" : "127.0.0.1:") + settings.HttpPort;
+                        break;
+                    case "SOCKS5":
+                        forwardSettings = "forward-socks5 " + (settings.SocksServer != "" ? settings.SocksServer + ":" : "127.0.0.1:") + settings.SocksPort + " .";
+                        break;
+                    default:
+                        forwardSettings = "";
+                        break;
                 }
 
                 var defaultProxy = Operation.Proxies.DefaultProxy;

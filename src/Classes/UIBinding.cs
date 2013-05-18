@@ -28,6 +28,10 @@ namespace XWall {
             UIBinding.bindTextBox(httpServerTextBox, "HttpServer");
             UIBinding.bindTextBox(httpPortTextBox, "HttpPort");
 
+            //socks information
+            UIBinding.bindTextBox(socksServerTextBox, "SocksServer");
+            UIBinding.bindTextBox(socksPortTextBox, "SocksPort");
+
             //ADVANCED SETTINGS
             //x-wall
             UIBinding.bindCheckBox(autoStartCheckBox, "AutoStart");
@@ -302,6 +306,9 @@ namespace XWall {
                 case "HTTP":
                     proxyTypeHttpRadio.IsChecked = true;
                     break;
+                case "SOCKS5":
+                    proxyTypeSocksRadio.IsChecked = true;
+                    break;
             }
 
             //control to settings
@@ -312,6 +319,10 @@ namespace XWall {
 
             proxyTypeHttpRadio.Checked += (sender, e) => {
                 settings.ProxyType = "HTTP";
+            };
+
+            proxyTypeSocksRadio.Checked += (sender, e) => {
+                settings.ProxyType = "SOCKS5";
             };
         }
     }
