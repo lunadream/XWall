@@ -314,6 +314,7 @@ bbc.in:80
 .blip.tv:80
 :80/.*(?:\.|%2e)blockcn(?:\.|%2e)com
 .blockcn.com
+.blog.de
 :80/.*(?:\.|%2e)blogcatalog(?:\.|%2e)com
 .blogcatalog.com
 :80/.*(?:\.|%2e)blogger(?:\.|%2e)com
@@ -601,6 +602,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .clipfish.de
 :80/.*(?:\.|%2e)cmule(?:\.|%2e)com
 .cmule.com
+.cms.gov
 .cna.com.tw
 :80/.*(?:\.|%2e)cnavista(?:\.|%2e)com(?:\.|%2e)tw(?:/|%2f)shop(?:/|%2f)stores_app
 .cnavista.com.tw:80/shop(?:/|%2f)stores_app
@@ -744,6 +746,7 @@ www.dfanning.com:80
 :80/.*(?:\.|%2e)dojin(?:\.|%2e)com
 .dojin.com
 .dolc.de
+.dollf.com
 :80/.*(?:\.|%2e)domain(?:\.|%2e)club(?:\.|%2e)tw
 .domain.club.tw
 :80/.*dongde(?:\.|%2e)com
@@ -896,8 +899,6 @@ www.dfanning.com:80
 .exploader.net
 :80/.*eyevio(?:\.|%2e)jp
 .eyevio.jp
-:80/.*eyny(?:\.|%2e)com
-.eyny.com
 :80/.*(?:\.|%2e)ezpc(?:\.|%2e)tk(?:/|%2f)category(?:/|%2f)soft
 .ezpc.tk:80/category(?:/|%2f)soft
 :80/.*(?:\.|%2e)ezpeer(?:\.|%2e)com
@@ -906,6 +907,7 @@ www.dfanning.com:80
 .facebook.com
 .connect.facebook.net
 .facesofnyfw.com
+.faiththedog.info
 :80/.*(?:\.|%2e)fakku(?:\.|%2e)net
 .fakku.net
 :80/.*falunart(?:\.|%2e)org
@@ -1718,6 +1720,7 @@ apis.google.com:443
 .hakkatv.org.tw
 :80/.*(?:\.|%2e)hanunyi(?:\.|%2e)com
 .hanunyi.com
+.hardsextube.com
 .hasaowall.com
 :80/.*have8(?:\.|%2e)com
 .have8.com
@@ -1922,6 +1925,7 @@ www.idlcoyote.com:80
 :80/.*imageshack(?:\.|%2e)us
 .imageshack.us
 .imagevenue.com
+.imagezilla.net
 www.imdb.com:80/name(?:/|%2f)nm0482730
 :80/.*(?:\.|%2e)img(?:\.|%2e)ly
 .img.ly
@@ -2652,6 +2656,7 @@ www.monlamit.org:80
 .opnir.com:80/215(?:/|%2f)myentunnel-ssh-autoproxy-cross-gfw
 :80/.*www(?:\.|%2e)orchidbbs(?:\.|%2e)com
 .www.orchidbbs.com
+.orient-doll.com
 :80/.*orientaldaily(?:\.|%2e)com(?:\.|%2e)my
 .orientaldaily.com.my
 :80/.*orientaldaily(?:\.|%2e)on(?:\.|%2e)cc
@@ -3087,6 +3092,7 @@ rfi.my:80/
 .say2.info
 :80/.*(?:\.|%2e)scribd(?:\.|%2e)com
 .scribd.com
+.scriptspot.com
 :80/.*seapuff(?:\.|%2e)com
 .seapuff.com
 :80/.*domainhelp(?:\.|%2e)search(?:\.|%2e)com
@@ -3105,6 +3111,7 @@ rfi.my:80/
 .sejie.com
 :80/.*(?:\.|%2e)sendspace(?:\.|%2e)com(?:/|%2f)file
 .sendspace.com:80/file
+tweets.seraph.me:80/
 :80/.*sesawe(?:\.|%2e)net
 .sesawe.net
 :80/.*(?:\.|%2e)sesawe(?:\.|%2e)org
@@ -3688,7 +3695,6 @@ tmi.me:80
 .stuffimreading.com
 .blog.summify.com
 .thedailywh.at
-.thechangelog.com
 .theinternetwishlist.com
 .thisiswhyyouarefat.com
 .www.tiffanyarment.com
@@ -5171,8 +5177,8 @@ www.x-berry.com:80/goagent
 .zh.wikipedia.org:80/.*%E6%98%9F%E4%BA%91%E6%B3%95%E5%B8%88
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%86%8A%E7%84%B1
 .zh.wikipedia.org:80/.*%E7%86%8A%E7%84%B1
-:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)%E5%BE%90%E6%89%8D%E5%8E%9A
-.zh.wikipedia.org:80/wiki(?:/|%2f)%E5%BE%90%E6%89%8D%E5%8E%9A
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%BE%90%E6%89%8D%E5%8E%9A
+.zh.wikipedia.org:80/.*%E5%BE%90%E6%89%8D%E5%8E%9A
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%AE%B8%E5%AE%B6%E5%B1%AF
 .zh.wikipedia.org:80/.*%E8%AE%B8%E5%AE%B6%E5%B1%AF
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E9%9B%AA%E5%B1%B1%E7%8D%85%E5%AD%90%E6%97%97
@@ -5429,7 +5435,6 @@ www.x-berry.com:80/goagent
 .cloudflare.com
 :80/.*box(?:\.|%2e)com(?:/|%2f)s
 .box.com:80/s
-.imagezilla.net
 .imgchili.com
 :80/.*telechargement(?:\.|%2e)rfi(?:\.|%2e)fr(?:\.|%2e)edgesuite(?:\.|%2e)net
 .telechargement.rfi.fr.edgesuite.net
@@ -5553,7 +5558,6 @@ goo.gl:80
 :80/.*jjgirls(?:\.|%2e)com
 .jjgirls.com
 :80/.*hardsextube(?:\.|%2e)com
-.hardsextube.com
 .c1520.inc.gs
 .local.apbest.info
 .lvcuser.com:80/user55
@@ -5691,3 +5695,5 @@ goo.gl:80
 autoproxy.org:443
 .xunlei.com
 .weibo.com
+.renren.com
+.youku.com
