@@ -38,9 +38,10 @@
     
     <sys:String x:Key="AdvancedSettings">Advanced Settings</sys:String>
     <sys:String x:Key="AutoStartDescription">Start X-Wall with Windows and connect automatically</sys:String>
-    <sys:String x:Key="AutoSetProxyDescription">Set Internet proxy automatically</sys:String>
+    <sys:String x:Key="AutoSetProxyDescription">Set system proxy automatically</sys:String>
     <sys:String x:Key="ListenToLocalOnlyDescription">Listen to local address only</sys:String>
     <sys:String x:Key="ProxyPort">Proxy port</sys:String>
+    <sys:String x:Key="UseIntranetProxyDescription">Use Intranet proxy for normal websites</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
     <sys:String x:Key="EnableConnectionStatusNotificationDescription">Enable notification for connection status change</sys:String>
     <sys:String x:Key="EnableCompression">Enable compression</sys:String>

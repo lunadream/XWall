@@ -144,6 +144,9 @@ namespace XWall {
                 switch (a.PropertyName) {
                     case "ProxyPort": break;
                     case "ListenToLocalOnly": break;
+                    case "UseIntranetProxy": break;
+                    case "IntranetProxyServer": break;
+                    case "IntranetProxyPort": break;
                     default: return;
                 }
 

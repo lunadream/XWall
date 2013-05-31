@@ -45,6 +45,9 @@ namespace XWall {
                     case "ForwardAll": break;
                     case "UseOnlineRules": break;
                     //case "UseCustomRules": break;
+                    case "UseIntranetProxy": break;
+                    case "IntranetProxyServer": break;
+                    case "IntranetProxyPort": break;
                     default: return;
                 }
 
@@ -108,8 +111,8 @@ namespace XWall {
                         break;
                 }
 
-                var defaultProxy = Operation.Proxies.DefaultProxy;
-                var defaultForwardSettings = "forward " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy);
+                //var defaultProxy = Operation.Proxies.DefaultProxy;
+                var defaultForwardSettings = "forward " + (settings.UseIntranetProxy ? (String.IsNullOrEmpty(settings.IntranetProxyServer) ? "127.0.0.1" : settings.IntranetProxyServer) + ":" + settings.IntranetProxyPort : ".");
 
                 string onlineForwardText = "";
                 string onlineDefaultText = "";

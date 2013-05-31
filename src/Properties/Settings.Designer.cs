@@ -723,5 +723,41 @@ namespace XWall.Properties {
                 this["SocksPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseIntranetProxy {
+            get {
+                return ((bool)(this["UseIntranetProxy"]));
+            }
+            set {
+                this["UseIntranetProxy"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string IntranetProxyServer {
+            get {
+                return ((string)(this["IntranetProxyServer"]));
+            }
+            set {
+                this["IntranetProxyServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("80")]
+        public int IntranetProxyPort {
+            get {
+                return ((int)(this["IntranetProxyPort"]));
+            }
+            set {
+                this["IntranetProxyPort"] = value;
+            }
+        }
     }
 }

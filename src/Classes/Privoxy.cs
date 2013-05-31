@@ -26,6 +26,9 @@ namespace XWall {
                 switch (e.PropertyName) {
                     case "ProxyPort": break;
                     case "ListenToLocalOnly": break;
+                    case "UseIntranetProxy": break;
+                    case "IntranetProxyServer": break;
+                    case "IntranetProxyPort": break;
                     default: return;
                 }
 
@@ -37,11 +40,11 @@ namespace XWall {
         }
 
         public static void GenerateConfigFile() {
-            var defaultProxy = Operation.Proxies.DefaultProxy;
+            //var defaultProxy = Operation.Proxies.DefaultProxy;
             var text =
                 "listen-address " + (settings.ListenToLocalOnly ? "127.0.0.1:" : ":") + settings.ProxyPort + "\r\n" +
                 "forwarded-connect-retries " + settings.ForwardConnectionRetries + "\r\n" +
-                "forward / " + (string.IsNullOrEmpty(defaultProxy) ? "." : defaultProxy) + "\r\n" +
+                "forward / " + (settings.UseIntranetProxy ? (String.IsNullOrEmpty(settings.IntranetProxyServer) ? "127.0.0.1" : settings.IntranetProxyServer) + ":" + settings.IntranetProxyPort : ".") + "\r\n" +
                 "keep-alive-timeout " + settings.PrivoxyKeepAliveTimeout + "\r\n" +
                 "actionsfile " + App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName + "\r\n" +
                 "actionsfile " + App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName + "\r\n" +

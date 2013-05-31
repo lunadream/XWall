@@ -51,6 +51,10 @@ namespace XWall {
             UIBinding.bindCheckBox(listenToLocalOnlyCheckBox, "ListenToLocalOnly");
             UIBinding.bindTextBox(proxyPortTextBox, "ProxyPort");
 
+            UIBinding.bindCheckBox(useIntranetProxyCheckBox, "UseIntranetProxy");
+            UIBinding.bindTextBox(intranetProxyServerTextBox, "IntranetProxyServer");
+            UIBinding.bindTextBox(intranetProxyPortTextBox, "IntranetProxyPort");
+
             //ssh
             UIBinding.bindCheckBox(sshNotificationCheckBox, "SshNotification");
             UIBinding.bindCheckBox(sshCompressionCheckBox, "SshCompression");

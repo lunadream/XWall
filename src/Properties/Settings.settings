@@ -203,5 +203,14 @@
     <Setting Name="SocksPort" Type="System.String" Scope="User">
       <Value Profile="(Default)">1080</Value>
     </Setting>
+    <Setting Name="UseIntranetProxy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IntranetProxyServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IntranetProxyPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

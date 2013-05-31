@@ -167,6 +167,8 @@ namespace XWall {
                         var defaultProxy = match.Groups[1].Value;
                         if (defaultProxy != xwallProxy)
                             DefaultProxy = defaultProxy;
+                        System.Windows.Forms.MessageBox.Show(defaultInfo.Proxy);
+                        System.Windows.Forms.MessageBox.Show(defaultInfo.Flags.ToString());
                     }
 
                     var strs = new List<string>();

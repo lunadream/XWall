@@ -3889,8 +3889,7 @@ twt.tl:80
 :80/.*(?:\.|%2e)srcf(?:\.|%2e)ucam(?:\.|%2e)org(?:/|%2f)salon(?:/|%2f)
 .srcf.ucam.org:80/salon(?:/|%2f)
 .ucdc1998.org
-:80/.*humanities(?:\.|%2e)uchicago(?:\.|%2e)edu(?:/|%2f)faculty(?:/|%2f)ywang(?:/|%2f)hi
-.humanities.uchicago.edu:80/faculty(?:/|%2f)ywang(?:/|%2f)hi
+.uderzo.it
 .udn.com
 :80/.*(?:\.|%2e)udn(?:\.|%2e)com
 :80/.*ufreevpn(?:\.|%2e)com

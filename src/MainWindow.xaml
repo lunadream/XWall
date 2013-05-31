@@ -138,16 +138,25 @@
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                                 <RowDefinition />
+                                <RowDefinition Height="24" />
+                                <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="75" />
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="50" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <CheckBox x:Name="autoStartCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoStartDescription}" />
-                            <CheckBox x:Name="autoSetProxyCheckBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoSetProxyDescription}" />
-                            <CheckBox x:Name="listenToLocalOnlyCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ListenToLocalOnlyDescription}" />
-                            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource ProxyPort}" />
+                            <CheckBox x:Name="autoStartCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoStartDescription}" />
+                            <CheckBox x:Name="autoSetProxyCheckBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoSetProxyDescription}" />
+                            <CheckBox x:Name="listenToLocalOnlyCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ListenToLocalOnlyDescription}" />
+                            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
                             <TextBox x:Name="proxyPortTextBox" Grid.Row="3" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <CheckBox x:Name="useIntranetProxyCheckBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UseIntranetProxyDescription}" />
+                            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}" />
+                            <TextBox x:Name="intranetProxyServerTextBox" Grid.Row="5" Grid.Column="1" Margin="5,5,0,0" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
+                            <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                            <TextBox x:Name="intranetProxyPortTextBox" Grid.Row="6" Grid.Column="3" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{StaticResource Ssh}" Margin="0,0,0,2">
