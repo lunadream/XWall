@@ -162,13 +162,12 @@ namespace XWall {
 
                     var defaultInfo = List[0];
 
-                    if ((defaultInfo.Flags & (int)PerConnFlags.PROXY_TYPE_PROXY) != 0) {
+                    if (!String.IsNullOrEmpty(defaultInfo.Proxy) && (defaultInfo.Flags & (int)PerConnFlags.PROXY_TYPE_PROXY) != 0) {
                         var match = new Regex(@"^(?:http=)?(.+?)(?=;|$)").Match(defaultInfo.Proxy);
                         var defaultProxy = match.Groups[1].Value;
-                        if (defaultProxy != xwallProxy)
+                        if (defaultProxy != xwallProxy) {
                             DefaultProxy = defaultProxy;
-                        System.Windows.Forms.MessageBox.Show(defaultInfo.Proxy);
-                        System.Windows.Forms.MessageBox.Show(defaultInfo.Flags.ToString());
+                        }
                     }
 
                     var strs = new List<string>();
@@ -276,7 +275,8 @@ namespace XWall {
             }
 
             public static void SetXWallProxy() {
-                SetProxy("127.0.0.1:" + settings.ProxyPort);
+                var proxy = "127.0.0.1:" + settings.ProxyPort;
+                SetProxy("http=" + proxy + ";https=" + proxy);
             }
 
             public static bool SetProxy(string proxy) {
