@@ -111,8 +111,6 @@ namespace XWall {
         // http://huddledmasses.org/setting-windows-internet-connection-proxy-from-c/
         // Modified by VILIC VANE to support setting proxies of all connections, and restoring proxy settings
         public static class Proxies {
-            public static string DefaultProxy { get; private set; }
-
             static class OriginalProxies {
                 static Dictionary<string, ProxyInfo> list = new Dictionary<string, ProxyInfo>();
                 public static ProxyInfo[] List;
@@ -123,7 +121,9 @@ namespace XWall {
                     if (initialized) return;
                     initialized = true;
 
-                    var xwallProxy = "127.0.0.1:" + settings.ProxyPort;
+                    var xwallProxy = getXWallProxyString();
+                    var xwallOldProxy = "127.0.0.1:" + settings.ProxyPort;
+                    var xwallFlags = (int)(PerConnFlags.PROXY_TYPE_DIRECT | PerConnFlags.PROXY_TYPE_PROXY);
 
                     var cachedList = new Dictionary<string, ProxyInfo>();
                     
@@ -141,14 +141,23 @@ namespace XWall {
                     }
 
                     var connections = getConnections();
+                    
                     foreach (var connection in connections) {
                         var info = GetSingleProxy(connection);
-                        //If it seems that the proxy is set by x-wall.
-                        if (info.Proxy == xwallProxy && info.Flags == (int)(PerConnFlags.PROXY_TYPE_DIRECT | PerConnFlags.PROXY_TYPE_PROXY)) {
+                        // If it seems that the proxy is set by x-wall.
+                        // If it seems to be, then keep the cache the way it is.
+                        if ((info.Proxy == xwallProxy || info.Proxy == xwallOldProxy) && info.Flags == xwallFlags) {
                             if (cachedList.ContainsKey(connection)) {
                                 var cachedInfo = cachedList[connection];
-                                info.Proxy = cachedInfo.Proxy;
-                                info.Flags = cachedInfo.Flags;
+
+                                if ((cachedInfo.Proxy == xwallProxy || cachedInfo.Proxy == xwallOldProxy) && cachedInfo.Flags == xwallFlags) {
+                                    info.Proxy = "";
+                                    info.Flags = (int)PerConnFlags.PROXY_TYPE_DIRECT;
+                                }
+                                else {
+                                    info.Proxy = cachedInfo.Proxy;
+                                    info.Flags = cachedInfo.Flags;
+                                }
                             }
                             else {
                                 info.Proxy = null;
@@ -160,15 +169,15 @@ namespace XWall {
 
                     List = list.Values.ToArray();
 
-                    var defaultInfo = List[0];
+                    //var defaultInfo = List[0];
 
-                    if (!String.IsNullOrEmpty(defaultInfo.Proxy) && (defaultInfo.Flags & (int)PerConnFlags.PROXY_TYPE_PROXY) != 0) {
-                        var match = new Regex(@"^(?:http=)?(.+?)(?=;|$)").Match(defaultInfo.Proxy);
-                        var defaultProxy = match.Groups[1].Value;
-                        if (defaultProxy != xwallProxy) {
-                            DefaultProxy = defaultProxy;
-                        }
-                    }
+                    //if (!String.IsNullOrEmpty(defaultInfo.Proxy) && (defaultInfo.Flags & (int)PerConnFlags.PROXY_TYPE_PROXY) != 0) {
+                    //    var match = new Regex(@"^(?:http=)?(.+?)(?=;|$)").Match(defaultInfo.Proxy);
+                    //    var defaultProxy = match.Groups[1].Value;
+                    //    if (defaultProxy != xwallProxy) {
+                    //        DefaultProxy = defaultProxy;
+                    //    }
+                    //}
 
                     var strs = new List<string>();
                     foreach (var item in list)
@@ -274,9 +283,14 @@ namespace XWall {
                 return proxyInfo;
             }
 
-            public static void SetXWallProxy() {
+            private static string getXWallProxyString() {
                 var proxy = "127.0.0.1:" + settings.ProxyPort;
-                SetProxy("http=" + proxy + ";https=" + proxy);
+                return "http=" + proxy + ";https=" + proxy;
+
+            }
+
+            public static void SetXWallProxy() {
+                SetProxy(getXWallProxyString());
             }
 
             public static bool SetProxy(string proxy) {

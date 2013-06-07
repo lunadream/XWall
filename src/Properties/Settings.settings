@@ -87,7 +87,7 @@
       <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="SshAbortionBeforeReconnect" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">32</Value>
+      <Value Profile="(Default)">8</Value>
     </Setting>
     <Setting Name="MaxReconnectPeriod" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">128</Value>
