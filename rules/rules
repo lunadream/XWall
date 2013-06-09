@@ -5330,6 +5330,7 @@ zh.wikipedia.org:443
 :80/.*x-wall(?:\.|%2e)org
 .zh.wikipedia.org
 .wikipedia.org:80/search-redirect(?:\.|%2e)php\?.*language=zh
+.google.
 .googleapis.com
 .g.doubleclick.net
 .adsense.com

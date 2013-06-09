@@ -6,7 +6,7 @@ x-wall.org
 ||wikipedia.org/search-redirect.php?*language=zh
 
 ! Google Related
-! ||google.
+||google.
 ||googleusercontent.com
 ||googleapis.com
 ||g.doubleclick.net
