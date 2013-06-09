@@ -52,6 +52,11 @@
     <sys:String x:Key="PlonkKeyword">Keyword</sys:String>
     <sys:String x:Key="PlonkKeywordMissingMessage">Please enter the keyword for SSH obfuscation.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS Port</sys:String>
+    <sys:String x:Key="SettingsBackup">Settings Backup</sys:String>
+    <sys:String x:Key="Import">Import</sys:String>
+    <sys:String x:Key="Export">Export</sys:String>
+    <sys:String x:Key="FailedImportSettings">Failed to import settings.</sys:String>
+    <sys:String x:Key="FailedExportSettings">Failed to export settings.</sys:String>
 
     <sys:String x:Key="Profile">Profile</sys:String>
     <sys:String x:Key="Profiles">Profiles</sys:String>
@@ -127,6 +132,9 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     
     <!-- Plink -->
     <sys:String x:Key="PlinkAuthFailed">Password authentication failed</sys:String>
+    
+    <!-- Local Server -->
+    <sys:String x:Key="FailedStartLocalServer">Failed to start local server, some features of X-Wall may not function properly. Please check if port {0} is occupied by another program.</sys:String>
     
     <!-- COMMON -->
     <sys:String x:Key="XWall">X-Wall</sys:String>

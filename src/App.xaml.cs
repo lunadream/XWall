@@ -40,6 +40,8 @@ namespace XWall {
             Directory.CreateDirectory(AppDataDirectory + settings.ConfigsFolderName);
             Directory.CreateDirectory(AppDataDirectory + settings.ResourcesFolderName);
 
+            var ignoreRunningInstance = false;
+
             if (eventArgs.Args.Length > 0) {
                 var commandStr = eventArgs.Args[0];
                 var match = new Regex(@"^(.*?)(?:/(.*))?$").Match(commandStr);
@@ -59,6 +61,9 @@ namespace XWall {
                         IsShutDown = true;
                         App.Current.Shutdown();
                         return;
+                    case "restart":
+                        ignoreRunningInstance = true;
+                        break;
                     //case "xwall:new-rule":
                     //    File.WriteAllText(settings.ConfigsFolderName + settings.NewRuleFileName, commandArg);
                     //    IsShutDown = true;
@@ -74,19 +79,21 @@ namespace XWall {
                 }
             }
 
-            Process current = Process.GetCurrentProcess();
-            var resources = App.Current.Resources;
-            MessageBoxResult? result = null;
-            foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
-                if (process.Id != current.Id) {
-                    if (result == null)
-                        result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
-                    if (result == MessageBoxResult.OK)
-                        process.Kill();
-                    else {
-                        IsShutDown = true;
-                        App.Current.Shutdown();
-                        return;
+            if (!ignoreRunningInstance) {
+                Process current = Process.GetCurrentProcess();
+                var resources = App.Current.Resources;
+                MessageBoxResult? result = null;
+                foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
+                    if (process.Id != current.Id) {
+                        if (result == null)
+                            result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
+                        if (result == MessageBoxResult.OK)
+                            process.Kill();
+                        else {
+                            IsShutDown = true;
+                            App.Current.Shutdown();
+                            return;
+                        }
                     }
                 }
             }

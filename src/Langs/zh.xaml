@@ -52,6 +52,11 @@
     <sys:String x:Key="PlonkKeyword">关键字</sys:String>
     <sys:String x:Key="PlonkKeywordMissingMessage">请输入 SSH 混淆的关键字.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS 端口</sys:String>
+    <sys:String x:Key="SettingsBackup">设置备份</sys:String>
+    <sys:String x:Key="Import">导入</sys:String>
+    <sys:String x:Key="Export">导出</sys:String>
+    <sys:String x:Key="FailedImportSettings">导入设置失败.</sys:String>
+    <sys:String x:Key="FailedExportSettings">导出设置失败.</sys:String>
 
     <sys:String x:Key="Profile">配置</sys:String>
     <sys:String x:Key="Profiles">账号配置</sys:String>
@@ -127,7 +132,10 @@
 
     <!-- Plink -->
     <sys:String x:Key="PlinkAuthFailed">账号或密码无效</sys:String>
-    
+
+    <!-- Local Server -->
+    <sys:String x:Key="FailedStartLocalServer">启动本地服务器失败, X-Wall 的某些功能可能不能正常使用. 请检查端口 {0} 是否被其他程序占用.</sys:String>
+
     <!-- COMMON -->
     <sys:String x:Key="XWall">X-Wall</sys:String>
     <sys:String x:Key="Server">服务器</sys:String>

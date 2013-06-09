@@ -12,6 +12,8 @@ namespace XWall.Properties {
     //  The SettingsLoaded event is raised after the setting values are loaded.
     //  The SettingsSaving event is raised before the setting values are saved.
     internal sealed partial class Settings {
+
+        public bool AutoSave { get; set; }
         
         public Settings() {
             // // To add event handlers for saving and changing settings, uncomment the lines below:
@@ -20,9 +22,45 @@ namespace XWall.Properties {
             //
             // this.SettingsSaving += this.SettingsSavingEventHandler;
             //
+
+            AutoSave = true;
+
             this.PropertyChanged += (sender, e) => {
-                Settings.Default.Save();
+                if (AutoSave) {
+                    Settings.Default.Save();
+                }
             };
+        }
+
+        public bool Export(string path) {
+            try {
+                File.Copy(GetDefaultExeConfigPath(ConfigurationUserLevel.PerUserRoamingAndLocal), path, true);
+                return true;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public bool Import(string path) {
+            AutoSave = false;
+            try {
+                File.Copy(path, GetDefaultExeConfigPath(ConfigurationUserLevel.PerUserRoamingAndLocal), true);
+                return true;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public static string GetDefaultExeConfigPath(ConfigurationUserLevel userLevel) {
+            try {
+                var UserConfig = ConfigurationManager.OpenExeConfiguration(userLevel);
+                return UserConfig.FilePath;
+            }
+            catch (ConfigurationException e) {
+                return e.Filename;
+            }
         }
         
         private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e) {

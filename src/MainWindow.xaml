@@ -4,11 +4,11 @@
         xmlns:local="clr-namespace:XWall"
         Title="{StaticResource XWallTitle}"
         ResizeMode="CanMinimize"
-        SizeToContent="WidthAndHeight" 
+        SizeToContent="WidthAndHeight"
         Loaded="onWindowLoaded"
         Closing="onWindowClosing"
         StateChanged="onWindowStateChanged"
-        WindowStyle="ToolWindow"
+        WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
         Icon="Icons/main.ico">
     <Window.Resources>
@@ -25,10 +25,10 @@
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Margin="5" Background="#FFF9F9F9">
+        <TabControl Grid.Row="0" HorizontalAlignment="Left" Width="400" Margin="5" Background="#FFF9F9F9">
             <TabItem Header="{StaticResource BasicSettings}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource ProxyType}" Margin="0,0,0,2">
@@ -43,7 +43,7 @@
                             <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource SshInformation}" PreviewKeyDown="onSshInfoPreviewKeyDown" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
+                    <GroupBox Header="{StaticResource SshInformation}" PreviewKeyDown="onSshInfoPreviewKeyDown" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
                         <StackPanel Margin="0,10,10,5">
                             <Grid Visibility="{Binding Items.Count, ElementName=sshProfilesList, Mode=OneWay, Converter={StaticResource IntegerToVisibilityConverter}}">
                                 <Grid.RowDefinitions>
@@ -93,7 +93,7 @@
                             </Grid>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource HttpInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeHttpRadio}">
+                    <GroupBox Header="{StaticResource HttpInformation}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeHttpRadio}">
                         <Grid Margin="0,10,10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="28" />
@@ -110,7 +110,7 @@
                             <TextBox x:Name="httpPortTextBox" Grid.Column="3" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource SocksInformation}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSocksRadio}">
+                    <GroupBox Header="{StaticResource SocksInformation}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSocksRadio}">
                         <Grid Margin="0,10,10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="28" />
@@ -194,11 +194,25 @@
                             </Grid>
                         </StackPanel>
                     </GroupBox>
+                    <GroupBox Header="{StaticResource SettingsBackup}" Margin="0,0,0,2">
+                        <Grid Margin="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="90" />
+                                <ColumnDefinition Width="90" />
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="importSettingsButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Import}" Click="onImportSettingsButtonClick" />
+                            <Button x:Name="exportSettingsButton" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Export}" Click="onExportSettingsButtonClick" />
+                        </Grid>
+                    </GroupBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="{StaticResource Profiles}">
                 <StackPanel Margin="0,0,0,3">
-                    <GroupBox Header="{StaticResource SshProfiles}" Margin="0,0,0,2" VerticalAlignment="Top">
+                    <GroupBox Header="{StaticResource SshProfiles}" Margin="0,0,0,2">
                         <StackPanel Margin="5,8,10,5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -271,7 +285,7 @@
                             <TextBlock Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"><Hyperlink Click="onShowUrlInfoHyperlinkClick"><Run Text="{StaticResource ViewUrlActionDescription}" /></Hyperlink></TextBlock>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource OnlineRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useOnlineRulesCheckBox}">
+                    <GroupBox Header="{StaticResource OnlineRules}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useOnlineRulesCheckBox}">
                         <Grid Margin="10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
@@ -288,7 +302,7 @@
                             <Button x:Name="onlineRulesUpdateButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Click="onOnlineRulesUpdateButtonClick" Content="{StaticResource Update}" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource CustomRules}" Margin="0,0,0,2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useCustomRulesCheckBox}">
+                    <GroupBox Header="{StaticResource CustomRules}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=useCustomRulesCheckBox}">
                         <Grid Margin="10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
@@ -307,7 +321,7 @@
             </TabItem>
             <TabItem Header="{StaticResource About}" GotFocus="onAboutTabItemGotFocus">
                 <StackPanel Margin="0,0,0,3">
-                    <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2" VerticalAlignment="Top">
+                    <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2">
                         <StackPanel Margin="10,5,10,8">
                             <TextBlock x:Name="versionTextBlock" Margin="0,2,0,0"></TextBlock>
                             <TextBlock Margin="0,2,0,0" Text="{StaticResource AuthorLine}" />
@@ -321,7 +335,7 @@
                             </TextBlock>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource OnlineVersion}" Margin="0,0,0,2" VerticalAlignment="Top">
+                    <GroupBox Header="{StaticResource OnlineVersion}" Margin="0,0,0,2">
                         <Grid Margin="10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />

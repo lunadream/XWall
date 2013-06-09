@@ -138,7 +138,19 @@ namespace XWall {
             privoxy.Start();
 
             var server = new Microsoft.VisualStudio.WebHost.Server(settings.LocalServerPort, "/", App.AppDataDirectory + settings.LocalServerFolderName);
-            server.Start();
+            try {
+                server.Start();
+            }
+            catch {
+                MessageBox.Show(string.Format(resources["FailedStartLocalServer"] as string, settings.LocalServerPort));
+            }
+
+            App.Current.Exit += (o, a) => {
+                try {
+                    server.Stop();
+                }
+                catch { }
+            };
 
             settings.PropertyChanged += (o, a) => {
                 switch (a.PropertyName) {
@@ -520,6 +532,34 @@ namespace XWall {
             var index = sshProfilesListBox.SelectedIndex;
             sshProfiles.Items.RemoveAt(index);
             sshProfilesListBox.SelectedIndex = Math.Min(index, sshProfilesListBox.Items.Count - 1);
+        }
+
+        private void onImportSettingsButtonClick(object sender, RoutedEventArgs e) {
+            var dialog = new System.Windows.Forms.OpenFileDialog();
+            dialog.FileName = "x-wall.config";
+            dialog.FileOk += (s, eArgs) => {
+                var result = settings.Import(dialog.FileName);
+                if (!result) {
+                    MessageBox.Show(resources["FailedImportSettings"] as string);
+                }
+                else {
+                    Process.Start(System.Windows.Forms.Application.ExecutablePath, "restart");
+                    App.Current.Shutdown();
+                }
+            };
+            dialog.ShowDialog();
+        }
+
+        private void onExportSettingsButtonClick(object sender, RoutedEventArgs e) {
+            var dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.FileName = "x-wall.config";
+            dialog.FileOk += (s, eArgs) => {
+                var result = settings.Export(dialog.FileName);
+                if (!result) {
+                    MessageBox.Show(resources["FailedExportSettings"] as string);
+                }
+            };
+            dialog.ShowDialog();
         }
 
     }
