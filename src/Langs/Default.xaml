@@ -53,6 +53,7 @@
     <sys:String x:Key="PlonkKeywordMissingMessage">Please enter the keyword for SSH obfuscation.</sys:String>
     <sys:String x:Key="SocksPort">SOCKS Port</sys:String>
     <sys:String x:Key="SettingsBackup">Settings Backup</sys:String>
+    <sys:String x:Key="UserSettingsFile">User settings file</sys:String>
     <sys:String x:Key="Import">Import</sys:String>
     <sys:String x:Key="Export">Export</sys:String>
     <sys:String x:Key="FailedImportSettings">Failed to import settings.</sys:String>

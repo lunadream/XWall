@@ -204,6 +204,9 @@
                                 <ColumnDefinition Width="90" />
                                 <ColumnDefinition Width="90" />
                             </Grid.ColumnDefinitions>
+                            <TextBlock VerticalAlignment="Center">
+                                <Run Text="{StaticResource UserSettingsFile}"></Run>
+                            </TextBlock>
                             <Button x:Name="importSettingsButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Import}" Click="onImportSettingsButtonClick" />
                             <Button x:Name="exportSettingsButton" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Export}" Click="onExportSettingsButtonClick" />
                         </Grid>
