@@ -239,8 +239,14 @@ namespace XWall {
             }, null, 0, settings.UpdateCheckDelay * 1000);
 
             if (App.Updated) {
-                File.Delete(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
-                notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+                new Action(() => {
+                    Thread.Sleep(1000);
+                    try {
+                        File.Delete(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
+                    }
+                    catch { }
+                    notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+                }).BeginInvoke(null, null);
             }
 
             if (App.Updated || App.FirstRun) {
