@@ -4,6 +4,7 @@
         Title="{StaticResource CustomRulesEditorTitle}" 
         SizeToContent="WidthAndHeight" 
         WindowStyle="ToolWindow" 
+        ResizeMode="NoResize"
         Icon="Icons/main.ico"
         Activated="onWindowActivated"
         Loaded="onWindowLoaded"
