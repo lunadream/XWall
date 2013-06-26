@@ -11,6 +11,7 @@
 .spotify.com
 .turntable.fm
 .vevo.com
+.zattoo.com
 :80/.*(?:\.|%2e)0rz(?:\.|%2e)tw
 .0rz.tw
 .0to255.com
@@ -75,6 +76,7 @@
 .881903.com:80/page(?:/|%2f)zh-tw(?:/|%2f)
 :80/.*(?:\.|%2e)888(?:\.|%2e)com
 .888.com
+.881903.com
 :80/.*89-64(?:\.|%2e)org
 .89-64.org
 :80/.*(?:\.|%2e)9001700(?:\.|%2e)com
@@ -122,6 +124,8 @@
 :80/.*aliengu(?:\.|%2e)com
 .aliengu.com
 .alkasir.com
+:80/.*allgirlsallowed(?:\.|%2e)org
+.allgirlsallowed.org
 :80/.*alliance(?:\.|%2e)org(?:\.|%2e)hk
 .alliance.org.hk
 :80/.*(?:\.|%2e)allinfa(?:\.|%2e)com
@@ -323,6 +327,8 @@ bbc.in:80
 .blog.kangye.org
 :80/.*(?:\.|%2e)bloglines(?:\.|%2e)com
 .bloglines.com
+:80/.*(?:\.|%2e)bloglovin(?:\.|%2e)com
+.bloglovin.com
 :80/.*rconversation(?:\.|%2e)blogs(?:\.|%2e)com
 .rconversation.blogs.com
 :80/.*blogspot(?:\.|%2e)co(?:\.|%2e)uk
@@ -436,6 +442,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .caochangqing.com
 :80/.*cari(?:\.|%2e)com(?:\.|%2e)my
 .cari.com.my
+.catch22.net
 .catfightpayperview.xxx
 :80/.*(?:\.|%2e)catholic(?:\.|%2e)org(?:\.|%2e)hk
 .catholic.org.hk
@@ -573,6 +580,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 :80/.*christusrex(?:\.|%2e)org(?:/|%2f)www1(?:/|%2f)sdc
 .christusrex.org:80/www1(?:/|%2f)sdc
 .chrlcg-hk.org
+.chromeadblock.com
 :80/.*chubun(?:\.|%2e)com
 .chubun.com
 :80/.*chuizi(?:\.|%2e)net
@@ -619,6 +627,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .cochina.org
 :80/.*(?:\.|%2e)code1984(?:\.|%2e)com(?:/|%2f)64
 .code1984.com:80/64
+tosh.comedycentral.com:80
 :80/.*comefromchina(?:\.|%2e)com
 .comefromchina.com
 .compileheart.com
@@ -679,6 +688,9 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .dadi360.com
 :80/.*dafagood(?:\.|%2e)com
 .dafagood.com
+:80/.*dafahao(?:\.|%2e)com
+.dafahao.com
+.dalailama.ru
 :80/.*(?:\.|%2e)dailidaili(?:\.|%2e)com
 .dailidaili.com
 :80/.*(?:\.|%2e)dailymotion(?:\.|%2e)com
@@ -1713,6 +1725,8 @@ apis.google.com:443
 .gstatic.com
 :80/.*guishan(?:\.|%2e)org
 .guishan.org
+:80/.*(?:\.|%2e)gyalwarinpoche(?:\.|%2e)com
+.gyalwarinpoche.com
 .h-china.org
 :80/.*h1n1china(?:\.|%2e)org
 .h1n1china.org
@@ -2131,6 +2145,7 @@ tech2.in.com:80/video(?:/|%2f)
 .la-forum.org
 :80/.*ladbrokes(?:\.|%2e)com
 .ladbrokes.com
+.labiennale.org
 :80/.*lagranepoca(?:\.|%2e)com
 .lagranepoca.com
 :80/.*(?:\.|%2e)lalulalu(?:\.|%2e)com
@@ -2662,6 +2677,8 @@ www.oxid.it:80
 .ow.ly
 :80/.*bbs(?:\.|%2e)ozchinese(?:\.|%2e)com
 .bbs.ozchinese.com
+:80/.*(?:\.|%2e)ozyoyo(?:\.|%2e)com
+.ozyoyo.com
 :80/.*(?:\.|%2e)pacificpoker(?:\.|%2e)com
 .pacificpoker.com
 :80/.*(?:\.|%2e)packetix(?:\.|%2e)net
@@ -2815,6 +2832,7 @@ www.oxid.it:80
 .pornbase.org
 :80/.*(?:\.|%2e)pornhub(?:\.|%2e)com
 .pornhub.com
+.pornmm.net
 :80/.*(?:\.|%2e)pornrapidshare(?:\.|%2e)com
 .pornrapidshare.com
 :80/.*(?:\.|%2e)pornstarclub(?:\.|%2e)com
@@ -3229,6 +3247,7 @@ www.skype.com:80/zh-Hant
 :80/.*home(?:\.|%2e)so-net(?:\.|%2e)net(?:\.|%2e)tw(?:/|%2f)yisa_tsai
 .home.so-net.net.tw:80/yisa_tsai
 .soc.mil:80
+.sockslist.net
 :80/.*(?:\.|%2e)sod(?:\.|%2e)co(?:\.|%2e)jp
 .sod.co.jp
 :80/.*(?:\.|%2e)softether(?:\.|%2e)org
@@ -4541,6 +4560,7 @@ www.x-berry.com:80/goagent
 .search:80/.*%E4%B8%AD%E5%9B%BD%E8%AE%BA%E5%9D%9B
 :80/.*search.*%E4%B8%AD%E5%AE%A3%E9%83%A8
 .search:80/.*%E4%B8%AD%E5%AE%A3%E9%83%A8
+.upload.wikimedia.org
 *.wikipedia.org:443
 :80/.*(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai_Lama
 .wikipedia.org:80/wiki(?:/|%2f)Dalai_Lama
@@ -4612,6 +4632,8 @@ www.x-berry.com:80/goagent
 .zh.wikipedia.org:80/.*%E9%98%BF%E6%B2%9B%C2%B7%E9%98%BF%E6%97%BA%E6%99%8B%E7%BE%8E
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E8%89%BE%E6%9C%AA%E6%9C%AA
 .zh.wikipedia.org:80/.*%E8%89%BE%E6%9C%AA%E6%9C%AA
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%85%AB%E4%B9%9D%E5%AD%A6%E8%BF%90
+.zh.wikipedia.org:80/.*%E5%85%AB%E4%B9%9D%E5%AD%A6%E8%BF%90
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%85%AB%E6%80%9D%E5%B7%B4
 .zh.wikipedia.org:80/.*%E5%85%AB%E6%80%9D%E5%B7%B4
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E7%8F%AD%E7%A6%85
