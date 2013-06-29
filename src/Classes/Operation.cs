@@ -56,6 +56,8 @@ namespace XWall {
             settings.ProxyPort = findAvailablePort(hash, settings.ProxyPort);
             hash.Add(settings.ProxyPort);
             settings.SshSocksPort = findAvailablePort(hash, settings.SshSocksPort);
+            hash.Add(settings.SshSocksPort);
+            settings.GaPort = findAvailablePort(hash, settings.GaPort);
         }
 
         static int findAvailablePort(HashSet<int> hash, int start) {
@@ -294,6 +296,10 @@ namespace XWall {
             }
 
             public static bool SetProxy(string proxy) {
+                /* !DEBUG CODE
+                return true;
+                //*/
+
                 OriginalProxies.Initialize();
 
                 var connections = getConnections();
@@ -311,6 +317,10 @@ namespace XWall {
             }
 
             public static bool RestoreProxy() {
+                /* !DEBUG CODE
+                return true;
+                //*/
+
                 OriginalProxies.Initialize();
                 if (OriginalProxies.List.Length == 0) return true;
 

@@ -84,7 +84,7 @@ namespace XWall {
 
                 icon.ContextMenu = menu;
 
-                SetStatus(Status.Stopped, resources["NotConnected"] as string);
+                SetStatus(settings.ProxyType, Status.Stopped, resources["NotConnected"] as string);
                 System.Windows.Application.Current.Exit += (sender, e) => {
                     icon.Dispose();
                 };
@@ -94,11 +94,15 @@ namespace XWall {
                 icon.ShowBalloonTip(0, title, details, tipIcon);
             }
 
-            public void SetStatus(Status status, string message, string tip = null, ToolTipIcon tipIcon = ToolTipIcon.Info) {
-                window.sshStatusTextBlock.Text = message;
+            public void SetStatus(string type, Status status, string message = null, string tip = null, ToolTipIcon tipIcon = ToolTipIcon.Info) {
+                if (message != null) {
+                    window.sshStatusTextBlock.Text = message;
+                }
 
-                icon.Icon = statusIcons[(int)status];
-                icon.Text = settings.ProxyType == "SSH" ? resources["XWall"] as string + " - " + message : resources["XWall"] as string;
+                if (type == settings.ProxyType) {
+                    icon.Icon = statusIcons[(int)status];
+                    icon.Text = settings.ProxyType == "SSH" && message != null ? resources["XWall"] as string + " - " + message : resources["XWall"] as string;
+                }
 
                 if (tip != null)
                     icon.ShowBalloonTip(0, message, tip, tipIcon);

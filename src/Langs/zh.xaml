@@ -6,9 +6,15 @@
     
     <sys:String x:Key="BasicSettings">基本设置</sys:String>
     <sys:String x:Key="ProxyType">代理类型</sys:String>
+    <sys:String x:Key="GaAndDescription">GoAgent - 需要谷歌账号或者 GAE 应用 ID</sys:String>
     <sys:String x:Key="SshTunnelAndDescription">SSH 隧道 - 需要服务器和账号信息</sys:String>
     <sys:String x:Key="HttpProxyAndDescription">HTTP 代理 - 需要服务器信息</sys:String>
     <sys:String x:Key="Socks5ProxyAndDescription">SOCKS v5 代理 - 需要服务器信息</sys:String>
+
+    <sys:String x:Key="GaStatus">GoAgent</sys:String>
+    <sys:String x:Key="GaAppIdsNotSet">尚未设置 GAE 应用 ID.</sys:String>
+    <sys:String x:Key="GaeWizard">GAE 设置向导</sys:String>
+    <sys:String x:Key="GoAgentNotInstalledMessage">此安装中未包含 GoAgent, 想要下载完整安装包吗?</sys:String>
     
     <sys:String x:Key="SshInformation">SSH 信息</sys:String>
     <sys:String x:Key="Status">状态</sys:String>
@@ -42,6 +48,9 @@
     <sys:String x:Key="ListenToLocalOnlyDescription">只监听本地端口</sys:String>
     <sys:String x:Key="ProxyPort">代理端口</sys:String>
     <sys:String x:Key="UseIntranetProxyDescription">使用内网代理访问普通网站</sys:String>
+    <sys:String x:Key="Ga">GoAgent</sys:String>
+    <sys:String x:Key="GaAppIds">应用 ID</sys:String>
+    <sys:String x:Key="GaAppIdsTooltip">使用 "|" 分隔</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
     <sys:String x:Key="EnableConnectionStatusNotificationDescription">开启连接状态改变时的气球状提示</sys:String>
     <sys:String x:Key="EnableCompression">开启压缩</sys:String>
@@ -127,6 +136,26 @@
     <sys:String x:Key="InvalidRuleMessage">您输入的规则无效.</sys:String>
     <sys:String x:Key="InvalidRulePathMessage">您输入的规则无效, 规则中的路径不是一个正确的正则表达式.</sys:String>
     <sys:String x:Key="RuleExistsMessage">您输入的规则已经存在.</sys:String>
+    
+    <!-- GAEWizard -->
+    <sys:String x:Key="GaeWizardWelcome">欢迎使用 GAE 设置向导, 它将帮助您创建 GAE 应用.</sys:String>
+    <sys:String x:Key="GaeWizardGoogleAccountLine">请输入您的谷歌账号以继续.</sys:String>
+    <sys:String x:Key="GaeWizardFinished">完成, 畅游新世界吧!</sys:String>
+    <sys:String x:Key="GaeShowMoreOptions">显示更多 GAE 应用选项</sys:String>
+    <sys:String x:Key="GaeAppIdPrefix">ID 前缀</sys:String>
+    <sys:String x:Key="GaeAppsNumber">数量</sys:String>
+    <sys:String x:Key="LoggingIn">正在登陆...</sys:String>
+    <sys:String x:Key="FailedToLoginMessage">登陆失败, 请检查您的账号.</sys:String>
+    <sys:String x:Key="InvalidGaeAppsNumberMessage">无效的应用数量.</sys:String>
+    <sys:String x:Key="EmptyGaePasswordMessage">请输入您的密码.</sys:String>
+    <sys:String x:Key="InvalidGaeEmailMessage">请输入一个有效的邮箱.</sys:String>
+    <sys:String x:Key="InvalidGaeAppIdPrefixMessage">请输入一个有效的应用 ID 前缀, 可以使用 a-z, 0-9 或者 -, 同时不要超过 28 个字符.</sys:String>
+    <sys:String x:Key="CreatingGaeApps">正在创建应用: {0}/{1}...</sys:String>
+    <sys:String x:Key="DeployingGaeApps">正在部署应用: {0}/{1}...</sys:String>
+    <sys:String x:Key="InvalidGaeAppIdMessage">应用 ID 已经存在或者无效, 请尝试其他前缀. 需要一个随机的前缀吗?</sys:String>
+    <sys:String x:Key="GaeAppsCreatedMessage">您已经在这个账号上创建过应用了, 您想使用它们作为代理服务器吗?</sys:String>
+    <sys:String x:Key="GaeBeforeVerifyMessage">您的账号需要被验证, 点击 "确认" 并在接下来会打开的网页中完成验证.</sys:String>
+    <sys:String x:Key="GaeAfterVerifyMessage">完成验证后点击 "确认" 继续.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (X-Wall 内建) 因为一个错误退出, 这可能是因为代理端口无效或者被占用.</sys:String>
@@ -141,9 +170,11 @@
     <sys:String x:Key="XWall">X-Wall</sys:String>
     <sys:String x:Key="Server">服务器</sys:String>
     <sys:String x:Key="Port">端口</sys:String>
+    <sys:String x:Key="Email">Email</sys:String>
     <sys:String x:Key="Username">用户名</sys:String>
     <sys:String x:Key="Password">密码</sys:String>
     <sys:String x:Key="Exit">退出</sys:String>
+    <sys:String x:Key="Next">下一步</sys:String>
     <sys:String x:Key="Hide">隐藏</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">X-Wall 似乎已经在运行, 要结束它吗?</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->

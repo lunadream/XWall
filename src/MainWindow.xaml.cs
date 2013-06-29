@@ -31,6 +31,7 @@ namespace XWall {
         NotificationController notificationController;
         Plink plink;
         Privoxy privoxy;
+        GoAgent goagent;
 
         Profile.SshProfilesCollection sshProfiles;
 
@@ -41,9 +42,18 @@ namespace XWall {
             InitializeComponent();
             InitializeBinding();
 
+            var gaAppIdsToolTip = new ToolTip();
+            gaAppIdsToolTip.Content = resources["GaAppIdsTooltip"] as string;
+            gaAppIdsToolTip.StaysOpen = true;
+            gaAppIdsToolTip.PlacementTarget = gaAppIdsTextBox;
+            gaAppIdsToolTip.Placement = System.Windows.Controls.Primitives.PlacementMode.Top;
+            gaAppIdsTextBox.ToolTip = gaAppIdsToolTip;
+            
+
             notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
+            goagent = new GoAgent();
         }
 
         private void onWindowLoaded(object sender, RoutedEventArgs e) {
@@ -51,16 +61,27 @@ namespace XWall {
             websiteUrlText.Text = settings.WebsiteUrl;
             feedbackEmailText.Text = settings.FeedbackEmail;
 
-            if (
-                settings.ProxyType != "SSH" || Plink.CheckSettings()
-            ) WindowState = WindowState.Minimized;
+            if (!(
+                (settings.ProxyType == "SSH" && !Plink.CheckSettings()) ||
+                (settings.ProxyType == "GA" && settings.GaAppIds == "")
+            )) WindowState = WindowState.Minimized;
+
+
+            goagent.Started += () => {
+                notificationController.SetStatus("GA", NotificationController.Status.OK);
+            };
+
+            goagent.Stopped += () => {
+                notificationController.SetStatus("GA", NotificationController.Status.Stopped);
+            };
+
 
             plink.Started += () => {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshInformationGrid.IsEnabled = false;
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Stop"] as string;
-                    notificationController.SetStatus(NotificationController.Status.Processing, resources["Connecting"] as string);
+                    notificationController.SetStatus("SSH", NotificationController.Status.Processing, resources["Connecting"] as string);
                 }));
             };
 
@@ -68,7 +89,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Disconnect"] as string;
-                    notificationController.SetStatus(NotificationController.Status.OK, resources["Connected"] as string, settings.SshNotification ? String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer) : null);
+                    notificationController.SetStatus("SSH", NotificationController.Status.OK, resources["Connected"] as string, settings.SshNotification ? String.Format(resources["SuccessConnectDescription"] as string, settings.SshServer) : null);
                 }));
             };
 
@@ -76,7 +97,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     sshConnectButton.IsEnabled = true;
                     sshConnectButton.Content = resources["Stop"] as string;
-                    notificationController.SetStatus(NotificationController.Status.Stopped, String.Format(resources["ReconnectDescription"] as string, seconds));
+                    notificationController.SetStatus("SSH", NotificationController.Status.Stopped, String.Format(resources["ReconnectDescription"] as string, seconds));
                 }));
             };
 
@@ -87,15 +108,15 @@ namespace XWall {
                     sshConnectButton.Content = resources["Connect"] as string;
 
                     if (plink.Error != null)
-                        notificationController.SetStatus(NotificationController.Status.Error, resources["ErrorConnect"] as string, plink.Error != lastPlinkError ? plink.Error : null, System.Windows.Forms.ToolTipIcon.Error);
+                        notificationController.SetStatus("SSH", NotificationController.Status.Error, resources["ErrorConnect"] as string, plink.Error != lastPlinkError ? plink.Error : null, System.Windows.Forms.ToolTipIcon.Error);
                     else if (isLastSuccess)
-                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
+                        notificationController.SetStatus("SSH", NotificationController.Status.Stopped, resources["Disconnected"] as string, settings.SshNotification ? resources["DisconnectedDescription"] as string : null, System.Windows.Forms.ToolTipIcon.Warning);
                     else if (plink.IsNormallyStopped)
-                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectStopped"] as string);
+                        notificationController.SetStatus("SSH", NotificationController.Status.Stopped, resources["ConnectStopped"] as string);
                     else if (isReconnect)
-                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string);
+                        notificationController.SetStatus("SSH", NotificationController.Status.Stopped, resources["ConnectFailed"] as string);
                     else
-                        notificationController.SetStatus(NotificationController.Status.Stopped, resources["ConnectFailed"] as string, String.Format(resources["ConnectFailedDescription"] as string, settings.SshServer), System.Windows.Forms.ToolTipIcon.Warning);
+                        notificationController.SetStatus("SSH", NotificationController.Status.Stopped, resources["ConnectFailed"] as string, String.Format(resources["ConnectFailedDescription"] as string, settings.SshServer), System.Windows.Forms.ToolTipIcon.Warning);
                     
                     lastPlinkError = plink.Error;
                 }));
@@ -166,6 +187,42 @@ namespace XWall {
             };
             //*/
 
+            //ga
+
+            if (settings.ProxyType == "GA") {
+                goagent.Start();
+            }
+
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "ProxyType": break;
+                    default: return;
+                }
+
+                if (settings.ProxyType == "GA") {
+                    goagent.Start();
+                }
+                else {
+                    goagent.Stop();
+                }
+            };
+
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "GaPort": break;
+                    case "GaProfile": break;
+                    case "GaAppIds": break;
+                    default: return;
+                }
+
+                if (settings.ProxyType == "GA") {
+                    goagent.Start();
+                }
+            };
+
+
+            //ssh
+
             if (settings.ProxyType == "SSH" && settings.AutoStart) {
                 plink.Start();
             }
@@ -221,6 +278,18 @@ namespace XWall {
                 }
             };
 
+            //http&socks
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "ProxyType": break;
+                    default: return;
+                }
+
+                initIconStatus();
+            };
+
+            initIconStatus();
+
             var ruleCommandWatcher = new FileSystemWatcher(App.AppDataDirectory + settings.ConfigsFolderName, "*-cmd");
             ruleCommandWatcher.Created += ruleCommandHandler;
             ruleCommandWatcher.Changed += ruleCommandHandler;
@@ -263,6 +332,15 @@ namespace XWall {
             //    var result = MessageBox.Show(message, resources["ShareRuleTitle"] as string, MessageBoxButton.YesNo);
             //    settings.SubmitNewRule = result == MessageBoxResult.Yes;
             //}
+        }
+
+        void initIconStatus() {
+            if (settings.ProxyType == "HTTP" || settings.ProxyType == "SOCKS5") {
+                notificationController.SetStatus(settings.ProxyType, NotificationController.Status.OK);
+            }
+            else {
+                notificationController.SetStatus(settings.ProxyType, NotificationController.Status.Stopped);
+            }
         }
 
         void updateCustomRulesStatus() {
@@ -324,7 +402,6 @@ namespace XWall {
             Rules.OnlineRules.Update();
         }
 
-
         string lastPlinkError = null;
 
         private void onSshConnectButtonClick(object sender, RoutedEventArgs e) {
@@ -373,9 +450,10 @@ namespace XWall {
         string onlineVersionStr = null;
         bool updateDownloaded = false;
         bool checkingVersion = false;
+        bool downloadingUpdate = false;
 
         void checkVersion() {
-            if (checkingVersion) return;
+            if (checkingVersion || downloadingUpdate) return;
             checkingVersion = true;
             downloadUpdateButton.IsEnabled = false;
             onlineVersionTextBlock.Text = resources["Checking"] as string;
@@ -423,7 +501,11 @@ namespace XWall {
             };
         }
 
-        void downloadUpdate() {
+        void downloadUpdate(bool fullVersion = false) {
+            if (downloadingUpdate) {
+                return;
+            }
+
             var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             if (version == onlineVersionStr) {
                 var result = MessageBox.Show(resources["SameVersionMessage"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
@@ -434,12 +516,14 @@ namespace XWall {
             if (updateDownloaded)
                 startUpdateInstalling();
             else {
+                downloadingUpdate = true;
                 downloadUpdateButton.IsEnabled = false;
 
-                var url = new Uri(settings.UpdateInstallerUrl);
+                var url = new Uri(settings.ProxyType == "GA" || fullVersion ? settings.UpdateFullInstallerUrl : settings.UpdateInstallerUrl);
 
                 var client = new WebClient();
                 //client.Proxy = null;
+
                 client.DownloadFileAsync(url, App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
 
                 client.DownloadProgressChanged += (sender, e) => {
@@ -450,6 +534,7 @@ namespace XWall {
 
                 client.DownloadFileCompleted += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
+                        downloadingUpdate = false;
                         downloadUpdateButton.IsEnabled = true;
                         onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersionStr;
                         if (e.Error == null) {
@@ -470,6 +555,9 @@ namespace XWall {
             if (result == MessageBoxResult.OK) {
                 Process.Start(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName, "/silent");
                 App.Current.Shutdown();
+            }
+            else {
+                checkVersion();
             }
         }
 
@@ -566,6 +654,22 @@ namespace XWall {
                 }
             };
             dialog.ShowDialog();
+        }
+
+        private void gaAppIdsTextBox_GotFocus(object sender, RoutedEventArgs e) {
+            var tooltip = gaAppIdsTextBox.ToolTip as ToolTip;
+            tooltip.IsOpen = true;
+        }
+
+        private void gaAppIdsTextBox_LostFocus(object sender, RoutedEventArgs e) {
+            var tooltip = gaAppIdsTextBox.ToolTip as ToolTip;
+            tooltip.IsOpen = false;
+        }
+
+        private void gaeWizardButton_Click(object sender, RoutedEventArgs e) {
+            var wizard = new GAEWizard();
+            wizard.Owner = this;
+            wizard.ShowDialog();
         }
 
     }

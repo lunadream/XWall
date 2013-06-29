@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:XWall"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="{StaticResource XWallTitle}"
         ResizeMode="CanMinimize"
         SizeToContent="WidthAndHeight"
@@ -13,6 +14,8 @@
         Icon="Icons/main.ico">
     <Window.Resources>
         <local:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
+        <local:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+        <local:StringToVisibilityNotConverter x:Key="StringToVisibilityNotConverter" />
         <local:IntegerToBooleanNotConverter x:Key="IntegerToBooleanNotConverter" />
         <local:BooleanNotConverter x:Key="BooleanNotConverter" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -37,11 +40,45 @@
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
+                                <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
-                            <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SshTunnelAndDescription}" />
-                            <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
-                            <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />
+                            <RadioButton x:Name="proxyTypeGaRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource GaAndDescription}" />
+                            <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource SshTunnelAndDescription}" />
+                            <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
+                            <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />
                         </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource GaStatus}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeGaRadio}">
+                        <StackPanel Margin="0,5,10,5">
+                            <Grid Visibility="{Binding Text, ElementName=gaAppIdsTextBox, Mode=OneWay, Converter={StaticResource StringToVisibilityNotConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Center" Text="{StaticResource GaAppIdsNotSet}"></TextBlock>
+                                <Button x:Name="gaeWizardButton" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" Content="{StaticResource GaeWizard}" Click="gaeWizardButton_Click" />
+                            </Grid>
+                            <Grid Visibility="{Binding Text, ElementName=gaAppIdsTextBox, Mode=OneWay, Converter={StaticResource StringToVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Profile}"/>
+                                <ComboBox Grid.Column="1" x:Name="gaProfilesList" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0" MinWidth="114">
+                                    <sys:String>google_cn</sys:String>
+                                    <sys:String>google_hk</sys:String>
+                                    <sys:String>google_ipv6</sys:String>
+                                </ComboBox>
+                                <Button x:Name="gaeWizardButton2" Grid.Column="2" Margin="5,0" VerticalAlignment="Center" Click="gaeWizardButton_Click" Content="{StaticResource GaeWizard}" />
+                            </Grid>
+                        </StackPanel>
                     </GroupBox>
                     <GroupBox Header="{StaticResource SshInformation}" PreviewKeyDown="onSshInfoPreviewKeyDown" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
                         <StackPanel Margin="0,10,10,5">
@@ -159,7 +196,43 @@
                             <TextBox x:Name="intranetProxyPortTextBox" Grid.Row="6" Grid.Column="3" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{StaticResource Ssh}" Margin="0,0,0,2">
+                    <GroupBox Header="{StaticResource Ga}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeGaRadio}">
+                        <Grid Margin="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Padding="10,0,0,0" Content="{StaticResource GaAppIds}"/>
+                            <TextBox x:Name="gaAppIdsTextBox" Grid.Row="0" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="280" GotFocus="gaAppIdsTextBox_GotFocus" LostFocus="gaAppIdsTextBox_LostFocus" />
+                            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                            <TextBox x:Name="gaPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <!--<Grid x:Name="sshInformationGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="28" />
+                                    <RowDefinition Height="28" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}"/>
+                                <TextBox x:Name="sshServerTextBox" Grid.Row="0" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                                <TextBox x:Name="sshPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Username}" />
+                                <TextBox x:Name="sshUsernameTextBox" Grid.Row="0" Grid.Column="3" Margin="5,0" VerticalAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Password}" />
+                                <PasswordBox x:Name="sshPasswordBox" Grid.Row="1" Grid.Column="3" Height="22" Margin="5,0" VerticalAlignment="Center" />
+                            </Grid>-->
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{StaticResource Ssh}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
                         <StackPanel Margin="10,5">
                             <Grid>
                                 <Grid.RowDefinitions>
@@ -207,13 +280,13 @@
                             <TextBlock VerticalAlignment="Center">
                                 <Run Text="{StaticResource UserSettingsFile}"></Run>
                             </TextBlock>
-                            <Button x:Name="importSettingsButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Import}" Click="onImportSettingsButtonClick" />
-                            <Button x:Name="exportSettingsButton" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Export}" Click="onExportSettingsButtonClick" />
+                            <Button x:Name="importSettingsButton" Grid.Column="1" VerticalAlignment="Center" Margin="5,0" Content="{StaticResource Import}" Click="onImportSettingsButtonClick" />
+                            <Button x:Name="exportSettingsButton" Grid.Column="2" VerticalAlignment="Center" Margin="5,0" Content="{StaticResource Export}" Click="onExportSettingsButtonClick" />
                         </Grid>
                     </GroupBox>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="{StaticResource Profiles}">
+            <TabItem Header="{StaticResource Profiles}" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeSshRadio}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource SshProfiles}" Margin="0,0,0,2">
                         <StackPanel Margin="5,8,10,5">
@@ -322,7 +395,7 @@
                     </GroupBox>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="{StaticResource About}" GotFocus="onAboutTabItemGotFocus">
+            <TabItem x:Name="aboutTabItem"  Header="{StaticResource About}" GotFocus="onAboutTabItemGotFocus">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2">
                         <StackPanel Margin="10,5,10,8">

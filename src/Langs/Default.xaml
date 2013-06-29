@@ -6,10 +6,16 @@
     
     <sys:String x:Key="BasicSettings">Basic Settings</sys:String>
     <sys:String x:Key="ProxyType">Proxy Type</sys:String>
+    <sys:String x:Key="GaAndDescription">GoAgent - A Google account or GAE app IDs are required</sys:String>
     <sys:String x:Key="SshTunnelAndDescription">SSH Tunnel - Server and account information required</sys:String>
     <sys:String x:Key="HttpProxyAndDescription">HTTP Proxy - Server information required</sys:String>
     <sys:String x:Key="Socks5ProxyAndDescription">SOCKS v5 Proxy - Server information required</sys:String>
-    
+
+    <sys:String x:Key="GaStatus">GoAgent</sys:String>
+    <sys:String x:Key="GaAppIdsNotSet">GAE app IDs have not been set.</sys:String>
+    <sys:String x:Key="GaeWizard">GAE Wizard</sys:String>
+    <sys:String x:Key="GoAgentNotInstalledMessage">GoAgent package is not included in this installation, do you want to download the full installer?</sys:String>
+
     <sys:String x:Key="SshInformation">SSH Information</sys:String>
     <sys:String x:Key="Status">Status</sys:String>
     <sys:String x:Key="Connect">Connect</sys:String>
@@ -42,6 +48,9 @@
     <sys:String x:Key="ListenToLocalOnlyDescription">Listen to local address only</sys:String>
     <sys:String x:Key="ProxyPort">Proxy port</sys:String>
     <sys:String x:Key="UseIntranetProxyDescription">Use Intranet proxy for normal websites</sys:String>
+    <sys:String x:Key="Ga">GoAgent</sys:String>
+    <sys:String x:Key="GaAppIds">App IDs</sys:String>
+    <sys:String x:Key="GaAppIdsTooltip">Separated by "|"</sys:String>
     <sys:String x:Key="Ssh">SSH</sys:String>
     <sys:String x:Key="EnableConnectionStatusNotificationDescription">Enable notification for connection status change</sys:String>
     <sys:String x:Key="EnableCompression">Enable compression</sys:String>
@@ -127,6 +136,26 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="InvalidRuleMessage">The rule you entered is invalid.</sys:String>
     <sys:String x:Key="InvalidRulePathMessage">The rule you entered is invalid, because the path in the rule is not a valid regular expression.</sys:String>
     <sys:String x:Key="RuleExistsMessage">The rule you entered already exists.</sys:String>
+    
+    <!-- GAEWizard -->
+    <sys:String x:Key="GaeWizardWelcome">Welcome to GAE Wizard, it will guide you to create your GAE applications.</sys:String>
+    <sys:String x:Key="GaeWizardGoogleAccountLine">Please enter a Google Account to continue.</sys:String>
+    <sys:String x:Key="GaeWizardFinished">Everything's done, enjoy the new world!</sys:String>
+    <sys:String x:Key="GaeShowMoreOptions">Show more options for GAE apps</sys:String>
+    <sys:String x:Key="GaeAppIdPrefix">ID prefix</sys:String>
+    <sys:String x:Key="GaeAppsNumber">Number</sys:String>
+    <sys:String x:Key="LoggingIn">Logging in...</sys:String>
+    <sys:String x:Key="FailedToLoginMessage">Failed to login, please check your account.</sys:String>
+    <sys:String x:Key="InvalidGaeAppsNumberMessage">Invalid apps number.</sys:String>
+    <sys:String x:Key="EmptyGaePasswordMessage">Please enter your password.</sys:String>
+    <sys:String x:Key="InvalidGaeEmailMessage">Please enter a valid email.</sys:String>
+    <sys:String x:Key="InvalidGaeAppIdPrefixMessage">Please enter a valid prefix for your app IDs using a-z, 0-9 or -. Also, make sure it's within 28 characters.</sys:String>
+    <sys:String x:Key="CreatingGaeApps">Creating apps: {0}/{1}...</sys:String>
+    <sys:String x:Key="DeployingGaeApps">Deploying apps: {0}/{1}...</sys:String>
+    <sys:String x:Key="InvalidGaeAppIdMessage">The App ID seems to be taken or invalid, please try another prefix. Do you want a new random prefix?</sys:String>
+    <sys:String x:Key="GaeAppsCreatedMessage">You have already created applications on this account, do you want to use them as proxy servers?</sys:String>
+    <sys:String x:Key="GaeBeforeVerifyMessage">Your account needs to be verified, click "OK" and finish the verification in the openning page.</sys:String>
+    <sys:String x:Key="GaeAfterVerifyMessage">Click "OK" after you have verified your account.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (built-in X-Wall) exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
@@ -141,9 +170,11 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="XWall">X-Wall</sys:String>
     <sys:String x:Key="Server">Server</sys:String>
     <sys:String x:Key="Port">Port</sys:String>
+    <sys:String x:Key="Email">Email</sys:String>
     <sys:String x:Key="Username">Username</sys:String>
     <sys:String x:Key="Password">Password</sys:String>
     <sys:String x:Key="Exit">Exit</sys:String>
+    <sys:String x:Key="Next">Next</sys:String>
     <sys:String x:Key="Hide">Hide</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">It seems that X-Wall has already started, do you want to end it?</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->

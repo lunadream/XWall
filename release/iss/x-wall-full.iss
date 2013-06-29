@@ -24,7 +24,7 @@ VersionInfoCopyright={#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=C:\Projects\X-Wall\X-Wall\release
-OutputBaseFilename=x-wall-setup-with-plonk
+OutputBaseFilename=x-wall-setup-full
 SetupIconFile=C:\Projects\X-Wall\X-Wall\src\Icons\main.ico
 UninstallDisplayIcon=C:\Projects\X-Wall\X-Wall\src\Icons\main.ico
 Compression=lzma/Max
@@ -40,16 +40,16 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\x-wall.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\x-wall.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\WebDev.WebHost20.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\mgwz.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plink.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\plonk.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\X-Wall\X-Wall\src\bin\Release\privoxy.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\local-server-apps\*"; DestDir: "{commonappdata}\{#MyAppName}\local-server-apps"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\local-server-apps\bin\*"; DestDir: "{commonappdata}\{#MyAppName}\local-server-apps\bin"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{commonappdata}\{#MyAppName}\resources"; Flags: ignoreversion
-Source: "C:\Projects\X-Wall\X-Wall\src\resources\privoxy-templates\*"; DestDir: "{commonappdata}\{#MyAppName}\resources\privoxy-templates"; Flags: ignoreversion
+Source: "C:\Projects\X-Wall\local-server-apps\*"; DestDir: "{commonappdata}\{#MyAppName}\local-server-apps"; Flags: ignoreversion recursesubdirs
+Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{commonappdata}\{#MyAppName}\resources"; Flags: ignoreversion recursesubdirs
 Source: "C:\Projects\X-Wall\X-Wall\src\configs\*"; DestDir: "{commonappdata}\{#MyAppName}\configs"; Flags: ignoreversion; Permissions: authusers-full
-Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full
+Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full                
+Source: "C:\Projects\X-Wall\goagent\*"; DestDir: "{commonappdata}\X-Wall\goagent"; Flags: ignoreversion recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

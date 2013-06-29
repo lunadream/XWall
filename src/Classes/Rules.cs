@@ -22,6 +22,17 @@ namespace XWall {
 
         static bool initialized = false;
 
+        static bool enabled = true;
+        public static bool Enabled {
+            get { return enabled; }
+            set {
+                if (enabled != value) {
+                    enabled = value;
+                    GenerateActionFile();
+                }
+            }
+        }
+
         public static void Initialize() {
             if (initialized) return;
             initialized = true;
@@ -39,6 +50,7 @@ namespace XWall {
             settings.PropertyChanged += (sender, e) => {
                 switch (e.PropertyName) {
                     case "ProxyType": break;
+                    case "GaPort": break;
                     case "SshSocksPort": break;
                     case "HttpServer": break;
                     case "HttpPort": break;
@@ -90,6 +102,10 @@ namespace XWall {
         }
 
         public static void GenerateActionFile() {
+            /* !DEBUG CODE
+            return;
+            //*/
+
             if (generatingActionFile) return;
             generatingActionFile = true;
 
@@ -97,6 +113,9 @@ namespace XWall {
                 string forwardSettings;
 
                 switch (settings.ProxyType) {
+                    case "GA":
+                        forwardSettings = "forward 127.0.0.1:" + settings.GaPort;
+                        break;
                     case "SSH":
                         forwardSettings = "forward-socks5 127.0.0.1:" + settings.SshSocksPort + " .";
                         break;
@@ -119,23 +138,23 @@ namespace XWall {
                 string customForwardText = "";
                 string customDefaultText = "";
 
-                if (settings.ForwardAll) {
-                    onlineForwardText =
-                        "# Forward all\r\n" +
-                        "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
-                        "/";
-                }
-                else {
-                    if (settings.UseOnlineRules && File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName)) {
-                        var onlineRulesText = File.ReadAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName);
-                        var parts = onlineRulesText.Split(new string[] { "#-- separator --#" }, StringSplitOptions.None);
-                        if (parts.Length == 2) {
-                            onlineForwardText = parts[0].Trim().Replace("$forward-settings$", forwardSettings);
-                            onlineDefaultText = parts[1].Trim().Replace("$default-forward-settings$", defaultForwardSettings);
-                        }
+                if (enabled) {
+                    if (settings.ForwardAll) {
+                        onlineForwardText =
+                            "# Forward all\r\n" +
+                            "{+forward-override{" + forwardSettings + "}}" + "\r\n" +
+                            "/";
                     }
+                    else {
+                        if (settings.UseOnlineRules && File.Exists(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName)) {
+                            var onlineRulesText = File.ReadAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName);
+                            var parts = onlineRulesText.Split(new string[] { "#-- separator --#" }, StringSplitOptions.None);
+                            if (parts.Length == 2) {
+                                onlineForwardText = parts[0].Trim().Replace("$forward-settings$", forwardSettings);
+                                onlineDefaultText = parts[1].Trim().Replace("$default-forward-settings$", defaultForwardSettings);
+                            }
+                        }
 
-                    if (settings.UseCustomRules) {
                         var matches = new Regex(@".+").Matches(settings.CustomRules);
 
                         var forwardRules = new List<string>();

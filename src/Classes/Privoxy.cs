@@ -40,6 +40,9 @@ namespace XWall {
         }
 
         public static void GenerateConfigFile() {
+            /* !DEBUG CODE
+            return;
+            //*/
             //var defaultProxy = Operation.Proxies.DefaultProxy;
             var text =
                 "listen-address " + (settings.ListenToLocalOnly ? "127.0.0.1:" : ":") + settings.ProxyPort + "\r\n" +

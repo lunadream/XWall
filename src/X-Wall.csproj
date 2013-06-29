@@ -83,6 +83,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -97,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\GAESimulator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\GoAgent.cs" />
     <Compile Include="Classes\Profiles.cs" />
     <Compile Include="CustomRulesEditor.xaml.cs">
       <DependentUpon>CustomRulesEditor.xaml</DependentUpon>
@@ -115,6 +120,10 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Page Include="GAEWizard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Langs\Default.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +135,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GAEWizard.xaml.cs">
+      <DependentUpon>GAEWizard.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -174,6 +186,7 @@
     <Content Include="resources\privoxy-templates\no-server-data" />
     <Content Include="resources\privoxy-templates\no-such-domain" />
     <Content Include="resources\privoxy-templates\show-url-info" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -107,7 +107,20 @@ namespace XWall {
                 }
             }
 
-            //* DEBUG CODE
+            if (settings.FirstRun || settings.ToUseGoAgent) {
+                if (settings.ToUseGoAgent) {
+                    settings.ToUseGoAgent = false;
+                }
+
+                if (Directory.Exists(AppDataDirectory + settings.GaFolderName)) {
+                    settings.ProxyType = "GA";
+                }
+            }
+
+            if (settings.ProxyType == "GA" && !Directory.Exists(AppDataDirectory + settings.GaFolderName)) {
+                settings.ProxyType = "SSH";
+            }
+
             if (settings.FirstRun) {
                 settings.FirstRun = false;
                 FirstRun = true;
@@ -116,6 +129,7 @@ namespace XWall {
                 Operation.SetAvailablePorts();
             }
 
+            //* DEBUG CODE
             var autoStart = Operation.SetAutoStart(settings.AutoStart);
             if (autoStart != settings.AutoStart)
                 settings.AutoStart = autoStart;

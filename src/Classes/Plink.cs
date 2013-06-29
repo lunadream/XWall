@@ -217,14 +217,14 @@ namespace XWall {
         }
 
         void onOutputDataReceived(object sender, DataReceivedEventArgs e) {
-            Console.WriteLine("D: " + e.Data);
+            //Console.WriteLine("D: " + e.Data);
         }
 
         void onErrorDataReceived(object sender, DataReceivedEventArgs e) {
             var line = e.Data;
             if (line == null) return;
 
-            Console.WriteLine("E: " + line);
+            //Console.WriteLine("E: " + line);
 
             if (new Regex(@"^Local port .+ SOCKS dynamic forwarding").IsMatch(line)) {
                 reconnectPeriod = 1;

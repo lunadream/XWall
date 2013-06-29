@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,7 +17,52 @@ namespace XWall {
         void InitializeBinding() {
             //BASIC SETTINGS
             //proxy type
-            bindProxyType();
+            initProxyType();
+
+            proxyTypeGaRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "GA") {
+                    if (Directory.Exists(App.AppDataDirectory + settings.GaFolderName)) {
+                        settings.ProxyType = "GA";
+                    }
+                    else {
+                        initProxyType();
+                        var r = MessageBox.Show(resources["GoAgentNotInstalledMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
+                        if (r == MessageBoxResult.OK) {
+                            settings.ToUseGoAgent = true;
+                            downloadUpdate(true);
+                            aboutTabItem.Focus();
+                        }
+                    }
+                }
+            };
+
+            proxyTypeSshRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "SSH") {
+                    settings.ProxyType = "SSH";
+                }
+            };
+
+            proxyTypeHttpRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "HTTP") {
+                    settings.ProxyType = "HTTP";
+                }
+            };
+
+            proxyTypeSocksRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "SOCKS5") {
+                    settings.ProxyType = "SOCKS5";
+                }
+            };
+
+            //goagent information
+            gaProfilesList.SelectionChanged += (sender, e) => {
+                var value = gaProfilesList.SelectedValue as string;
+                if (settings.GaProfile != value) {
+                    settings.GaProfile = value;
+                }
+            };
+
+            gaProfilesList.Text = settings.GaProfile;
 
             //ssh information
             UIBinding.bindTextBox(sshServerTextBox, "SshServer");
@@ -54,6 +100,10 @@ namespace XWall {
             UIBinding.bindCheckBox(useIntranetProxyCheckBox, "UseIntranetProxy");
             UIBinding.bindTextBox(intranetProxyServerTextBox, "IntranetProxyServer");
             UIBinding.bindTextBox(intranetProxyPortTextBox, "IntranetProxyPort");
+            
+            //goagent
+            UIBinding.bindTextBox(gaAppIdsTextBox, "GaAppIds");
+            UIBinding.bindTextBox(gaPortTextBox, "GaPort");
 
             //ssh
             UIBinding.bindCheckBox(sshNotificationCheckBox, "SshNotification");
@@ -224,10 +274,12 @@ namespace XWall {
             var items = sshProfiles.Items;
 
             var build = new Action(() => {
+                profileContextMenu.MenuItems.Clear();
+
                 var selectedIndex = settings.SshSelectedProfileIndex;
                 System.Windows.Forms.MenuItem selectedItem = null;
 
-                profileContextMenu.Visible = items.Count > 0;
+                profileContextMenu.Visible = settings.ProxyType == "SSH" && items.Count > 0;
 
                 for (int i = 0; i < items.Count; i++) {
                     var item = items[i];
@@ -259,7 +311,15 @@ namespace XWall {
             build();
 
             items.ListChanged += (sender, e) => {
-                profileContextMenu.MenuItems.Clear();
+                build();
+            };
+
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "ProxyType": break;
+                    default: return;
+                }
+
                 build();
             };
         }
@@ -301,9 +361,12 @@ namespace XWall {
             }
         }
 
-        void bindProxyType() {
+        void initProxyType() {
             //settings to control
             switch (settings.ProxyType) {
+                case "GA":
+                    proxyTypeGaRadio.IsChecked = true;
+                    break;
                 case "SSH":
                     proxyTypeSshRadio.IsChecked = true;
                     break;
@@ -315,19 +378,6 @@ namespace XWall {
                     break;
             }
 
-            //control to settings
-            proxyTypeSshRadio.Checked += (sender, e) => {
-                settings.ProxyType = "SSH";
-
-            };
-
-            proxyTypeHttpRadio.Checked += (sender, e) => {
-                settings.ProxyType = "HTTP";
-            };
-
-            proxyTypeSocksRadio.Checked += (sender, e) => {
-                settings.ProxyType = "SOCKS5";
-            };
         }
     }
 
@@ -340,6 +390,26 @@ namespace XWall {
     class IntegerToVisibilityConverter : IValueConverter {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
             return (int)value == 0 ? Visibility.Collapsed : Visibility.Visible;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+            throw new NotImplementedException();
+        }
+    }
+
+    class StringToVisibilityConverter : IValueConverter {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+            return string.IsNullOrEmpty((string)value) ? Visibility.Collapsed : Visibility.Visible;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+            throw new NotImplementedException();
+        }
+    }
+
+    class StringToVisibilityNotConverter : IValueConverter {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+            return !string.IsNullOrEmpty((string)value) ? Visibility.Collapsed : Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
