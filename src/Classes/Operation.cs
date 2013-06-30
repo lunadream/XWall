@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using XWall.Properties;
@@ -14,6 +16,14 @@ using XWall.Properties;
 namespace XWall {
     static class Operation {
         static Settings settings = Settings.Default;
+
+        public static void GrantAccessControl(string fileName) {
+            try {
+                var security = File.GetAccessControl(fileName);
+                security.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.AuthenticatedUserSid, null), FileSystemRights.FullControl, AccessControlType.Allow));
+            }
+            catch { }
+        }
 
         public static void KillProcess(string fileName) {
             var processes = GetProcesses(fileName);

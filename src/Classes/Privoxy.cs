@@ -57,6 +57,7 @@ namespace XWall {
                 "actionsfile " + App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName + "\r\n" +
                 "templdir " + App.AppDataDirectory + settings.ResourcesFolderName + settings.PrivoxyTemplatesFolderName + "\r\n";
             File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyConfigFileName, text);
+            Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyConfigFileName);
         }
 
         void startProcess() {

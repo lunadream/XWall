@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Windows;
@@ -52,25 +53,30 @@ namespace XWall {
                 .Replace("$app-ids$", settings.GaAppIds);
 
             File.WriteAllText(App.AppDataDirectory + settings.GaConfigFileName, configText);
+            Operation.GrantAccessControl(App.AppDataDirectory + settings.GaConfigFileName);
         }
 
         public event Action Started = () => { };
         public event Action Stopped = () => { };
+        public event Action RequireRunas = () => { };
 
         void startProcess() {
             if (Environment.HasShutdownStarted) return;
 
             stop = false;
-            Started();
             process = new Process();
 
             var si = process.StartInfo;
+
             si.FileName = App.AppDataDirectory + settings.GaPython33FileName;
             si.Arguments = '"' + App.AppDataDirectory + settings.GaScriptFileName + '"';
             si.CreateNoWindow = true;
             si.UseShellExecute = false;
 
             process.Start();
+
+            Started();
+            
             process.WaitForExit();
 
             Stopped();
@@ -96,9 +102,12 @@ namespace XWall {
 
         public void Stop() {
             stop = true;
-            if (process != null && !process.HasExited) {
-                process.Kill();
+            try {
+                if (process != null && !process.HasExited) {
+                    process.Kill();
+                }
             }
+            catch { }
         }
 
 

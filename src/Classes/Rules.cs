@@ -99,6 +99,7 @@ namespace XWall {
 
         static void updateNewRuleSubmitToggleFile() {
             File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
+            Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName);
         }
 
         public static void GenerateActionFile() {
@@ -184,9 +185,13 @@ namespace XWall {
                 }
 
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName, onlineForwardText);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName, onlineDefaultText);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName, customForwardText);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName, customDefaultText);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName);
 
                 generatingActionFile = false;
             }).BeginInvoke(null, null);
@@ -245,6 +250,7 @@ namespace XWall {
                         Updated(false);
                     else {
                         File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName, e.Result);
+                        Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.OnlineRulesFileName);
                         settings.OnlineRulesLastUpdateTime = DateTime.Now;
                         Updated(true);
                     }

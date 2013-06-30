@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Resources;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading;
 using System.Windows;
@@ -76,6 +77,20 @@ namespace XWall {
             goagent.Stopped += () => {
                 notificationController.SetStatus("GA", NotificationController.Status.Stopped);
             };
+
+            //goagent.RequireRunas += () => {
+            //    MessageBox.Show(resources["GoAgentRequiresRunasMessage"] as string);
+
+            //    //var si = new ProcessStartInfo();
+            //    //si.FileName = System.Windows.Forms.Application.ExecutablePath;
+            //    //si.Verb = "runas";
+            //    //si.Arguments = "restart";
+            //    //Process.Start(si);
+            //    Process.Start(System.Windows.Forms.Application.ExecutablePath, "restart");
+                
+
+            //    //App.Current.Shutdown();
+            //};
 
 
             plink.Started += () => {
@@ -536,6 +551,7 @@ namespace XWall {
 
                 client.DownloadFileCompleted += (sender, e) => {
                     Dispatcher.BeginInvoke(new Action(() => {
+                        Operation.GrantAccessControl(App.AppDataDirectory + settings.ResourcesFolderName + settings.UpdateInstallerName);
                         downloadingUpdate = false;
                         downloadUpdateButton.IsEnabled = true;
                         onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersionStr;
