@@ -40,6 +40,9 @@ namespace XWall {
                 return;
 
             InitializeComponent();
+        }
+
+        private void onWindowLoaded(object sender, RoutedEventArgs e) {
             InitializeBinding();
 
             var gaAppIdsToolTip = new ToolTip();
@@ -48,15 +51,14 @@ namespace XWall {
             gaAppIdsToolTip.PlacementTarget = gaAppIdsTextBox;
             gaAppIdsToolTip.Placement = System.Windows.Controls.Primitives.PlacementMode.Top;
             gaAppIdsTextBox.ToolTip = gaAppIdsToolTip;
-            
+
 
             notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
             goagent = new GoAgent();
-        }
 
-        private void onWindowLoaded(object sender, RoutedEventArgs e) {
+
             versionTextBlock.Text += resources["Version"] as string + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             websiteUrlText.Text = settings.WebsiteUrl;
             feedbackEmailText.Text = settings.FeedbackEmail;

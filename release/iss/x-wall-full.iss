@@ -49,7 +49,7 @@ Source: "C:\Projects\X-Wall\local-server-apps\*"; DestDir: "{commonappdata}\{#My
 Source: "C:\Projects\X-Wall\X-Wall\src\resources\*"; DestDir: "{commonappdata}\{#MyAppName}\resources"; Flags: ignoreversion recursesubdirs
 Source: "C:\Projects\X-Wall\X-Wall\src\configs\*"; DestDir: "{commonappdata}\{#MyAppName}\configs"; Flags: ignoreversion; Permissions: authusers-full
 Source: "C:\Projects\X-Wall\X-Wall\rules\rules-v2"; DestDir: "{commonappdata}\{#MyAppName}\configs"; DestName: "online-rules"; Flags: ignoreversion; Permissions: authusers-full                
-Source: "C:\Projects\X-Wall\goagent\*"; DestDir: "{commonappdata}\X-Wall\goagent"; Flags: ignoreversion recursesubdirs
+Source: "C:\Projects\X-Wall\goagent\*"; DestDir: "{commonappdata}\X-Wall\goagent"; Flags: ignoreversion recursesubdirs; Permissions: authusers-full
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
