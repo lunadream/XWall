@@ -284,6 +284,10 @@ namespace XWall {
                 }
 
                 callback(true, i, 0);
+                try {
+                    File.Delete(App.AppDataDirectory + settings.GaUploaderCookieFileName);
+                }
+                catch { }
             }).BeginInvoke(null, null);
         }
 
