@@ -16,6 +16,7 @@ namespace XWall {
         Process process;
         bool stop;
         static string configTpl;
+        bool startPending = false;
 
         public GoAgent() {
             Operation.KillProcess(App.AppDataDirectory + settings.GaPython33FileName);
@@ -84,8 +85,9 @@ namespace XWall {
             if (!stop) {
                 new Action(() => {
                     Thread.Sleep(2000);
-                    if (process == null || process.HasExited)
+                    if ((process == null || process.HasExited) && !startPending) {
                         startProcess();
+                    }
                 }).BeginInvoke(null, null);
             }
         }
@@ -94,8 +96,10 @@ namespace XWall {
             Stop();
             if (settings.GaAppIds != "" && settings.GaAppIds != "goagent") {
                 new Action(() => {
+                    startPending = true;
                     Thread.Sleep(100);
                     startProcess();
+                    startPending = false;
                 }).BeginInvoke(null, null);
             }
         }
