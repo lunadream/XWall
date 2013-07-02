@@ -144,8 +144,8 @@
     <sys:String x:Key="GaeShowMoreOptions">显示更多 GAE 应用选项</sys:String>
     <sys:String x:Key="GaeAppIdPrefix">ID 前缀</sys:String>
     <sys:String x:Key="GaeAppsNumber">数量</sys:String>
-    <sys:String x:Key="LoggingIn">正在登陆...</sys:String>
-    <sys:String x:Key="FailedToLoginMessage">登陆失败, 请检查您的账号.</sys:String>
+    <sys:String x:Key="LoggingIn">正在登录...</sys:String>
+    <sys:String x:Key="FailedToLoginMessage">登录失败, 请检查您的账号.</sys:String>
     <sys:String x:Key="InvalidGaeAppsNumberMessage">无效的应用数量.</sys:String>
     <sys:String x:Key="EmptyGaePasswordMessage">请输入您的密码.</sys:String>
     <sys:String x:Key="InvalidGaeEmailMessage">请输入一个有效的邮箱.</sys:String>
