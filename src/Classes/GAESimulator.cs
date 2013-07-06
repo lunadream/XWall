@@ -48,6 +48,7 @@ namespace XWall {
 
         public class LoginCallbackData {
             public string[] AppIds;
+            public string[] NoneDeployedAppIds;
             public int RemainingNumber;
         }
         public delegate void LoginCallback(bool success, LoginCallbackData data);
@@ -82,15 +83,23 @@ namespace XWall {
                     }
 
                     var appIds = new List<string>();
+                    var noneDeployedAppIds = new List<string>();
                     var idMatches = new Regex(@"<tr[\s\S]+?&app_id=s~(.+?)""[\s\S]*?</tr>").Matches(h);
                     foreach (Match match in idMatches) {
                         if (!match.Value.Contains("<strong>Disabled")) {
-                            Console.WriteLine(match.Groups[1].Value);
-                            appIds.Add(match.Groups[1].Value);
+                            var id = match.Groups[1].Value;
+                            appIds.Add(id);
+                            if (match.Value.Contains("None Deployed")) {
+                                noneDeployedAppIds.Add(id);
+                            }
                         }
                     }
 
-                    callback(true, new LoginCallbackData() { AppIds = appIds.ToArray(), RemainingNumber = remaining });
+                    callback(true, new LoginCallbackData() {
+                        AppIds = appIds.ToArray(), 
+                        NoneDeployedAppIds = noneDeployedAppIds.ToArray(), 
+                        RemainingNumber = remaining 
+                    });
                 });
 
                 var processLogin = new Action<string>((h) => {
@@ -139,6 +148,11 @@ namespace XWall {
             };
         }
 
+        NameValueCollection sendVerifierQeury = null;
+        NameValueCollection verifyQuery = null;
+
+        public event Action<Action> VerificationRequired = (callback) => { };
+
         public delegate void CreateAppsCallback(bool done, int i, string id, bool error = false);
         public void CreateApps(string prefix, int number, CreateAppsCallback callback) {
             var current = 0;
@@ -185,24 +199,30 @@ namespace XWall {
             prefetch = new Action(() => {
                 var client = new WebClientWithCookies();
                 client.DownloadStringAsync(new Uri("https://appengine.google.com/start/createapp"));
+                //client.DownloadStringAsync(new Uri("https://accounts.google.com/b/0/IdvChallenge?idvContinueHandler=SERVICE&service=ah"));
                 client.DownloadStringCompleted += (sender, e) => {
                     if (e.Result.Contains("IdvPhoneType()")) {
-                        var r = MessageBox.Show(resources["GaeBeforeVerifyMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
+                        //var r = MessageBox.Show(resources["GaeBeforeVerifyMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
 
-                        if (r == MessageBoxResult.OK) {
-                            Process.Start("\"https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FIdvChallenge%3FidvContinueHandler%3DSERVICE%26service%3Dah\"");
-                            r = MessageBox.Show(resources["GaeAfterVerifyMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
+                        //if (r == MessageBoxResult.OK) {
+                        //    Process.Start("\"https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FIdvChallenge%3FidvContinueHandler%3DSERVICE%26service%3Dah\"");
+                        //    r = MessageBox.Show(resources["GaeAfterVerifyMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
 
-                            if (r == MessageBoxResult.OK) {
-                                prefetch();
-                            }
-                            else {
-                                callback(false, 0, null, true);
-                            }
-                        }
-                        else {
-                            callback(false, 0, null, true);
-                        }
+                        //    if (r == MessageBoxResult.OK) {
+                        //        prefetch();
+                        //    }
+                        //    else {
+                        //        callback(false, 0, null, true);
+                        //    }
+                        //}
+                        //else {
+                        //    callback(false, 0, null, true);
+                        //}
+
+                        sendVerifierQeury = initQuery(e.Result);
+                        VerificationRequired(() => {
+                            prefetch();
+                        });
                     }
                     else {
                         query = initQuery(e.Result);
@@ -210,11 +230,49 @@ namespace XWall {
                         next(false);
                     }
                 };
-                
-
             });
 
             prefetch();
+        }
+
+        public delegate void SendVerifierCallback(bool success);
+        public void SendVerifier(string method, string country, string phone, SendVerifierCallback callback) {
+            sendVerifierQeury["idvType"] = method;
+            sendVerifierQeury["MobileCountry"] = country;
+            sendVerifierQeury["MobileNumber"] = phone;
+            sendVerifierQeury["PhoneType"] = "MOBILE";
+            sendVerifierQeury["MobileCarrier"] = "";
+
+            var sendVerifierUrl = "https://accounts.google.com/b/0/IdvChallenge?idvContinueHandler=SERVICE&service=ah";
+
+            var cl = new WebClientWithCookies();
+            cl.UploadValuesAsync(new Uri(sendVerifierUrl), sendVerifierQeury);
+            cl.UploadValuesCompleted += (s, o) => {
+                var html = Encoding.UTF8.GetString(o.Result);
+
+                if (html.Contains("\"idvGivenAnswer\"")) {
+                    verifyQuery = initQuery(html);
+                    callback(true);
+                }
+                else {
+                    callback(false);
+                }
+            };
+        }
+
+        public delegate void VerifyCallback(bool success);
+        public void Verify(string verifier, VerifyCallback callback) {
+            verifyQuery["idvGivenAnswer"] = verifier;
+
+            var verifyUrl = "https://accounts.google.com/b/0/IdvVerify?idvContinueHandler=SERVICE&service=ah";
+
+            var cl = new WebClientWithCookies();
+            cl.UploadValuesAsync(new Uri(verifyUrl), verifyQuery);
+            cl.UploadValuesCompleted += (s, o) => {
+                var html = Encoding.UTF8.GetString(o.Result);
+                callback(!html.Contains("\"idvGivenAnswer\""));
+            };
+
         }
 
         public delegate void CheckAppIdCallback(bool valid);

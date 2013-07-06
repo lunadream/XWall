@@ -154,8 +154,13 @@
     <sys:String x:Key="DeployingGaeApps">正在部署应用: {0}/{1}...</sys:String>
     <sys:String x:Key="InvalidGaeAppIdMessage">应用 ID 已经存在或者无效, 请尝试其他前缀. 需要一个随机的前缀吗?</sys:String>
     <sys:String x:Key="GaeAppsCreatedMessage">您已经在这个账号上创建过应用了, 您想使用它们作为代理服务器吗?</sys:String>
-    <sys:String x:Key="GaeBeforeVerifyMessage">您的账号需要被验证, 点击 "确认" 并在接下来会打开的网页中完成验证.</sys:String>
-    <sys:String x:Key="GaeAfterVerifyMessage">完成验证后点击 "确认" 继续.</sys:String>
+    <sys:String x:Key="DeployDeployedGaeAppsMessage">部分您创建的应用已经部署, 您想重新部署这些应用吗?</sys:String>
+    <!--<sys:String x:Key="GaeBeforeVerifyMessage">您的账号需要被验证, 点击 "确认" 并在接下来会打开的网页中完成验证.</sys:String>
+    <sys:String x:Key="GaeAfterVerifyMessage">完成验证后点击 "确认" 继续.</sys:String>-->
+    <sys:String x:Key="GaeInvalidPhoneMessage">请输入有效的手机号码.</sys:String>
+    <sys:String x:Key="GaeFailToSendVerifierMessage">发送验证码失败, 请检查输入的信息并重试.</sys:String>
+    <sys:String x:Key="GaeEmptyVerifierMessage">请输入您收到的验证码.</sys:String>
+    <sys:String x:Key="GaeInvalidVerifierMessage">账号验证失败, 请重试.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (X-Wall 内建) 因为一个错误退出, 这可能是因为代理端口无效或者被占用.</sys:String>
@@ -168,13 +173,23 @@
 
     <!-- COMMON -->
     <sys:String x:Key="XWall">X-Wall</sys:String>
+    <sys:String x:Key="VerificationMethod">方式</sys:String>
     <sys:String x:Key="Server">服务器</sys:String>
     <sys:String x:Key="Port">端口</sys:String>
-    <sys:String x:Key="Email">Email</sys:String>
+    <sys:String x:Key="Country">国家</sys:String>
+    <sys:String x:Key="TextMessage">短信息</sys:String>
+    <sys:String x:Key="VoiceCall">语音电话</sys:String>
+    <sys:String x:Key="Email">电子邮箱</sys:String>
+    <sys:String x:Key="PhoneNumber">手机</sys:String>
+    <sys:String x:Key="Verifier">验证码</sys:String>
     <sys:String x:Key="Username">用户名</sys:String>
     <sys:String x:Key="Password">密码</sys:String>
     <sys:String x:Key="Exit">退出</sys:String>
     <sys:String x:Key="Next">下一步</sys:String>
+    <sys:String x:Key="Send">发送</sys:String>
+    <sys:String x:Key="Sending">正在发送</sys:String>
+    <sys:String x:Key="Verify">验证</sys:String>
+    <sys:String x:Key="Verifying">正在验证</sys:String>
     <sys:String x:Key="Hide">隐藏</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">X-Wall 似乎已经在运行, 要结束它吗?</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->

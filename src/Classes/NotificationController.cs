@@ -95,17 +95,20 @@ namespace XWall {
             }
 
             public void SetStatus(string type, Status status, string message = null, string tip = null, ToolTipIcon tipIcon = ToolTipIcon.Info) {
-                if (message != null) {
-                    window.sshStatusTextBlock.Text = message;
-                }
+                try {
+                    if (message != null) {
+                        window.sshStatusTextBlock.Text = message;
+                    }
 
-                if (type == settings.ProxyType) {
-                    icon.Icon = statusIcons[(int)status];
-                    icon.Text = settings.ProxyType == "SSH" && message != null ? resources["XWall"] as string + " - " + message : resources["XWall"] as string;
-                }
+                    if (type == settings.ProxyType) {
+                        icon.Icon = statusIcons[(int)status];
+                        icon.Text = settings.ProxyType == "SSH" && message != null ? resources["XWall"] as string + " - " + message : resources["XWall"] as string;
+                    }
 
-                if (tip != null)
-                    icon.ShowBalloonTip(0, message, tip, tipIcon);
+                    if (tip != null)
+                        icon.ShowBalloonTip(0, message, tip, tipIcon);
+                }
+                catch { }
             }
         }
     }

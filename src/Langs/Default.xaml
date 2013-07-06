@@ -154,8 +154,13 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="DeployingGaeApps">Deploying apps: {0}/{1}...</sys:String>
     <sys:String x:Key="InvalidGaeAppIdMessage">The App ID seems to be taken or invalid, please try another prefix. Do you want a new random prefix?</sys:String>
     <sys:String x:Key="GaeAppsCreatedMessage">You have already created applications on this account, do you want to use them as proxy servers?</sys:String>
-    <sys:String x:Key="GaeBeforeVerifyMessage">Your account needs to be verified, click "OK" and finish the verification in the openning page.</sys:String>
-    <sys:String x:Key="GaeAfterVerifyMessage">Click "OK" after you have verified your account.</sys:String>
+    <sys:String x:Key="DeployDeployedGaeAppsMessage">Some of your applications have already been deployed, do you want to deploy them again?</sys:String>
+    <!--<sys:String x:Key="GaeBeforeVerifyMessage">Your account needs to be verified, click "OK" and finish the verification in the openning page.</sys:String>
+    <sys:String x:Key="GaeAfterVerifyMessage">Click "OK" after you have verified your account.</sys:String>-->
+    <sys:String x:Key="GaeInvalidPhoneMessage">Please enter a valid mobile phone number.</sys:String>
+    <sys:String x:Key="GaeFailToSendVerifierMessage">Failed to send verifier, please check the information entered and try again.</sys:String>
+    <sys:String x:Key="GaeEmptyVerifierMessage">Please enter the verifier you received.</sys:String>
+    <sys:String x:Key="GaeInvalidVerifierMessage">Failed to verify your account, please try again.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (built-in X-Wall) exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
@@ -168,13 +173,23 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     
     <!-- COMMON -->
     <sys:String x:Key="XWall">X-Wall</sys:String>
+    <sys:String x:Key="VerificationMethod">Method</sys:String>
     <sys:String x:Key="Server">Server</sys:String>
     <sys:String x:Key="Port">Port</sys:String>
+    <sys:String x:Key="Country">Country</sys:String>
+    <sys:String x:Key="TextMessage">Text message</sys:String>
+    <sys:String x:Key="VoiceCall">Voice call</sys:String>
     <sys:String x:Key="Email">Email</sys:String>
+    <sys:String x:Key="PhoneNumber">Phone</sys:String>
+    <sys:String x:Key="Verifier">Verifier</sys:String>
     <sys:String x:Key="Username">Username</sys:String>
     <sys:String x:Key="Password">Password</sys:String>
     <sys:String x:Key="Exit">Exit</sys:String>
     <sys:String x:Key="Next">Next</sys:String>
+    <sys:String x:Key="Send">Send</sys:String>
+    <sys:String x:Key="Sending">Sending</sys:String>
+    <sys:String x:Key="Verify">Verify</sys:String>
+    <sys:String x:Key="Verifying">Verifying</sys:String>
     <sys:String x:Key="Hide">Hide</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">It seems that X-Wall has already started, do you want to end it?</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->

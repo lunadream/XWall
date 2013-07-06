@@ -186,7 +186,6 @@
     <Content Include="resources\privoxy-templates\no-server-data" />
     <Content Include="resources\privoxy-templates\no-such-domain" />
     <Content Include="resources\privoxy-templates\show-url-info" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
