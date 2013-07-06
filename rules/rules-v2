@@ -229,8 +229,7 @@
 .backpackers.com.tw:80/forum
 :80/.*badoo(?:\.|%2e)com
 .badoo.com
-www.baidu.jp:80
-image.baidu.jp:80
+.baidu.jp
 :80/.*hen(?:\.|%2e)bao(?:\.|%2e)li
 .hen.bao.li
 :80/.*bannedbook(?:\.|%2e)org
@@ -913,6 +912,8 @@ www.dfanning.com:80
 .blog.exblog.co.jp
 .expatshield.com
 .exploader.net
+:80/.*(?:\.|%2e)extremetube(?:\.|%2e)com
+.extremetube.com
 :80/.*eyevio(?:\.|%2e)jp
 .eyevio.jp
 :80/.*(?:\.|%2e)ezpc(?:\.|%2e)tk(?:/|%2f)category(?:/|%2f)soft
@@ -2798,7 +2799,8 @@ www.oxid.it:80
 .placemix.com
 :80/.*(?:\.|%2e)planetsuzy(?:\.|%2e)org
 .planetsuzy.org
-.www.playboy.com
+pictures.playboy.com:80
+.playboy.com
 :80/.*plays(?:\.|%2e)com(?:\.|%2e)tw
 .plays.com.tw
 .m.plixi.com
@@ -2994,6 +2996,7 @@ post.ly:80
 .retweetrank.com
 :80/.*connectedchina(?:\.|%2e)reuters(?:\.|%2e)com
 .connectedchina.reuters.com
+www.reuters.com:80/news(?:/|%2f)video
 :80/.*revver(?:\.|%2e)com
 .revver.com
 :80/.*(?:\.|%2e)rfa(?:\.|%2e)org
@@ -5460,6 +5463,8 @@ www.x-berry.com:80/goagent
 .youdao.com
 .zhongsou.com
 autoproxy.org:443
+ime.baidu.jp:80
+.client*.google.com
 .xunlei.com
 .weibo.com
 .renren.com
