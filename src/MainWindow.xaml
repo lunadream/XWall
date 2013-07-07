@@ -9,7 +9,7 @@
         Loaded="onWindowLoaded"
         Closing="onWindowClosing"
         StateChanged="onWindowStateChanged"
-        WindowStyle="SingleBorderWindow"
+        WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
         Icon="Icons/main.ico">
     <Window.Resources>
