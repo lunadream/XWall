@@ -80,8 +80,6 @@ Type: files; Name: "{app}\online-rules"
 Type: files; Name: "{app}\update-mark"
 Type: files; Name: "{app}\privoxy.config"
 Type: files; Name: "{app}\privoxy.action"
-Type: files; Name: "{commonappdata}\{#MyAppName}\*"
-Type: filesandordirs; Name: "{commonappdata}\{#MyAppName}"
 
 [CustomMessages]
 win_sp_title=Windows %1 Service Pack %2
