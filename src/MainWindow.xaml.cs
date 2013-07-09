@@ -69,7 +69,6 @@ namespace XWall {
                 (settings.ProxyType == "GA" && settings.GaAppIds == "")
             )) WindowState = WindowState.Minimized;
 
-
             goagent.Started += () => {
                 notificationController.SetStatus("GA", NotificationController.Status.OK);
             };
@@ -380,6 +379,10 @@ namespace XWall {
 
         private void onFeedbackEmailClick(object sender, RoutedEventArgs e) {
             Process.Start("mailto:" + settings.FeedbackEmail);
+        }
+
+        private void onDonateLinkClick(object sender, RoutedEventArgs e) {
+            Process.Start(settings.DonateUrl);
         }
 
         private void onShowUrlInfoHyperlinkClick(object sender, RoutedEventArgs e) {

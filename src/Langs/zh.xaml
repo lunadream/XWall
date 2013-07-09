@@ -112,6 +112,9 @@
     <sys:String x:Key="AuthorLine">作者 VILIC VANE</sys:String>
     <sys:String x:Key="XWallDescription">X-Wall 是一个整合了 Privoxy 和 Plink 的小工具, 提供给大家一个更简单方便的科学上网方案.</sys:String>
     <sys:String x:Key="FeedbackLine">有任何建议可以发送到我的邮箱</sys:String>
+    <sys:String x:Key="DonateLineStart">如果你愿意&#160;</sys:String>
+    <sys:String x:Key="DonateLinkText">帮我付杯咖啡钱</sys:String>
+    <sys:String x:Key="DonateLineEnd">, 我会很开心.</sys:String>
     <sys:String x:Key="OnlineVersion">在线版本</sys:String>
     <sys:String x:Key="Download">下载</sys:String>
     <sys:String x:Key="Downloading">正在下载... ({0}%)</sys:String>

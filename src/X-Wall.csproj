@@ -172,6 +172,7 @@
     <Content Include="plonk.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="resources\about-logo.png" />
     <Content Include="resources\icon-error.ico" />
     <Content Include="resources\icon.ico" />
     <Content Include="resources\logo-error.png" />

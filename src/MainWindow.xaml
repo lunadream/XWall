@@ -174,9 +174,9 @@
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
-                                <RowDefinition />
+                                <RowDefinition Height="28" />
                                 <RowDefinition Height="24" />
-                                <RowDefinition />
+                                <RowDefinition Height="28" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="55" />
@@ -187,13 +187,13 @@
                             <CheckBox x:Name="autoStartCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoStartDescription}" />
                             <CheckBox x:Name="autoSetProxyCheckBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource AutoSetProxyDescription}" />
                             <CheckBox x:Name="listenToLocalOnlyCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ListenToLocalOnlyDescription}" />
-                            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
-                            <TextBox x:Name="proxyPortTextBox" Grid.Row="3" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                            <TextBox x:Name="proxyPortTextBox" Grid.Row="3" Grid.Column="1" Width="40" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             <CheckBox x:Name="useIntranetProxyCheckBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UseIntranetProxyDescription}" />
-                            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}" />
-                            <TextBox x:Name="intranetProxyServerTextBox" Grid.Row="5" Grid.Column="1" Margin="5,5,0,0" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
-                            <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
-                            <TextBox x:Name="intranetProxyPortTextBox" Grid.Row="6" Grid.Column="3" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
+                            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}" />
+                            <TextBox x:Name="intranetProxyServerTextBox" Grid.Row="5" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
+                            <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                            <TextBox x:Name="intranetProxyPortTextBox" Grid.Row="6" Grid.Column="3" Width="40" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{StaticResource Ga}" Margin="0,0,0,2" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=proxyTypeGaRadio}">
@@ -208,8 +208,8 @@
                             </Grid.ColumnDefinitions>
                             <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Padding="10,0,0,0" Content="{StaticResource GaAppIds}"/>
                             <TextBox x:Name="gaAppIdsTextBox" Grid.Row="0" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="280" GotFocus="gaAppIdsTextBox_GotFocus" LostFocus="gaAppIdsTextBox_LostFocus" />
-                            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
-                            <TextBox x:Name="gaPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
+                            <TextBox x:Name="gaPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             <!--<Grid x:Name="sshInformationGrid">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="28" />
@@ -399,8 +399,19 @@
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource AboutXWall}" Margin="0,0,0,2">
                         <StackPanel Margin="10,5,10,8">
-                            <TextBlock x:Name="versionTextBlock" Margin="0,2,0,0"></TextBlock>
-                            <TextBlock Margin="0,2,0,0" Text="{StaticResource AuthorLine}" />
+                            <Grid Margin="0,2,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="45" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" Source="resources/about-logo.png" Stretch="Fill" Margin="0,0,3,0" Width="40" Height="40"/>
+                                <TextBlock x:Name="versionTextBlock" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Text="{StaticResource AuthorLine}" />
+                            </Grid>
                             <TextBlock TextWrapping="Wrap" Margin="0,10,0,0" Text="{StaticResource XWallDescription}" />
                             <TextBlock Margin="0,2,0,0" HorizontalAlignment="Left">
                                 <Hyperlink Click="onWebsiteHyperLinkClick"><Run x:Name="websiteUrlText"></Run></Hyperlink>
@@ -408,6 +419,9 @@
                             <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
                                 <Run Text="{StaticResource FeedbackLine}" />
                                 <Hyperlink Click="onFeedbackEmailClick"><Run x:Name="feedbackEmailText"></Run></Hyperlink>.
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                                <Run Text="{StaticResource DonateLineStart}" /><Hyperlink Click="onDonateLinkClick"><Run Text="{StaticResource DonateLinkText}"></Run></Hyperlink><Run Text="{StaticResource DonateLineEnd}" />
                             </TextBlock>
                         </StackPanel>
                     </GroupBox>
