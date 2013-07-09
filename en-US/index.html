@@ -64,20 +64,20 @@
             <a id="introduction" class="anchor">&nbsp;</a>
             <h3>Introduction</h3>
             <h4>What is X-Wall?</h4>
-            <p>X-Wall is a small tool wraps together <a href="http://www.privoxy.org/">Privoxy</a> and Plink (which is part of <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" target="_blank">PuTTy</a>) to provide people an easier way to X (cross) the Great Firewall of China.</p>
+            <p>X-Wall is a small tool wraps together <a href="http://www.privoxy.org/">Privoxy</a> and Plink (which is part of <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" target="_blank">PuTTy</a>) as well as GoAgent in version 1.3 to provide people an easier way to X (cross) the Great Firewall of China.</p>
             <p><img alt="X-Wall Screenshot" src="./images/1.png" style="width: 426px; height: 343px;" /></p>
             <h4>System Requirements</h4>
             <p>Microsoft Windows 2000/XP/7/8<br>
             Microsoft .NET Framework 3.5 SP1 (pre-installed on Windows 7)</p>
             <h4>Other Requirements</h4>
-            <p>You will need to prepare the SSH account (or a HTTP/SOCKSv5 proxy) yourself, which is usually not free (but also not expensive, many within 50 RMB per year).</p>
+            <p>You will need to prepare the SSH account (or a HTTP/SOCKSv5 proxy) yourself, which is usually not free (but also not expensive, many within 50 RMB per year). Or you will need a Google account for creating and deploying GAE applications for GoAgent. X-Wall has a built-in GAE Wizard to create and deploy GAE applications, so it will be easy to do so even if you know little about it.</p>
             <h4>Features</h4>
             <ul>
-                <li>Easy to setup and configure. What you need to do after setup is just to start X-Wall, enter your SSH account information and connect.</li>
+                <li>Easy to setup and configure. What you need to do after setup is just to start X-Wall, enter your SSH account information and connect or configure GoAgent with the GAE Wizard.</li>
                 <li>Built-in GFWList and will check it online everyday, when you visit websites that are not blocked, it will connect directly.</li>
                 <li>Support custom rules. Just copy the link you want to add from your browser, right click the notification icon of X-Wall, and then "Add rules".</li>
                 <!--<li>Share your rules and keep the online rules list up to date (anonymous and optional).</li>-->
-                <li>Ability to share the proxy with your phone via WiFi (need to cancel "Listen to local address only").</li>
+                <li>Ability to share the proxy with other devices via WiFi (need to cancel "Listen to local address only", root certificate of GoAgent will need to be installed on these devices if you are going to use GoAgent).</li>
             </ul>
         </div>
         <div id="sidebar-wrapper">
@@ -87,7 +87,8 @@
                 <p>Please select a package you prefer to download.</p>
                 <ul>
                     <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe">Windows Installer</a></li>
-                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-with-plonk.exe">Windows Installer (with Plonk)</a></li>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-full.exe">Windows Installer (with GoAgent)</a></li>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-1.2-setup.exe">Windows Installer (v1.2)</a></li>
                     <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-1.1-setup.exe">Windows Installer (v1.1)</a></li>
                 </ul>
             </div>

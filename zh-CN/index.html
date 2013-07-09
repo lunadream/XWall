@@ -69,25 +69,22 @@
             <a id="introduction" class="anchor">&nbsp;</a>
             <h3>简介</h3>
             <h4>X-Wall 是什么?</h4>
-            <p>X-Wall 是一个整合了 <a href="http://www.privoxy.org/">Privoxy</a> 和 Plink (Plink 是 <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" target="_blank">PuTTy</a> 的一部分) 的小工具, 提供给大家一个更简单方便的 "科学上网 (翻墙)" 方案.</p>
-            <p><em>需要特别说明的是</em> X-Wall 是免费的, 但 SSH 不一定, 且通常不是免费的. 如果说你特别在意一个月几块钱或者一年几十块钱的费用, 也可以找相对不稳定的免费账号或者其他翻墙方案.</p>
+            <p>X-Wall 是一个整合了 <a href="http://www.privoxy.org/">Privoxy</a> 和 Plink (Plink 是 <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" target="_blank">PuTTy</a> 的一部分) 的小工具, 1.3 版新整合了 GoAgent, 提供给大家一个更简单方便的 "科学上网 (翻墙)" 方案.</p>
             <p><em>友情提示</em> 打开 X-Wall 之前, 请先关闭其他相关工具, 切忌交叉使用两种代理, 除非你知道并且能控制产生的影响. 原先配置了 Proxy Switchy (Chrome) 或者 AutoProxy (Firefox) 的用户, 请将插件禁用.</p>
             <p><img alt="X-Wall 屏幕截图" src="./images/1.png" style="width: 426px; height: 343px;" /></p>
             <h4>系统要求</h4>
             <p>Microsoft Windows 2000/XP/7/8<br>
             Microsoft .NET Framework 3.5 SP1 (Windows 7 上已经预装)</p>
             <h4>其他要求</h4>
-            <p>你需要自己准备 SSH 账号 (或者 HTTP/SOCKSv5 代理), 但 SSH 账号通常不是免费的 (也不贵, 便宜的一年不超过50元).</p>
+            <p>你需要自己准备 SSH 账号 (或者 HTTP/SOCKSv5 代理), 但 SSH 账号通常不是免费的 (也不贵, 便宜的一年不超过50元). 或者你需要一个 Google 账号来配置和部署供 GoAgent 使用的 GAE 应用, X-Wall 内建了 GAE 设置向导, 即使对相关内容不熟悉也可以快速方便地完成应用创建和部署.</p>
             <h4>特性</h4>
             <ul>
-                <li>安装配置傻瓜. 安装后仅需要运行 X-Wall, 输入 SSH 账号信息, 连接即可. v1.2 版已经支持多账号.</li>
+                <li>安装配置傻瓜. 安装后仅需要运行 X-Wall, 通过 GAE 设置向导配置 GoAgent 或者选择 SSH 隧道方式配置 SSH 账号即可使用.</li>
                 <li>内置 GFWList, 每天检查更新. 访问没有被墙的网站则直接连接.</li>
                 <li>支持自定义规则. 需要添加规则时, 从浏览器复制链接, 右键 X-Wall 的托盘图标, 点击 "添加规则" 后按提示操作即可.</li>
                 <!--<li>分享你的规则并借此扩大在线规则的覆盖面 (匿名且可选).</li>-->
-                <li>可以通过 WiFi 把代理共享给手机 (需要取消 "只监听本地端口"), 当然也可以共享给室友什么的...</li>
+                <li>可以通过 WiFi 把代理共享给其他设备 (需要取消 "只监听本地端口", 如果是使用 GoAgent, 需要在其他设备上也安装 GoAgent 的根证书).</li>
             </ul>
-            <h4>1.3 测试版 - 内建 GoAgent 及 GAE 设置向导</h4>
-            <p>为了进一步方便一些不愿意购买 SSH 账号, 动手能力又稍差的同学爬墙, 1.3 测试版集成了 GoAgent 并提供设置向导, 实现傻瓜式的 GAE 应用批量创建和部署. 不过目前接收到的反馈较少, 只有再挂 "测试版" 一段时间... 下载链接见右方下载栏.</p>
             <a id="comment" class="anchor">&nbsp;</a>
 	        <div class="ds-thread" data-thread-key="zh-CN/index" data-order="desc" data-title="X-WALL | 穿越防火长城" data-image="http://x-wall.org/images/logo-large.png"></div>
             <!-- Custom Rules -->
@@ -162,8 +159,8 @@
                 <p>请选择你想下载的文件包.</p>
                 <ul>
                     <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe">Windows 安装包</a></li>
-                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-with-plonk.exe">Windows 安装包 (含 Plonk)</a></li>
-                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-full.exe">Windows 安装包 (v1.3 测试版)</a></li>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-full.exe">Windows 安装包 (含 GoAgent)</a></li>
+                    <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-1.2-setup.exe">Windows 安装包 (v1.2)</a></li>
                     <li><a href="https://raw.github.com/vilic/x-wall/master/release/x-wall-1.1-setup.exe">Windows 安装包 (v1.1)</a></li>
                 </ul>
             </div>
@@ -206,7 +203,7 @@
     </div>
     <div id="footer">
         <div>架设在 <a href="https://pages.github.com/" target="_blank">Github Pages</a></div>
-        <div>©2012 <a href="http://vilic.info/" target="_blank">VILIC VANE</a></div>
+        <div>©2013 <a href="http://vilic.info/" target="_blank">VILIC VANE</a></div>
     </div>
 </div>
 </body>
