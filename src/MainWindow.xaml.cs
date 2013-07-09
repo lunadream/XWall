@@ -527,7 +527,7 @@ namespace XWall {
             }
 
             var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            if (version == onlineVersionStr) {
+            if (!fullVersion && version == onlineVersionStr) {
                 var result = MessageBox.Show(resources["SameVersionMessage"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
                 if (result == MessageBoxResult.Cancel)
                     return;
