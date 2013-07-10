@@ -160,6 +160,7 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="DeployDeployedGaeAppsMessage">Some of your applications have already been deployed, do you want to deploy them again?</sys:String>
     <!--<sys:String x:Key="GaeBeforeVerifyMessage">Your account needs to be verified, click "OK" and finish the verification in the openning page.</sys:String>
     <sys:String x:Key="GaeAfterVerifyMessage">Click "OK" after you have verified your account.</sys:String>-->
+    <sys:String x:Key="GaeNeedVerifyLine">You account needs to be verified to create GAE apps.</sys:String>
     <sys:String x:Key="GaeInvalidPhoneMessage">Please enter a valid mobile phone number.</sys:String>
     <sys:String x:Key="GaeFailToSendVerifierMessage">Failed to send verifier, please check the information entered and try again.</sys:String>
     <sys:String x:Key="GaeEmptyVerifierMessage">Please enter the verifier you received.</sys:String>

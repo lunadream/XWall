@@ -160,6 +160,7 @@
     <sys:String x:Key="DeployDeployedGaeAppsMessage">部分您创建的应用已经部署, 您想重新部署这些应用吗?</sys:String>
     <!--<sys:String x:Key="GaeBeforeVerifyMessage">您的账号需要被验证, 点击 "确认" 并在接下来会打开的网页中完成验证.</sys:String>
     <sys:String x:Key="GaeAfterVerifyMessage">完成验证后点击 "确认" 继续.</sys:String>-->
+    <sys:String x:Key="GaeNeedVerifyLine">您的账号需要先通过验证才能创建 GAE 应用.</sys:String>
     <sys:String x:Key="GaeInvalidPhoneMessage">请输入有效的手机号码.</sys:String>
     <sys:String x:Key="GaeFailToSendVerifierMessage">发送验证码失败, 请检查输入的信息并重试.</sys:String>
     <sys:String x:Key="GaeEmptyVerifierMessage">请输入您收到的验证码.</sys:String>

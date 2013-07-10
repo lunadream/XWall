@@ -58,8 +58,7 @@
             <ProgressBar x:Name="processingProgressBar" Margin="0,10,0,0" Height="16" IsIndeterminate="True"></ProgressBar>
         </StackPanel>
         <StackPanel x:Name="verifyPanel" Margin="15" Visibility="Collapsed">
-            <TextBlock TextWrapping="Wrap">
-                You account needs to be verified to create GAE apps.
+            <TextBlock TextWrapping="Wrap" Text="{StaticResource GaeNeedVerifyLine}">
             </TextBlock>
             <Grid Margin="0,10,0,0">
                 <Grid.RowDefinitions>
