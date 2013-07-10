@@ -9,6 +9,10 @@ ul, li {
     list-style: none;
 }
 
+ul {
+    margin-bottom: 0.5em;
+}
+
 h1, h2, h3, h4, h5 {
     margin: 0px; padding: 0px;
     font-weight: normal;
@@ -361,10 +365,6 @@ input:focus {
     line-height: 18px;
     padding-left: 10px;
     background: url(images/spirits.png) no-repeat;
-}
-
-#provider-list {
-    margin-bottom: 0.5em;
 }
 
 #sidebar-wrapper .item ul li a {
