@@ -1206,6 +1206,7 @@ www.zensur.freerk.com:80/
 :80/.*(?:\.|%2e)ggssl(?:\.|%2e)com
 .ggssl.com
 .giga-web.jp
+cn.giganews.com:80/
 :80/.*gigporno(?:\.|%2e)ru
 .gigporno.ru
 .gimpshop.com
@@ -1857,6 +1858,7 @@ hk-pub.com:80
 .derekhsu.homeip.net
 :80/.*hongmeimei(?:\.|%2e)com
 .hongmeimei.com
+.hongzhi.li
 :80/.*hootsuite(?:\.|%2e)com
 .hootsuite.com
 :80/.*hotpot(?:\.|%2e)hk
@@ -2283,6 +2285,7 @@ tech2.in.com:80/video(?:/|%2f)
 .mashable.com
 .matainja.com
 .mathiew-badimon.com
+.matsushimakaede.com
 :80/.*mayimayi(?:\.|%2e)com
 .mayimayi.com
 :80/.*mcfog(?:\.|%2e)com
@@ -2961,6 +2964,8 @@ post.ly:80
 .rangzen.org
 :80/.*ranyunfei(?:\.|%2e)com
 .ranyunfei.com
+:80/.*(?:\.|%2e)rapbull(?:\.|%2e)net
+.rapbull.net
 .rapidshare8.com
 :80/.*(?:\.|%2e)rapidsharedata(?:\.|%2e)com
 .rapidsharedata.com
@@ -3218,7 +3223,6 @@ tweets.seraph.me:80/
 .sitemaps.org
 :80/.*sitetag(?:\.|%2e)us
 .sitetag.us
-:80/.*sis001(?:\.|%2e)com
 .sis001.com
 :80/.*sis001(?:\.|%2e)us
 .sis001.us
@@ -3288,6 +3292,7 @@ www.skype.com:80/zh-Hant
 .chinese.soifind.com
 :80/.*sokamonline(?:\.|%2e)com
 .sokamonline.com
+.somee.com
 :80/.*(?:\.|%2e)songjianjun(?:\.|%2e)com
 .songjianjun.com
 :80/.*(?:\.|%2e)sopcast(?:\.|%2e)com
@@ -3421,6 +3426,7 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 .taiwannation.com
 :80/.*taiwannation(?:\.|%2e)com(?:\.|%2e)tw
 .taiwannation.com.tw
+.taiwannews.com.tw
 :80/.*taiwanus(?:\.|%2e)net
 .taiwanus.net
 :80/.*taiwanyes(?:\.|%2e)com
@@ -3792,6 +3798,8 @@ deck.ly:80
 :80/.*twimbow(?:\.|%2e)com
 .twimbow.com
 .twindexx.com
+:80/.*twipple(?:\.|%2e)jp
+.twipple.jp
 .twip.me:80
 :80/.*twistar(?:\.|%2e)cc
 .twistar.cc
@@ -4117,6 +4125,7 @@ uploaded.to:80/file
 .hkg.westkit.net
 :80/.*www(?:\.|%2e)wet123(?:\.|%2e)com
 .www.wet123.com
+.wepn.info
 :80/.*wetpussygames(?:\.|%2e)com
 .wetpussygames.com
 :80/.*wexiaobo(?:\.|%2e)org
