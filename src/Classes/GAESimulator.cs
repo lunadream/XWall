@@ -159,10 +159,12 @@ namespace XWall {
             var i = 0;
 
             NameValueCollection query = null;
-            CheckAppIdCallback next = null;
+            Action<bool, bool> next = null;
 
-            next = new CheckAppIdCallback((valid) => {
-                current++;
+            next = new Action<bool, bool>((valid, retry) => {
+                if (!retry) {
+                    current++;
+                }
 
                 if (valid) {
                     i++;
@@ -186,11 +188,16 @@ namespace XWall {
                         var cl = new WebClientWithCookies();
                         cl.UploadValuesAsync(new Uri("https://appengine.google.com/start/createapp.do"), query);
                         cl.UploadValuesCompleted += (sender, e) => {
-                            next(true);
+                            if (e.Result != null && Encoding.UTF8.GetString(e.Result).Contains("Application Registered Successfully")) {
+                                next(true, false);
+                            }
+                            else {
+                                next(true, true);
+                            }
                         };
                     }
                     else {
-                        next(false);
+                        next(false, false);
                     }
                 });
             });
@@ -227,7 +234,7 @@ namespace XWall {
                     else {
                         query = initQuery(e.Result);
                         query["auth_config"] = "google";
-                        next(false);
+                        next(false, false);
                     }
                 };
             });
@@ -248,7 +255,7 @@ namespace XWall {
             var cl = new WebClientWithCookies();
             cl.UploadValuesAsync(new Uri(sendVerifierUrl), sendVerifierQeury);
             cl.UploadValuesCompleted += (s, o) => {
-                var html = Encoding.UTF8.GetString(o.Result);
+                var html = o.Result != null ? Encoding.UTF8.GetString(o.Result) : "";
 
                 if (html.Contains("\"idvGivenAnswer\"")) {
                     verifyQuery = initQuery(html);
@@ -272,7 +279,6 @@ namespace XWall {
                 var html = Encoding.UTF8.GetString(o.Result);
                 callback(!html.Contains("\"idvGivenAnswer\""));
             };
-
         }
 
         public delegate void CheckAppIdCallback(bool valid);
