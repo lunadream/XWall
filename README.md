@@ -1,5 +1,7 @@
-Please visit [x-wall.org](http://x-wall.org) or [x-wall.org/en-US/](http://x-wall.org/en-US/) for more information.  
-请访问 [x-wall.org](http://x-wall.org) 或 [x-wall.org/zh-CN/](http://x-wall.org/zh-CN/) 了解更多.
+#X-Wall
+
+Please visit [x-wall.org/en-US/](http://x-wall.org/en-US/) for more information.  
+请访问 [x-wall.org](http://x-wall.org) 了解更多.
 
 使用说明请见[这里](https://github.com/vilic/x-wall/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E).
 
