@@ -126,6 +126,10 @@
                     <p class="a">解决方法是点击 "更多信息", 并选择 "仍要运行". 顺便说下, X-Wall 是开源软件, 作者本人也不可能往里面加恶意的东西. 但建议从官方地址下载, 避免被植入了病毒 (虽然这种可能性目前不大).</p>
                 </li>
                 <li>
+                    <p class="q">使用 GoAgent 方式翻墙 Facebook 无法上传图片?</p>
+                    <p class="a">据说是 GAE 的 IP 被 Facebook 封了, 这个没办法, 需要这个功能的时候可以切换到 SSH (右侧也有很多免费的 SSH 可用).</p>
+                </li>
+                <li>
                     <p class="q">输入 SSH 信息并成功连接后, 依旧无法访问墙外站点, 应该怎么办?</p>
                     <p class="a">X-Wall 理论上来讲支持任何浏览器, 但前提是浏览器使用的是系统代理设置.</p>
                     <p class="a">IE 理论上是没问题的, 如果 IE 都无法正常访问的话, 请尝试重新启动 X-Wall, 仍然无效请检查 "Internet 选项" 中的代理是否成功设置 (可能被安全软件拦截了);</p>
@@ -139,7 +143,7 @@
                     <p class="a">解决方法是先切换到 "高级设置" 选项卡, 在 "X-Wall" 一组中将 "代理端口" 改成其他数字. 如果你对这个的意义不是很了解, 建议在原先端口的数字上累加 1 (如果人品不是太差, 应该就可以了, 依旧报错的话, 可以多累加几次).</p>
                 </li>
                 <li>
-                    <p class="q">X-Wall 的连接每隔一段时间会断开一下, 应该怎么办?</p>
+                    <p class="q">X-Wall 的 SSH 连接每隔一段时间会断开一下, 应该怎么办?</p>
                     <p class="a">这个, Plink 连接久了中途会有一段时间没反应, 为了缩短这个时间, X-Wall 会在疑似这种情况出现的时候, 断开连接并重连, 这个是正常的.</p>
                 </li>
                 <li>
@@ -176,16 +180,13 @@
                 <p>这里有些 SSH 服务提供商, 提供免费或者收费的 SSH 服务. 鼠标移上去会有简要介绍.</p>
                 <ul id="provider-list">
                     <li>
+                        <a href="https://cngov.me" title="免费账号, 每天凌晨 4 点更换密码." target="_blank">VPNYou Project</a>
+                    </li>
+                    <li>
                         <a href="http://blog.onlybird.com" title="免费账号若干小时更换一次密码; 收费账号每年 40 ~ 240 元不等." target="_blank">Onlybird</a>
                     </li>
                     <li>
-                        <a href="http://www.sshcenter.info" title="注册即免费 24 小时; 收费账号每年 45 元, 可分天, 周, 月, 半年, 年付." target="_blank">SSHCenter.info</a>
-                    </li>
-                    <li>
-                        <a href="https://www.sshcenter.net" title="注册即免费 24 小时; 收费账号每年 45 元, 可分天, 周, 月, 半年, 年付." target="_blank">SSHCenter.net</a>
-                    </li>
-                    <li>
-                        <a href="http://www.hangssh.info" title="收费账号每年 20 ~ 100 元不等." target="_blank">HangSSH</a>
+                        <a href="http://www.sshcenter.info" title="注册即免费 48 小时; 收费账号每年 45 元, 可分天, 周, 月, 半年, 年付." target="_blank">SSHCenter.info</a>
                     </li>
                     <li>
                         <a href="http://www.ssh91.tk" title="免费账号每月更换一到两次密码, 邮件通知, 需 1 元设置费; 收费账号每年 66 元, 可分季, 半年, 年付." target="_blank">就要 SSH</a>
@@ -194,7 +195,7 @@
                         <a href="http://www.diyssh.net" title="免费账号邮件发送, 每次可用 2 小时; 收费账号每年 50 ~ 80 元不等." target="_blank">DIYSSH</a>
                     </li>
                     <li>
-                        <a href="http://playssh.com" title="免费且用户名密码不变." target="_blank">PlaySSH</a>
+                        <a href="http://playssh.com" title="免费账号, 群内公布." target="_blank">PlaySSH</a>
                     </li>
                     <li>
                         <a href="http://www.cnssh.org" title="收集并提供丰富的免费 SSH 账号." target="_blank">CNSSH</a>
