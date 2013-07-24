@@ -10,6 +10,11 @@
     <sys:String x:Key="SshTunnelAndDescription">SSH 隧道 - 需要服务器和账号信息</sys:String>
     <sys:String x:Key="HttpProxyAndDescription">HTTP 代理 - 需要服务器信息</sys:String>
     <sys:String x:Key="Socks5ProxyAndDescription">SOCKS v5 代理 - 需要服务器信息</sys:String>
+    <sys:String x:Key="ProxyTypeContextMenu">代理类型</sys:String>
+    <sys:String x:Key="GaContextMenu">GoAgent</sys:String>
+    <sys:String x:Key="SshTunnelContextMenu">SSH</sys:String>
+    <sys:String x:Key="HttpProxyContextMenu">HTTP</sys:String>
+    <sys:String x:Key="Socks5ProxyContextMenu">SOCKS</sys:String>
 
     <sys:String x:Key="GaStatus">GoAgent</sys:String>
     <sys:String x:Key="GaAppIdsNotSet">尚未设置 GAE 应用 ID.</sys:String>

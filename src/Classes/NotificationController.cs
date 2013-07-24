@@ -37,11 +37,17 @@ namespace XWall {
 
                 var menu = new ContextMenu();
 
+                // Add Rules
+
                 menu.MenuItems.Add(resources["AddRules"] as string, (sender, e) => {
                     Rules.OpenEditor(false);
                 });
 
-                menu.MenuItems.Add(window.profileContextMenu);
+                // Proxy Type
+
+                menu.MenuItems.Add(window.proxyTypeContextMenu);
+
+                // Proxy Mode
 
                 var proxyModeNormalItem = new MenuItem(resources["Normal"] as string);
                 var proxyModeForwardAllItem=new MenuItem(resources["ForwardAll"] as string);
@@ -78,9 +84,17 @@ namespace XWall {
 
                 menu.MenuItems.Add(proxyModeMenuItem);
 
+                // Profiles
+
+                menu.MenuItems.Add(window.profileContextMenu);
+
+                // Exit
+
                 menu.MenuItems.Add(resources["Exit"] as string, (sender, e) => {
                     System.Windows.Application.Current.Shutdown();
                 });
+
+                // End
 
                 icon.ContextMenu = menu;
 

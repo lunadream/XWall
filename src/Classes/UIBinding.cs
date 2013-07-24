@@ -13,13 +13,38 @@ using XWall.Properties;
 namespace XWall {
     partial class MainWindow {
         System.Windows.Forms.MenuItem profileContextMenu = new System.Windows.Forms.MenuItem(resources["Profiles"] as string);
+        System.Windows.Forms.MenuItem proxyTypeContextMenu = new System.Windows.Forms.MenuItem(resources["ProxyTypeContextMenu"] as string);
+        System.Windows.Forms.MenuItem proxyTypeGaMenuItem = new System.Windows.Forms.MenuItem(resources["GaContextMenu"] as string);
+        System.Windows.Forms.MenuItem proxyTypeSshMenuItem = new System.Windows.Forms.MenuItem(resources["SshTunnelContextMenu"] as string);
+        System.Windows.Forms.MenuItem proxyTypeHttpMenuItem = new System.Windows.Forms.MenuItem(resources["HttpProxyContextMenu"] as string);
+        System.Windows.Forms.MenuItem proxyTypeSocksMenuItem = new System.Windows.Forms.MenuItem(resources["Socks5ProxyContextMenu"] as string);
 
         void InitializeBinding() {
             //BASIC SETTINGS
             //proxy type
+
+            proxyTypeGaMenuItem.RadioCheck = true;
+            proxyTypeSshMenuItem.RadioCheck = true;
+            proxyTypeHttpMenuItem.RadioCheck = true;
+            proxyTypeSocksMenuItem.RadioCheck = true;
+
+            proxyTypeContextMenu.MenuItems.Add(proxyTypeGaMenuItem);
+            proxyTypeContextMenu.MenuItems.Add(proxyTypeSshMenuItem);
+            proxyTypeContextMenu.MenuItems.Add(proxyTypeHttpMenuItem);
+            proxyTypeContextMenu.MenuItems.Add(proxyTypeSocksMenuItem);
+
             initProxyType();
 
-            proxyTypeGaRadio.Checked += (sender, e) => {
+            settings.PropertyChanged += (o, a) => {
+                switch (a.PropertyName) {
+                    case "ProxyType": break;
+                    default: return;
+                }
+
+                initProxyType();
+            };
+
+            var gaSelected = new Action(() => {
                 if (settings.ProxyType != "GA") {
                     if (Directory.Exists(App.AppDataDirectory + settings.GaFolderName)) {
                         settings.ProxyType = "GA";
@@ -34,9 +59,23 @@ namespace XWall {
                         }
                     }
                 }
+            });
+
+            proxyTypeGaRadio.Checked += (sender, e) => {
+                gaSelected();
+            };
+
+            proxyTypeGaMenuItem.Click += (sender, e) => {
+                gaSelected();
             };
 
             proxyTypeSshRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "SSH") {
+                    settings.ProxyType = "SSH";
+                }
+            };
+
+            proxyTypeSshMenuItem.Click += (sender, e) => {
                 if (settings.ProxyType != "SSH") {
                     settings.ProxyType = "SSH";
                 }
@@ -48,7 +87,18 @@ namespace XWall {
                 }
             };
 
+            proxyTypeHttpMenuItem.Click += (sender, e) => {
+                if (settings.ProxyType != "HTTP") {
+                    settings.ProxyType = "HTTP";
+                }
+            };
+
             proxyTypeSocksRadio.Checked += (sender, e) => {
+                if (settings.ProxyType != "SOCKS5") {
+                    settings.ProxyType = "SOCKS5";
+                }
+            };
+            proxyTypeSocksMenuItem.Click += (sender, e) => {
                 if (settings.ProxyType != "SOCKS5") {
                     settings.ProxyType = "SOCKS5";
                 }
@@ -363,18 +413,27 @@ namespace XWall {
 
         void initProxyType() {
             //settings to control
+            proxyTypeGaMenuItem.Checked = false;
+            proxyTypeSshMenuItem.Checked = false;
+            proxyTypeHttpMenuItem.Checked = false;
+            proxyTypeSocksMenuItem.Checked = false;
+
             switch (settings.ProxyType) {
                 case "GA":
                     proxyTypeGaRadio.IsChecked = true;
+                    proxyTypeGaMenuItem.Checked = true;
                     break;
                 case "SSH":
                     proxyTypeSshRadio.IsChecked = true;
+                    proxyTypeSshMenuItem.Checked = true;
                     break;
                 case "HTTP":
                     proxyTypeHttpRadio.IsChecked = true;
+                    proxyTypeHttpMenuItem.Checked = true;
                     break;
                 case "SOCKS5":
                     proxyTypeSocksRadio.IsChecked = true;
+                    proxyTypeSocksMenuItem.Checked = true;
                     break;
             }
 

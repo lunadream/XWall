@@ -3,13 +3,18 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!-- MainWindow -->
     <sys:String x:Key="XWallTitle">X-Wall</sys:String>
-    
+
     <sys:String x:Key="BasicSettings">Basic Settings</sys:String>
     <sys:String x:Key="ProxyType">Proxy Type</sys:String>
     <sys:String x:Key="GaAndDescription">GoAgent - A Google account or GAE app IDs are required</sys:String>
     <sys:String x:Key="SshTunnelAndDescription">SSH Tunnel - Server and account information required</sys:String>
     <sys:String x:Key="HttpProxyAndDescription">HTTP Proxy - Server information required</sys:String>
     <sys:String x:Key="Socks5ProxyAndDescription">SOCKS v5 Proxy - Server information required</sys:String>
+    <sys:String x:Key="ProxyTypeContextMenu">Proxy type</sys:String>
+    <sys:String x:Key="GaContextMenu">GoAgent</sys:String>
+    <sys:String x:Key="SshTunnelContextMenu">SSH</sys:String>
+    <sys:String x:Key="HttpProxyContextMenu">HTTP</sys:String>
+    <sys:String x:Key="Socks5ProxyContextMenu">SOCKS</sys:String>
 
     <sys:String x:Key="GaStatus">GoAgent</sys:String>
     <sys:String x:Key="GaAppIdsNotSet">GAE app IDs have not been set.</sys:String>
