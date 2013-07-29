@@ -1157,6 +1157,7 @@ www.zensur.freerk.com:80/
 :80/.*gamebase(?:\.|%2e)com(?:\.|%2e)tw
 .gamebase.com.tw
 .gamer.com.tw
+:80/.*(?:\.|%2e)gamer(?:\.|%2e)com(?:\.|%2e)tw
 :80/.*(?:\.|%2e)gamez(?:\.|%2e)com(?:\.|%2e)tw
 .gamez.com.tw
 :80/.*(?:\.|%2e)gaoming(?:\.|%2e)net
@@ -3313,7 +3314,8 @@ soundcloud.com:443/punkgod
 :80/.*soundofhope(?:\.|%2e)org
 .soundofhope.org
 .soupofmedia.com
-retroshare.sourceforge.net:80
+:80/.*(?:\.|%2e)sourceforge(?:\.|%2e)net
+.sourceforge.net
 :80/.*southnews(?:\.|%2e)com(?:\.|%2e)tw
 .southnews.com.tw
 :80/.*sowers(?:\.|%2e)org(?:\.|%2e)hk
@@ -4290,6 +4292,7 @@ www.x-berry.com:80/goagent
 .xpdo.net
 .xpud.org
 .k2.xrea.com
+.xtube.com
 :80/.*blog(?:\.|%2e)xuite(?:\.|%2e)net
 .blog.xuite.net
 :80/.*vlog(?:\.|%2e)xuite(?:\.|%2e)net
