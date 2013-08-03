@@ -220,6 +220,8 @@ namespace XWall {
             //Console.WriteLine("D: " + e.Data);
         }
 
+        DateTime lastPortCloseTime;
+
         void onErrorDataReceived(object sender, DataReceivedEventArgs e) {
             var line = e.Data;
             if (line == null) return;
@@ -233,14 +235,22 @@ namespace XWall {
                 IsConnecting = false;
                 Connected();
             }
-            else if (line.StartsWith("Nothing left to send, closing channel"))
+            else if (line.StartsWith("Nothing left to send, closing channel")) {
                 portCloseCount = Math.Min(1, portCloseCount + 1);
-            else if (line.StartsWith("Forwarded port closed")) {
-                if (--portCloseCount < -settings.SshAbortionBeforeReconnect && settings.SshAutoReconnect)
-                    Stop(true);
             }
-            else if (line.StartsWith("The server's host key is not cached in the registry."))
+            else if (line.StartsWith("Forwarded port closed")) {
+                var now = DateTime.Now;
+
+                if (lastPortCloseTime == null || now - lastPortCloseTime >= new TimeSpan(2000000)) {
+                    lastPortCloseTime = now;
+                    if (--portCloseCount < -settings.SshAbortionBeforeReconnect && settings.SshAutoReconnect) {
+                        Stop(true);
+                    }
+                }
+            }
+            else if (line.StartsWith("The server's host key is not cached in the registry.")) {
                 process.StandardInput.WriteLine("y");
+            }
             else if (line.StartsWith("Password authentication failed")) {
                 Error = resources["PlinkAuthFailed"] as string;
                 Stop(settings.SshReconnectAnyCondition);
