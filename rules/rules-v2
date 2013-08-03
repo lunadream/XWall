@@ -3148,6 +3148,7 @@ tweets.seraph.me:80/
 .sfileydy.com
 :80/.*shadow(?:\.|%2e)ma
 .shadow.ma
+.shadowsocks.org
 :80/.*(?:\.|%2e)shangfang(?:\.|%2e)org
 .shangfang.org
 :80/.*shapeservices(?:\.|%2e)com
@@ -3634,7 +3635,6 @@ tmi.me:80
 .turbobit.net
 .turningtorso.com
 .tuxtraining.com
-.tumblr.com
 .301works.org
 .365singles.com.ar
 .all-that-is-interesting.com
@@ -4583,7 +4583,6 @@ www.x-berry.com:80/goagent
 .search:80/.*%E4%B8%AD%E5%9B%BD%E8%AE%BA%E5%9D%9B
 :80/.*search.*%E4%B8%AD%E5%AE%A3%E9%83%A8
 .search:80/.*%E4%B8%AD%E5%AE%A3%E9%83%A8
-.upload.wikimedia.org
 *.wikipedia.org:443
 :80/.*(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai_Lama
 .wikipedia.org:80/wiki(?:/|%2f)Dalai_Lama
@@ -5379,11 +5378,6 @@ www.x-berry.com:80/goagent
 .simplecd.me
 .static.soup.io
 .www.tripod.com
-.assets.tumblr.com
-.data.tumblr.com
-.media.tumblr.com
-.static.tumblr.com
-.www.tumblr.com
 .www.typepad.com
 .static.typepad.com
 .tax.nat.gov.tw
