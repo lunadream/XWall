@@ -20,3 +20,7 @@ x-wall.org
 @@||weibo.com
 @@||renren.com
 @@||youku.com
+@@||sina.com.cn
+@@||163.com
+@@||qq.com
+@@||taobao.com
