@@ -539,7 +539,7 @@ namespace XWall {
                 downloadingUpdate = true;
                 downloadUpdateButton.IsEnabled = false;
 
-                var url = new Uri(settings.ProxyType == "GA" || fullVersion ? settings.UpdateFullInstallerUrl : settings.UpdateInstallerUrl);
+                var url = new Uri(Directory.Exists(App.AppDataDirectory + settings.GaFolderName) || fullVersion ? settings.UpdateFullInstallerUrl : settings.UpdateInstallerUrl);
 
                 var client = new WebClient();
                 //client.Proxy = null;
