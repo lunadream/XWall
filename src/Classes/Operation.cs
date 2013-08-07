@@ -18,11 +18,10 @@ namespace XWall {
         static Settings settings = Settings.Default;
 
         public static void GrantAccessControl(string fileName) {
-            try {
-                var security = File.GetAccessControl(fileName);
-                security.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.AuthenticatedUserSid, null), FileSystemRights.FullControl, AccessControlType.Allow));
-            }
-            catch { }
+            var fileInfo = new FileInfo(fileName);
+            var security = fileInfo.GetAccessControl();
+            security.ResetAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), FileSystemRights.FullControl, AccessControlType.Allow));
+            fileInfo.SetAccessControl(security);
         }
 
         public static void KillProcess(string fileName) {
