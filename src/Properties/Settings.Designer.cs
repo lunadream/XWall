@@ -483,7 +483,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:14220/url-info.html")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://local.x-wall.org:14220/url-info.html")]
         public string ShowUrlInfoUrl {
             get {
                 return ((string)(this["ShowUrlInfoUrl"]));

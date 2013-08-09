@@ -202,7 +202,6 @@
     <Content Include="resources\privoxy-templates\mod-header-error" />
     <Content Include="resources\privoxy-templates\mod-gfw-operation" />
     <Content Include="resources\privoxy-templates\mod-lang-helper" />
-    <Content Include="configs\submit-new-rule-toggle" />
     <None Include="X-Wall_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -241,7 +240,9 @@
       <Name>WebDev.WebHost20</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="configs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

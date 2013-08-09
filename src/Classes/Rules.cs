@@ -76,19 +76,19 @@ namespace XWall {
                     OnlineRules.Update();
             };
 
-            settings.PropertyChanged += (sender, e) => {
-                switch (e.PropertyName) {
-                    case "SubmitNewRule": break;
-                    default: return;
-                }
+            //settings.PropertyChanged += (sender, e) => {
+            //    switch (e.PropertyName) {
+            //        case "SubmitNewRule": break;
+            //        default: return;
+            //    }
 
-                updateNewRuleSubmitToggleFile();
-            };
+            //    updateNewRuleSubmitToggleFile();
+            //};
 
             //if (!File.Exists(settings.PrivoxyActionFileName))
 
             GenerateActionFile();
-            updateNewRuleSubmitToggleFile();
+            //updateNewRuleSubmitToggleFile();
 
             if (
                 settings.UseOnlineRules &&
@@ -97,10 +97,10 @@ namespace XWall {
             ) OnlineRules.Update();
         }
 
-        static void updateNewRuleSubmitToggleFile() {
-            File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
-            Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName);
-        }
+        //static void updateNewRuleSubmitToggleFile() {
+        //    File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName, settings.SubmitNewRule.ToString().ToLower());
+        //    Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.SubmitNewRuleToggleFileName);
+        //}
 
         public static void GenerateActionFile() {
             /* !DEBUG CODE
@@ -176,21 +176,21 @@ namespace XWall {
                                 String.Join("\r\n", forwardRules.ToArray());
                         }
 
-                        if (doNotForwardRules.Count > 0) {
-                            customDefaultText =
-                                "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
-                                String.Join("\r\n", doNotForwardRules.ToArray());
-                        }
+                        customDefaultText =
+                            "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
+                            "local.x-wall.org" + "\r\n" +
+                            String.Join("\r\n", doNotForwardRules.ToArray());
                     }
                 }
 
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName, onlineForwardText);
-                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName, onlineDefaultText);
-                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName, customForwardText);
-                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName);
                 File.WriteAllText(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName, customDefaultText);
+
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineForwardActionFileName);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyOnlineDefaultActionFileName);
+                Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomForwardActionFileName);
                 Operation.GrantAccessControl(App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyCustomDefaultActionFileName);
 
                 generatingActionFile = false;

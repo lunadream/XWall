@@ -132,7 +132,7 @@
       <Value Profile="(Default)">submit-new-rule-toggle</Value>
     </Setting>
     <Setting Name="ShowUrlInfoUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:14220/url-info.html</Value>
+      <Value Profile="(Default)">http://local.x-wall.org:14220/url-info.html</Value>
     </Setting>
     <Setting Name="PrivoxyTemplatesFolderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">privoxy-templates\</Value>
