@@ -26,8 +26,12 @@ namespace XWall {
 
         public static void KillProcess(string fileName) {
             var processes = GetProcesses(fileName);
-            foreach (var process in processes)
-                process.Kill();
+            foreach (var process in processes) {
+                try {
+                    process.Kill();
+                }
+                catch { }
+            }
         }
 
         public static Process[] GetProcesses(string fileName) {
@@ -54,8 +58,12 @@ namespace XWall {
             process.Start();
             var portsStr = process.StandardOutput.ReadToEnd();
 
-            if (process != null && !process.HasExited)
-                process.Kill();
+            if (process != null && !process.HasExited) {
+                try {
+                    process.Kill();
+                }
+                catch { }
+            }
 
             var hash = new HashSet<int>();
 

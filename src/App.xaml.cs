@@ -87,8 +87,12 @@ namespace XWall {
                     if (process.Id != current.Id) {
                         if (result == null)
                             result = MessageBox.Show(resources["XWallAlreadyStartedDescription"] as string, resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
-                        if (result == MessageBoxResult.OK)
-                            process.Kill();
+                        if (result == MessageBoxResult.OK) {
+                            try {
+                                process.Kill();
+                            }
+                            catch { }
+                        }
                         else {
                             IsShutDown = true;
                             App.Current.Shutdown();

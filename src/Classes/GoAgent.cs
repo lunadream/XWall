@@ -108,7 +108,10 @@ namespace XWall {
             stop = true;
             try {
                 if (process != null && !process.HasExited) {
-                    process.Kill();
+                    try {
+                        process.Kill();
+                    }
+                    catch { }
                 }
             }
             catch { }

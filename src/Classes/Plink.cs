@@ -107,7 +107,10 @@ namespace XWall {
                         process.WaitForExit();
                     }
                     else {
-                        process.Kill();
+                        try {
+                            process.Kill();
+                        }
+                        catch { }
                     }
                 }
             }
@@ -151,7 +154,10 @@ namespace XWall {
             }
 
             if (process != null && !process.HasExited) {
-                process.Kill();
+                try {
+                    process.Kill();
+                }
+                catch { }
             }
         }
 
