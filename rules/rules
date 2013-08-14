@@ -3621,6 +3621,7 @@ tmi.me:80
 .tube8.com
 :80/.*tubecao(?:\.|%2e)com
 .tubecao.com
+.tubewolf.com
 :80/.*tuidang(?:\.|%2e)net
 .tuidang.net
 :80/.*tuidang(?:\.|%2e)org
@@ -4583,6 +4584,7 @@ www.x-berry.com:80/goagent
 .search:80/.*%E4%B8%AD%E5%9B%BD%E8%AE%BA%E5%9D%9B
 :80/.*search.*%E4%B8%AD%E5%AE%A3%E9%83%A8
 .search:80/.*%E4%B8%AD%E5%AE%A3%E9%83%A8
+upload.wikimedia.org:443
 *.wikipedia.org:443
 :80/.*(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Dalai_Lama
 .wikipedia.org:80/wiki(?:/|%2f)Dalai_Lama
