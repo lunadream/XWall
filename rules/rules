@@ -940,6 +940,7 @@ www.dfanning.com:80
 .falundafamuseum.org
 .falunhr.org
 .fanglizhi.info
+.fangong.org
 :80/.*fangongheike(?:\.|%2e)com
 .fangongheike.com
 :80/.*fapdu(?:\.|%2e)com
