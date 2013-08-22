@@ -170,6 +170,7 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="GaeFailToSendVerifierMessage">Failed to send verifier, please check the information entered and try again.</sys:String>
     <sys:String x:Key="GaeEmptyVerifierMessage">Please enter the verifier you received.</sys:String>
     <sys:String x:Key="GaeInvalidVerifierMessage">Failed to verify your account, please try again.</sys:String>
+    <sys:String x:Key="NewGaServerMessage">The GoAgent server-side script has a newer version, you may deploy your GAE applications again using GAE Wizard to apply this update.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (built-in X-Wall) exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>

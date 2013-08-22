@@ -153,12 +153,10 @@ namespace XWall {
                 stopReconnect();
             }
 
-            if (process != null && !process.HasExited) {
-                try {
-                    process.Kill();
-                }
-                catch { }
+            try {
+                process.Kill();
             }
+            catch { }
         }
 
         Action reconnect() {

@@ -170,6 +170,7 @@
     <sys:String x:Key="GaeFailToSendVerifierMessage">发送验证码失败, 请检查输入的信息并重试.</sys:String>
     <sys:String x:Key="GaeEmptyVerifierMessage">请输入您收到的验证码.</sys:String>
     <sys:String x:Key="GaeInvalidVerifierMessage">账号验证失败, 请重试.</sys:String>
+    <sys:String x:Key="NewGaServerMessage">GoAgent 服务器端脚本有更新, 您可以通过 GAE 设置向导重新部署您的 GAE 应用来使用此更新.</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (X-Wall 内建) 因为一个错误退出, 这可能是因为代理端口无效或者被占用.</sys:String>

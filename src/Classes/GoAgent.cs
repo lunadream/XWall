@@ -19,7 +19,7 @@ namespace XWall {
         bool startPending = false;
 
         public GoAgent() {
-            Operation.KillProcess(App.AppDataDirectory + settings.GaPython33FileName);
+            Operation.KillProcess(App.AppDataDirectory + settings.GaPython27FileName);
             App.Current.Exit += (sender, e) => {
                 Stop();
             };
@@ -69,7 +69,7 @@ namespace XWall {
 
             var si = process.StartInfo;
 
-            si.FileName = App.AppDataDirectory + settings.GaPython33FileName;
+            si.FileName = App.AppDataDirectory + settings.GaPython27FileName;
             si.Arguments = '"' + App.AppDataDirectory + settings.GaScriptFileName + '"';
             si.CreateNoWindow = true;
             si.UseShellExecute = false;
@@ -107,17 +107,9 @@ namespace XWall {
         public void Stop() {
             stop = true;
             try {
-                if (process != null && !process.HasExited) {
-                    try {
-                        process.Kill();
-                    }
-                    catch { }
-                }
+                process.Kill();
             }
             catch { }
         }
-
-
-
     }
 }

@@ -777,15 +777,6 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("goagent\\local\\python33.exe")]
-        public string GaPython33FileName {
-            get {
-                return ((string)(this["GaPython33FileName"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("goagent\\local\\proxy.ini")]
         public string GaConfigFileName {
             get {
@@ -895,6 +886,27 @@ namespace XWall.Properties {
         public string DonateUrl {
             get {
                 return ((string)(this["DonateUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int GaServerVersion {
+            get {
+                return ((int)(this["GaServerVersion"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int GaLastServerVersion {
+            get {
+                return ((int)(this["GaLastServerVersion"]));
+            }
+            set {
+                this["GaLastServerVersion"] = value;
             }
         }
     }

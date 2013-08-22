@@ -58,12 +58,10 @@ namespace XWall {
             process.Start();
             var portsStr = process.StandardOutput.ReadToEnd();
 
-            if (process != null && !process.HasExited) {
-                try {
-                    process.Kill();
-                }
-                catch { }
+            try {
+                process.Kill();
             }
+            catch { }
 
             var hash = new HashSet<int>();
 

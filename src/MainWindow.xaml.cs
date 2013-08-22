@@ -53,7 +53,6 @@ namespace XWall {
             gaAppIdsToolTip.Placement = System.Windows.Controls.Primitives.PlacementMode.Top;
             gaAppIdsTextBox.ToolTip = gaAppIdsToolTip;
 
-
             notificationController = new NotificationController(this);
             plink = new Plink();
             privoxy = new Privoxy();
@@ -331,6 +330,11 @@ namespace XWall {
                     }
                     catch { }
                     notificationController.SendMessage(resources["UpdateSuccessTitle"] as string, resources["UpdateSuccessDetails"] as string);
+
+                    if (Directory.Exists(App.AppDataDirectory + settings.GaFolderName) && settings.GaServerVersion > settings.GaLastServerVersion) {
+                        settings.GaLastServerVersion = settings.GaServerVersion;
+                        MessageBox.Show(resources["NewGaServerMessage"] as string);
+                    }
                 }).BeginInvoke(null, null);
             }
 

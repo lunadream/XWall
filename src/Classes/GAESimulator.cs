@@ -31,6 +31,7 @@ namespace XWall {
         static Settings settings = Settings.Default;
         static ResourceDictionary resources = App.Current.Resources;
 
+        Process pythonProcess;
         bool stopped = false;
 
         static NameValueCollection initQuery(string html) {
@@ -322,7 +323,12 @@ namespace XWall {
                     info.UseShellExecute = false;
                     info.CreateNoWindow = true;
 
-                    var process = new Process();
+                    try {
+                        pythonProcess.Kill();
+                    }
+                    catch { }
+
+                    pythonProcess = new Process();
                     callback(false, i, 0);
 
                     Thread.Sleep(1000);
@@ -330,7 +336,7 @@ namespace XWall {
                     var steps = 17;
                     var step = 0;
 
-                    process.ErrorDataReceived += (sender, e) => {
+                    pythonProcess.ErrorDataReceived += (sender, e) => {
                         step++;
                         if (e.Data != null && e.Data.StartsWith("Completed update of app:")) {
                             i++;
@@ -340,11 +346,11 @@ namespace XWall {
                         }
                     };
 
-                    process.StartInfo = info;
-                    process.Start();
+                    pythonProcess.StartInfo = info;
+                    pythonProcess.Start();
 
-                    process.BeginErrorReadLine();
-                    process.WaitForExit();
+                    pythonProcess.BeginErrorReadLine();
+                    pythonProcess.WaitForExit();
                 }
 
                 callback(true, i, 0);
@@ -357,7 +363,10 @@ namespace XWall {
 
         internal void Stop() {
             stopped = true;
-            Operation.KillProcess(App.AppDataDirectory + settings.GaPython27FileName);
+            try {
+                pythonProcess.Kill();
+            }
+            catch { }
         }
     }
 }
