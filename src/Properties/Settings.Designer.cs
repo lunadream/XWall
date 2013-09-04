@@ -675,7 +675,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://vilic.s4.jutuo.net/x-wall/update.ashx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://xwallstats.sinaapp.com/stats.php")]
         public string UpdateReportUrl {
             get {
                 return ((string)(this["UpdateReportUrl"]));

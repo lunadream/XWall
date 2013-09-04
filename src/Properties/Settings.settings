@@ -189,7 +189,7 @@
       <Value Profile="(Default)">privoxy-custom-forward.action</Value>
     </Setting>
     <Setting Name="UpdateReportUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://vilic.s4.jutuo.net/x-wall/update.ashx</Value>
+      <Value Profile="(Default)">http://xwallstats.sinaapp.com/stats.php</Value>
     </Setting>
     <Setting Name="UpdateCheckDelay" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">300</Value>
