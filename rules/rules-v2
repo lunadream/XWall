@@ -591,6 +591,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .chuizi.net
 .chrispederick.com
 .chrispederick.net
+:80/.*(?:\.|%2e)chrlawyers(?:\.|%2e)hk
+.chrlawyers.hk
 .allaboutalpha.com
 :80/.*(?:\.|%2e)citizenlab(?:\.|%2e)org
 .citizenlab.org
@@ -1149,6 +1151,7 @@ www.zensur.freerk.com:80/
 :80/.*(?:\.|%2e)futurechinaforum(?:\.|%2e)org
 .futurechinaforum.org
 .futuremessage.org
+.fw.cm
 :80/.*fzh999(?:\.|%2e)com
 .fzh999.com
 :80/.*fzh999(?:\.|%2e)net
@@ -2045,6 +2048,7 @@ tech2.in.com:80/video(?:/|%2f)
 .itunes.apple.com:80/us.*id447119634
 :80/.*(?:\.|%2e)apple(?:\.|%2e).*isunaffairs
 .apple.:80/.*isunaffairs
+.j.mp
 :80/.*blog(?:\.|%2e)jackjia(?:\.|%2e)com
 .blog.jackjia.com
 :80/.*jbtalks(?:\.|%2e)cc
@@ -2568,6 +2572,7 @@ www.monlamit.org:80
 .nowtorrents.com
 :80/.*(?:\.|%2e)noypf(?:\.|%2e)com
 .noypf.com
+.npa.go.jp
 :80/.*(?:\.|%2e)nps(?:\.|%2e)gov
 .nps.gov
 :80/.*(?:\.|%2e)nrk(?:\.|%2e)no
