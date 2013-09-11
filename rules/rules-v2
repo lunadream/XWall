@@ -1233,6 +1233,7 @@ cn.giganews.com:80/
 .gmhz.org
 :80/.*godfootsteps(?:\.|%2e)org
 .godfootsteps.org
+www.goldenmelody.com.tw:80
 .goldwave.com
 :80/.*gongmeng(?:\.|%2e)info
 .gongmeng.info
@@ -1524,6 +1525,8 @@ ub0.cc:80
 .google.:80/.*%E9%B2%81%E6%98%95
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E9%A9%AC%E5%87%AF
 .google.:80/.*%E9%A9%AC%E5%87%AF
+:80/.*(?:\.|%2e)google(?:\.|%2e).*%E9%A9%AC%E5%8A%9B
+.google.:80/.*%E9%A9%AC%E5%8A%9B
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E9%BA%A6%E5%BD%93%E5%8A%B3
 .google.:80/.*%E9%BA%A6%E5%BD%93%E5%8A%B3
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E5%86%85%E8%92%99.*%E7%A4%BA%E5%A8%81
@@ -4752,6 +4755,8 @@ upload.wikimedia.org:443
 .zh.wikipedia.org:80/.*%E5%B0%81%E5%BE%9E%E5%BE%B7
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%86%AF%E6%AD%A3%E8%99%8E
 .zh.wikipedia.org:80/.*%E5%86%AF%E6%AD%A3%E8%99%8E
+:80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%82%85%E9%93%81%E5%B1%B1
+.zh.wikipedia.org:80/.*%E5%82%85%E9%93%81%E5%B1%B1
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E5%99%B6%E5%80%AB%E8%B5%A4%E5%B7%B4
 .zh.wikipedia.org:80/.*%E5%99%B6%E5%80%AB%E8%B5%A4%E5%B7%B4
 :80/.*zh(?:\.|%2e)wikipedia(?:\.|%2e)org.*%E9%AB%98%E6%99%BA%E6%99%9F
