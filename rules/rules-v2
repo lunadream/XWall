@@ -2303,6 +2303,7 @@ tech2.in.com:80/video(?:/|%2f)
 .matsushimakaede.com
 :80/.*mayimayi(?:\.|%2e)com
 .mayimayi.com
+.mcadforums.com
 :80/.*mcfog(?:\.|%2e)com
 .mcfog.com
 :80/.*(?:\.|%2e)md-t(?:\.|%2e)org
@@ -2592,6 +2593,8 @@ www.monlamit.org:80
 .cbs.ntu.edu.tw
 .nuexpo.com
 .nurgo-software.com
+:80/.*(?:\.|%2e)nuvid(?:\.|%2e)com
+.nuvid.com
 :80/.*nuzcom(?:\.|%2e)com
 .nuzcom.com
 .nyt.com
@@ -3242,6 +3245,8 @@ tweets.seraph.me:80/
 .sitemaps.org
 :80/.*sitetag(?:\.|%2e)us
 .sitetag.us
+:80/.*(?:\.|%2e)sis(?:\.|%2e)xxx
+.sis.xxx
 .sis001.com
 :80/.*sis001(?:\.|%2e)us
 .sis001.us
