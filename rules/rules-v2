@@ -1875,6 +1875,8 @@ hk-pub.com:80
 .hongzhi.li
 :80/.*hootsuite(?:\.|%2e)com
 .hootsuite.com
+:80/.*hotfile(?:\.|%2e)com(?:/|%2f)dl
+.hotfile.com:80/dl
 :80/.*hotpot(?:\.|%2e)hk
 .hotpot.hk
 .hotspotshield.com
