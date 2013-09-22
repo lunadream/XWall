@@ -46,10 +46,6 @@ namespace XWall {
                 settings.SshSocksPort > 0;
         }
 
-        void fixPlink() { 
-            
-        }
-
         void startProcess(bool isReconnect) {
             if (Environment.HasShutdownStarted) return;
 

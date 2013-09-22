@@ -202,5 +202,8 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="Verifying">Verifying</sys:String>
     <sys:String x:Key="Hide">Hide</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">It seems that X-Wall has already started, do you want to end it?</sys:String>
+    <sys:String x:Key="UnhandledExceptionMessage">Oops, an unknown error occurred.%n
+If X-Wall does not function well, you may try to restart it.%n
+You can also contact the developer if the error resists.</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->
 </ResourceDictionary>

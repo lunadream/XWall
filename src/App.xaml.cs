@@ -12,6 +12,8 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Net;
+using System.Web;
 
 namespace XWall {
     /// <summary>
@@ -26,6 +28,7 @@ namespace XWall {
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
             LoadLanguage();
+            var resources = App.Current.Resources;
 
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
@@ -81,7 +84,6 @@ namespace XWall {
 
             if (!ignoreRunningInstance) {
                 Process current = Process.GetCurrentProcess();
-                var resources = App.Current.Resources;
                 MessageBoxResult? result = null;
                 foreach (Process process in Process.GetProcessesByName(current.ProcessName)) {
                     if (process.Id != current.Id) {
@@ -175,6 +177,17 @@ namespace XWall {
 
             SystemEvents.SessionEnded += (sender, e) => {
                 App.Current.Shutdown();
+            };
+
+            Dispatcher.UnhandledException += (sender, e) => {
+                var query = HttpUtility.ParseQueryString("");
+                query["data"] = e.Exception.ToString();
+
+                var client = new WebClient();
+                client.UploadValuesAsync(new Uri(settings.ErrorReportUrl), query);
+                var msg = (resources["UnhandledExceptionMessage"] as string).Replace("%n", Environment.NewLine);
+                MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+                e.Handled = true;
             };
             //*/
         }

@@ -909,5 +909,14 @@ namespace XWall.Properties {
                 this["GaLastServerVersion"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://xwallstats.sinaapp.com/rpt.php")]
+        public string ErrorReportUrl {
+            get {
+                return ((string)(this["ErrorReportUrl"]));
+            }
+        }
     }
 }

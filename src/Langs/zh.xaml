@@ -202,5 +202,8 @@
     <sys:String x:Key="Verifying">正在验证</sys:String>
     <sys:String x:Key="Hide">隐藏</sys:String>
     <sys:String x:Key="XWallAlreadyStartedDescription">X-Wall 似乎已经在运行, 要结束它吗?</sys:String>
+    <sys:String x:Key="UnhandledExceptionMessage">发生了一个未知错误.%n
+如果 X-Wall 不能正常使用, 可以试试重启它.%n
+如果错误频繁出现, 请联系开发者.</sys:String>
     <!--<sys:String x:Key=""></sys:String>-->
 </ResourceDictionary>
