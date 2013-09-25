@@ -33,8 +33,11 @@ namespace XWall {
             var executablePath = System.Windows.Forms.Application.ExecutablePath;
             Environment.CurrentDirectory = Path.GetDirectoryName(executablePath);
             Microsoft.Win32.SystemEvents.SessionEnding += (sender, e) => {
-                IsShutDown = true;
-                App.Current.Shutdown();
+                try {
+                    IsShutDown = true;
+                    App.Current.Shutdown();
+                }
+                catch { }
             };
 
             var settings = Settings.Default;
