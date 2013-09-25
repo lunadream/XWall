@@ -179,7 +179,10 @@ namespace XWall {
             };
 
             SystemEvents.SessionEnded += (sender, e) => {
-                App.Current.Shutdown();
+                try {
+                    App.Current.Shutdown();
+                }
+                catch { }
             };
 
             Dispatcher.UnhandledException += (sender, e) => {
