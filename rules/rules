@@ -4626,6 +4626,8 @@ upload.wikimedia.org:443
 .en.wikipedia.org:80/wiki(?:/|%2f)Freegate
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Golden_Shield_Project
 .en.wikipedia.org:80/wiki(?:/|%2f)Golden_Shield_Project
+:80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Great_Firewall_of_China
+.en.wikipedia.org:80/wiki(?:/|%2f)Great_Firewall_of_China
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Hong_Kong
 .en.wikipedia.org:80/wiki(?:/|%2f)Hong_Kong
 :80/.*en(?:\.|%2e)wikipedia(?:\.|%2e)org(?:/|%2f)wiki(?:/|%2f)Huang_Qi
