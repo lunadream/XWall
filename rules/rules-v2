@@ -3556,6 +3556,8 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 .time.com:80/time(?:/|%2f)time100(?:/|%2f)leaders(?:/|%2f)profile(?:/|%2f)rebel
 :80/.*(?:\.|%2e)time(?:\.|%2e)com(?:/|%2f)time(?:/|%2f)specials(?:/|%2f)packages(?:/|%2f)article(?:/|%2f)0,28804
 .time.com:80/time(?:/|%2f)specials(?:/|%2f)packages(?:/|%2f)article(?:/|%2f)0,28804
+:80/.*(?:\.|%2e)time(?:\.|%2e)com(?:/|%2f)time(?:/|%2f)magazine
+.time.com:80/time(?:/|%2f)magazine
 .blog.tiney.com
 :80/.*tinychat(?:\.|%2e)com
 .tinychat.com
