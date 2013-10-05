@@ -192,7 +192,9 @@ namespace XWall {
                 var client = new WebClient();
                 client.UploadValuesAsync(new Uri(settings.ErrorReportUrl), query);
                 var msg = (resources["UnhandledExceptionMessage"] as string).Replace("%n", Environment.NewLine);
-                MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+                if (!(e.Exception is WebException)) {
+                    MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 e.Handled = true;
             };
             //*/
