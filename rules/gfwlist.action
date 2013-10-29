@@ -4131,6 +4131,8 @@ uploaded.to:80/file
 .weekmag.info
 :80/.*(?:\.|%2e)wefong(?:\.|%2e)com
 .wefong.com
+:80/.*weiboleak(?:\.|%2e)com
+.weiboleak.com
 :80/.*weijingsheng(?:\.|%2e)org
 .weijingsheng.org
 :80/.*(?:\.|%2e)weiming(?:\.|%2e)info
@@ -5493,6 +5495,7 @@ upload.wikimedia.org:443
 .duckduckgo.com
 .jike.com
 .panguso.com
+.qq.com
 .sina.cn
 .sina.com.cn
 .sogou.com
@@ -5509,5 +5512,4 @@ ime.baidu.jp:80
 .renren.com
 .youku.com
 .163.com
-.qq.com
 .taobao.com
