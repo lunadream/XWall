@@ -37,7 +37,7 @@ namespace XWall {
         static NameValueCollection initQuery(string html) {
             var query = HttpUtility.ParseQueryString("");
 
-            var re = new Regex(@"<input type=""hidden""[^>]+name=""(.+?)""[^>]+value=[""'](.*?)[""']");
+            var re = new Regex(@"<input[^>]+name=""(.+?)""[^>]+value=[""'](.*?)[""']");
             var matches = re.Matches(html);
 
             foreach (Match match in matches) {

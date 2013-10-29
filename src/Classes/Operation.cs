@@ -85,6 +85,7 @@ namespace XWall {
         public static bool SetAutoStart(bool autoStart) {
             var dir = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
             var valueName = "X-Wall";
+
             try {
                 var reg = Registry.CurrentUser.CreateSubKey(dir);
 
