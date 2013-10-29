@@ -40,8 +40,11 @@ namespace XWall {
             var results = new List<Process>();
             var current = Process.GetCurrentProcess();
             foreach (var process in processes) {
-                if (process.Id != current.Id && Path.GetFullPath(process.MainModule.FileName).ToLower() == path)
-                    results.Add(process);
+                try {
+                    if (process.Id != current.Id && Path.GetFullPath(process.MainModule.FileName).ToLower() == path)
+                        results.Add(process);
+                }
+                catch { }
             }
             return results.ToArray();
         }
