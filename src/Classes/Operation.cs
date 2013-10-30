@@ -40,14 +40,56 @@ namespace XWall {
             var results = new List<Process>();
             var current = Process.GetCurrentProcess();
             foreach (var process in processes) {
+                if (process.Id != current.Id) {
+                    continue;
+                }
+
                 try {
-                    if (process.Id != current.Id && Path.GetFullPath(process.MainModule.FileName).ToLower() == path)
+                    if (GetExecutablePathWin6(process.Id).ToLower() == path)
                         results.Add(process);
                 }
-                catch { }
+                catch {
+                    results.Add(process);
+                }
             }
             return results.ToArray();
         }
+
+        static string GetExecutablePath(Process Process) {
+            //If running on Vista or later use the new function
+            if (Environment.OSVersion.Version.Major >= 6) {
+                return GetExecutablePathWin6(Process.Id);
+            }
+            else {
+                return Process.MainModule.FileName;
+            }
+        }
+
+        static string GetExecutablePathWin6(int ProcessId) {
+            var buffer = new StringBuilder(1024);
+            IntPtr hprocess = OpenProcess(0x1000, false, ProcessId);
+            if (hprocess != IntPtr.Zero) {
+                try {
+                    int size = buffer.Capacity;
+                    if (QueryFullProcessImageName(hprocess, 0, buffer, out size)) {
+                        return buffer.ToString();
+                    }
+                }
+                finally {
+                    CloseHandle(hprocess);
+                }
+            }
+            throw new Win32Exception(Marshal.GetLastWin32Error());
+        }
+
+
+        [DllImport("kernel32.dll")]
+        private static extern bool QueryFullProcessImageName(IntPtr hprocess, int dwFlags, StringBuilder lpExeName, out int size);
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern bool CloseHandle(IntPtr hHandle);
 
         public static void SetAvailablePorts() {
             var process = new Process();

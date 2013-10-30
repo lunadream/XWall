@@ -187,14 +187,14 @@ namespace XWall {
 
             Dispatcher.UnhandledException += (sender, e) => {
                 var query = HttpUtility.ParseQueryString("");
-                query["data"] = e.Exception.ToString();
+                query["data"] = Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\r\n" + e.Exception.ToString();
 
                 var client = new WebClient();
                 client.UploadValuesAsync(new Uri(settings.ErrorReportUrl), query);
+
                 var msg = (resources["UnhandledExceptionMessage"] as string).Replace("%n", Environment.NewLine);
-                if (!(e.Exception is WebException)) {
-                    MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+
                 e.Handled = true;
             };
             //*/

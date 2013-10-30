@@ -114,7 +114,7 @@ namespace XWall {
                     var cl = new WebClientWithCookies();
                     cl.UploadValuesAsync(new Uri(loginUrl), query);
                     cl.UploadValuesCompleted += (s, o) => {
-                        processHtml(Encoding.UTF8.GetString(o.Result));
+                        processHtml(o.Error == null ? Encoding.UTF8.GetString(o.Result) : "");
                     };
                 });
 
@@ -189,7 +189,7 @@ namespace XWall {
                         var cl = new WebClientWithCookies();
                         cl.UploadValuesAsync(new Uri("https://appengine.google.com/start/createapp.do"), query);
                         cl.UploadValuesCompleted += (sender, e) => {
-                            if (e.Result != null && Encoding.UTF8.GetString(e.Result).Contains("Application Registered Successfully")) {
+                            if (e.Error == null && Encoding.UTF8.GetString(e.Result).Contains("Application Registered Successfully")) {
                                 next(true, false);
                             }
                             else {
@@ -209,7 +209,7 @@ namespace XWall {
                 client.DownloadStringAsync(new Uri("https://appengine.google.com/start/createapp"));
                 //client.DownloadStringAsync(new Uri("https://accounts.google.com/b/0/IdvChallenge?idvContinueHandler=SERVICE&service=ah"));
                 client.DownloadStringCompleted += (sender, e) => {
-                    if (e.Result.Contains("IdvPhoneType()")) {
+                    if (e.Error == null && e.Result.Contains("IdvPhoneType()")) {
                         //var r = MessageBox.Show(resources["GaeBeforeVerifyMessage"] as string, resources["XWall"] as string, MessageBoxButton.OKCancel);
 
                         //if (r == MessageBoxResult.OK) {
@@ -256,7 +256,7 @@ namespace XWall {
             var cl = new WebClientWithCookies();
             cl.UploadValuesAsync(new Uri(sendVerifierUrl), sendVerifierQeury);
             cl.UploadValuesCompleted += (s, o) => {
-                var html = o.Result != null ? Encoding.UTF8.GetString(o.Result) : "";
+                var html = o.Error == null ? Encoding.UTF8.GetString(o.Result) : "";
 
                 if (html.Contains("\"idvGivenAnswer\"")) {
                     verifyQuery = initQuery(html);
@@ -277,7 +277,8 @@ namespace XWall {
             var cl = new WebClientWithCookies();
             cl.UploadValuesAsync(new Uri(verifyUrl), verifyQuery);
             cl.UploadValuesCompleted += (s, o) => {
-                var html = Encoding.UTF8.GetString(o.Result);
+                var html = o.Error == null ? Encoding.UTF8.GetString(o.Result) : "";
+
                 callback(!html.Contains("\"idvGivenAnswer\""));
             };
         }
