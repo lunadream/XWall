@@ -40,7 +40,7 @@ namespace XWall {
             var results = new List<Process>();
             var current = Process.GetCurrentProcess();
             foreach (var process in processes) {
-                if (process.Id != current.Id) {
+                if (process.Id == current.Id) {
                     continue;
                 }
 
