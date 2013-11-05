@@ -252,7 +252,7 @@
       <Value Profile="(Default)">http://me.alipay.com/vilic</Value>
     </Setting>
     <Setting Name="GaServerVersion" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="GaLastServerVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
