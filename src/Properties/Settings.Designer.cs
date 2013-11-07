@@ -840,7 +840,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("google_cn")]
+        [global::System.Configuration.DefaultSettingValueAttribute("google_hk")]
         public string GaProfile {
             get {
                 return ((string)(this["GaProfile"]));
@@ -891,7 +891,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int GaServerVersion {
             get {
                 return ((int)(this["GaServerVersion"]));
