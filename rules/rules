@@ -13,6 +13,7 @@
 .turntable.fm
 .vevo.com
 .zattoo.com
+.qq.co.za
 :80/.*(?:\.|%2e)0rz(?:\.|%2e)tw
 .0rz.tw
 .0to255.com
