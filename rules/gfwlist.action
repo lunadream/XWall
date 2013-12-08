@@ -1,4 +1,5 @@
 {+forward-override{forward-socks5 127.0.0.1:1080 .}}
+.fxnetworks.com
 :80/.*hulu(?:\.|%2e)com
 .hulu.com
 :80/.*huluim(?:\.|%2e)com
@@ -14,6 +15,7 @@
 .vevo.com
 .zattoo.com
 .qq.co.za
+.zozotown.com
 :80/.*(?:\.|%2e)0rz(?:\.|%2e)tw
 .0rz.tw
 .0to255.com
@@ -395,6 +397,8 @@ bbc.in:80
 .brizzly.com
 :80/.*broadbook(?:\.|%2e)com
 .broadbook.com
+*.broadcasthe.net:443
+broadcasthe.net:443
 :80/.*ibros(?:\.|%2e)org
 .ibros.org
 :80/.*brucewang(?:\.|%2e)net
@@ -532,6 +536,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .chinagreenparty.org
 :80/.*(?:\.|%2e)chinahush(?:\.|%2e)com
 .chinahush.com
+:80/.*chinalawtranslate(?:\.|%2e)com
+.chinalawtranslate.com
 :80/.*chinaxchina(?:\.|%2e)com(?:/|%2f)howto
 .chinaxchina.com:80/howto
 :80/.*(?:\.|%2e)chinainperspective(?:\.|%2e)com
@@ -947,6 +953,8 @@ www.dfanning.com:80
 .fangong.org
 :80/.*fangongheike(?:\.|%2e)com
 .fangongheike.com
+:80/.*fanqianghou(?:\.|%2e)com
+.fanqianghou.com
 :80/.*fapdu(?:\.|%2e)com
 .fapdu.com
 :80/.*(?:\.|%2e)fawanghuihui(?:\.|%2e)org
@@ -1134,6 +1142,8 @@ www.zensur.freerk.com:80/
 :80/.*(?:\.|%2e)fring(?:\.|%2e)com
 .fring.com
 .frommel.net
+:80/.*(?:\.|%2e)frontlinedefenders(?:\.|%2e)org
+.frontlinedefenders.org
 .fscked.org
 :80/.*(?:\.|%2e)fsurf(?:\.|%2e)com
 .fsurf.com
@@ -1531,6 +1541,8 @@ ub0.cc:80
 .google.:80/.*%E9%A9%AC%E5%8A%9B
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E9%BA%A6%E5%BD%93%E5%8A%B3
 .google.:80/.*%E9%BA%A6%E5%BD%93%E5%8A%B3
+:80/.*(?:\.|%2e)google(?:\.|%2e).*%E6%AF%9B%E5%90%91%E8%BE%89
+.google.:80/.*%E6%AF%9B%E5%90%91%E8%BE%89
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E5%86%85%E8%92%99.*%E7%A4%BA%E5%A8%81
 .google.:80/.*%E5%86%85%E8%92%99.*%E7%A4%BA%E5%A8%81
 :80/.*(?:\.|%2e)google(?:\.|%2e).*%E5%AD%9F%E5%BB%BA%E6%9F%B1
@@ -1806,6 +1818,8 @@ apis.google.com:443
 .heungkongdiscuss.com
 :80/.*app(?:\.|%2e)heywire(?:\.|%2e)com
 .app.heywire.com
+:80/.*(?:\.|%2e)hgseav(?:\.|%2e)com
+.hgseav.com
 :80/.*hidden-advent(?:\.|%2e)org
 .hidden-advent.org
 :80/.*hidecloud(?:\.|%2e)com(?:/|%2f)blog(?:/|%2f)2008(?:/|%2f)07(?:/|%2f)29(?:/|%2f)fuck-beijing-olympics(?:\.|%2e)html
@@ -1998,6 +2012,8 @@ tech2.in.com:80/video(?:/|%2f)
 :80/.*ipobar(?:\.|%2e)com
 .ipobar.com
 .ippotv.com
+*.iptorrents.com:80
+iptorrents.com:80
 .ipvanish.com
 :80/.*iredmail(?:\.|%2e)org
 .iredmail.org
@@ -2087,6 +2103,8 @@ tech2.in.com:80/video(?:/|%2f)
 .jitouch.com
 :80/.*jkforum(?:\.|%2e)net
 .jkforum.net
+:80/.*research(?:\.|%2e)jmsc(?:\.|%2e)hku(?:\.|%2e)hk(?:/|%2f)social
+.research.jmsc.hku.hk:80/social
 .joachims.org
 .jobso.tv
 .joeedelman.com
@@ -2179,6 +2197,8 @@ tech2.in.com:80/video(?:/|%2f)
 :80/.*(?:\.|%2e)laoyang(?:\.|%2e)info
 .laoyang.info
 .laptoplockdown.com
+:80/.*(?:\.|%2e)laqingdan(?:\.|%2e)net
+.laqingdan.net
 .larsgeorge.com
 .lastfm.es
 :80/.*latelinenews(?:\.|%2e)com
@@ -2732,6 +2752,8 @@ www.oxid.it:80
 .panoramio.com
 :80/.*(?:\.|%2e)parade(?:\.|%2e)com(?:/|%2f)dictators(?:/|%2f)2009
 .parade.com:80/dictators(?:/|%2f)2009
+passthepopcorn.me:443/
+*.passthepopcorn.me:443/
 :80/.*pastebin(?:\.|%2e)com
 .pastebin.com
 :80/.*(?:\.|%2e)pastie(?:\.|%2e)org
@@ -3020,6 +3042,8 @@ post.ly:80
 .renyurenquan.org
 :80/.*subacme(?:\.|%2e)rerouted(?:\.|%2e)org
 .subacme.rerouted.org
+:80/.*cn(?:\.|%2e)reuters(?:\.|%2e)com
+.cn.reuters.com
 :80/.*(?:\.|%2e)revleft(?:\.|%2e)com
 .revleft.com
 :80/.*retweetist(?:\.|%2e)com
@@ -3050,8 +3074,8 @@ rfi.my:80/
 .rlwlw.com
 :80/.*chinese(?:\.|%2e)rnw(?:\.|%2e)nl
 .chinese.rnw.nl
-:80/.*www(?:\.|%2e)rnw(?:\.|%2e)nl(?:/|%2f)chinese
-.www.rnw.nl:80/chinese
+:80/.*(?:\.|%2e)rnw(?:\.|%2e)nl
+.rnw.nl
 :80/.*robtex(?:\.|%2e)com
 .robtex.com
 .robustnessiskey.com
@@ -3249,7 +3273,7 @@ tweets.seraph.me:80/
 .sitemaps.org
 :80/.*sitetag(?:\.|%2e)us
 .sitetag.us
-:80/.*(?:\.|%2e)sis(?:\.|%2e)xxx
+:80/.*sis(?:\.|%2e)xxx
 .sis.xxx
 .sis001.com
 :80/.*sis001(?:\.|%2e)us
@@ -3361,6 +3385,7 @@ spb.com:80/symbian-software(?:/|%2f)tv(?:/|%2f)download
 :80/.*squarespace(?:\.|%2e)com
 .squarespace.com
 .ssh91.com
+cdn.sstatic.net:80/
 :80/.*www(?:\.|%2e)stackfile(?:\.|%2e)com(?:/|%2f)freedur
 .www.stackfile.com:80/freedur
 :80/.*usinfo(?:\.|%2e)state(?:\.|%2e)gov
@@ -4240,8 +4265,8 @@ uploaded.to:80/file
 .wqyd.org
 :80/.*wretch(?:\.|%2e)cc
 .wretch.cc
-:80/.*cn(?:\.|%2e)wsj(?:\.|%2e)com(?:/|%2f)gb(?:/|%2f)20130215(?:/|%2f)tec113853(?:\.|%2e)asp
-.cn.wsj.com:80/gb(?:/|%2f)20130215(?:/|%2f)tec113853(?:\.|%2e)asp
+:80/.*cn(?:\.|%2e)wsj(?:\.|%2e)com
+.cn.wsj.com
 :80/.*(?:\.|%2e)wtfpeople(?:\.|%2e)com
 .wtfpeople.com
 :80/.*(?:\.|%2e)wuala(?:\.|%2e)com
@@ -4261,6 +4286,7 @@ uploaded.to:80/file
 :80/.*wzyboy(?:\.|%2e)im(?:/|%2f)post(?:/|%2f)160
 .wzyboy.im:80/post(?:/|%2f)160
 www.x-berry.com:80/goagent
+x-art.com:80
 .x-wall.org
 :80/.*x1949x(?:\.|%2e)com
 .x1949x.com
