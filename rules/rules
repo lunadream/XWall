@@ -57,6 +57,7 @@
 .315lz.com
 .36rain.com
 .4bluestones.biz
+.4chan.org
 :80/.*5i01(?:\.|%2e)com
 .5i01.com
 :80/.*taiwannation(?:\.|%2e)50webs(?:\.|%2e)com
@@ -1147,8 +1148,6 @@ www.zensur.freerk.com:80/
 .fscked.org
 :80/.*(?:\.|%2e)fsurf(?:\.|%2e)com
 .fsurf.com
-:80/.*(?:\.|%2e)ftchinese(?:\.|%2e)com
-.ftchinese.com
 :80/.*(?:\.|%2e)fuckcnnic(?:\.|%2e)net
 .fuckcnnic.net
 :80/.*fuckgfw(?:\.|%2e)org
@@ -1747,6 +1746,7 @@ talkgadget.google.com:443/
 apis.google.com:443
 :80/.*gospelherald(?:\.|%2e)com
 .gospelherald.com
+hk.gradconnection.com:80/
 .graylog2.org
 :80/.*greatfire(?:\.|%2e)org
 .greatfire.org
@@ -1755,6 +1755,7 @@ apis.google.com:443
 .gstatic.com
 :80/.*guishan(?:\.|%2e)org
 .guishan.org
+.gunsamerica.com
 :80/.*(?:\.|%2e)gyalwarinpoche(?:\.|%2e)com
 .gyalwarinpoche.com
 .h-china.org
@@ -2012,8 +2013,8 @@ tech2.in.com:80/video(?:/|%2f)
 :80/.*ipobar(?:\.|%2e)com
 .ipobar.com
 .ippotv.com
-*.iptorrents.com:80
-iptorrents.com:80
+*.iptorrents.com:443
+iptorrents.com:443
 .ipvanish.com
 :80/.*iredmail(?:\.|%2e)org
 .iredmail.org
@@ -2502,6 +2503,8 @@ www.monlamit.org:80
 .nanyang.com
 :80/.*(?:\.|%2e)nanyangpost(?:\.|%2e)com
 .nanyangpost.com
+:80/.*(?:\.|%2e)nanzao(?:\.|%2e)com
+.nanzao.com
 .navicat.com
 :80/.*(?:\.|%2e)nakido(?:\.|%2e)com
 .nakido.com
@@ -2572,7 +2575,6 @@ www.monlamit.org:80
 .nga.mil
 :80/.*ngensis(?:\.|%2e)com
 .ngensis.com
-.ngs2.info
 :80/.*nicovideo(?:\.|%2e)tw
 .nicovideo.tw
 .nighost.org
@@ -3135,6 +3137,8 @@ rfi.my:80/
 :80/.*savevid(?:\.|%2e)com
 .savevid.com
 .say2.info
+:80/.*(?:\.|%2e)scmpchinese(?:\.|%2e)com
+.scmpchinese.com
 :80/.*(?:\.|%2e)scribd(?:\.|%2e)com
 .scribd.com
 .scriptspot.com
@@ -3594,6 +3598,8 @@ cdn.sstatic.net:80/
 .tistory.com
 .tkcs-collins.com
 .tkforum.tk
+:80/.*cn(?:\.|%2e)tmagazine(?:\.|%2e)com
+.cn.tmagazine.com
 tmi.me:80
 :80/.*(?:\.|%2e)tnaflix(?:\.|%2e)com
 .tnaflix.com
