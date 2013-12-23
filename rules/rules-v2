@@ -182,6 +182,8 @@
 .video.aol.com
 :80/.*www(?:\.|%2e)aolnews(?:\.|%2e)com
 .www.aolnews.com
+:80/.*video(?:\.|%2e)ap(?:\.|%2e)org
+.video.ap.org
 :80/.*(?:\.|%2e)apetube(?:\.|%2e)com
 .apetube.com
 .apiary.io
@@ -642,6 +644,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .cochina.org
 :80/.*(?:\.|%2e)code1984(?:\.|%2e)com(?:/|%2f)64
 .code1984.com:80/64
+codeshare.io:80
 tosh.comedycentral.com:80
 :80/.*comefromchina(?:\.|%2e)com
 .comefromchina.com
@@ -758,6 +761,7 @@ www.dfanning.com:80
 :80/.*(?:\.|%2e)diigo(?:\.|%2e)com
 .diigo.com
 .furl.net
+directcreative.com:80/
 :80/.*(?:\.|%2e)discuss(?:\.|%2e)com(?:\.|%2e)hk
 .discuss.com.hk
 :80/.*disp(?:\.|%2e)cc
