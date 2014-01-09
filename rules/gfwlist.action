@@ -4,6 +4,7 @@
 .hulu.com
 :80/.*huluim(?:\.|%2e)com
 .huluim.com
+.muzu.tv
 .netflix.com
 .pandora.com
 :80/.*(?:\.|%2e)pandora(?:\.|%2e)tv
@@ -90,8 +91,6 @@
 .92ccav.com
 .9bis.com
 .9bis.net
-:80/.*(?:\.|%2e)9city(?:\.|%2e)me(?:/|%2f)archiver.*308578(?:\.|%2e)html
-.9city.me:80/archiver.*308578(?:\.|%2e)html
 .a-normal-day.com
 :80/.*a5(?:\.|%2e)com(?:\.|%2e)ru
 .a5.com.ru
@@ -191,6 +190,8 @@
 .apigee.com
 :80/.*appledaily(?:\.|%2e)com
 .appledaily.com
+:80/.*archive(?:\.|%2e)is
+.archive.is
 :80/.*archive(?:\.|%2e)org
 .archive.org
 :80/.*(?:\.|%2e)arctosia(?:\.|%2e)com
@@ -644,7 +645,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .cochina.org
 :80/.*(?:\.|%2e)code1984(?:\.|%2e)com(?:/|%2f)64
 .code1984.com:80/64
-codeshare.io:80
+.codeshare.io
 tosh.comedycentral.com:80
 :80/.*comefromchina(?:\.|%2e)com
 .comefromchina.com
@@ -761,7 +762,7 @@ www.dfanning.com:80
 :80/.*(?:\.|%2e)diigo(?:\.|%2e)com
 .diigo.com
 .furl.net
-directcreative.com:80/
+.directcreative.com
 :80/.*(?:\.|%2e)discuss(?:\.|%2e)com(?:\.|%2e)hk
 .discuss.com.hk
 :80/.*disp(?:\.|%2e)cc
@@ -1218,6 +1219,8 @@ www.zensur.freerk.com:80/
 .geohot.com
 .geometrictools.com
 .get-digital-help.com
+:80/.*(?:\.|%2e)getchu(?:\.|%2e)com
+.getchu.com
 .getfoxyproxy.org
 :80/.*(?:\.|%2e)getfreedur(?:\.|%2e)com
 .getfreedur.com
@@ -2259,6 +2262,8 @@ iptorrents.com:443
 .liuxiaotong.com
 :80/.*liu(?:\.|%2e)lu
 .liu.lu
+:80/.*(?:\.|%2e)liveleak(?:\.|%2e)com
+.liveleak.com
 :80/.*(?:\.|%2e)livestation(?:\.|%2e)com
 .livestation.com
 :80/.*livestream(?:\.|%2e)com
@@ -2565,6 +2570,8 @@ www.monlamit.org:80
 .newspeak.cc:80/story
 :80/.*(?:\.|%2e)newsancai(?:\.|%2e)com
 .newsancai.com
+:80/.*(?:\.|%2e)newtaiwan(?:\.|%2e)com(?:\.|%2e)tw
+.newtaiwan.com.tw
 :80/.*newtalk(?:\.|%2e)tw
 .newtalk.tw
 :80/.*newyorktimes(?:\.|%2e)com
@@ -2943,6 +2950,7 @@ post.ly:80
 .privatepaste.com
 :80/.*privatetunnel(?:\.|%2e)com
 .privatetunnel.com
+.procopytips.com
 :80/.*provideocoalition(?:\.|%2e)com
 .provideocoalition.com
 .prosiben.de
@@ -3359,9 +3367,7 @@ www.skype.com:80/zh-Hant
 .sopcast.com
 :80/.*(?:\.|%2e)sopcast(?:\.|%2e)org
 .sopcast.org
-:80/.*soundcloud(?:\.|%2e)com(?:/|%2f)punkgod
-.soundcloud.com:80/punkgod
-soundcloud.com:443/punkgod
+.soundcloud.com
 :80/.*soundofhope(?:\.|%2e)org
 .soundofhope.org
 .soupofmedia.com
