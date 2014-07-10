@@ -123,6 +123,7 @@
 .ajaxplorer.info
 .www.ajsands.com
 .akiba-online.com
+.al-qimmah.net
 .alabout.com
 .alasbarricadas.org
 .notes.alexdong.com
@@ -195,7 +196,6 @@
 .appledaily.com
 :80/.*archive(?:\.|%2e)is
 .archive.is
-:80/.*archive(?:\.|%2e)org
 .archive.org
 :80/.*(?:\.|%2e)arctosia(?:\.|%2e)com
 .arctosia.com
@@ -564,6 +564,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .chinamule.com
 :80/.*chinamz(?:\.|%2e)org
 .chinamz.org
+:80/.*(?:\.|%2e)chinarightsia(?:\.|%2e)org
+.chinarightsia.org
 :80/.*chinasocialdemocraticparty(?:\.|%2e)com
 .chinasocialdemocraticparty.com
 :80/.*chinasoul(?:\.|%2e)org
@@ -816,8 +818,8 @@ www.dfanning.com:80
 .dpp.org.tw
 .weigegebyc.dreamhosters.com
 .drgan.net
-:80/.*(?:\.|%2e)dropbox(?:\.|%2e)com
 .dropbox.com
+.dropboxusercontent.com
 :80/.*(?:\.|%2e)drtuber(?:\.|%2e)com
 .drtuber.com
 .dtiblog.com
@@ -856,10 +858,13 @@ www.dfanning.com:80
 :80/.*dy24k(?:\.|%2e)info
 .dy24k.info
 .dynawebinc.com
+:80/.*(?:\.|%2e)dyndns(?:\.|%2e)org
+.dyndns.org
 :80/.*(?:\.|%2e)dzze(?:\.|%2e)com
 .dzze.com
 .e-gold.com
 :80/.*(?:\.|%2e)e-gold(?:\.|%2e)com
+g.e-hentai.org:80/
 :80/.*e-info(?:\.|%2e)org(?:\.|%2e)tw
 .e-info.org.tw
 :80/.*(?:\.|%2e)e-traderland(?:\.|%2e)net(?:/|%2f)board
@@ -984,6 +989,8 @@ www.dfanning.com:80
 :80/.*fangeming(?:\.|%2e)com
 .fangeming.com
 .fanswong.com
+:80/.*(?:\.|%2e)fanyue(?:\.|%2e)info
+.fanyue.info
 :80/.*(?:\.|%2e)farwestchina(?:\.|%2e)com
 .farwestchina.com
 .fastly.net
@@ -1049,23 +1056,8 @@ www.dfanning.com:80
 .falsefire.com
 :80/.*fleshbot(?:\.|%2e)com
 .fleshbot.com
-.farm6.staticflickr.com
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)46231077@N06
-.flickr.com:80/photos(?:/|%2f)46231077@N06
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)groups(?:/|%2f)aiweiwei
-.flickr.com:80/groups(?:/|%2f)aiweiwei
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)digitalboy100
-.flickr.com:80/photos(?:/|%2f)digitalboy100
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)fzhenghu
-.flickr.com:80/photos(?:/|%2f)fzhenghu
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)lonelyfox
-.flickr.com:80/photos(?:/|%2f)lonelyfox
-:80/.*flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)vanvan(?:/|%2f)529925157
-.flickr.com:80/photos(?:/|%2f)vanvan(?:/|%2f)529925157
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)winterkanal
-.flickr.com:80/photos(?:/|%2f)winterkanal
-:80/.*(?:\.|%2e)flickr(?:\.|%2e)com(?:/|%2f)photos(?:/|%2f)zola
-.flickr.com:80/photos(?:/|%2f)zola
+.flickr.com
+.staticflickr.com
 :80/.*flickrhivemind(?:\.|%2e)net
 .flickrhivemind.net
 :80/.*yuming(?:\.|%2e)flnet(?:\.|%2e)org
@@ -1099,6 +1091,7 @@ cn.fmnnow.com:80
 .franklc.com
 :80/.*(?:\.|%2e)freakshare(?:\.|%2e)com
 .freakshare.com
+.free4u.com.ar
 :80/.*free-gate(?:\.|%2e)org
 .free-gate.org
 :80/.*(?:\.|%2e)free(?:\.|%2e)fr(?:/|%2f)adsl
@@ -1235,6 +1228,8 @@ www.zensur.freerk.com:80/
 .getfoxyproxy.org
 :80/.*(?:\.|%2e)getfreedur(?:\.|%2e)com
 .getfreedur.com
+:80/.*(?:\.|%2e)getlantern(?:\.|%2e)org
+.getlantern.org
 :80/.*(?:\.|%2e)getjetso(?:\.|%2e)com(?:/|%2f)forum
 .getjetso.com:80/forum
 :80/.*getiton(?:\.|%2e)com
@@ -1245,6 +1240,7 @@ www.zensur.freerk.com:80/
 .gfw.org.ua
 :80/.*(?:\.|%2e)ggssl(?:\.|%2e)com
 .ggssl.com
+.ghost.org
 .giga-web.jp
 cn.giganews.com:80/
 :80/.*gigporno(?:\.|%2e)ru
@@ -1252,6 +1248,8 @@ cn.giganews.com:80/
 .gimpshop.com
 .girlbanker.com
 .glennhilton.com
+:80/.*globaljihad(?:\.|%2e)net
+.globaljihad.net
 :80/.*globalmuseumoncommunism(?:\.|%2e)org
 .globalmuseumoncommunism.org
 .globalrescue.net
@@ -1260,6 +1258,7 @@ cn.giganews.com:80/
 :80/.*gmbd(?:\.|%2e)cn
 .gmbd.cn
 .gmhz.org
+.goagent.biz
 :80/.*godfootsteps(?:\.|%2e)org
 .godfootsteps.org
 www.goldenmelody.com.tw:80
@@ -1278,6 +1277,7 @@ www.goldenmelody.com.tw:80
 .goodreaders.com
 .goofind.com
 .googleusercontent.com
+.googledrive.com
 :80/.*(?:\.|%2e)googlesile(?:\.|%2e)com
 .googlesile.com
 :80/.*(?:\.|%2e)gopetition(?:\.|%2e)com
@@ -1771,6 +1771,8 @@ hk.gradconnection.com:80/
 :80/.*greatfirewallofchina(?:\.|%2e)org
 .greatroc.tw
 .gstatic.com
+:80/.*(?:\.|%2e)theguardian(?:\.|%2e)co.*
+.theguardian.co:80
 :80/.*guishan(?:\.|%2e)org
 .guishan.org
 .gunsamerica.com
@@ -1874,8 +1876,8 @@ hk-pub.com:80
 .hkday.net
 :80/.*(?:\.|%2e)hkdailynews(?:\.|%2e)com(?:\.|%2e)hk(?:/|%2f)china(?:\.|%2e)php
 .hkdailynews.com.hk:80/china(?:\.|%2e)php
-:80/.*(?:\.|%2e)hkej(?:\.|%2e)com(?:/|%2f)template(?:/|%2f)forum
-.hkej.com:80/template(?:/|%2f)forum
+:80/.*(?:\.|%2e)hkej(?:\.|%2e)com
+.hkej.com
 :80/.*(?:\.|%2e)hkepc(?:\.|%2e)com(?:/|%2f)forum(?:/|%2f)viewthread(?:\.|%2e)php\?tid=1153322
 .hkepc.com:80/forum(?:/|%2f)viewthread(?:\.|%2e)php\?tid=1153322
 :80/.*global(?:\.|%2e)hkepc(?:\.|%2e)com.*forum
@@ -1908,6 +1910,7 @@ hk-pub.com:80
 :80/.*holyspiritspeaks(?:\.|%2e)org
 .holyspiritspeaks.org
 .derekhsu.homeip.net
+homeservershow.com:80
 :80/.*hongmeimei(?:\.|%2e)com
 .hongmeimei.com
 .hongzhi.li
@@ -1924,7 +1927,7 @@ hk-pub.com:80
 .hqcdp.org
 :80/.*(?:\.|%2e)hrcir(?:\.|%2e)com
 .hrcir.com
-:80/.*hrichina(?:\.|%2e)org
+:80/.*(?:\.|%2e)hrichina(?:\.|%2e)org
 .hrichina.org
 :80/.*(?:\.|%2e)hrw(?:\.|%2e)org
 .hrw.org
@@ -1972,6 +1975,8 @@ cn.ibtimes.com:80
 .iconpaper.org
 :80/.*w(?:\.|%2e)idaiwan(?:\.|%2e)com(?:/|%2f)forum
 .w.idaiwan.com:80/forum
+:80/.*idemocracy(?:\.|%2e)asia
+.idemocracy.asia
 :80/.*(?:\.|%2e)identi(?:\.|%2e)ca
 .identi.ca
 .idiomconnection.com
@@ -2084,22 +2089,6 @@ iptorrents.com:443
 .gmozomg.izihost.org
 :80/.*(?:\.|%2e)izles(?:\.|%2e)net
 .izles.net
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*285688934
-.itunes.apple.:80/.*285688934
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*358801284
-.itunes.apple.:80/.*358801284
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*375584677
-.itunes.apple.:80/.*375584677
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*383949089
-.itunes.apple.:80/.*383949089
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*319295332
-.itunes.apple.:80/.*319295332
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e).*418987775
-.itunes.apple.:80/.*418987775
-:80/.*itunes(?:\.|%2e)apple(?:\.|%2e)com(?:/|%2f)us.*id447119634
-.itunes.apple.com:80/us.*id447119634
-:80/.*(?:\.|%2e)apple(?:\.|%2e).*isunaffairs
-.apple.:80/.*isunaffairs
 .j.mp
 :80/.*blog(?:\.|%2e)jackjia(?:\.|%2e)com
 .blog.jackjia.com
@@ -2160,6 +2149,7 @@ iptorrents.com:443
 .kagyuoffice.org.tw
 :80/.*(?:\.|%2e)kaiyuan(?:\.|%2e)de
 .kaiyuan.de
+.kakao.com
 :80/.*kanzhongguo(?:\.|%2e)com
 .kanzhongguo.com
 :80/.*kanzhongguo(?:\.|%2e)eu
@@ -2256,6 +2246,7 @@ iptorrents.com:443
 .limiao.net
 :80/.*abitno(?:\.|%2e)linpie(?:\.|%2e)com(?:/|%2f)use-ipv6-to-fuck-gfw
 .abitno.linpie.com:80/use-ipv6-to-fuck-gfw
+.line.me
 :80/.*(?:\.|%2e)linglingfa(?:\.|%2e)com
 .linglingfa.com
 :80/.*(?:\.|%2e)linkideo(?:\.|%2e)com
@@ -2382,6 +2373,8 @@ iptorrents.com:443
 .melon-peach.com
 :80/.*memedia(?:\.|%2e)cn
 .memedia.cn
+:80/.*(?:\.|%2e)memrijttm(?:\.|%2e)org
+.memrijttm.org
 :80/.*merit-times(?:\.|%2e)com(?:\.|%2e)tw
 .merit-times.com.tw
 :80/.*(?:\.|%2e)mesotw(?:\.|%2e)com(?:/|%2f)bbs
@@ -2540,6 +2533,7 @@ www.monlamit.org:80
 .nanyangpost.com
 :80/.*(?:\.|%2e)nanzao(?:\.|%2e)com
 .nanzao.com
+line.naver.jp:80/
 .navicat.com
 :80/.*(?:\.|%2e)nakido(?:\.|%2e)com
 .nakido.com
@@ -2662,6 +2656,8 @@ www.monlamit.org:80
 .nuvid.com
 :80/.*nuzcom(?:\.|%2e)com
 .nuzcom.com
+:80/.*(?:\.|%2e)nydus(?:\.|%2e)ca
+.nydus.ca
 .nyt.com
 .nytco.com
 :80/.*(?:\.|%2e)nytimes(?:\.|%2e)com
@@ -2704,6 +2700,7 @@ www.monlamit.org:80
 .the-sun.on.cc
 :80/.*tv(?:\.|%2e)on(?:\.|%2e)cc
 .tv.on.cc
+onedrive.live.com:443/
 :80/.*(?:\.|%2e)onlylady(?:\.|%2e)cn
 .onlylady.cn
 :80/.*onmoon(?:\.|%2e)net
@@ -3066,8 +3063,6 @@ post.ly:80
 .realraptalk.com
 :80/.*(?:\.|%2e)recordhistory(?:\.|%2e)org
 .recordhistory.org
-:80/.*blog(?:\.|%2e)redren(?:\.|%2e)com(?:/|%2f)2009(?:/|%2f)01(?:/|%2f)jap-let-you-use-online-stealth
-.blog.redren.com:80/2009(?:/|%2f)01(?:/|%2f)jap-let-you-use-online-stealth
 :80/.*(?:\.|%2e)redtube(?:\.|%2e)com
 .redtube.com
 :80/.*referer(?:\.|%2e)us
@@ -3234,6 +3229,8 @@ tweets.seraph.me:80/
 :80/.*shadow(?:\.|%2e)ma
 .shadow.ma
 .shadowsocks.org
+:80/.*shahamat-english(?:\.|%2e)com
+.shahamat-english.com
 :80/.*(?:\.|%2e)shangfang(?:\.|%2e)org
 .shangfang.org
 :80/.*shapeservices(?:\.|%2e)com
@@ -3248,6 +3245,8 @@ tweets.seraph.me:80/
 .sharpdaily.hk
 :80/.*(?:\.|%2e)shaunthesheep(?:\.|%2e)com
 .shaunthesheep.com
+:80/.*sheikyermami(?:\.|%2e)com
+.sheikyermami.com
 .shellmix.com
 :80/.*shenshou(?:\.|%2e)org
 .shenshou.org
@@ -3362,6 +3361,8 @@ www.skype.com:80/zh-Hant
 .sod.co.jp
 :80/.*(?:\.|%2e)softether(?:\.|%2e)org
 .softether.org
+:80/.*(?:\.|%2e)softether-download(?:\.|%2e)com
+.softether-download.com
 .sogclub.com
 :80/.*sohcradio(?:\.|%2e)com
 .sohcradio.com
@@ -3539,6 +3540,7 @@ cdn.sstatic.net:80/
 :80/.*taiwan-sex(?:\.|%2e)com
 .taiwan-sex.com
 .tamiaode.tk
+.tanc.org
 :80/.*tangben(?:\.|%2e)com
 .tangben.com
 :80/.*(?:\.|%2e)taolun(?:\.|%2e)info
@@ -3560,6 +3562,7 @@ cdn.sstatic.net:80/
 .teck.in:80
 :80/.*(?:\.|%2e)telecomspace(?:\.|%2e)com
 .telecomspace.com
+.telegraph.co.uk
 :80/.*(?:\.|%2e)tenacy(?:\.|%2e)com
 .tenacy.com
 .theampfactory.com
@@ -3606,6 +3609,8 @@ cdn.sstatic.net:80/
 .thumbzilla.com
 :80/.*tiananmenmother(?:\.|%2e)org
 .tiananmenmother.org
+.tiananmenuniv.com
+.tiananmenuniv.net
 .tiandixing.org
 :80/.*(?:\.|%2e)tianhuayuan(?:\.|%2e)com
 .tianhuayuan.com
@@ -4151,6 +4156,7 @@ uploaded.to:80/file
 .vpnbook.com
 :80/.*vpnfire(?:\.|%2e)com
 .vpnfire.com
+.vpngate.jp
 :80/.*(?:\.|%2e)vpngate(?:\.|%2e)net
 .vpngate.net
 .vpnpop.com
@@ -4323,8 +4329,8 @@ uploaded.to:80/file
 .wqyd.org
 :80/.*wretch(?:\.|%2e)cc
 .wretch.cc
-:80/.*cn(?:\.|%2e)wsj(?:\.|%2e)com
-.cn.wsj.com
+:80/.*(?:\.|%2e)wsj(?:\.|%2e)com
+.wsj.com
 :80/.*(?:\.|%2e)wtfpeople(?:\.|%2e)com
 .wtfpeople.com
 :80/.*(?:\.|%2e)wuala(?:\.|%2e)com
@@ -4344,7 +4350,7 @@ uploaded.to:80/file
 :80/.*wzyboy(?:\.|%2e)im(?:/|%2f)post(?:/|%2f)160
 .wzyboy.im:80/post(?:/|%2f)160
 www.x-berry.com:80/goagent
-x-art.com:80
+.x-art.com
 .x-wall.org
 :80/.*x1949x(?:\.|%2e)com
 .x1949x.com
@@ -4362,6 +4368,8 @@ x-art.com:80
 .destiny.xfiles.to:80/ubbthreads
 :80/.*(?:\.|%2e)xfm(?:\.|%2e)pp(?:\.|%2e)ru
 .xfm.pp.ru
+:80/.*xgmyd(?:\.|%2e)com
+.xgmyd.com
 :80/.*xh4n(?:\.|%2e)cn(?:/|%2f)blog
 .xh4n.cn:80/blog
 :80/.*xhamster(?:\.|%2e)com
@@ -5592,7 +5600,6 @@ upload.wikimedia.org:443
 .zhongsou.com
 autoproxy.org:443
 ime.baidu.jp:80
-.client*.google.com
 .xunlei.com
 .weibo.com
 .renren.com
