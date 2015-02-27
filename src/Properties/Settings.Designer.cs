@@ -354,7 +354,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://x-wall.org")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lunarlove/XWall")]
         public string WebsiteUrl {
             get {
                 return ((string)(this["WebsiteUrl"]));

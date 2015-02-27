@@ -39,7 +39,7 @@
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
-                            <RadioButton x:Name="proxyTypeGaRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource GaAndDescription}" />
+                            <RadioButton x:Name="proxyTypeGaRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource GaAndDescription}" IsEnabled="False" />
                             <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource SshTunnelAndDescription}" />
                             <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
                             <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />

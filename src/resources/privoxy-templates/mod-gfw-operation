@@ -168,7 +168,7 @@
                     button.disabled = true;
                     button.innerHTML = lang.adding;
 
-                    require("http://local.x-wall.org:14220/rule.ashx?new=" + encodeURIComponent(rule), function (done) {
+                    require("http://localhost:14220/rule.ashx?new=" + encodeURIComponent(rule), function (done) {
                         if (done) {
                             startTest();
                         }
@@ -243,7 +243,7 @@
                     button.disabled = false;
 
                     button.onclick = function () {
-                        require("http://local.x-wall.org:14220/rule.ashx?del=" + encodeURIComponent(rule), function () { });
+                        require("http://localhost:14220/rule.ashx?del=" + encodeURIComponent(rule), function () { });
                         button.disabled = true;
                         button.innerHTML = lang.sorry;
                     };

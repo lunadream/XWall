@@ -178,7 +178,7 @@ namespace XWall {
 
                         customDefaultText =
                             "{+forward-override{" + defaultForwardSettings + "}}" + "\r\n" +
-                            "local.x-wall.org" + "\r\n" +
+                            "null" + "\r\n" +
                             String.Join("\r\n", doNotForwardRules.ToArray());
                     }
                 }

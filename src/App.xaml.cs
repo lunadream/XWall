@@ -193,7 +193,7 @@ namespace XWall {
                 client.UploadValuesAsync(new Uri(settings.ErrorReportUrl), query);
 
                 var msg = (resources["UnhandledExceptionMessage"] as string).Replace("%n", Environment.NewLine);
-                MessageBox.Show(msg, resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(msg+e.Exception.ToString(), resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
 
                 e.Handled = true;
             };

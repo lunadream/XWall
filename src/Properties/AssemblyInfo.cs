@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("X-Wall")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Groinup")]
+[assembly: AssemblyCompany("LunaTech")]
 [assembly: AssemblyProduct("X-Wall")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © LunaTech 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

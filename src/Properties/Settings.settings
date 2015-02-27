@@ -93,7 +93,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="WebsiteUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://x-wall.org</Value>
+      <Value Profile="(Default)">https://github.com/lunarlove/XWall</Value>
     </Setting>
     <Setting Name="UpdateInstallerUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe</Value>

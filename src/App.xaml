@@ -11,10 +11,9 @@
 			<SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
 			<SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
         	<SolidColorBrush x:Key="Button.Pressed.Border" Color="#FFB2B2B2"/>
-			<SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-			<SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-			<SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-			<Style TargetType="{x:Type Button}">
+            <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+            <Style TargetType="{x:Type Button}">
         	<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         	<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
         	<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -28,59 +27,47 @@
         			<ControlTemplate TargetType="{x:Type Button}">
         				<Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" BorderBrush="#FFC7C7C7" CornerRadius="1">
         					<Border.Background>
-        						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        							<GradientStop Color="White" Offset="0"/>
-        							<GradientStop Color="#FFECECEC" Offset="1"/>
-        						</LinearGradientBrush>
-        					</Border.Background>
-        					<ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        				</Border>
-        				<ControlTemplate.Triggers>
-        					<Trigger Property="IsDefaulted" Value="true">
-        						<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-        					</Trigger>
-        					<Trigger Property="IsMouseOver" Value="true">
-        						<Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
-                                            <ColorAnimation To="White" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation To="White" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
-                                            <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-        					</Trigger>
-        					<Trigger Property="IsPressed" Value="true">
-        						<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-        					</Trigger>
-        					<Trigger Property="IsEnabled" Value="false">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="White" Offset="0"/>
+                                        <GradientStop Color="#FFECECEC" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal">
                                             <Storyboard>
-                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="White" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
                                                 <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
                                             </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                    <Trigger.ExitActions>
-                                        <BeginStoryboard>
+                                        </VisualState>
+                                        <VisualState Name="MouseOver">
                                             <Storyboard>
                                                 <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
                                                 <ColorAnimation To="White" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
                                             </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.ExitActions>
-                                    
-        					</Trigger>
-        				</ControlTemplate.Triggers>
-        			</ControlTemplate>
+                                        </VisualState>
+                                        <VisualState Name="Disabled">
+                                            <Storyboard>
+                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            </Storyboard>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true"/>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false"/>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
         		</Setter.Value>
         	</Setter>
         </Style>
@@ -110,8 +97,8 @@
 			</Setter>
         </Style>
 		<SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
-		<SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
-		<SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+		<SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FFA6A6A6"/>
+		<SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF737373"/>
 		<Style TargetType="{x:Type TextBox}">
 			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
 			<Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
@@ -164,16 +151,16 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
-		<SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
-		<SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+		<SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFFFFFFF"/>
+		<SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FFA6A6A6"/>
 		<SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
 		<SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
 		<SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
 		<SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
-		<SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
-		<SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+		<SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFF2F2F2"/>
+		<SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF737373"/>
 		<SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
-		<SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+		<SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF666666"/>
 		<Style TargetType="{x:Type CheckBox}">
 			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
 			<Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
@@ -233,7 +220,7 @@
 			</Setter>
 		</Style>
 			<SolidColorBrush x:Key="TabItem.MouseOver.Background" Color="#FAFAFA"/>
-        	<SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#7EB4EA"/>
+            <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#DEDEDE"/>
 			<SolidColorBrush x:Key="TabItem.Static.Background" Color="#F2F2F2"/>
 			<SolidColorBrush x:Key="TabItem.Static.Border" Color="#DEDEDE"/>
         	<SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
@@ -481,6 +468,70 @@
         						</Trigger>
         						<Trigger Property="IsEnabled" Value="false">
         							<Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        						</Trigger>
+        					</ControlTemplate.Triggers>
+        				</ControlTemplate>
+        			</Setter.Value>
+        		</Setter>
+        	</Style>
+        	<SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF"/>
+        	<SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FFA6A6A6"/>
+        	<SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFFFFFFF"/>
+        	<SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF707070"/>
+        	<SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121"/>
+        	<SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6"/>
+        	<SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC"/>
+        	<SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070"/>
+        	<SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFF2F2F2"/>
+        	<SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF737373"/>
+        	<SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121"/>
+        	<SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF666666"/>
+        	<Style TargetType="{x:Type RadioButton}">
+        		<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        		<Setter Property="Background" Value="{StaticResource RadioButton.Static.Background}"/>
+        		<Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}"/>
+        		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        		<Setter Property="BorderThickness" Value="1"/>
+        		<Setter Property="Template">
+        			<Setter.Value>
+        				<ControlTemplate TargetType="{x:Type RadioButton}">
+        					<Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+        						<Grid.ColumnDefinitions>
+        							<ColumnDefinition Width="Auto"/>
+        							<ColumnDefinition Width="*"/>
+        						</Grid.ColumnDefinitions>
+        						<Border x:Name="radioButtonBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,1,2,1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+        							<Grid x:Name="markGrid" Margin="2">
+        								<Ellipse x:Name="optionMark" Fill="{StaticResource RadioButton.Static.Glyph}" MinWidth="6" MinHeight="6" Opacity="0"/>
+        							</Grid>
+        						</Border>
+        						<ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        					</Grid>
+        					<ControlTemplate.Triggers>
+        						<Trigger Property="HasContent" Value="true">
+        							<Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+        							<Setter Property="Padding" Value="4,-1,0,0"/>
+        						</Trigger>
+        						<Trigger Property="IsMouseOver" Value="true">
+        							<Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.MouseOver.Background}"/>
+        							<Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.MouseOver.Border}"/>
+        							<Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.MouseOver.Glyph}"/>
+        						</Trigger>
+        						<Trigger Property="IsEnabled" Value="false">
+        							<Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Disabled.Background}"/>
+        							<Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Disabled.Border}"/>
+        							<Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.Disabled.Glyph}"/>
+        						</Trigger>
+        						<Trigger Property="IsPressed" Value="true">
+        							<Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Pressed.Background}"/>
+        							<Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Pressed.Border}"/>
+        							<Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.Pressed.Glyph}"/>
+        						</Trigger>
+        						<Trigger Property="IsChecked" Value="true">
+        							<Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+        						</Trigger>
+        						<Trigger Property="IsChecked" Value="{x:Null}">
+        							<Setter Property="Opacity" TargetName="optionMark" Value="0.56"/>
         						</Trigger>
         					</ControlTemplate.Triggers>
         				</ControlTemplate>
