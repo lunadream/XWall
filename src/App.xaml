@@ -61,9 +61,23 @@
         						<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
         					</Trigger>
         					<Trigger Property="IsEnabled" Value="false">
-        						<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-        						<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-        						<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#FFECECEC" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="White" BeginTime="0:0:0.0" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                    
         					</Trigger>
         				</ControlTemplate.Triggers>
         			</ControlTemplate>
