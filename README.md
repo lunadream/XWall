@@ -1,7 +1,7 @@
 #XWall
 
-Please visit [xwall.im/en-US/](http://xwall.im/en-US/) for more information.  
-请访问 [xwall.im](http://xwall.im) 了解更多.
+~~Please visit [xwall.im/en-US/](http://xwall.im/en-US/) for more information.~~
+~~请访问 [xwall.im](http://xwall.im) 了解更多.~~
 
 使用说明请见[这里](https://github.com/lunarlove/XWall/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E).
 

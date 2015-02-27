@@ -316,7 +316,7 @@ namespace XWall {
                 var optionsPtr = Marshal.AllocCoTaskMem(optSize * options.Length);
                 // copy the array over into that spot in memory ...
                 for (var i = 0; i < options.Length; i++) {
-                    var opt = new IntPtr(optionsPtr.ToInt32() + (i * optSize));
+                    var opt = new IntPtr(optionsPtr.ToInt64() + (i * optSize));
                     Marshal.StructureToPtr(options[i], opt, false);
                 }
 
@@ -331,7 +331,7 @@ namespace XWall {
 
                 Marshal.PtrToStructure(ipcoListPtr, list);
                 Marshal.PtrToStructure(list.pOptions, options[0]);
-                Marshal.PtrToStructure(new IntPtr(list.pOptions.ToInt32() + optSize), options[1]);
+                Marshal.PtrToStructure(new IntPtr(list.pOptions.ToInt64() + optSize), options[1]);
 
                 var proxyInfo = new ProxyInfo() {
                     ConnectionName = connection,

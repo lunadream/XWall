@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!-- MainWindow -->
@@ -114,9 +114,9 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="About">About</sys:String>
     <sys:String x:Key="AboutXWall">About X-Wall</sys:String>
     <sys:String x:Key="Version">Version</sys:String>
-    <sys:String x:Key="AuthorLine">Author VILIC VANE</sys:String>
+    <sys:String x:Key="AuthorLine">Author LunaTech</sys:String>
     <sys:String x:Key="XWallDescription">X-Wall is a small tool wraps together Plink and Privoxy to provide people an easier way to cross the Great Firewall of China.</sys:String>
-    <sys:String x:Key="FeedbackLine">Any feedback please email</sys:String>
+    <sys:String x:Key="FeedbackLine">Any feedback please email our team</sys:String>
     <sys:String x:Key="DonateLineStart">I would never mind if you want to&#160;</sys:String>
     <sys:String x:Key="DonateLinkText">buy me a cup of coffee</sys:String>
     <sys:String x:Key="DonateLineEnd">.</sys:String>

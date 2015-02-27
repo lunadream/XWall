@@ -11,7 +11,7 @@
         StateChanged="onWindowStateChanged"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        Icon="Icons/main.ico">
+        Icon="Icons/main.ico" Background="#FFF3F3F3" FontSize="13.333">
     <Window.Resources>
         <local:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
         <local:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
@@ -19,23 +19,20 @@
         <local:IntegerToBooleanNotConverter x:Key="IntegerToBooleanNotConverter" />
         <local:BooleanNotConverter x:Key="BooleanNotConverter" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        
+
     </Window.Resources>
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-            <GradientStop Color="#FFF0F0F0" Offset="0"/>
-            <GradientStop Color="#FFEEEEEE" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
-    <Grid>
+    
+    <Grid Margin="0" Width="422">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="0" HorizontalAlignment="Left" Width="400" Margin="5" Background="#FFF9F9F9">
+        <TabControl Grid.Row="0" HorizontalAlignment="Left" Margin="5" Width="412">
             <TabItem Header="{StaticResource BasicSettings}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource ProxyType}" Margin="0,0,0,2">
-                        <Grid Margin="10,5,10,0">
+                        <Grid Margin="10,5,-2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
@@ -189,7 +186,7 @@
                             <CheckBox x:Name="listenToLocalOnlyCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource ListenToLocalOnlyDescription}" />
                             <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
                             <TextBox x:Name="proxyPortTextBox" Grid.Row="3" Grid.Column="1" Width="40" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <CheckBox x:Name="useIntranetProxyCheckBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UseIntranetProxyDescription}" />
+                            <CheckBox x:Name="useIntranetProxyCheckBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource UseIntranetProxyDescription}"/>
                             <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Server}" />
                             <TextBox x:Name="intranetProxyServerTextBox" Grid.Row="5" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" IsEnabled="{Binding IsChecked, ElementName=useIntranetProxyCheckBox}" />
                             <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Port}" />
@@ -347,7 +344,7 @@
             <TabItem Header="{StaticResource Rules}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource RuleOptions}" Margin="0,0,0,2">
-                        <Grid Margin="10,5,10,3">
+                        <Grid Margin="10,5,-2,3">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
