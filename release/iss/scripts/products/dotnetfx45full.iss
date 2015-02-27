@@ -13,7 +13,7 @@ const
 
 procedure dotnetfx4full();
 begin
-	if (netfxspversion(NetFx40Full, '') < 1) then
+	if (netfxspversion(NetFx40Full, '') <> 0) then
 		AddProduct('dotnetfx4full' + GetArchitectureString() + '.exe',
 			'/lang:enu /passive /norestart',
 			CustomMessage('dotnetfx4full_title'),
