@@ -29,6 +29,7 @@ SetupIconFile=E:\WorkSpace\XWall\src\Icons\main.ico
 UninstallDisplayIcon=E:\WorkSpace\XWall\src\Icons\main.ico
 Compression=lzma/Max
 SolidCompression=true
+MinVersion=6.0
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
@@ -64,7 +65,7 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 #include "scripts\products\dotnetfxversion.iss"
 
 #include "scripts\products\msi31.iss"
-#include "scripts\products\dotnetfx35sp1.iss"
+#include "scripts\products\dotnetfx45full.iss"
 
 [Registry]
 Root: "HKCR"; Subkey: "xwall"; Flags: deletekey
@@ -96,7 +97,7 @@ var
 begin
 	initwinversion();
 	msi31('3.1');
-	dotnetfx35sp1();
+	dotnetfx4full();
   Result := true;
 end;
 
