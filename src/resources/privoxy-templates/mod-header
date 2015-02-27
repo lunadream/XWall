@@ -1,7 +1,7 @@
 <div id="header-wrapper">
     <div id="header">
         <a id="logo-wrapper" href="http://x-wall.org/">
-            <img id="logo" alt="X-Wall Logo" src="http://local.x-wall.org:14220/transmit.ashx?file=logo.png&type=image/png" />
+            <img id="logo" alt="X-Wall Logo" src="http://localhost:14220/transmit.ashx?file=logo.png&type=image/png" />
             <h1 id="title">Privoxy</h1>
             <span id="domain">@my-ip-address@:@my-port@ / built-in X-WALL</span>
         </a>

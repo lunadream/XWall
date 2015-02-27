@@ -4,31 +4,23 @@
 DependenciesDir=MyProgramDependencies
 
 en.depdownload_msg=The following applications are required before setup can continue:%n%n%1%nDownload and install now?
-zh.depdownload_msg=需要先安装下列程序:%n%n%1%n是否现在下载并安装?
 
 en.depdownload_memo_title=Download dependencies
-zh.depdownload_memo_title=下载依赖项
 
 en.depinstall_memo_title=Install dependencies
-zh.depinstall_memo_title=安装依赖项
+
 
 en.depinstall_title=Installing dependencies
-zh.depinstall_title=正在安装依赖项
 
 en.depinstall_description=Please wait while Setup installs dependencies on your computer.
-zh.depinstall_description=请稍等.
 
 en.depinstall_status=Installing %1...
-zh.depinstall_status=正在安装 %1...
 
 en.depinstall_missing=%1 must be installed before setup can continue. Please install %1 and run Setup again.
-zh.depinstall_missing=安装 %1 后才能继续. 请安装 %1 并重新运行此安装程序.
 
 en.depinstall_error=An error occured while installing the dependencies. Please restart the computer and run the setup again or install the following dependencies manually:%n
-zh.depinstall_error=安装依赖项的过程中发生了错误. 请重新启动电脑后再次运行此安装程序, 或者手动安装下列依赖项:%n
 
 en.isxdl_langfile=
-zh.isxdl_langfile=chinese.ini
 
 [Files]
 Source: "scripts\isxdl\chinese.ini"; Flags: dontcopy

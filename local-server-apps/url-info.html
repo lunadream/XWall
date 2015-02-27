@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="shortcut icon" href="http://localhost:14220/transmit.ashx?file=icon.ico&type=image/x-icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:14220/transmit.ashx?file=style.css&type=text/css" />
+</head>
+<body>
+<div id="header-wrapper">
+    <div id="header">
+        <a id="logo-wrapper" href="http://x-wall.org/">
+            <img id="logo" alt="X-Wall Logo" src="http://localhost:14220/transmit.ashx?file=logo.png&type=image/png" />
+            <h1 id="title">X-WALL</h1>
+            <span id="domain">x-wall.org</span>
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="http://www.privoxy.org/" target="_blank">Privoxy</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main-wrapper">
+    <div id="body-wrapper">
+        <div id="content-wrapper">
+            <div data-lang="en-US" data-title="View the Action for a URL">
+                <h3>View Whether a URL Will Be Forwarded</h3>
+                <div id="result-wrapper-en-us" style="display: none;">
+                    <h4>Forward Settings:</h4>
+                    <p>Fetching...</p>
+                </div>
+                <h4>Please enter a URL:</h4>
+                <form method="GET">
+                    <p>
+                        <input type="text" name="url" style="width: 300px;" value="">
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+            <div data-lang="zh-CN" data-title="查看 URL 对应的行为">
+                <h3>查看 URL 是否会被转发</h3>
+                <div id="result-wrapper-zh-cn" style="display: none;">
+                    <h4>转发设置:</h4>
+                    <p>获取中...</p>
+                </div>
+                <h4>请输入一个 URL:</h4>
+                <form method="GET">
+                    <p>
+                        <input type="text" name="url" style="width: 300px;" value="">
+                        <button type="submit">提交</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="sidebar-wrapper">
+            <div data-lang="en-US" class="item dark">
+                <h2>More Operation</h2>
+                <ul>
+                    <li>
+                        <a href="">View the action for a URL</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-lang="zh-CN" class="item dark">
+                <h2>更多操作</h2>
+                <ul>
+                    <li>
+                        <a href="">查看 URL 对应的行为</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div>©2015 <a href="javascript:void(0);" target="_blank">VILIC VANE</a></div>
+    </div>
+</div>
+<script>
+    var lang;
+    var langs = {
+        "en-US": {
+            wrapperId: "result-wrapper-en-us",
+            forwardDescription: 'Request for <a href="{url}">{url}</a> will be forwarded through {type} proxy {host}.',
+            directDescription: 'Request for <a href="{url}">{url}</a> will be made directly, no forwarding settings would be applied.'
+        },
+        "zh-CN": {
+            wrapperId: "result-wrapper-zh-cn",
+            forwardDescription: '请求 <a href="{url}">{url}</a> 将会通过 {type} 代理 {host} 转发.',
+            directDescription: '请求 <a href="{url}">{url}</a> 将会直接连接, 没有转发设置被应用.'
+        }
+    };
+
+    window.onlangready = function () {
+        lang = langs[pageLang];
+
+        var wrapper = document.getElementById(lang.wrapperId);
+        var p = wrapper.getElementsByTagName("p")[0];
+
+        if (/[&?]url=[^&].*/.test(window.location.search)) {
+            wrapper.style.display = "block";
+            require("http://config.privoxy.org/show-url-info" + window.location.search, function (info) {
+                var description;
+                if (info.forward.type) {
+                    description = lang.forwardDescription;
+                }
+                else {
+                    description = lang.directDescription;
+                }
+
+                description = description.replace(/\{url\}/g, info.url);
+
+                if (info.forward.type) {
+                    description = description.replace(/\{type\}/g, info.forward.type.toUpperCase());
+                    description = description.replace(/\{host\}/g, info.forward.host + ":" + info.forward.port);
+                }
+
+                p.innerHTML = description;
+            }, undefined, "urlInfoCallback");
+        }
+    };
+
+    function require(url, callback, callbackQueryName, callbackName) {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+
+        if (arguments.length < 4) {
+            callbackName = "callback_" + Math.floor(Math.random() * 9999999999999999);
+            if (arguments.length < 3) {
+                callbackQueryName = "callback";
+            }
+        }
+
+        if (callbackQueryName) {
+            url += "&" + callbackQueryName + "=" + callbackName;
+        }
+
+        script.src = url;
+
+        window[callbackName] = function () {
+            window[callbackName] = undefined;
+            head.removeChild(script);
+            callback.apply(this, arguments);
+        };
+
+        head.insertBefore(script, head.firstChild);
+    }
+</script>
+<script src="http://localhost:14220/transmit.ashx?file=privoxy-templates/lang-helper.js&type=text/javascript"></script>
+</body>
+</html>

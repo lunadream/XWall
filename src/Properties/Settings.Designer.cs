@@ -354,15 +354,6 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("i@vilic.info")]
-        public string FeedbackEmail {
-            get {
-                return ((string)(this["FeedbackEmail"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://x-wall.org")]
         public string WebsiteUrl {
             get {
@@ -483,7 +474,7 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://local.x-wall.org:14220/url-info.html")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:14220/url-info.html")]
         public string ShowUrlInfoUrl {
             get {
                 return ((string)(this["ShowUrlInfoUrl"]));
@@ -916,6 +907,15 @@ namespace XWall.Properties {
         public string ErrorReportUrl {
             get {
                 return ((string)(this["ErrorReportUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("team@lunatech.me")]
+        public string FeedbackEmail {
+            get {
+                return ((string)(this["FeedbackEmail"]));
             }
         }
     }

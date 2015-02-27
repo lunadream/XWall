@@ -21,5 +21,8 @@ x-wall.org
 @@||youku.com
 @@||sina.com.cn
 @@||163.com
+@@||126.com
 @@||qq.com
 @@||taobao.com
+@@||tmall.com
+@@||jd.com

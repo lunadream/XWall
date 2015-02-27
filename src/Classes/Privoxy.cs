@@ -69,7 +69,6 @@ namespace XWall {
             si.Arguments = '"' + App.AppDataDirectory + settings.ConfigsFolderName + settings.PrivoxyConfigFileName + '"';
             si.CreateNoWindow = true;
             si.UseShellExecute = false;
-
             process.Start();
             process.WaitForExit();
 

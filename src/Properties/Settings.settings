@@ -92,9 +92,6 @@
     <Setting Name="OriginalProxies" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FeedbackEmail" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">i@vilic.info</Value>
-    </Setting>
     <Setting Name="WebsiteUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://x-wall.org</Value>
     </Setting>
@@ -132,7 +129,7 @@
       <Value Profile="(Default)">submit-new-rule-toggle</Value>
     </Setting>
     <Setting Name="ShowUrlInfoUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://local.x-wall.org:14220/url-info.html</Value>
+      <Value Profile="(Default)">http://localhost:14220/url-info.html</Value>
     </Setting>
     <Setting Name="PrivoxyTemplatesFolderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">privoxy-templates\</Value>
@@ -259,6 +256,9 @@
     </Setting>
     <Setting Name="ErrorReportUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://xwallstats.sinaapp.com/rpt.php</Value>
+    </Setting>
+    <Setting Name="FeedbackEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">team@lunatech.me</Value>
     </Setting>
   </Settings>
 </SettingsFile>
