@@ -24,6 +24,7 @@ using XWall.Properties;
 namespace XWall {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// TODO:Remove '//' in line 369 before release build
     /// </summary>
     public partial class MainWindow : Window {
         static Settings settings = Settings.Default;

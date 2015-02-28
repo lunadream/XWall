@@ -14,7 +14,6 @@
             <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
             <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
             <Style TargetType="{x:Type Button}">
-        	<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         	<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
         	<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
         	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -71,32 +70,22 @@
         		</Setter.Value>
         	</Setter>
         </Style>
-		<Style TargetType="{x:Type Hyperlink}">
-			<Setter Property="Foreground" Value="#FF62A6E4"/>
-			<Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
-			<Style.Triggers>
-				<Trigger Property="IsMouseOver" Value="True">
-					<Setter Property="Foreground" Value="#FF9966FF"/>
-				</Trigger>
-				<Trigger Property="IsEnabled" Value="False">
-					<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-				</Trigger>
-				<Trigger Property="IsEnabled" Value="True">
-				<Setter Property="Cursor" Value="Hand"/>
-			</Trigger>
-		</Style.Triggers>
-		</Style>
-
-		<Style x:Key="FocusVisual">
-			<Setter Property="Control.Template">
-				<Setter.Value>
-					<ControlTemplate>
-						<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-        </Style>
-		<SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+            <Style TargetType="{x:Type Hyperlink}">
+                <Setter Property="Foreground" Value="#FF62A6E4"/>
+                <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="#FF9966FF"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="True">
+                        <Setter Property="Cursor" Value="Hand"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
 		<SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FFA6A6A6"/>
 		<SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF737373"/>
 		<Style TargetType="{x:Type TextBox}">
