@@ -45,6 +45,32 @@ namespace XWall {
 
         private void onWindowLoaded(object sender, RoutedEventArgs e) {
             InitializeBinding();
+            string GroinupDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Groinup";
+            if (System.IO.Directory.Exists(GroinupDir))
+            {
+                if (!File.Exists(GroinupDir+ "\\Updated")){
+                    DirectoryInfo directoryInfo = new DirectoryInfo(GroinupDir);
+                    DirectoryInfo[] arrayDir = directoryInfo.GetDirectories();
+                    SortAsFolderModifyTime(ref arrayDir);
+                    string lastversionAppdir = GroinupDir + "\\" + arrayDir[0].Name;
+                    directoryInfo = new DirectoryInfo(lastversionAppdir);
+                    arrayDir = directoryInfo.GetDirectories();
+                    SortAsFolderModifyTime(ref arrayDir);
+                    string lastversionCFGdir = lastversionAppdir + "\\" + arrayDir[0].Name;
+                    var result = settings.Import(lastversionCFGdir + "\\user.config");
+                    if (!result)
+                    {
+                        MessageBox.Show(resources["FailedImportSettings"] as string);
+                    }
+                    else
+                    {
+                        File.WriteAllText(GroinupDir+"\\Updated",null);
+                        MessageBox.Show(resources["UpdateSuccessDetails"] as string, resources["UpdateSuccessTitle"] as string,MessageBoxButton.OK,MessageBoxImage.Information);
+                        Process.Start(System.Windows.Forms.Application.ExecutablePath, "restart");
+                        App.Current.Shutdown();
+                    }
+                }
+            }
 
             var gaAppIdsToolTip = new ToolTip();
             gaAppIdsToolTip.Content = resources["GaAppIdsTooltip"] as string;
@@ -335,6 +361,7 @@ namespace XWall {
                         settings.GaLastServerVersion = settings.GaServerVersion;
                         MessageBox.Show(resources["NewGaServerMessage"] as string);
                     }
+                    
                 }).BeginInvoke(null, null);
             }
 
@@ -695,6 +722,10 @@ namespace XWall {
             var wizard = new GAEWizard();
             wizard.Owner = this;
             wizard.ShowDialog();
+        }
+        private void SortAsFolderModifyTime(ref DirectoryInfo[] dirs)
+        {
+            Array.Sort(dirs, delegate(DirectoryInfo x, DirectoryInfo y) { return y.LastWriteTime.CompareTo(x.LastWriteTime); });
         }
 
     }
