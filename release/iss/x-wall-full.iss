@@ -98,7 +98,7 @@ var
 begin
 	initwinversion();
 	msi31('3.1');
-	dotnetfx4full();
+	dotnetfx45(2);
   Result := true;
 end;
 

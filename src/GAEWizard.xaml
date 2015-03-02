@@ -2,19 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="{StaticResource GaeWizard}"
-        WindowStyle="ToolWindow"
-        ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight">
+        WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-            <GradientStop Color="#FFF9F9F9" Offset="0"/>
-            <GradientStop Color="#FFF8F8F8" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
-    <Grid Width="300" IsEnabled="False">
+    <Grid Width="300" IsEnabled="False" Margin="0">
         <StackPanel x:Name="homePanel" Margin="15" Visibility="Visible" IsEnabled="False" Opacity="0.45">
             <StackPanel.Effect>
                 <BlurEffect Radius="15"/>
@@ -91,7 +83,7 @@
                 <Button x:Name="verifyButton" IsEnabled="False" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" Width="80" Content="{StaticResource Verify}" Click="verifyButton_Click"></Button>
             </Grid>
         </StackPanel>
-        <Label HorizontalAlignment="Left" Margin="11,54,0,0" VerticalAlignment="Top" Width="275">
+        <Label HorizontalAlignment="Left" Margin="12,54,0,0" VerticalAlignment="Top" Width="275">
             <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="#FF303030">
                 <TextBlock.Effect>
                     <DropShadowEffect BlurRadius="2" ShadowDepth="0" Color="#FFB2B2B2" RenderingBias="Quality"/>
@@ -101,6 +93,5 @@
                 已经上传完毕的用户可以直接在设置页面填写APPID。
             </TextBlock>
         </Label>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="554,179,-354,-71" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

@@ -11,9 +11,9 @@ dotnetfx4full_size=66.8MB
 const
 	dotnetfx4full_url = 'http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe';
 
-procedure dotnetfx4full();
+procedure dotnetfx45(MinVersion: integer);
 begin
-	if (netfxspversion(NetFx40Full, '') <> 0) then
+  if (not netfxinstalled(NetFx45, '') or (netfxspversion(NetFx45, '') < MinVersion)) then
 		AddProduct('dotnetfx4full' + GetArchitectureString() + '.exe',
 			'/lang:enu /passive /norestart',
 			CustomMessage('dotnetfx4full_title'),
