@@ -515,7 +515,7 @@ namespace XWall {
             var client = new WebClient();
             //client.Proxy = null;
             client.DownloadStringAsync(url);
-
+            client.Encoding = System.Text.Encoding.UTF8;
             client.DownloadStringCompleted += (sender, e) => {
                 Dispatcher.BeginInvoke(new Action(() => {
                     checkingVersion = false;
