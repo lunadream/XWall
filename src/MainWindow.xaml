@@ -5,13 +5,12 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="{StaticResource XWallTitle}"
         ResizeMode="CanMinimize"
-        SizeToContent="WidthAndHeight"
         Loaded="onWindowLoaded"
         Closing="onWindowClosing"
         StateChanged="onWindowStateChanged"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        Icon="Icons/main.ico" Background="#FFF3F3F3" FontSize="13.333">
+        Icon="Icons/main.ico" Background="WhiteSmoke" FontSize="13.333" SizeToContent="WidthAndHeight">
     <Window.Resources>
         <local:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
         <local:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
@@ -28,7 +27,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="0" HorizontalAlignment="Left" Margin="5" Width="412">
+        <TabControl Grid.Row="0" HorizontalAlignment="Left" Margin="5" Width="412" BorderBrush="#FFDEDEDE">
             <TabItem Header="{StaticResource BasicSettings}">
                 <StackPanel Margin="0,0,0,3">
                     <GroupBox Header="{StaticResource ProxyType}" Margin="0,0,0,2">
@@ -55,7 +54,7 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Center" Text="{StaticResource GaAppIdsNotSet}"></TextBlock>
+                                <TextBlock Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Center"><Run Text="{DynamicResource GaAppIdsNotSet}"/></TextBlock>
                                 <Button x:Name="gaeWizardButton" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" Content="{StaticResource GaeWizard}" Click="gaeWizardButton_Click" />
                             </Grid>
                             <Grid Visibility="{Binding Text, ElementName=gaAppIdsTextBox, Mode=OneWay, Converter={StaticResource StringToVisibilityConverter}}">
@@ -417,7 +416,7 @@
                                 <Run Text="{StaticResource FeedbackLine}" />
                                 <Hyperlink Click="onFeedbackEmailClick"><Run x:Name="feedbackEmailText"></Run></Hyperlink>.
                             </TextBlock>
-                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,0" Visibility="Collapsed">
                                 <Run Text="{StaticResource DonateLineStart}" /><Hyperlink Click="onDonateLinkClick"><Run Text="{StaticResource DonateLinkText}"></Run></Hyperlink><Run Text="{StaticResource DonateLineEnd}" />
                             </TextBlock>
                         </StackPanel>
@@ -433,6 +432,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="onlineVersionTextBlock" VerticalAlignment="Center"></TextBlock>
                             <Button x:Name="downloadUpdateButton" Click="onDownloadUpdateButtonClick" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Download}" />
+                            
                         </Grid>
                     </GroupBox>
                 </StackPanel>

@@ -36,7 +36,6 @@ namespace XWall {
             prefixTextBox.Text = "ga-" + randomString();
             appsNumberTextBox.Text = Math.Max(settings.GaDefaultAppsNumber, settings.GaAppIds.Split('|').Length).ToString();
             currentState = homePanel;
-
             Loaded += (sender, e) => {
                 Rules.Enabled = false;
             };

@@ -363,24 +363,6 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe")]
-        public string UpdateInstallerUrl {
-            get {
-                return ((string)(this["UpdateInstallerUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/version")]
-        public string OnlineVersionUrl {
-            get {
-                return ((string)(this["OnlineVersionUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("setup.exe")]
         public string UpdateInstallerName {
             get {
@@ -820,15 +802,6 @@ namespace XWall.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-full.exe")]
-        public string UpdateFullInstallerUrl {
-            get {
-                return ((string)(this["UpdateFullInstallerUrl"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("google_hk")]
@@ -916,6 +889,33 @@ namespace XWall.Properties {
         public string FeedbackEmail {
             get {
                 return ((string)(this["FeedbackEmail"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup.exe")]
+        public string UpdateInstallerUrl {
+            get {
+                return ((string)(this["UpdateInstallerUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/version")]
+        public string OnlineVersionUrl {
+            get {
+                return ((string)(this["OnlineVersionUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup-full.exe")]
+        public string UpdateFullInstallerUrl {
+            get {
+                return ((string)(this["UpdateFullInstallerUrl"]));
             }
         }
     }

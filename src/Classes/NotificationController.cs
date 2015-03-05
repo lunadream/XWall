@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace XWall {
     partial class MainWindow {
@@ -88,12 +89,20 @@ namespace XWall {
 
                 menu.MenuItems.Add(window.profileContextMenu);
 
+                // Restart Application
+                menu.MenuItems.Add(resources["Restart_Text"] as string, (sender, e) =>
+                {
+                    Process.Start(System.Windows.Forms.Application.ExecutablePath, "restart");
+                    App.Current.Shutdown();
+                });
+
                 // Exit
 
                 menu.MenuItems.Add(resources["Exit"] as string, (sender, e) => {
                     System.Windows.Application.Current.Shutdown();
                 });
 
+                
                 // End
 
                 icon.ContextMenu = menu;

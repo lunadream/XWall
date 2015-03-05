@@ -102,6 +102,7 @@
     <sys:String x:Key="OneCustomRuleDescription">共有 1 条自定义规则</sys:String>
     <sys:String x:Key="CustomRulesDescription">共有 {0} 条自定义规则</sys:String>
     <sys:String x:Key="AddRules">添加规则</sys:String>
+    <sys:String x:Key="Restart_Text">重启程序</sys:String>
     <sys:String x:Key="Edit">编辑</sys:String>
     <sys:String x:Key="ShareRuleTitle">分享新规则</sys:String>
     <sys:String x:Key="ShareRuleMessage">要开启分享新规则的功能吗?%n
@@ -114,9 +115,9 @@
     <sys:String x:Key="About">关于</sys:String>
     <sys:String x:Key="AboutXWall">关于 X-Wall</sys:String>
     <sys:String x:Key="Version">版本号</sys:String>
-    <sys:String x:Key="AuthorLine">作者 LunaTech</sys:String>
+    <sys:String x:Key="AuthorLine">作者 LunaTech &amp; VILIC VANE</sys:String>
     <sys:String x:Key="XWallDescription">X-Wall 是一个整合了 Privoxy 和 Plink 的小工具, 提供给大家一个更简单方便的科学上网方案.</sys:String>
-    <sys:String x:Key="FeedbackLine">有任何建议请给我们发送邮件</sys:String>
+    <sys:String x:Key="FeedbackLine">有任何建议请在GitHub Issue页面递交</sys:String>
     <sys:String x:Key="DonateLineStart">如果你愿意&#160;</sys:String>
     <sys:String x:Key="DonateLinkText">帮我付杯咖啡钱</sys:String>
     <sys:String x:Key="DonateLineEnd">, 我会很开心.</sys:String>
@@ -133,6 +134,8 @@
     <sys:String x:Key="UpdateFailedDetails">X-Wall 似乎并没有成功更新.</sys:String>
     <sys:String x:Key="UpdateSuccessTitle">更新成功</sys:String>
     <sys:String x:Key="UpdateSuccessDetails">X-Wall 已经成功更新.</sys:String>
+    <sys:String x:Key="UpdateCancelByUserTitle">更新已取消</sys:String>
+    <sys:String x:Key="UpdateCancelByUserMessage">更新已被用户主动取消.</sys:String>
 
     <!-- CustomRulesEditor -->
     <sys:String x:Key="CustomRulesEditorTitle">自定义规则</sys:String>
@@ -171,6 +174,14 @@
     <sys:String x:Key="GaeEmptyVerifierMessage">请输入您收到的验证码.</sys:String>
     <sys:String x:Key="GaeInvalidVerifierMessage">账号验证失败, 请重试.</sys:String>
     <sys:String x:Key="NewGaServerMessage">GoAgent 服务器端脚本有更新, 您可以通过 GAE 设置向导重新部署您的 GAE 应用来使用此更新.</sys:String>
+
+    <!-- ShowUpdateLogWindow-->
+    <sys:String x:Key="LocalVer_Text">本地版本:</sys:String>
+    <sys:String x:Key="OnlineVer_Text">在线版本:</sys:String>
+    <sys:String x:Key="Cancel_Text">取消</sys:String>
+    <sys:String x:Key="Update_Text">升级</sys:String>
+    <sys:String x:Key="UpdateLog_Text">升级日志</sys:String>
+    <sys:String x:Key="UpdateLogWindow_Title">版本升级确认</sys:String>
 
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (X-Wall 内置) 因为一个错误退出, 这可能是因为代理端口无效或者被占用.</sys:String>

@@ -88,7 +88,7 @@ namespace XWall {
 
             versionTextBlock.Text += resources["Version"] as string + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             websiteUrlText.Text = settings.WebsiteUrl;
-            feedbackEmailText.Text = settings.FeedbackEmail;
+            //feedbackEmailText.Text = settings.FeedbackEmail;
 
             if (!(
                 (settings.ProxyType == "SSH" && !Plink.CheckSettings()) ||
@@ -520,6 +520,7 @@ namespace XWall {
                 Dispatcher.BeginInvoke(new Action(() => {
                     checkingVersion = false;
                     if (e.Error == null) {
+                        MainSetting.onlineVersionArr = e.Result.Split(new string[] { "\r\n" }, StringSplitOptions.None);
                         bool suggestedToUpdate = false;
 
                         var versions = e.Result.Split(new string[] { "\r\n" }, StringSplitOptions.None);
@@ -542,9 +543,7 @@ namespace XWall {
                         downloadUpdateButton.IsEnabled = true;
 
                         if (suggestedToUpdate) {
-                            var result = MessageBox.Show(String.Format(resources["UpdateAvailableDescription"] as string, onlineVersionStr), resources["XWallTitle"] as string, MessageBoxButton.OKCancel);
-                            if (result == MessageBoxResult.OK)
-                                downloadUpdate();
+                            showUpdateLog();
                         }
                     }
                     else
@@ -632,7 +631,7 @@ namespace XWall {
         }
 
         private void onDownloadUpdateButtonClick(object sender, RoutedEventArgs e) {
-            downloadUpdate();
+            showUpdateLog();
         }
 
         private void onAboutTabItemGotFocus(object sender, RoutedEventArgs e) {
@@ -728,6 +727,26 @@ namespace XWall {
         {
             Array.Sort(dirs, delegate(DirectoryInfo x, DirectoryInfo y) { return y.LastWriteTime.CompareTo(x.LastWriteTime); });
         }
+        private void showUpdateLog()
+        {
+            var showUpdateLogWindow = new ShowUpdateLog();
+            showUpdateLogWindow.Owner = this;
+            showUpdateLogWindow.ShowDialog();
+            if (MainSetting.isUpdateCancel == false)
+            {
+                downloadUpdate();
+            }
+            else
+            {
+                MainSetting.isUpdateCancel = false;
+                MessageBox.Show(resources["UpdateCancelByUserMessage"] as string, resources["UpdateCancelByUserTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
 
+    }
+    public class MainSetting
+    {
+        public static Boolean isUpdateCancel = false;
+        public static string[] onlineVersionArr = null;
     }
 }

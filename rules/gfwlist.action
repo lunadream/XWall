@@ -255,6 +255,8 @@ www.antd.org:80
 .atnext.com
 :80/.*avaaz(?:\.|%2e)org
 .avaaz.org
+:80/.*(?:\.|%2e)avast(?:\.|%2e)com
+.avast.com
 :80/.*avdb(?:\.|%2e)in
 .avdb.in
 .avidemux.org
@@ -666,8 +668,6 @@ chicagoncmtv.com:80
 .chubun.com
 :80/.*chuizi(?:\.|%2e)net
 .chuizi.net
-.chrispederick.com
-.chrispederick.net
 .christiantimes.org.hk
 :80/.*(?:\.|%2e)chrlawyers(?:\.|%2e)hk
 .chrlawyers.hk
@@ -1362,6 +1362,7 @@ cn.giganews.com:80/
 .gimpshop.com
 .girlbanker.com
 gist.github.com:443
+cthlo.github.io:80/hktv(?:/|%2f)
 .glennhilton.com
 :80/.*globaljihad(?:\.|%2e)net
 .globaljihad.net
@@ -1458,6 +1459,7 @@ www.goldenmelody.com.tw:80
 .googleusercontent.com
 .googlevideo.com
 .recaptcha.net
+sipml5.org:80/
 :80/.*(?:\.|%2e)appspot(?:\.|%2e)com
 .appspot.com
 :80/.*echofon(?:\.|%2e)com
@@ -1745,6 +1747,7 @@ www.idlcoyote.com:80
 .imagevenue.com
 .imagezilla.net
 www.imdb.com:80/name(?:/|%2f)nm0482730
+www.imdb.com:80/title(?:/|%2f)tt0819354(?:/|%2f)
 :80/.*(?:\.|%2e)img(?:\.|%2e)ly
 .img.ly
 :80/.*(?:\.|%2e)imkev(?:\.|%2e)com
@@ -2398,6 +2401,7 @@ www.monlamit.org:80
 .nokola.com
 .noobbox.com
 .novelasia.com
+news.now.com:80/home.*
 .nownews.com
 :80/.*(?:\.|%2e)nowtorrents(?:\.|%2e)com
 .nowtorrents.com
@@ -2426,6 +2430,7 @@ www.monlamit.org:80
 .nuzcom.com
 :80/.*(?:\.|%2e)nvquan(?:\.|%2e)org
 .nvquan.org
+www.nyaa.se:80
 :80/.*(?:\.|%2e)nydus(?:\.|%2e)ca
 .nydus.ca
 .nyt.com
@@ -2566,6 +2571,8 @@ www.oxid.it:80
 .pao-pao.net
 :80/.*(?:\.|%2e)parade(?:\.|%2e)com(?:/|%2f)dictators(?:/|%2f)2009
 .parade.com:80/dictators(?:/|%2f)2009
+:80/.*(?:\.|%2e)passiontimes(?:\.|%2e)hk
+.passiontimes.hk
 :80/.*pastebin(?:\.|%2e)com
 .pastebin.com
 :80/.*(?:\.|%2e)pastie(?:\.|%2e)org
@@ -3403,6 +3410,7 @@ thegioitinhoc.vn:80/
 .thesartorialist.com
 :80/.*thespeeder(?:\.|%2e)com
 .thespeeder.com
+thestandnews.com:80/
 .thetibetpost.com
 :80/.*thetrotskymovie(?:\.|%2e)com(?:/|%2f)
 .thetrotskymovie.com:80
@@ -3930,6 +3938,8 @@ uploaded.to:80/file
 .uygur.org
 :80/.*(?:\.|%2e)uyghuramerican(?:\.|%2e)org
 .uyghuramerican.org
+:80/.*(?:\.|%2e)v2ex(?:\.|%2e)com
+.v2ex.com
 :80/.*v70(?:\.|%2e)us
 .v70.us
 v7976888.info:80/
@@ -4014,8 +4024,6 @@ ny.visiontimes.com:80/
 :80/.*lists(?:\.|%2e)w3(?:\.|%2e)org(?:/|%2f)archives(?:/|%2f)public
 .lists.w3.org:80/archives(?:/|%2f)public
 .waffle1999.com
-:80/.*(?:\.|%2e)jyzj(?:\.|%2e)waqn(?:\.|%2e)com
-.jyzj.waqn.com
 :80/.*(?:\.|%2e)wahas(?:\.|%2e)com
 .wahas.com
 :80/.*(?:\.|%2e)waigaobu(?:\.|%2e)com
@@ -4219,7 +4227,8 @@ woesermiddle-way.net:80/
 .wwitv.com
 :80/.*wzyboy(?:\.|%2e)im(?:/|%2f)post(?:/|%2f)160
 .wzyboy.im:80/post(?:/|%2f)160
-www.x-berry.com:80/goagent
+:80/.*(?:\.|%2e)x-berry(?:\.|%2e)com
+.x-berry.com
 .x-art.com
 .x-wall.org
 :80/.*x1949x(?:\.|%2e)com
@@ -4355,6 +4364,8 @@ xinyubbs.net:80
 .yhcw.net
 :80/.*(?:\.|%2e)yi(?:\.|%2e)org
 .yi.org
+:80/.*(?:\.|%2e)yibada(?:\.|%2e)com
+.yibada.com
 :80/.*(?:\.|%2e)yidio(?:\.|%2e)com
 .yidio.com
 :80/.*yilubbs(?:\.|%2e)com
@@ -5491,11 +5502,13 @@ upload.wikimedia.org:443
 .taitung-house.gov.tw
 .aliyun.com
 .baidu.com
-.jike.com
 .chinaso.com
+.fonts.googleapis.com
 .haosou.com
+.jike.com
 translate.google.cn:80
 www.google.cn:80/maps
+.http2.golang.org
 .qq.com
 .sina.cn
 .sina.com.cn

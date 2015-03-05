@@ -95,12 +95,6 @@
     <Setting Name="WebsiteUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://github.com/lunarlove/XWall</Value>
     </Setting>
-    <Setting Name="UpdateInstallerUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/x-wall-setup.exe</Value>
-    </Setting>
-    <Setting Name="OnlineVersionUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/version</Value>
-    </Setting>
     <Setting Name="UpdateInstallerName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">setup.exe</Value>
     </Setting>
@@ -230,9 +224,6 @@
     <Setting Name="GaFolderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">goagent\</Value>
     </Setting>
-    <Setting Name="UpdateFullInstallerUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/x-wall-setup-full.exe</Value>
-    </Setting>
     <Setting Name="GaProfile" Type="System.String" Scope="User">
       <Value Profile="(Default)">google_hk</Value>
     </Setting>
@@ -259,6 +250,15 @@
     </Setting>
     <Setting Name="FeedbackEmail" Type="System.String" Scope="Application">
       <Value Profile="(Default)">team@lunatech.me</Value>
+    </Setting>
+    <Setting Name="UpdateInstallerUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup.exe</Value>
+    </Setting>
+    <Setting Name="OnlineVersionUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/version</Value>
+    </Setting>
+    <Setting Name="UpdateFullInstallerUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup-full.exe</Value>
     </Setting>
   </Settings>
 </SettingsFile>

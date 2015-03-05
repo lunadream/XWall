@@ -102,6 +102,7 @@
     <sys:String x:Key="OneCustomRuleDescription">There is 1 custom rule in total</sys:String>
     <sys:String x:Key="CustomRulesDescription">There are {0} custom rules in total</sys:String>
     <sys:String x:Key="AddRules">Add rules</sys:String>
+    <sys:String x:Key="Restart_Text">Restart Application</sys:String>
     <sys:String x:Key="Edit">Edit</sys:String>
     <sys:String x:Key="ShareRuleTitle">Share New Rules</sys:String>
     <sys:String x:Key="ShareRuleMessage">Do you want to enable sharing of new rules?%n
@@ -114,9 +115,9 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="About">About</sys:String>
     <sys:String x:Key="AboutXWall">About X-Wall</sys:String>
     <sys:String x:Key="Version">Version</sys:String>
-    <sys:String x:Key="AuthorLine">Author LunaTech</sys:String>
+    <sys:String x:Key="AuthorLine">Author LunaTech &amp; VILIC VANE</sys:String>
     <sys:String x:Key="XWallDescription">X-Wall is a small tool wraps together Plink and Privoxy to provide people an easier way to cross the Great Firewall of China.</sys:String>
-    <sys:String x:Key="FeedbackLine">Any feedback please email our team</sys:String>
+    <sys:String x:Key="FeedbackLine">Any feedback please write in GitHun issue page.</sys:String>
     <sys:String x:Key="DonateLineStart">I would never mind if you want to&#160;</sys:String>
     <sys:String x:Key="DonateLinkText">buy me a cup of coffee</sys:String>
     <sys:String x:Key="DonateLineEnd">.</sys:String>
@@ -133,6 +134,8 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="UpdateFailedDetails">It seems that X-Wall hasn't been updated successfully.</sys:String>
     <sys:String x:Key="UpdateSuccessTitle">Update success</sys:String>
     <sys:String x:Key="UpdateSuccessDetails">X-Wall has been successfully updated.</sys:String>
+    <sys:String x:Key="UpdateCancelByUserTitle">Update cancelled</sys:String>
+    <sys:String x:Key="UpdateCancelByUserMessage">Update cancelled by user.</sys:String>
 
     <!-- CustomRulesEditor -->
     <sys:String x:Key="CustomRulesEditorTitle">Custom Rules</sys:String>
@@ -172,6 +175,14 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <sys:String x:Key="GaeInvalidVerifierMessage">Failed to verify your account, please try again.</sys:String>
     <sys:String x:Key="NewGaServerMessage">The GoAgent server-side script has a newer version, you may deploy your GAE applications again using GAE Wizard to apply this update.</sys:String>
 
+    <!-- ShowUpdateLogWindow-->
+    <sys:String x:Key="LocalVer_Text">Local Version:</sys:String>
+    <sys:String x:Key="OnlineVer_Text">Online Version:</sys:String>
+    <sys:String x:Key="Cancel_Text">Cancel</sys:String>
+    <sys:String x:Key="Update_Text">Update</sys:String>
+    <sys:String x:Key="UpdateLog_Text">UpdateLog</sys:String>
+    <sys:String x:Key="UpdateLogWindow_Title">Update Confirm</sys:String>
+    
     <!-- Privoxy -->
     <sys:String x:Key="PrivoxyErrorExitMessage">Privoxy (built-in X-Wall) exited with an error, it might be caused by an invalid proxy port or the port is taken by another program.</sys:String>
     
