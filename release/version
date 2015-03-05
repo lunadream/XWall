@@ -1,3 +1,3 @@
+1.3.5542.38327
 1.3.5542.31988
-1.3.5542.31988
-XWall 1.3.5542.31988 更新日志\newline1.增加升级日志查看功能\newline2.修改界面细节配色\newline3.增加了托盘图标右键重启程序\newline4.修正了多个界面显示Bug
+XWall 1.3.5542.38327 更新日志\newline1.增加升级日志查看功能\newline2.修改界面细节配色\newline3.增加了托盘图标右键重启程序\newline4.修正了 Windows 10 下仍然提示安装.NET Framework 4.2的问题\newline5.修正了多个界面显示 Bug\newline6.移除了取消升级后的提示\newline7.修正英文大小写问题

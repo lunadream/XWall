@@ -134,8 +134,6 @@
     <sys:String x:Key="UpdateFailedDetails">X-Wall 似乎并没有成功更新.</sys:String>
     <sys:String x:Key="UpdateSuccessTitle">更新成功</sys:String>
     <sys:String x:Key="UpdateSuccessDetails">X-Wall 已经成功更新.</sys:String>
-    <sys:String x:Key="UpdateCancelByUserTitle">更新已取消</sys:String>
-    <sys:String x:Key="UpdateCancelByUserMessage">更新已被用户主动取消.</sys:String>
 
     <!-- CustomRulesEditor -->
     <sys:String x:Key="CustomRulesEditorTitle">自定义规则</sys:String>

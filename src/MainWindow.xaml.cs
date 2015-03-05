@@ -360,7 +360,7 @@ namespace XWall {
 
                     if (Directory.Exists(App.AppDataDirectory + settings.GaFolderName) && settings.GaServerVersion > settings.GaLastServerVersion) {
                         settings.GaLastServerVersion = settings.GaServerVersion;
-                        MessageBox.Show(resources["NewGaServerMessage"] as string);
+                        //MessageBox.Show(resources["NewGaServerMessage"] as string);
                     }
                     
                 }).BeginInvoke(null, null);
@@ -739,7 +739,6 @@ namespace XWall {
             else
             {
                 MainSetting.isUpdateCancel = false;
-                MessageBox.Show(resources["UpdateCancelByUserMessage"] as string, resources["UpdateCancelByUserTitle"] as string, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
