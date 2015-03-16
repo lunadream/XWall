@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XWall.UpdateXML>
+  <MinVersion>1.3.5542.31988</MinVersion>
+  <LatestVersion>1.3.5553.35642</LatestVersion>
+  <DownloadUrl>https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup.exe</DownloadUrl>
+  <DownloadUrlFull>https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup-full.exe</DownloadUrlFull>
+  <UpdateLog>XWall 1.3.5553.35642 更新日志\newline-- 基于 1.3.5542.38327 --\newline1.常规升级\newline2.更新程序升级模块，更稳定更灵活</UpdateLog>
+</XWall.UpdateXML>

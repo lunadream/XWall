@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -7,24 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Resources;
-using System.Security.AccessControl;
-using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using XWall.Properties;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace XWall {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// TODO:Remove '//' in line 369 before release build
+    /// TODO:Remove '//' in line 363 before release build
     /// </summary>
     public partial class MainWindow : Window {
         static Settings settings = Settings.Default;
@@ -511,29 +504,34 @@ namespace XWall {
             onlineVersionTextBlock.Text = resources["Checking"] as string;
 
             var url = new Uri(settings.OnlineVersionUrl);
-
+            XmlDocument xmlDoc = new XmlDocument();
             var client = new WebClient();
             //client.Proxy = null;
             client.DownloadStringAsync(url);
             client.Encoding = System.Text.Encoding.UTF8;
-            client.DownloadStringCompleted += (sender, e) => {
-                Dispatcher.BeginInvoke(new Action(() => {
+            client.DownloadStringCompleted += (sender, e) =>
+            {
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
                     checkingVersion = false;
-                    if (e.Error == null) {
-                        MainSetting.onlineVersionArr = e.Result.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                    if (e.Error == null)
+                    {
+                        xmlDoc.LoadXml(e.Result);
+                        MainSetting.minVersion = xmlDoc.SelectSingleNode("XWall.UpdateXML/MinVersion").InnerText;
+                        MainSetting.latestVersion = xmlDoc.SelectSingleNode("XWall.UpdateXML/LatestVersion").InnerText;
+                        MainSetting.downloadUrl = xmlDoc.SelectSingleNode("XWall.UpdateXML/DownloadUrl").InnerText;
+                        MainSetting.downloadUrlFull = xmlDoc.SelectSingleNode("XWall.UpdateXML/DownloadUrlFull").InnerText;
+                        MainSetting.updateLog = xmlDoc.SelectSingleNode("XWall.UpdateXML/UpdateLog").InnerText.Replace("\\newline", Environment.NewLine);
                         bool suggestedToUpdate = false;
-
-                        var versions = e.Result.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-
                         var installedVersion = Assembly.GetExecutingAssembly().GetName().Version;
-                        onlineVersionStr = versions[0];
-                        var onlineVersion = new Version(onlineVersionStr);
-                        var lowVersion = new Version(versions[1]);
+                        onlineVersionStr = MainSetting.latestVersion;
 
-                        if (installedVersion < lowVersion) {
+                        if (installedVersion < Version.Parse( MainSetting.minVersion))
+                        {
                             suggestedToUpdate = settings.DismissedUpdateVersion != onlineVersionStr;
 
-                            if (onlineVersionStr != settings.DismissedUpdateVersion) {
+                            if (onlineVersionStr != settings.DismissedUpdateVersion)
+                            {
                                 suggestedToUpdate = true;
                                 settings.DismissedUpdateVersion = onlineVersionStr;
                             }
@@ -542,7 +540,8 @@ namespace XWall {
                         onlineVersionTextBlock.Text = resources["Version"] as string + " " + onlineVersionStr;
                         downloadUpdateButton.IsEnabled = true;
 
-                        if (suggestedToUpdate) {
+                        if (suggestedToUpdate)
+                        {
                             showUpdateLog();
                         }
                     }
@@ -570,7 +569,7 @@ namespace XWall {
                 downloadingUpdate = true;
                 downloadUpdateButton.IsEnabled = false;
 
-                var url = new Uri(Directory.Exists(App.AppDataDirectory + settings.GaFolderName) || fullVersion ? settings.UpdateFullInstallerUrl : settings.UpdateInstallerUrl);
+                var url = new Uri(Directory.Exists(App.AppDataDirectory + settings.GaFolderName) || fullVersion ? MainSetting.downloadUrlFull : MainSetting.downloadUrl);
 
                 var client = new WebClient();
                 //client.Proxy = null;
@@ -746,6 +745,10 @@ namespace XWall {
     public class MainSetting
     {
         public static Boolean isUpdateCancel = false;
-        public static string[] onlineVersionArr = null;
+        public static string minVersion;
+        public static string latestVersion;
+        public static string downloadUrl;
+        public static string downloadUrlFull;
+        public static string updateLog;
     }
 }

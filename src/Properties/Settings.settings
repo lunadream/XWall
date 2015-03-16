@@ -56,9 +56,6 @@
     <Setting Name="SshAutoReconnect" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="OnlineRulesUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/rules/rules-v2</Value>
-    </Setting>
     <Setting Name="OnlineRulesFileName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">online-rules</Value>
     </Setting>
@@ -251,14 +248,11 @@
     <Setting Name="FeedbackEmail" Type="System.String" Scope="Application">
       <Value Profile="(Default)">team@lunatech.me</Value>
     </Setting>
-    <Setting Name="UpdateInstallerUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup.exe</Value>
+    <Setting Name="OnlineRulesUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://raw.github.com/lunarlove/x-wall/master/rules/rules-v2</Value>
     </Setting>
     <Setting Name="OnlineVersionUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/version</Value>
-    </Setting>
-    <Setting Name="UpdateFullInstallerUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup-full.exe</Value>
+      <Value Profile="(Default)">https://raw.github.com/vilic/x-wall/master/release/version-v2.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -36,6 +36,8 @@ cdn*.search.xxx:80/
 .0to255.com
 :80/.*1-apple(?:\.|%2e)com(?:\.|%2e)tw
 .1-apple.com.tw
+:80/.*(?:\.|%2e)10conditionsoflove(?:\.|%2e)com
+.10conditionsoflove.com
 .10musume.com
 :80/.*123rf(?:\.|%2e)com
 .123rf.com
@@ -233,6 +235,7 @@ www.antd.org:80
 .asahichinese.com
 :80/.*asdfg(?:\.|%2e)jp(?:/|%2f)dabr
 .asdfg.jp:80/dabr
+japanfirst.asianfreeforum.com:80/
 :80/.*(?:\.|%2e)asiaharvest(?:\.|%2e)org
 .asiaharvest.org
 :80/.*asianews(?:\.|%2e)it
@@ -257,8 +260,10 @@ www.antd.org:80
 .avaaz.org
 :80/.*(?:\.|%2e)avast(?:\.|%2e)com
 .avast.com
-:80/.*avdb(?:\.|%2e)in
+:80/.*(?:\.|%2e)avdb(?:\.|%2e)in
 .avdb.in
+:80/.*(?:\.|%2e)avdb(?:\.|%2e)tv
+.avdb.tv
 .avidemux.org
 .avoision.com
 .axureformac.com
@@ -274,6 +279,7 @@ www.antd.org:80
 .backtotiananmen.com
 :80/.*badoo(?:\.|%2e)com
 .badoo.com
+*2.bahamut.com.tw:80
 .baidu.jp
 .baixing.me
 :80/.*hen(?:\.|%2e)bao(?:\.|%2e)li
@@ -455,6 +461,8 @@ static*.businessinsider.com:80/
 .businesstimes.com.cn
 .bugclub.org
 .buugaa.com
+:80/.*(?:\.|%2e)buzzhand(?:\.|%2e)com
+.buzzhand.com
 :80/.*buzzurl(?:\.|%2e)jp
 .buzzurl.jp
 :80/.*bwsj(?:\.|%2e)hk
@@ -500,6 +508,7 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 .catholic.org.hk
 :80/.*catholic(?:\.|%2e)org(?:\.|%2e)tw
 .catholic.org.tw
+.cattt.com
 :80/.*(?:\.|%2e)cbsnews(?:\.|%2e)com(?:/|%2f)video
 .cbsnews.com:80/video
 .ccavtop10.com
@@ -564,6 +573,8 @@ catcatbox.com:80/forum(?:\.|%2e)php.*
 :80/.*chenpokong(?:\.|%2e)com
 .chenpokong.com
 .cherrysave.com
+:80/.*(?:\.|%2e)chhongbi(?:\.|%2e)org
+.chhongbi.org
 chicagoncmtv.com:80
 :80/.*(?:\.|%2e)china-week(?:\.|%2e)com
 .china-week.com
@@ -664,6 +675,7 @@ chicagoncmtv.com:80
 .chrlcg-hk.org
 .chrome.com
 .chromeadblock.com
+.chromium.org
 :80/.*chubun(?:\.|%2e)com
 .chubun.com
 :80/.*chuizi(?:\.|%2e)net
@@ -825,6 +837,8 @@ tosh.comedycentral.com:80
 :80/.*(?:\.|%2e)democrats(?:\.|%2e)org
 .democrats.org
 .desc.se:80
+:80/.*(?:\.|%2e)destroy-china(?:\.|%2e)jp
+.destroy-china.jp
 .deutsche-welle.de
 .dev102.com
 .deviantart.com
@@ -844,6 +858,7 @@ www.dfanning.com:80
 :80/.*(?:\.|%2e)dipity(?:\.|%2e)com
 .dipity.com
 .directcreative.com
+www.discogs.com:80/
 :80/.*(?:\.|%2e)discuss(?:\.|%2e)com(?:\.|%2e)hk
 .discuss.com.hk
 :80/.*disp(?:\.|%2e)cc
@@ -954,6 +969,12 @@ g.e-hentai.org:80/
 .e-traderland.net:80/board
 :80/.*(?:\.|%2e)e123(?:\.|%2e)hk
 .e123.hk
+:80/.*(?:\.|%2e)eastturkestan(?:\.|%2e)com
+.eastturkestan.com
+:80/.*(?:\.|%2e)eastturkistan-gov(?:\.|%2e)org
+.eastturkistan-gov.org
+:80/.*(?:\.|%2e)eastturkistangovernmentinexile(?:\.|%2e)us
+.eastturkistangovernmentinexile.us
 :80/.*hkjp(?:\.|%2e)easyweb(?:\.|%2e)hk
 .hkjp.easyweb.hk
 :80/.*ebookbrowse(?:\.|%2e)com
@@ -1025,6 +1046,8 @@ g.e-hentai.org:80/
 .erepublik.com
 .ernestmandel.org
 .erights.net
+:80/.*(?:\.|%2e)etaa(?:\.|%2e)org(?:\.|%2e)au
+.etaa.org.au
 :80/.*etaiwannews(?:\.|%2e)com
 .etaiwannews.com
 .etizer.org
@@ -1227,9 +1250,14 @@ cn.fmnnow.com:80
 :80/.*free4u(?:\.|%2e)com(?:\.|%2e)ar
 :80/.*(?:\.|%2e)free-ssh(?:\.|%2e)com
 .free-ssh.com
+:80/.*(?:\.|%2e)freeforums(?:\.|%2e)org
+.freeforums.org
 .freenetproject.org
 :80/.*(?:\.|%2e)freeoz(?:\.|%2e)org
+:80/.*(?:\.|%2e)freetibet(?:\.|%2e)net
+.freetibet.net
 .freetibet.org
+freetibetanheroes.org:80
 .freewallpaper4.me
 :80/.*(?:\.|%2e)freewebs(?:\.|%2e)com
 .freewebs.com
@@ -1356,6 +1384,7 @@ www.zensur.freerk.com:80/
 .ghost.org
 .ghut.org
 .giga-web.jp
+tw.gigacircle.com:80
 cn.giganews.com:80/
 :80/.*gigporno(?:\.|%2e)ru
 .gigporno.ru
@@ -1379,6 +1408,8 @@ cthlo.github.io:80/hktv(?:/|%2f)
 .goagentplus.com
 :80/.*godfootsteps(?:\.|%2e)org
 .godfootsteps.org
+:80/.*(?:\.|%2e)gokbayrak(?:\.|%2e)com
+.gokbayrak.com
 .goldbetsports.com
 www.goldenmelody.com.tw:80
 .goldwave.com
@@ -1421,6 +1452,8 @@ www.goldenmelody.com.tw:80
 .greatroc.org
 :80/.*greatzhonghua(?:\.|%2e)org
 .greatzhonghua.org
+:80/.*(?:\.|%2e)greenpeace(?:\.|%2e)com(?:\.|%2e)tw
+.greenpeace.com.tw
 :80/.*(?:\.|%2e)greenvpn(?:\.|%2e)net
 .greenvpn.net
 :80/.*gs-discuss(?:\.|%2e)com
@@ -1444,10 +1477,11 @@ www.goldenmelody.com.tw:80
 .google-analytics.com
 .googleadservices.com
 .googleapis.com
+.googlecode.com
 .googledomains.com
 .googleearth.com
-.googlecode.com
 .googledrive.com
+.googlegroups.com
 .googlehosted.com
 .googlelabs.com
 .googlemail.com
@@ -1723,6 +1757,7 @@ www.idlcoyote.com:80
 .ieasynews.net
 :80/.*(?:\.|%2e)ied2k(?:\.|%2e)net
 .ied2k.net
+if.ttt:80/
 :80/.*ifanqiang(?:\.|%2e)com
 .ifanqiang.com
 :80/.*(?:\.|%2e)ifanr(?:\.|%2e)com(?:/|%2f)857
@@ -1731,6 +1766,7 @@ www.idlcoyote.com:80
 .ifcss.org
 :80/.*ifjc(?:\.|%2e)org
 .ifjc.org
+ift.tt:80
 .antidrm.hpg.ig.com.br
 .igfw.net
 .ignitedetroit.net
@@ -1824,6 +1860,7 @@ iptorrents.com:443
 .itweet.net
 :80/.*(?:\.|%2e)iu45(?:\.|%2e)com
 .iu45.com
+.iuhrdf.org
 :80/.*(?:\.|%2e)iverycd(?:\.|%2e)com
 .iverycd.com
 .ixquick.com
@@ -1852,8 +1889,6 @@ iptorrents.com:443
 .tw.jiepang.com
 :80/.*jieshibaobao(?:\.|%2e)com
 .jieshibaobao.com
-:80/.*(?:\.|%2e)jimoparty(?:\.|%2e)com
-.jimoparty.com
 :80/.*jinbushe(?:\.|%2e)org
 .jinbushe.org
 :80/.*zhao(?:\.|%2e)jinhai(?:\.|%2e)de
@@ -2181,6 +2216,8 @@ michaelanti.com:80
 .mingpaovan.com
 :80/.*(?:\.|%2e)mininova(?:\.|%2e)org(?:/|%2f)tor(?:/|%2f)2593503
 .mininova.org:80/tor(?:/|%2f)2593503
+:80/.*(?:\.|%2e)mimivv(?:\.|%2e)com
+.mimivv.com
 :80/.*(?:\.|%2e)minzhuhua(?:\.|%2e)net
 .minzhuhua.net
 :80/.*minzhuzhanxian(?:\.|%2e)com
@@ -2466,8 +2503,8 @@ www.nyaa.se:80
 .olympicwatch.org
 :80/.*omgili(?:\.|%2e)com
 .omgili.com
-:80/.*omnitalk(?:\.|%2e)com
 .omnitalk.com
+.omnitalk.org
 :80/.*forum(?:\.|%2e)omy(?:\.|%2e)sg
 .forum.omy.sg
 :80/.*news(?:\.|%2e)omy(?:\.|%2e)sg
@@ -2662,6 +2699,7 @@ pcij.org:80/
 .placemix.com
 pictures.playboy.com:80
 .playboy.com
+.playpcesor.com
 :80/.*plays(?:\.|%2e)com(?:\.|%2e)tw
 .plays.com.tw
 .m.plixi.com
@@ -2899,6 +2937,8 @@ vds.rightster.com:80/
 .rileyguide.com
 :80/.*riku(?:\.|%2e)me(?:/|%2f)
 .riku.me:80
+:80/.*(?:\.|%2e)ritouki(?:\.|%2e)jp
+.ritouki.jp
 :80/.*(?:\.|%2e)rlwlw(?:\.|%2e)com
 .rlwlw.com
 :80/.*(?:\.|%2e)rmjdw(?:\.|%2e)com
@@ -2940,6 +2980,8 @@ vds.rightster.com:80/
 .ruyiseek.com
 :80/.*(?:\.|%2e)rxhj(?:\.|%2e)net
 .rxhj.net
+:80/.*(?:\.|%2e)s-dragon(?:\.|%2e)org
+.s-dragon.org
 .s1heng.com
 .s8forum.com
 :80/.*sacom(?:\.|%2e)hk
@@ -3175,6 +3217,7 @@ www.skype.com:80/zh-Hant
 .softether.org
 :80/.*(?:\.|%2e)softether-download(?:\.|%2e)com
 .softether-download.com
+.cdn.softlayer.net
 .sogclub.com
 :80/.*sohcradio(?:\.|%2e)com
 .sohcradio.com
@@ -3218,6 +3261,7 @@ www.skype.com:80/zh-Hant
 .sopcast.com
 :80/.*(?:\.|%2e)sopcast(?:\.|%2e)org
 .sopcast.org
+bbs.soul-plus.net:80
 .soundcloud.com
 :80/.*(?:\.|%2e)soundofhope(?:\.|%2e)kr
 .soundofhope.kr
@@ -3319,6 +3363,7 @@ www.skype.com:80/zh-Hant
 .t35.com
 :80/.*(?:\.|%2e)t66y(?:\.|%2e)com
 .t66y.com
+.t88.ca
 :80/.*(?:\.|%2e)taa-usa(?:\.|%2e)org
 .taa-usa.org
 :80/.*tabtter(?:\.|%2e)jp
@@ -3342,6 +3387,7 @@ www.skype.com:80/zh-Hant
 :80/.*taiwannation(?:\.|%2e)com(?:\.|%2e)tw
 .taiwannation.com.tw
 .taiwannews.com.tw
+www.taiwanonline.cc:80/
 :80/.*taiwantp(?:\.|%2e)net
 .taiwantp.net
 :80/.*taiwanus(?:\.|%2e)net
@@ -3358,6 +3404,8 @@ www.skype.com:80/zh-Hant
 .taolun.info
 :80/.*blog(?:\.|%2e)taragana(?:\.|%2e)com
 .blog.taragana.com
+.taup.net
+www.taup.org.tw:80
 :80/.*(?:\.|%2e)taweet(?:\.|%2e)com
 .taweet.com
 .tbpic.info
@@ -3447,6 +3495,8 @@ thestandnews.com:80/
 .tibet.com
 :80/.*(?:\.|%2e)tibet(?:\.|%2e)net
 .tibet.net
+:80/.*(?:\.|%2e)tibet(?:\.|%2e)org
+.tibet.org
 :80/.*tibet(?:\.|%2e)org(?:\.|%2e)tw
 .tibet.org.tw
 :80/.*tibetalk(?:\.|%2e)com
@@ -3550,11 +3600,13 @@ tmi.me:80
 .tsemtulku.com
 :80/.*tsquare(?:\.|%2e)tv
 .tsquare.tv
+:80/.*\|http:(?:/|%2f)www(?:\.|%2e)tsu(?:\.|%2e)org(?:\.|%2e)tw
 :80/.*tsunagarumon(?:\.|%2e)com
 .tsunagarumon.com
 www.tsuru-bird.net:80/
 :80/.*(?:\.|%2e)tsctv(?:\.|%2e)net
 .tsctv.net
+tt-rss.org:80/
 .tt1069.com
 .tttan.com
 :80/.*(?:\.|%2e)tttan(?:\.|%2e)com
@@ -3933,11 +3985,14 @@ uploaded.to:80/file
 .uwants.com
 :80/.*(?:\.|%2e)uwants(?:\.|%2e)net
 .uwants.net
+uyghur-j.org:80/
+:80/.*(?:\.|%2e)uyghurcanadiansociety(?:\.|%2e)org
+.uyghurcanadiansociety.org
 .uyghurcongress.org
+.uyghuramerican.org
 :80/.*uygur(?:\.|%2e)org
 .uygur.org
-:80/.*(?:\.|%2e)uyghuramerican(?:\.|%2e)org
-.uyghuramerican.org
+uymaarip.com:80/
 :80/.*(?:\.|%2e)v2ex(?:\.|%2e)com
 .v2ex.com
 :80/.*v70(?:\.|%2e)us
@@ -4168,6 +4223,8 @@ evchk.wikia.com:80
 .witnessleeteaching.com
 :80/.*(?:\.|%2e)witopia(?:\.|%2e)net
 .witopia.net
+:80/.*(?:\.|%2e)wnacg(?:\.|%2e)com
+.wnacg.com
 :80/.*(?:\.|%2e)wo(?:\.|%2e)tc
 .wo.tc
 .woeser.com
@@ -4489,6 +4546,7 @@ xinyubbs.net:80
 .zsrhao.com
 :80/.*(?:\.|%2e)zuo(?:\.|%2e)la
 .zuo.la
+.zuobiao.me
 :80/.*(?:\.|%2e)zuola(?:\.|%2e)com
 .zuola.com
 .zvereff.com

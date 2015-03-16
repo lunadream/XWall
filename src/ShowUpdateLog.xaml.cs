@@ -52,10 +52,10 @@ namespace XWall
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Update_LocalVerNum.Content = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            if (MainSetting.onlineVersionArr != null)
+            if (MainSetting.latestVersion != null)
             {
-                Update_OnlineVerNum.Content = MainSetting.onlineVersionArr[0].ToString();
-                Update_UpdateLogBox.Text = MainSetting.onlineVersionArr[2].ToString().Replace("\\newline",Environment.NewLine);
+                Update_OnlineVerNum.Content = MainSetting.latestVersion;
+                Update_UpdateLogBox.Text = MainSetting.updateLog;
             }
             Update_UpdateLogBox.IsReadOnly = true;
         }

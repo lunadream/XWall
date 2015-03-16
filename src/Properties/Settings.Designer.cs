@@ -232,15 +232,6 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/rules/rules-v2")]
-        public string OnlineRulesUrl {
-            get {
-                return ((string)(this["OnlineRulesUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("online-rules")]
         public string OnlineRulesFileName {
             get {
@@ -894,28 +885,19 @@ namespace XWall.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup.exe")]
-        public string UpdateInstallerUrl {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/lunarlove/x-wall/master/rules/rules-v2")]
+        public string OnlineRulesUrl {
             get {
-                return ((string)(this["UpdateInstallerUrl"]));
+                return ((string)(this["OnlineRulesUrl"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/version")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/vilic/x-wall/master/release/version-v2.xml")]
         public string OnlineVersionUrl {
             get {
                 return ((string)(this["OnlineVersionUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lunarlove/XWall/raw/master/release/x-wall-setup-full.exe")]
-        public string UpdateFullInstallerUrl {
-            get {
-                return ((string)(this["UpdateFullInstallerUrl"]));
             }
         }
     }
