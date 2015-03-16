@@ -34,7 +34,7 @@ begin
 			begin
 				RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Release', regVersion);
 				// >= 4.5.0 and <= 4.5.?(Win10)
-				Result := (regVersion >= 378389) and (regVersion <= 381029);
+				Result := (regVersion >= 378389);
 				Exit;
 			end;
 		end;
@@ -73,7 +73,7 @@ begin
 				regVersion := -1;
 		NetFx45:
 			if (RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Release', regVersion)) then begin
-				if (regVersion = 381029) then
+				if (regVersion >= 381029) then
 					regVersion := 9 //4.5.?(Win10)
 				else if (regVersion = 379893) then
 					regVersion := 2 // 4.5.2
