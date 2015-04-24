@@ -106,6 +106,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\AppSetting.cs" />
     <Compile Include="Classes\GAESimulator.cs">
       <SubType>Component</SubType>
     </Compile>

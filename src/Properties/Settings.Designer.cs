@@ -900,5 +900,17 @@ namespace XWall.Properties {
                 return ((string)(this["OnlineVersionUrl"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SshUsePrivateKeyLogin {
+            get {
+                return ((bool)(this["SshUsePrivateKeyLogin"]));
+            }
+            set {
+                this["SshUsePrivateKeyLogin"] = value;
+            }
+        }
     }
 }

@@ -62,7 +62,21 @@ namespace XWall {
 
             var si = process.StartInfo;
             si.FileName = settings.SshUsePlonk ? settings.PlonkFileName : settings.PlinkFileName;
-            si.Arguments = String.Format(
+            if (settings.SshUsePrivateKeyLogin == true){
+                si.Arguments = String.Format(
+                "-v -x -a -T -N{0}{1} -l {2} -i {3} -P {4} -D {5} {6}",
+                settings.SshCompression ? " -C" : "",
+                settings.SshUsePlonk ? " -z" + (settings.SshPlonkKeyword.Trim() != "" ? " -Z " + settings.SshPlonkKeyword : "") : "",
+                settings.SshUsername,
+                settings.SshPassword,
+                settings.SshPort,
+                "127.0.0.1:" + settings.SshSocksPort,
+                settings.SshServer
+            );
+            }
+            else
+            {
+                si.Arguments = String.Format(
                 "-v -x -a -T -N{0}{1} -l {2} -pw {3} -P {4} -D {5} {6}",
                 settings.SshCompression ? " -C" : "",
                 settings.SshUsePlonk ? " -z" + (settings.SshPlonkKeyword.Trim() != "" ? " -Z " + settings.SshPlonkKeyword : "") : "",
@@ -72,6 +86,8 @@ namespace XWall {
                 "127.0.0.1:" + settings.SshSocksPort,
                 settings.SshServer
             );
+            }
+
 
             si.RedirectStandardOutput = true;
             si.RedirectStandardInput = true;
@@ -226,7 +242,7 @@ namespace XWall {
             var line = e.Data;
             if (line == null) return;
 
-            //Console.WriteLine("E: " + line);
+            Console.WriteLine("E: " + line);
 
             if (new Regex(@"^Local port .+ SOCKS dynamic forwarding").IsMatch(line)) {
                 reconnectPeriod = 1;
@@ -255,6 +271,12 @@ namespace XWall {
                 Error = resources["PlinkAuthFailed"] as string;
                 Stop(settings.SshReconnectAnyCondition);
             }
+            else if (line.StartsWith("Server refused our key"))
+            {
+                Error = resources["SshPrivKeyRefused"] as string;
+                Stop(settings.SshReconnectAnyCondition);
+
+            }
             else {
                 var match = new Regex(@"Failed to connect to (.+?): Network error: No route to host").Match(line);
                 if (match.Success) {
@@ -263,6 +285,12 @@ namespace XWall {
                     si.CreateNoWindow = true;
                     si.UseShellExecute = false;
                     Process.Start(si);
+                }
+                match = new Regex(@"Unable to use key file (.+?)").Match(line);
+                if (match.Success)
+                {
+                    Error = resources["SshPrivKeyFormatError"] as string;
+                    Stop(settings.SshReconnectAnyCondition);
                 }
             }
             //else if (line.StartsWith("FATAL ERROR:")) {

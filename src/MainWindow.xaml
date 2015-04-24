@@ -18,10 +18,10 @@
         <local:IntegerToBooleanNotConverter x:Key="IntegerToBooleanNotConverter" />
         <local:BooleanNotConverter x:Key="BooleanNotConverter" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        
+
 
     </Window.Resources>
-    
+
     <Grid Margin="0" Width="422">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -38,8 +38,8 @@
                                 <RowDefinition Height="24" />
                                 <RowDefinition Height="24" />
                             </Grid.RowDefinitions>
-                            <RadioButton x:Name="proxyTypeGaRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource GaAndDescription}"/>
-                            <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource SshTunnelAndDescription}" />
+                            <RadioButton x:Name="proxyTypeGaRadio" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource GaAndDescription}"/>
+                            <RadioButton x:Name="proxyTypeSshRadio" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Content="{StaticResource SshTunnelAndDescription}" />
                             <RadioButton x:Name="proxyTypeHttpRadio" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource HttpProxyAndDescription}" />
                             <RadioButton x:Name="proxyTypeSocksRadio" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{StaticResource Socks5ProxyAndDescription}" />
                         </Grid>
@@ -107,11 +107,12 @@
                                     <TextBox x:Name="sshPortTextBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
                                     <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Username}" />
                                     <TextBox x:Name="sshUsernameTextBox" Grid.Row="0" Grid.Column="3" Margin="5,0" VerticalAlignment="Center" />
-                                    <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Password}" />
-                                    <PasswordBox x:Name="sshPasswordBox" Grid.Row="1" Grid.Column="3" Height="22" Margin="5,0" VerticalAlignment="Center" />
+                                    <Label x:Name="label_sshpwd" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,2,0" Content="{StaticResource Password}" />
+                                    <TextBox x:Name="sshPasswordBox" Grid.Row="1" Grid.Column="3" Height="22" Margin="5,3" VerticalAlignment="Center" />
+                                    <Button x:Name="button_sshkeyselect" Content="..." Grid.Column="3" HorizontalAlignment="Left" Margin="5,34,0,-24" Grid.Row="1" VerticalAlignment="Top" Width="21" Click="button_sshkeyselect_Click" RenderTransformOrigin="2.429,0.444"/>
                                 </Grid>
                             </Grid>
-                            <Grid Margin="0,6,0,0">
+                            <Grid Margin="0,6,0,0" Height="55">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="28" />
                                 </Grid.RowDefinitions>
@@ -120,9 +121,10 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="90" />
                                 </Grid.ColumnDefinitions>
-                                <Label VerticalAlignment="Center" HorizontalAlignment="Right" Padding="0,0,2,0" Content="{StaticResource Status}" />
-                                <TextBlock x:Name="sshStatusTextBlock" Grid.Column="1" Margin="5,0,5,0" VerticalAlignment="Center"></TextBlock>
-                                <Button x:Name="sshConnectButton" Grid.Column="2" Margin="5,0,5,0" VerticalAlignment="Center" Click="onSshConnectButtonClick" Content="{StaticResource Connect}" />
+                                <CheckBox x:Name="checkbox_sshusekey" Content="{DynamicResource SshUsePrivateKeyText}" Grid.ColumnSpan="2" Margin="14,0,44,1" Checked="checkbox_sshusekey_Checked" Unchecked="checkbox_sshusekey_Unchecked"/>
+                                <Label VerticalAlignment="Center" HorizontalAlignment="Right" Padding="0,0,2,0" Content="{StaticResource Status}" Margin="0,28,0,-16" Height="17" />
+                                <TextBlock x:Name="sshStatusTextBlock" Grid.Column="1" Margin="5,29,5,-22" VerticalAlignment="Center" Height="22"></TextBlock>
+                                <Button x:Name="sshConnectButton" Grid.Column="2" Margin="10,28,0,-20" VerticalAlignment="Center" Click="onSshConnectButtonClick" Content="{StaticResource Connect}" />
                             </Grid>
                         </StackPanel>
                     </GroupBox>
@@ -432,7 +434,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="onlineVersionTextBlock" VerticalAlignment="Center"></TextBlock>
                             <Button x:Name="downloadUpdateButton" Click="onDownloadUpdateButtonClick" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Download}" />
-                            
+
                         </Grid>
                     </GroupBox>
                 </StackPanel>
