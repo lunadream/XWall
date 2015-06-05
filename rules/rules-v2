@@ -744,6 +744,7 @@ tosh.comedycentral.com:80
 .contactmagazine.net
 :80/.*(?:\.|%2e)convio(?:\.|%2e)net
 .convio.net
+www.cool18.com:80/bbs.*(?:/|%2f)
 :80/.*(?:\.|%2e)coolaler(?:\.|%2e)com
 .coolaler.com
 :80/.*coolder(?:\.|%2e)com
@@ -771,6 +772,8 @@ tosh.comedycentral.com:80
 .ctfriend.net
 :80/.*cts(?:\.|%2e)com(?:\.|%2e)tw
 .cts.com.tw
+library.usc.cuhk.edu.hk:80/Default(?:\.|%2e)aspx\?url=dflms%2fsub%2f%2f1%2fdict%2f50
+mjlsh.usc.cuhk.edu.hk:80
 :80/.*(?:\.|%2e)cuhkacs(?:\.|%2e)org(?:/|%2f)~benng
 .cuhkacs.org:80/~benng
 :80/.*(?:\.|%2e)cuihua(?:\.|%2e)org
@@ -861,6 +864,7 @@ www.dfanning.com:80
 .diaoyuislands.org
 :80/.*static(?:\.|%2e)digg(?:\.|%2e)com
 .static.digg.com
+digiland.tw:80/
 .digitalnomadsproject.org
 :80/.*(?:\.|%2e)diigo(?:\.|%2e)com
 .diigo.com
@@ -1493,6 +1497,7 @@ www.goldenmelody.com.tw:80
 .googleapis.com
 .googleartproject.com
 .googlecode.com
+.googlecommerce.com
 .googledomains.com
 .googleearth.com
 .googledrive.com
@@ -1506,6 +1511,7 @@ www.goldenmelody.com.tw:80
 .googlevideo.com
 .groups.google.cn
 .gvt0.com
+.gvt1.com
 .html5rocks.com
 .panoramio.com
 .recaptcha.net
@@ -1551,6 +1557,7 @@ hk.gradconnection.com:80/
 .hakkatv.org.tw
 :80/.*(?:\.|%2e)hanunyi(?:\.|%2e)com
 .hanunyi.com
+jp.hao123.com:80
 .hardsextube.com
 .hasaowall.com
 :80/.*have8(?:\.|%2e)com
@@ -1936,8 +1943,6 @@ iptorrents.com:443
 .junefourth-20.net
 :80/.*justfreevpn(?:\.|%2e)com
 .justfreevpn.com
-:80/.*zh-tw(?:\.|%2e)justin(?:\.|%2e)tv
-.zh-tw.justin.tv
 :80/.*justtristan(?:\.|%2e)com
 .justtristan.com
 :80/.*juziyue(?:\.|%2e)com
@@ -2477,6 +2482,7 @@ news.now.com:80/home.*
 :80/.*(?:\.|%2e)nrk(?:\.|%2e)no
 .nrk.no
 .nsc.gov.tw
+.ntd.tv
 :80/.*ntdtv(?:\.|%2e)co
 .ntdtv.co
 :80/.*ntdtv(?:\.|%2e)ca
@@ -2757,6 +2763,7 @@ pictures.playboy.com:80
 .porn2.com
 :80/.*(?:\.|%2e)pornbase(?:\.|%2e)org
 .pornbase.org
+.pornhd.com
 :80/.*(?:\.|%2e)pornhub(?:\.|%2e)com
 .pornhub.com
 .pornmm.net
@@ -2770,6 +2777,8 @@ pictures.playboy.com:80
 .porntube.com
 :80/.*(?:\.|%2e)pornvisit(?:\.|%2e)com
 .pornvisit.com
+:80/.*(?:\.|%2e)portablevpn(?:\.|%2e)nl
+.portablevpn.nl
 :80/.*(?:\.|%2e)post852(?:\.|%2e)com
 .post852.com
 :80/.*postadult(?:\.|%2e)com
@@ -2782,6 +2791,7 @@ pictures.playboy.com:80
 .pubu.com.tw
 :80/.*puffinbrowser(?:\.|%2e)com
 .puffinbrowser.com
+.putty.org
 post.ly:80
 :80/.*(?:\.|%2e)posterous(?:\.|%2e)com
 .posterous.com
@@ -3008,6 +3018,7 @@ vds.rightster.com:80/
 .ruyiseek.com
 :80/.*(?:\.|%2e)rxhj(?:\.|%2e)net
 .rxhj.net
+.s-cute.com
 :80/.*(?:\.|%2e)s-dragon(?:\.|%2e)org
 .s-dragon.org
 .s1heng.com
@@ -3368,6 +3379,7 @@ bbs.soul-plus.net:80
 .www.supertweet.net
 :80/.*(?:\.|%2e)surfeasy(?:\.|%2e)com(?:\.|%2e)au
 .surfeasy.com.au
+.surrenderat20.net
 .svwind.com
 .sweux.com
 .swift-tools.net
@@ -3639,7 +3651,7 @@ tmi.me:80
 www.tsuru-bird.net:80/
 :80/.*(?:\.|%2e)tsctv(?:\.|%2e)net
 .tsctv.net
-tt-rss.org:80/
+.tt-rss.org
 .tt1069.com
 .tttan.com
 :80/.*(?:\.|%2e)tttan(?:\.|%2e)com
@@ -4330,6 +4342,7 @@ woesermiddle-way.net:80/
 .x.xcity.jp
 :80/.*(?:\.|%2e)xcritic(?:\.|%2e)com
 .xcritic.com
+cdn*.xda-developers.com:80
 :80/.*destiny(?:\.|%2e)xfiles(?:\.|%2e)to(?:/|%2f)ubbthreads
 .destiny.xfiles.to:80/ubbthreads
 :80/.*(?:\.|%2e)xfm(?:\.|%2e)pp(?:\.|%2e)ru
@@ -4366,6 +4379,7 @@ xinyubbs.net:80
 .xizang-zhiye.org
 :80/.*xjp(?:\.|%2e)cc
 .xjp.cc
+.xlfmwz.info
 .xml-training-guide.com
 :80/.*xmovies(?:\.|%2e)com
 .xmovies.com
