@@ -18,8 +18,8 @@
         <local:IntegerToBooleanNotConverter x:Key="IntegerToBooleanNotConverter" />
         <local:BooleanNotConverter x:Key="BooleanNotConverter" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-
-
+        
+        
     </Window.Resources>
 
     <Grid Margin="0" Width="422">
@@ -433,7 +433,14 @@
                                 <ColumnDefinition Width="90" />
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="onlineVersionTextBlock" VerticalAlignment="Center"></TextBlock>
-                            <Button x:Name="downloadUpdateButton" Click="onDownloadUpdateButtonClick" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" Content="{StaticResource Download}" />
+                            <Button x:Name="downloadUpdateButton" Click="onDownloadUpdateButtonClick" Grid.Column="1" VerticalAlignment="Center" Margin="10,2,0,2" Content="{StaticResource Download}" />
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="0,0,0,2" Header="Feedback">
+                        <Grid Margin="10,5">
+                            <Label Content="If you have any questions please let us know." />
+                            <Button x:Name="feedbackBtn" Content="Feedback" HorizontalAlignment="Left" Margin="299,3,0,0" VerticalAlignment="Top" Width="75" Click="feedbackBtn_Click"/>
 
                         </Grid>
                     </GroupBox>

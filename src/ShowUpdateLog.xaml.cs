@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Reflection;
-
 namespace XWall
 {
     /// <summary>
@@ -28,7 +27,7 @@ namespace XWall
 
         private void Update_UpdateLogExpander_Collapsed(object sender, RoutedEventArgs e)
         {
-            this.Height = 150;
+            this.Height = 163;
         }
 
         private void Update_UpdateLogExpander_Expanded(object sender, RoutedEventArgs e)
@@ -56,6 +55,13 @@ namespace XWall
             {
                 Update_OnlineVerNum.Content = MainSetting.latestVersion;
                 Update_UpdateLogBox.Text = MainSetting.updateLog;
+                Update_DownloadTimes.Content = MainSetting.downloadTimes;
+                var installedVersion = Assembly.GetExecutingAssembly().GetName().Version;
+                if (installedVersion < Version.Parse(MainSetting.minVersion))
+                {
+                    Update_DownloadTimes.Foreground = Brushes.ForestGreen;
+                    Update_DownloadTimes_Text.Foreground = Brushes.ForestGreen;
+                }
             }
             Update_UpdateLogBox.IsReadOnly = true;
         }

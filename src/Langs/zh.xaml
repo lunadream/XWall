@@ -180,6 +180,7 @@
     <!-- ShowUpdateLogWindow-->
     <sys:String x:Key="LocalVer_Text">本地版本:</sys:String>
     <sys:String x:Key="OnlineVer_Text">在线版本:</sys:String>
+    <sys:String x:Key="DownloadTimes_Text">下载次数:</sys:String>
     <sys:String x:Key="Cancel_Text">取消</sys:String>
     <sys:String x:Key="Update_Text">升级</sys:String>
     <sys:String x:Key="UpdateLog_Text">升级日志</sys:String>

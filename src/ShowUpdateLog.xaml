@@ -1,13 +1,24 @@
 ﻿<Window x:Class="XWall.ShowUpdateLog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="{DynamicResource UpdateLogWindow_Title}" Height="150
-        " Width="400" ResizeMode="NoResize" Closing="Window_Closing" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
+        Title="{DynamicResource UpdateLogWindow_Title}" Height="163" Width="400" ResizeMode="NoResize" Closing="Window_Closing" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
     <Grid Margin="0">
         <Label x:Name="Update_LocalVer" Content="{DynamicResource LocalVer_Text}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Update_OnlineVer" Content="{DynamicResource OnlineVer_Text}" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Update_LocalVerNum" Content="0.0.0.0" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Update_OnlineVerNum" Content="0.0.0.1" HorizontalAlignment="Left" Margin="107,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Update_OnlineVerNum" Content="0.0.0.1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,36,0,0"/>
+        <Grid HorizontalAlignment="Right" Margin="0,0,181,9" VerticalAlignment="Bottom" Width="203">
+            <Label x:Name="Update_DownloadTimes_Text" Content="{DynamicResource DownloadTimes_Text}" HorizontalAlignment="Left" Margin="10,0,19,0" VerticalAlignment="Top">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="Update_DownloadTimes" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,0,0,0">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+                </Label.Foreground>
+            </Label>
+        </Grid>
         <Expander x:Name="Update_UpdateLogExpander" Header="{DynamicResource UpdateLog_Text}" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Collapsed="Update_UpdateLogExpander_Collapsed" Expanded="Update_UpdateLogExpander_Expanded">
             <TextBox x:Name="Update_UpdateLogBox" Height="97" TextWrapping="Wrap" Width="359" Margin="0,5,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
          ScrollViewer.VerticalScrollBarVisibility="Auto">
@@ -16,6 +27,7 @@
         </Expander>
         <Button x:Name="Update_Confirm" Content="{DynamicResource Update_Text}" HorizontalAlignment="Left" Margin="298,0,0,13" VerticalAlignment="Bottom" Width="75" Click="Update_Confirm_Click"/>
         <Button x:Name="Update_Cancel" Content="{DynamicResource Cancel_Text}" HorizontalAlignment="Left" Margin="218,0,0,13" VerticalAlignment="Bottom" Width="75" Click="Update_Cancel_Click"/>
+
 
     </Grid>
 </Window>

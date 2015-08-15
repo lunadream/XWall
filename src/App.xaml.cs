@@ -25,6 +25,15 @@ namespace XWall {
         public static bool Updated = false;
         public static bool FirstRun = false;
 
+        
+        void App_SessionEnding(object sender, SessionEndingCancelEventArgs e)
+        {
+            try
+            {
+                App.Current.Shutdown();
+            }
+            catch { }
+        }
         protected override void OnStartup(StartupEventArgs eventArgs) {
             base.OnStartup(eventArgs);
             LoadLanguage();
@@ -178,12 +187,6 @@ namespace XWall {
                 }
             };
 
-            SystemEvents.SessionEnded += (sender, e) => {
-                try {
-                    App.Current.Shutdown();
-                }
-                catch { }
-            };
 
             Dispatcher.UnhandledException += (sender, e) => {
                 var query = HttpUtility.ParseQueryString("");
@@ -193,9 +196,11 @@ namespace XWall {
                 client.UploadValuesAsync(new Uri(settings.ErrorReportUrl), query);
 
                 var msg = (resources["UnhandledExceptionMessage"] as string).Replace("%n", Environment.NewLine);
+                System.IO.File.WriteAllText("D:\\XWERR.txt",msg+e.Exception.ToString(),System.Text.Encoding.UTF8);
                 MessageBox.Show(msg+e.Exception.ToString(), resources["XWall"] as string, MessageBoxButton.OK, MessageBoxImage.Error);
 
                 e.Handled = true;
+                App.Current.Shutdown();
             };
             //*/
         }

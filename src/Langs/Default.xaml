@@ -179,6 +179,7 @@ It is STRONGLY RECOMMENDED to enable this feature, but of course you have the ch
     <!-- ShowUpdateLogWindow-->
     <sys:String x:Key="LocalVer_Text">Local version:</sys:String>
     <sys:String x:Key="OnlineVer_Text">Online version:</sys:String>
+    <sys:String x:Key="DownloadTimes_Text">Download Times:</sys:String>
     <sys:String x:Key="Cancel_Text">Cancel</sys:String>
     <sys:String x:Key="Update_Text">Update</sys:String>
     <sys:String x:Key="UpdateLog_Text">Update log</sys:String>

@@ -21,6 +21,7 @@ namespace XWall
     /// Interaction logic for MainWindow.xaml
     /// TODO:Remove '//' in line 409 before release build
     /// </summary>
+
     public partial class MainWindow : Window
     {
         static Settings settings = Settings.Default;
@@ -37,7 +38,6 @@ namespace XWall
         {
             if (App.IsShutDown)
                 return;
-
             InitializeComponent();
         }
 
@@ -217,10 +217,11 @@ namespace XWall
                 try
                 {
                     server.Stop();
+                    //Restore network isolation status
+                    NetworkIsolationAction(false);
                 }
                 catch { }
             };
-
             settings.PropertyChanged += (o, a) =>
             {
                 switch (a.PropertyName)
@@ -419,6 +420,9 @@ namespace XWall
             //    var result = MessageBox.Show(message, resources["ShareRuleTitle"] as string, MessageBoxButton.YesNo);
             //    settings.SubmitNewRule = result == MessageBoxResult.Yes;
             //}
+
+            //Check is system need to disable network isolation for morden app(Windows 8 or higher)
+            NetworkIsolationAction(true);
         }
 
         void initIconStatus()
@@ -576,25 +580,42 @@ namespace XWall
             onlineVersionTextBlock.Text = resources["Checking"] as string;
 
             var url = new Uri(settings.OnlineVersionUrl);
-            XmlDocument xmlDoc = new XmlDocument();
-            var client = new WebClient();
+            XmlDocument xmlDocRpt = new XmlDocument();
+            var clientRpt = new WebClient();
             //client.Proxy = null;
-            client.DownloadStringAsync(url);
-            client.Encoding = System.Text.Encoding.UTF8;
-            client.DownloadStringCompleted += (sender, e) =>
+            clientRpt.DownloadStringAsync(url);
+            clientRpt.Encoding = System.Text.Encoding.UTF8;
+            clientRpt.DownloadStringCompleted += (sender, e) =>
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
                     checkingVersion = false;
                     if (e.Error == null)
                     {
-                        xmlDoc.LoadXml(e.Result);
-                        MainSetting.minVersion = xmlDoc.SelectSingleNode("XWall.UpdateXML/MinVersion").InnerText;
-                        MainSetting.latestVersion = xmlDoc.SelectSingleNode("XWall.UpdateXML/LatestVersion").InnerText;
-                        //MainSetting.forceUpdate = Convert.ToBoolean(xmlDoc.SelectSingleNode("XWall.UpdateXML/ForceUpdate").InnerText);
-                        MainSetting.downloadUrl = xmlDoc.SelectSingleNode("XWall.UpdateXML/DownloadUrl").InnerText;
-                        MainSetting.downloadUrlFull = xmlDoc.SelectSingleNode("XWall.UpdateXML/DownloadUrlFull").InnerText;
-                        MainSetting.updateLog = xmlDoc.SelectSingleNode("XWall.UpdateXML/UpdateLog").InnerText.Replace("\\newline", Environment.NewLine);
+                        xmlDocRpt.LoadXml(e.Result);
+                        MainSetting.minVersion = xmlDocRpt.SelectSingleNode("XWall.UpdateXML/MinVersion").InnerText;
+                        MainSetting.latestVersion = xmlDocRpt.SelectSingleNode("XWall.UpdateXML/LatestVersion").InnerText;
+
+                        //get latest version download times
+                        var checkUrl = new Uri(settings.UpdateReportUrl + "?v=" + MainSetting.latestVersion + "&r=1");
+                        XmlDocument xmlDoc = new XmlDocument();
+                        var client = new WebClient();
+                        client.DownloadStringAsync(checkUrl);
+                        client.Encoding = System.Text.Encoding.UTF8;
+                        client.DownloadStringCompleted += (_sender, _e) =>
+                            {
+                                Dispatcher.BeginInvoke(new Action(() =>
+                                    {
+                                        MainSetting.downloadTimes = _e.Result;
+                                    }));
+
+                            };
+
+
+                        MainSetting.forceUpdate = Convert.ToBoolean(xmlDocRpt.SelectSingleNode("XWall.UpdateXML/ForceUpdate").InnerText);
+                        MainSetting.downloadUrl = xmlDocRpt.SelectSingleNode("XWall.UpdateXML/DownloadUrl").InnerText;
+                        MainSetting.downloadUrlFull = xmlDocRpt.SelectSingleNode("XWall.UpdateXML/DownloadUrlFull").InnerText;
+                        MainSetting.updateLog = xmlDocRpt.SelectSingleNode("XWall.UpdateXML/UpdateLog").InnerText.Replace("\\newline", Environment.NewLine);
                         bool suggestedToUpdate = false;
                         var installedVersion = Assembly.GetExecutingAssembly().GetName().Version;
                         onlineVersionStr = MainSetting.latestVersion;
@@ -914,6 +935,32 @@ namespace XWall
             }
         }
 
+        private void feedbackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //add network check in the future,if network unavailable then disable feedback button.
+            var feedbackWindow = new FeedbackWindow();
+            feedbackWindow.Owner = this;
+            feedbackWindow.ShowDialog();
+        }
+
+        private void NetworkIsolationAction(bool disable)
+        {
+            //This application can only run in Windows Vista or highr,so just let Windows 7 skip this function
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                if (Environment.OSVersion.Version.Major == 6)
+                {
+                    if (Environment.OSVersion.Version.Minor <= 1)
+                    {
+                        return;
+                    }
+                }
+            }
+            LoopBack.LoopUtil _loop;
+            _loop = new LoopBack.LoopUtil();
+            _loop.OnekeyDisableIsolation(disable);
+
+        }
     }
     public class MainSetting
     {
@@ -924,5 +971,7 @@ namespace XWall
         public static string downloadUrl;
         public static string downloadUrlFull;
         public static string updateLog;
+        public static string downloadTimes;
     }
+    
 }
