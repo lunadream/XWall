@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Feedback" Height="312" Width="396" Loaded="Window_Loaded">
     <Grid Margin="-1,0,1,0">
-        <Label Content="CommonApp Feedback Module" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16">
+        <Label Content="{StaticResource FbTitle}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
             </Label.Foreground>
@@ -13,16 +13,14 @@
                 <SolidColorBrush Color="#FFE3E3E3"/>
             </Border.BorderBrush>
         </Border>
-        <Grid HorizontalAlignment="Left" Height="225" Margin="10,55,0,0" VerticalAlignment="Top" Width="368">
-
-            <Label x:Name="Text_AppName" Content="AppName:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top">
+            <Label x:Name="Text_AppName" Content="{StaticResource FbName}" HorizontalAlignment="Left" Margin="9,4,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TextBox_AppName" HorizontalAlignment="Left" Height="23" Margin="80,1,0,0" TextWrapping="Wrap" Text="X-Wall" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <Label x:Name="Text_AppVersion" Content="AppVersion:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,29,0,0"/>
-            <TextBox x:Name="TextBox_AppVersion" HorizontalAlignment="Left" Height="23" Margin="80,30,0,0" TextWrapping="Wrap" Text="X-Wall" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <Label Content="Question or Advice:" HorizontalAlignment="Left" Margin="0,59,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="Text_AppVersion" Content="{StaticResource FbVersion}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,29,0,0"/>
+            <TextBox  x:Name="TextBox_AppVersion" HorizontalAlignment="Left" Height="23" Margin="80,30,0,0" TextWrapping="Wrap" Text="X-Wall" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+            <Label Content="{StaticResource FbQA}" HorizontalAlignment="Left" Margin="0,59,0,0" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Left" Height="78" Margin="0,89,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357"/>
-            <Button Content="Send" HorizontalAlignment="Left" Margin="283,187,10,10" VerticalAlignment="Top" Width="75"/>
+            <Button  Content="{StaticResource FbSend}" HorizontalAlignment="Left" Margin="283,187,10,10" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         </Grid>
-
     </Grid>
 </Window>

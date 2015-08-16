@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Resources;
@@ -12,7 +11,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using XWall.Properties;
 using System.Xml;
-using System.Xml.Linq;
 using Microsoft.Win32;
 
 namespace XWall
@@ -218,7 +216,10 @@ namespace XWall
                 {
                     server.Stop();
                     //Restore network isolation status
-                    NetworkIsolationAction(false);
+                    if (settings.LBIDEnable)
+                    {
+                        NetworkIsolationAction(false);
+                    }
                 }
                 catch { }
             };
@@ -363,6 +364,24 @@ namespace XWall
 
             initIconStatus();
 
+            //loopback
+            settings.PropertyChanged += (o, a) =>
+            {
+                switch (a.PropertyName)
+                {
+                    case "LBIDEnable": break;
+                    default: return;
+                }
+                if (settings.LBIDEnable)
+                {
+                    NetworkIsolationAction(true);
+                }
+                else
+                {
+                    NetworkIsolationAction(false);
+                }
+            };
+
             var ruleCommandWatcher = new FileSystemWatcher(App.AppDataDirectory + settings.ConfigsFolderName, "*-cmd");
             ruleCommandWatcher.Created += ruleCommandHandler;
             ruleCommandWatcher.Changed += ruleCommandHandler;
@@ -422,7 +441,27 @@ namespace XWall
             //}
 
             //Check is system need to disable network isolation for morden app(Windows 8 or higher)
-            NetworkIsolationAction(true);
+            if (settings.LBIDEnable)
+            {
+                NetworkIsolationAction(true);
+            }
+
+            //Bind loopback isolation disable checkbox click event
+            LBIDCheckBox.Click += LBIDCheckBox_Click;
+        }
+
+
+        private void LBIDCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(bool)(sender as CheckBox).IsChecked)
+            {
+                MessageBoxResult result = MessageBox.Show((resources["LBIDAsk"] as string).Replace("%n", Environment.NewLine), resources["ActionConfirmTitle"] as string, MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
+                if (result == MessageBoxResult.No)
+                {
+                    (sender as CheckBox).IsChecked = true;
+                }
+            }
+            e.Handled = true;
         }
 
         void initIconStatus()
@@ -943,7 +982,7 @@ namespace XWall
             feedbackWindow.ShowDialog();
         }
 
-        private void NetworkIsolationAction(bool disable)
+        private void NetworkIsolationAction(bool isdisable)
         {
             //This application can only run in Windows Vista or highr,so just let Windows 7 skip this function
             if (Environment.OSVersion.Version.Major >= 6)
@@ -958,7 +997,19 @@ namespace XWall
             }
             LoopBack.LoopUtil _loop;
             _loop = new LoopBack.LoopUtil();
-            _loop.OnekeyDisableIsolation(disable);
+            if (_loop.OnekeyDisableIsolation(isdisable))
+            {
+                if (!settings.LBIDTipsShowed)
+                {
+                    notificationController.SendMessage("XWall", resources["LBIDTips"] as string);
+                    settings.LBIDTipsShowed = true;
+                }
+            }
+            else
+            {
+                notificationController.SendMessage("XWall", resources["LBIDFail"] as string);
+            }
+            
 
         }
     }
